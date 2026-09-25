@@ -11,6 +11,10 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       if (window.location.hostname.endsWith('github.io')) {
+        const stylesheet = document.createElement('link')
+        stylesheet.rel = 'stylesheet'
+        stylesheet.href = '/pkhuntdb/assets/index-BUnWhvJN.css'
+        document.head.appendChild(stylesheet)
         const script = document.createElement('script')
         script.type = 'module'
         script.src = '/pkhuntdb/assets/index-BG02Bpt-.js'
