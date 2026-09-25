@@ -1,6 +1,6 @@
 import React, { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, MapPin, Radio, ScrollText, Search, Swords } from 'lucide-react'
+import { ArrowRight, BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, Home, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords } from 'lucide-react'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon } from './data'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import { getTypeMatchups } from './type-chart'
@@ -13,6 +13,8 @@ import './tm-overrides.css'
 import './theme-overrides.css'
 import './joy-theme.css'
 import './missions.css'
+import './home.css'
+import './color-mode.css'
 
 const legacyAreaTms = [
   ['Flash Cannon', 'Steel', 80, '15s', 3, '7,1%'], ['Iron Tail', 'Steel', 90, '18s', 1, '3,6%'],
@@ -45,21 +47,29 @@ const moveAttackLabel = (category: string) => category === 'physical' ? 'Físico
 function App() { return <Atlas /> }
 
 function Atlas() {
-  const [view, setView] = useState<'pokemon' | 'tms' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'detail'>('pokemon')
+  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'detail'>('home')
+  const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'dark' ? 'dark' : 'light')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
   const [region, setRegion] = useState('Todas Regiões')
+  const [eggGroupFilter, setEggGroupFilter] = useState('Todos os grupos')
   const [megaFilter, setMegaFilter] = useState('Todas as formas')
   const [sort, setSort] = useState('Ordem A-Z')
   const [tmType, setTmType] = useState('Todos os tipos')
   const [tmRange, setTmRange] = useState('Todos os alcances')
   const [tmSort, setTmSort] = useState('Nome (A-Z)')
   const [captureRange, setCaptureRange] = useState('Todas as faixas')
+  const [captureType, setCaptureType] = useState('Todos os tipos')
   const [captureSort, setCaptureSort] = useState('Nome (A-Z)')
   const [moveSource, setMoveSource] = useState('Todas as origens')
   const [moveSort, setMoveSort] = useState('Nome (A-Z)')
+
+  useEffect(() => {
+    document.documentElement.dataset.colorMode = colorMode
+    window.localStorage.setItem('pkhuntdb-color-mode', colorMode)
+  }, [colorMode])
 
   useEffect(() => {
     loadPokemon().then((entries) => {
@@ -71,9 +81,10 @@ function Atlas() {
 
   const filteredPokemon = useMemo(() => [...pokemon]
     .filter((entry) => region === 'Todas Regiões' || entry.region === region)
+    .filter((entry) => eggGroupFilter === 'Todos os grupos' || (eggGroupFilter === 'Sem grupo' ? !entry.eggGroup : entry.eggGroup.split(',').map((group) => group.trim()).includes(eggGroupFilter)))
     .filter((entry) => megaFilter === 'Todas as formas' || entry.form === 'Mega')
     .filter((entry) => `${entry.name} ${entry.type} ${entry.eggGroup} ${entry.region}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, megaFilter, sort])
+    .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, eggGroupFilter, megaFilter, sort])
   const filteredTms = useMemo(() => [...tms]
     .filter((entry) => tmType === 'Todos os tipos' || entry.type === tmType)
     .filter((entry) => tmRange === 'Todos os alcances' || (tmRange === 'Área' ? entry.isArea : !entry.isArea))
@@ -81,13 +92,16 @@ function Atlas() {
     .sort((a, b) => tmSort === 'Poder (maior)' ? (b.power ?? 0) - (a.power ?? 0) : tmSort === 'Cooldown (menor)' ? Number.parseFloat(a.cooldown) - Number.parseFloat(b.cooldown) : a.name.localeCompare(b.name)), [query, tmRange, tmSort, tmType])
   const filteredCaptures = useMemo(() => [...captureRates]
     .filter((entry) => captureRange === 'Todas as faixas' || entry.range === captureRange)
+    .filter((entry) => captureType === 'Todos os tipos' || pokemon.find((item) => item.name === entry.name)?.type.split(' / ').includes(captureType))
     .filter((entry) => `${entry.name} ${entry.range} ${entry.recommendedBall}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => captureSort === 'Dureza (menor)' ? a.hardness - b.hardness : captureSort === 'Dureza (maior)' ? b.hardness - a.hardness : a.name.localeCompare(b.name)), [captureRange, captureSort, query])
+    .sort((a, b) => captureSort === 'Dureza (menor)' ? a.hardness - b.hardness : captureSort === 'Dureza (maior)' ? b.hardness - a.hardness : a.name.localeCompare(b.name)), [captureRange, captureSort, captureType, pokemon, query])
   const filteredMoveDex = useMemo(() => [...moveDex]
     .filter((entry) => moveSource === 'Todas as origens' || (moveSource === 'Por nível' ? entry.learnedByLevel > 0 : entry.learnedByTm))
     .filter((entry) => `${entry.name} ${entry.type} ${entry.category} ${entry.range}`.toLowerCase().includes(query.toLowerCase()))
     .sort((a, b) => moveSort === 'Poder (maior)' ? (b.power ?? 0) - (a.power ?? 0) : moveSort === 'Recarga (menor)' ? Number.parseFloat(a.cooldown) - Number.parseFloat(b.cooldown) : a.name.localeCompare(b.name)), [moveSource, moveSort, query])
   const captureRanges = [...new Set(captureRates.map((entry) => entry.range))]
+  const captureTypes = [...new Set(pokemon.flatMap((entry) => entry.type.split(' / ')))].sort((a, b) => typeLabel(a).localeCompare(typeLabel(b)))
+  const eggGroups = [...new Set(pokemon.flatMap((entry) => entry.eggGroup.split(',').map((group) => group.trim()).filter(Boolean)))].sort((a, b) => a.localeCompare(b))
   const regions = ['Todas Regiões', ...new Set(pokemon.map((entry) => entry.region))]
 
   function changeView(nextView: typeof view) {
@@ -103,9 +117,10 @@ function Atlas() {
   return (
     <main className="app-shell">
       <aside className="sidebar">
-        <div className="brand"><span className="brand-mark"><BookOpen size={30} strokeWidth={2.4} /><img src="https://img.pokemondb.net/sprites/home/normal/pikachu.png" alt="" /></span><span>PK HUNT<br /><b>DATABASE</b></span></div>
+        <button type="button" className="brand brand-home" aria-label="Ir para Início" onClick={() => changeView('home')}><span className="brand-mark"><BookOpen size={30} strokeWidth={2.4} /><img src="https://img.pokemondb.net/sprites/home/normal/pikachu.png" alt="" /></span><span>PK HUNT<br /><b>DATABASE</b></span></button>
         <p className="eyebrow">GUIA DO TREINADOR</p>
         <nav>
+          <button aria-label="Início" className={view === 'home' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('home')}><Home size={18} /> <span>Início</span></button>
           <button aria-label="Pokedex" className={view === 'pokemon' || view === 'detail' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('pokemon')}><BookOpen size={18} /> <span>Pokedex</span> <strong>{pokemon.length}</strong></button>
           <button aria-label="TMs" className={view === 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
           <button aria-label="Capturas" className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('captures')}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong></button>
@@ -117,14 +132,61 @@ function Atlas() {
       </aside>
 
       <section className="content">
-        <header className="topbar"><div><p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p><h1>{view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'captures' ? 'Taxas de Captura' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : 'REGISTROS'} <span>WIKI</span></div></div></header>
-        {view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : <>
-          <div className="toolbar"><label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>{view === 'pokemon' ? <><select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Filtrar por forma" value={megaFilter} onChange={(event) => setMegaFilter(event.target.value)}><option>Todas as formas</option><option>Apenas Megas</option></select><select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select></> : view === 'tms' ? <><select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select><select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select><select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></> : view === 'captures' ? <><select aria-label="Filtrar por faixa" value={captureRange} onChange={(event) => setCaptureRange(event.target.value)}><option>Todas as faixas</option>{captureRanges.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Ordenar capturas" value={captureSort} onChange={(event) => setCaptureSort(event.target.value)}><option>Nome (A-Z)</option><option>Dureza (menor)</option><option>Dureza (maior)</option></select></> : <><select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select><select aria-label="Ordenar MoveDex" value={moveSort} onChange={(event) => setMoveSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></>}</div>
+        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'captures' ? 'Taxas de Captura' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
+        {view === 'home' ? <HomeDashboard onNavigate={changeView} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : <>
+          <div className="toolbar">
+            <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
+            {view === 'pokemon' ? <>
+              <select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select>
+              <select aria-label="Filtrar por Egg Group" value={eggGroupFilter} onChange={(event) => setEggGroupFilter(event.target.value)}>
+                <option>Todos os grupos</option>
+                {eggGroups.map((group) => <option key={group} value={group}>{group}</option>)}
+                <option>Sem grupo</option>
+              </select>
+              <select aria-label="Filtrar por forma" value={megaFilter} onChange={(event) => setMegaFilter(event.target.value)}><option>Todas as formas</option><option>Apenas Megas</option></select>
+              <select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select>
+            </> : view === 'tms' ? <>
+              <select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
+              <select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select>
+              <select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select>
+            </> : view === 'captures' ? <>
+              <select aria-label="Filtrar por faixa" value={captureRange} onChange={(event) => setCaptureRange(event.target.value)}><option>Todas as faixas</option>{captureRanges.map((item) => <option key={item}>{item}</option>)}</select>
+              <select aria-label="Filtrar capturas por tipo" value={captureType} onChange={(event) => setCaptureType(event.target.value)}><option>Todos os tipos</option>{captureTypes.map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
+              <select aria-label="Ordenar capturas" value={captureSort} onChange={(event) => setCaptureSort(event.target.value)}><option>Nome (A-Z)</option><option>Dureza (menor)</option><option>Dureza (maior)</option></select>
+            </> : <>
+              <select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select>
+              <select aria-label="Ordenar MoveDex" value={moveSort} onChange={(event) => setMoveSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select>
+            </>}
+          </div>
           {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} /> : view === 'missions' ? <MissionBoard items={clanMissions} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
     </main>
   )
+}
+
+type HomeDestination = 'pokemon' | 'missions' | 'calculator' | 'tms' | 'captures'
+type HomeCounts = Pick<Record<HomeDestination, number>, 'pokemon' | 'missions' | 'tms' | 'captures'>
+
+function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeDestination) => void; counts: HomeCounts }) {
+  const shortcuts = [
+    { destination: 'pokemon', label: 'Pokédex', detail: `${counts.pokemon} espécies`, icon: BookOpen, tone: 'pokedex' },
+    { destination: 'missions', label: 'Missões', detail: `${counts.missions} missões de clã`, icon: ClipboardList, tone: 'missions' },
+    { destination: 'calculator', label: 'Calculadora', detail: '6 atributos', icon: Calculator, tone: 'calculator' },
+    { destination: 'tms', label: 'TMs', detail: `${counts.tms} golpes`, icon: ScrollText, tone: 'tms' },
+    { destination: 'captures', label: 'Capturas', detail: `${counts.captures} espécies`, icon: Crosshair, tone: 'captures' },
+  ] as const
+
+  return <section className="home-screen" aria-label="Navegação principal">
+    <div className="home-shortcuts">{shortcuts.map((shortcut) => {
+      const Icon = shortcut.icon
+      return <button type="button" className={`home-shortcut home-shortcut-${shortcut.tone}`} key={shortcut.destination} onClick={() => onNavigate(shortcut.destination)}>
+        <span className="home-shortcut-icon"><Icon size={22} /></span>
+        <span className="home-shortcut-copy"><strong>{shortcut.label}</strong><small>{shortcut.detail}</small></span>
+        <ArrowRight className="home-shortcut-arrow" size={18} />
+      </button>
+    })}</div>
+  </section>
 }
 
 function MissionBoard({ items }: { items: ClanMission[] }) {
@@ -179,7 +241,7 @@ function MissionAdvice({ recommendation, hardnessByName }: { recommendation: Cla
   const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
   const formatExpected = (value: number) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
   const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 2 }).format(value)
-  const summary = recommendation.kind === 'capture' ? 'Ver melhor mapa e dureza' : recommendation.kind === 'multi' ? 'Ver mapa de cada Pokémon' : recommendation.kind === 'weak' ? 'Ver melhor mapa elemental' : 'Ver recomendação'
+  const summary = recommendation.kind === 'capture' ? 'Ver Melhor Mapa' : recommendation.kind === 'multi' ? 'Ver mapa de cada Pokémon' : recommendation.kind === 'weak' ? 'Ver melhor mapa elemental' : 'Ver recomendação'
   const pokemon = recommendation.pokemon ?? []
   const totalChance = pokemon.reduce((total, entry) => total + entry.chance, 0)
   const averageCaptureHardness = totalChance ? pokemon.reduce((total, entry) => total + (hardnessByName.get(entry.name) ?? entry.media ?? 0) * entry.chance, 0) / totalChance : recommendation.avgMedia
@@ -313,6 +375,22 @@ function TmTable({ items }: { items: typeof tms }) { return <div className="tm-p
 
 function MoveDexTable({ items }: { items: MoveDexEntry[] }) { return <div className="tm-panel movedex-panel"><div className="capture-note"><strong>MoveDex:</strong> catálogo unificado dos golpes que aparecem nos movesets por nível e no catálogo de TMs do PokeHunt.</div><div className="panel-heading"><span>GOLPES DISPONÍVEIS / {items.length}</span><span className="sort">NOME ↕</span></div><div className="tm-head movedex-head"><span>GOLPE</span><span>TIPO</span><span>ATAQUE</span><span>PODER</span><span>RECARGA</span><span>EFEITO</span><span>ALCANCE</span><span>ORIGEM</span></div>{items.map((move) => <div className="tm-row movedex-row" key={move.name}><strong data-type={move.type}>{move.name}</strong><span data-type={move.type} className="type">{typeLabel(move.type)}</span><span className={`attack-category ${move.attackCategory}`}><i>{attackCategoryIcon(move.attackCategory)}</i>{attackCategoryLabel(move.attackCategory)}</span><span>{move.power ?? '—'}</span><span>{move.cooldown}</span><span>{move.category.replace('Utilitário/Status', 'Status')}</span><span>{move.isArea ? 'Área' : 'Alvo único'}</span><span className="move-source">{move.learnedByLevel && move.learnedByTm ? 'Nível + TM' : move.learnedByTm ? 'TM' : 'Nível'}</span></div>)}</div> }
 
-function CaptureTable({ items, pokemon }: { items: CaptureEntry[]; pokemon: Pokemon[] }) { return <div className="tm-panel capture-panel"><div className="capture-note"><strong>Como ler:</strong> quanto menor a dureza, mais fácil é capturar. A wiki recomenda Ultraball para a tabela de caça. As 8 espécies não capturáveis e os 74 lendários/Megas ficam fora destes registros.</div><div className="panel-heading"><span>ESPÉCIES NA TABELA / {items.length}</span><span className="sort">DUREZA ↕</span></div><div className="tm-head capture-head"><span>ESPÉCIE</span><span>ELEMENTO</span><span>DUREZA</span><span>FAIXA</span><span>BALL RECOMENDADA</span></div>{items.map((entry) => { const match = pokemon.find((item) => item.name === entry.name); const elements = match ? match.type.split(' / ').map(typeLabel).join(' e ') : '—'; return <div className="tm-row capture-row" key={entry.name}><strong>{entry.name}</strong><span className="capture-types">{elements}</span><span className="capture-hardness">{entry.hardness}</span><span className={`capture-range range-${entry.range.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{entry.range}</span><span className="capture-ball">{entry.recommendedBall}</span></div> })}</div> }
+function CaptureTable({ items, pokemon }: { items: CaptureEntry[]; pokemon: Pokemon[] }) {
+  const pokemonByName = new Map(pokemon.map((entry) => [entry.name, entry]))
+
+  return <div className="tm-panel capture-panel">
+    <div className="capture-note"><strong>Como ler:</strong> quanto menor a dureza, mais fácil é capturar. A wiki recomenda Ultraball para a tabela de caça. As 8 espécies não capturáveis e os 74 lendários/Megas ficam fora destes registros.</div>
+    <div className="panel-heading">
+      <span>ESPÉCIES NA TABELA / {items.length}</span>
+      <span className="sort">DUREZA ↕</span>
+    </div>
+    <div className="tm-head capture-head"><span>ESPÉCIE</span><span>ELEMENTO</span><span>DUREZA</span><span>FAIXA</span><span>BALL RECOMENDADA</span></div>
+    {items.map((entry) => {
+      const match = pokemonByName.get(entry.name)
+      const elements = match ? match.type.split(' / ').map(typeLabel).join(' e ') : '—'
+      return <div className="tm-row capture-row" key={entry.name}><strong>{entry.name}</strong><span className="capture-types">{elements}</span><span className="capture-hardness">{entry.hardness}</span><span className={`capture-range range-${entry.range.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{entry.range}</span><span className="capture-ball">{entry.recommendedBall}</span></div>
+    })}
+  </div>
+}
 
 createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>)

@@ -1,0 +1,25 @@
+.brand-home { width: 100%; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; text-align: left; }
+.brand-home:focus-visible { outline: 2px solid var(--yellow); outline-offset: 5px; }
+.home-screen { width: min(1120px, 100%); margin: 28px auto 0; }
+.home-shortcuts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.home-shortcut { --home-accent: #2764e7; display: grid; grid-template-columns: 46px minmax(0, 1fr) 18px; align-items: center; gap: 12px; min-height: 92px; padding: 14px; border: 1px solid #c8d8ed; border-left: 4px solid var(--home-accent); border-radius: 6px; background: rgba(255, 255, 255, .88); color: #17243d; cursor: pointer; text-align: left; transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease; }
+.home-shortcut:hover { background: #fff; box-shadow: 0 4px 0 color-mix(in srgb, var(--home-accent) 28%, white); transform: translateY(-2px); }
+.home-shortcut:focus-visible { outline: 3px solid color-mix(in srgb, var(--home-accent) 45%, white); outline-offset: 2px; }
+.home-shortcut-pokedex { --home-accent: #2764e7; }
+.home-shortcut-missions { --home-accent: #d6404c; }
+.home-shortcut-calculator { --home-accent: #a97914; }
+.home-shortcut-tms { --home-accent: #16808c; }
+.home-shortcut-captures { --home-accent: #35804d; }
+.home-shortcut-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 6px; background: color-mix(in srgb, var(--home-accent) 12%, white); color: var(--home-accent); }
+.home-shortcut-copy { display: grid; gap: 4px; min-width: 0; }
+.home-shortcut-copy strong { color: #172e78; font-size: 16px; font-weight: 800; }
+.home-shortcut-copy small { color: #637590; font-size: 12px; }
+.home-shortcut-arrow { color: var(--home-accent); }
+
+@media (max-width: 800px) {
+  .home-shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .home-shortcuts { grid-template-columns: minmax(0, 1fr); }
+}

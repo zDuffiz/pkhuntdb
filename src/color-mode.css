@@ -1,0 +1,272 @@
+.theme-switch { display: inline-flex; flex: 0 0 auto; gap: 3px; padding: 3px; border: 1px solid #b9cde8; border-radius: 8px; background: #fff; box-shadow: 0 3px 0 rgba(75, 117, 171, .12); }
+.theme-switch button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 32px; padding: 0 9px; border: 0; border-radius: 5px; background: transparent; color: #52647b; cursor: pointer; font: 700 11px 'DM Sans', sans-serif; }
+.theme-switch button[aria-pressed="true"] { background: #e4efff; color: #173b9b; box-shadow: inset 0 0 0 1px #b9cde8; }
+.theme-switch button:focus-visible { outline: 2px solid #2764e7; outline-offset: 2px; }
+
+@media (max-width: 800px) {
+  .theme-switch button { width: 34px; padding: 0; }
+  .theme-switch button span { display: none; }
+}
+
+:root[data-color-mode="dark"] {
+  color-scheme: dark;
+  --line: #39434f;
+  --muted: #aab5c1;
+  --ink: #e8edf3;
+  --blue: #82b7f2;
+  --blue-dark: #b8d5f7;
+  --yellow: #e8c96c;
+  --red: #ff7b83;
+  --mint: #243b36;
+  --sky: #253746;
+  background: #151a21;
+  color: #e8edf3;
+}
+
+:root[data-color-mode="dark"] body {
+  background-color: #151a21 !important;
+  background-image: radial-gradient(#303944 1px, transparent 1px), linear-gradient(135deg, #1b222a 0%, #12171d 100%) !important;
+  color: #e8edf3 !important;
+}
+
+:root[data-color-mode="dark"] .app-shell,
+:root[data-color-mode="dark"] .content { background: transparent; color: #e8edf3; }
+:root[data-color-mode="dark"] .sidebar { border-right: 3px solid #b43f4c; background: linear-gradient(180deg, #202630 0%, #171c23 100%); box-shadow: 6px 0 22px rgba(0, 0, 0, .24); }
+:root[data-color-mode="dark"] .brand,
+:root[data-color-mode="dark"] .brand-mark { color: #f0c96b; }
+:root[data-color-mode="dark"] .brand b { color: #ff7b83; }
+:root[data-color-mode="dark"] .eyebrow,
+:root[data-color-mode="dark"] .sidebar-foot { color: #c4ced9; }
+:root[data-color-mode="dark"] .sidebar-foot small,
+:root[data-color-mode="dark"] .nav-item { color: #bbc5d0; }
+:root[data-color-mode="dark"] .nav-item span,
+:root[data-color-mode="dark"] .nav-item strong { color: #99a7b6; }
+:root[data-color-mode="dark"] .nav-item > svg { color: #94b9de; }
+:root[data-color-mode="dark"] .nav-item:hover { background: rgba(255, 255, 255, .08); }
+:root[data-color-mode="dark"] .nav-item.active { background: #46351f; color: #ffe09a; box-shadow: 0 3px 0 #755821; }
+:root[data-color-mode="dark"] .nav-item.active span,
+:root[data-color-mode="dark"] .nav-item.active strong,
+:root[data-color-mode="dark"] .nav-item.active > svg { color: #f0cf79; }
+
+:root[data-color-mode="dark"] .topbar { border-bottom-color: #3c4652; }
+:root[data-color-mode="dark"] .topbar h1 { color: #f1f3f5; }
+:root[data-color-mode="dark"] .kicker { color: #ff8990; }
+:root[data-color-mode="dark"] .version { color: #bac4ce; }
+:root[data-color-mode="dark"] .version span { border-color: #597694; background: #253442; color: #b9d6f5; }
+:root[data-color-mode="dark"] .live-link { border-color: #75404a; background: #39262c; color: #ff9ca2; box-shadow: 0 3px 0 #342027; }
+:root[data-color-mode="dark"] .live-link:hover { border-color: #ec6874; background: #a83e4b; color: #fff; }
+
+:root[data-color-mode="dark"] .theme-switch { border-color: #46515e; background: #202731; box-shadow: 0 3px 0 rgba(0, 0, 0, .2); }
+:root[data-color-mode="dark"] .theme-switch button { color: #c1cbd5; }
+:root[data-color-mode="dark"] .theme-switch button[aria-pressed="true"] { background: #3a3023; color: #f5d789; box-shadow: inset 0 0 0 1px #8e713b; }
+:root[data-color-mode="dark"] .theme-switch button:focus-visible { outline-color: #f0c96b; }
+:root[data-color-mode="dark"] .brand-home:focus-visible { outline-color: #f0c96b; }
+
+:root[data-color-mode="dark"] .home-shortcut { border-color: #3d4854; border-left-color: var(--home-accent); background: #202731; color: #e4eaf0; }
+:root[data-color-mode="dark"] .home-shortcut:hover { background: #29323c; box-shadow: 0 4px 0 color-mix(in srgb, var(--home-accent) 38%, #161b22); }
+:root[data-color-mode="dark"] .home-shortcut-icon { background: color-mix(in srgb, var(--home-accent) 24%, #202731); color: color-mix(in srgb, var(--home-accent) 48%, #f0f3f6); }
+:root[data-color-mode="dark"] .home-shortcut-copy strong { color: #edf2f7; }
+:root[data-color-mode="dark"] .home-shortcut-copy small { color: #bac6d1; }
+
+:root[data-color-mode="dark"] .search,
+:root[data-color-mode="dark"] select,
+:root[data-color-mode="dark"] .filter,
+:root[data-color-mode="dark"] .back-button,
+:root[data-color-mode="dark"] .mission-search,
+:root[data-color-mode="dark"] .mission-filter {
+  border-color: #485462;
+  background: #202731;
+  color: #e4eaf0;
+  box-shadow: none;
+}
+:root[data-color-mode="dark"] .search:focus-within,
+:root[data-color-mode="dark"] .mission-search:focus-within { border-color: #8ab9ea; box-shadow: 0 0 0 3px rgba(106, 164, 219, .18); }
+:root[data-color-mode="dark"] .search input,
+:root[data-color-mode="dark"] .mission-search input { color: #edf2f7; }
+:root[data-color-mode="dark"] .search input::placeholder,
+:root[data-color-mode="dark"] .mission-search input::placeholder { color: #a6b1bd; }
+:root[data-color-mode="dark"] select option { background: #202731; color: #edf2f7; }
+:root[data-color-mode="dark"] .toolbar select,
+:root[data-color-mode="dark"] .mission-filter select { background: transparent; color: #edf2f7; }
+
+:root[data-color-mode="dark"] .pokedex-list,
+:root[data-color-mode="dark"] .tm-panel,
+:root[data-color-mode="dark"] .detail-block,
+:root[data-color-mode="dark"] .detail-panel,
+:root[data-color-mode="dark"] .calculator-controls,
+:root[data-color-mode="dark"] .calculator-results,
+:root[data-color-mode="dark"] .comparison-section {
+  border-color: #39444f;
+  background: #1c232b;
+  color: #e2e8ef;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .22);
+}
+:root[data-color-mode="dark"] .pokedex-grid { background: #313b46; }
+:root[data-color-mode="dark"] .pokedex-card { border-color: #313b46; background: #202731; color: #edf2f7; box-shadow: 0 3px 0 rgba(0, 0, 0, .16); }
+:root[data-color-mode="dark"] .pokedex-card:hover,
+:root[data-color-mode="dark"] .pokedex-card.selected { border-color: #f0c96b; background: #29323c; box-shadow: 0 4px 0 #66542e; }
+:root[data-color-mode="dark"] .card-top,
+:root[data-color-mode="dark"] .sort { color: #b3bdc8; }
+:root[data-color-mode="dark"] .card-image { border-radius: 5px; background: #1a2027; }
+:root[data-color-mode="dark"] .card-name b { color: #f1f4f7; }
+:root[data-color-mode="dark"] .card-types em { border-color: #4a5663; background: #29323b; color: #e0e7ee; }
+:root[data-color-mode="dark"] .card-stats[data-type] { background: color-mix(in srgb, var(--element-color, #526171) 32%, #1b222a) !important; color: #d3dbe4; }
+:root[data-color-mode="dark"] .card-stats b { color: #fff; }
+:root[data-color-mode="dark"] .panel-heading,
+:root[data-color-mode="dark"] .tm-head { border-color: #39434f; background: #252e38; color: #c5d8eb; }
+:root[data-color-mode="dark"] .tm-row { border-color: #323c47; background: #1c232b; color: #dce3ea; }
+:root[data-color-mode="dark"] .tm-row:nth-child(even) { background: #202832; }
+:root[data-color-mode="dark"] .tm-row span:nth-child(n+3) { color: #c1ccd7; }
+:root[data-color-mode="dark"] .tm-row span:nth-child(7) { border-color: #806b37; background: #393322; color: #f1d58b !important; }
+:root[data-color-mode="dark"] .attack-category { color: #e4e9ee !important; }
+:root[data-color-mode="dark"] .attack-category.physical i { color: #ff7b83; }
+:root[data-color-mode="dark"] .attack-category.special i { color: #f0ca69; }
+:root[data-color-mode="dark"] .attack-category.status i { color: #9fbbd6; }
+:root[data-color-mode="dark"] .move-list > div { border-color: #46525e; background: #232b34; color: #e4eaf0; }
+:root[data-color-mode="dark"] .move-list b { color: #ff9298; }
+:root[data-color-mode="dark"] .move-list > div > span { color: #f1f4f7; }
+:root[data-color-mode="dark"] .move-detail { border-color: #587083; background: #2b3b47; color: #dcecf7 !important; }
+:root[data-color-mode="dark"] .move-element { border-color: #557c91; background: #29404b; color: #d5edf8 !important; }
+:root[data-color-mode="dark"] .move-power { border-color: #806b37; background: #403820; color: #f4dc96 !important; }
+:root[data-color-mode="dark"] .move-cooldown { border-color: #82505a; background: #422b32; color: #ffc4ca !important; }
+:root[data-color-mode="dark"] .move-fact { border-color: #495665; background: #2a333d; color: #d2dce6; }
+:root[data-color-mode="dark"] .move-fact.attack-physical { border-color: #835850; background: #402f2d; color: #ffc1b4; }
+:root[data-color-mode="dark"] .move-fact.attack-special { border-color: #7b6936; background: #3e3725; color: #f2d88e; }
+:root[data-color-mode="dark"] .move-fact.attack-status,
+:root[data-color-mode="dark"] .move-fact.effect-status { border-color: #665481; background: #332c40; color: #d9c7f5; }
+:root[data-color-mode="dark"] .move-fact.effect-dano { border-color: #3e735b; background: #24372f; color: #b7e7ca; }
+:root[data-color-mode="dark"] .tm-warning { border-color: #e2c26b; background: #302d25; color: #d9d0b7; }
+:root[data-color-mode="dark"] .tm-warning strong { color: #f2d98e; }
+:root[data-color-mode="dark"] .type-pill em { color: #f4f6f8 !important; }
+
+:root[data-color-mode="dark"] .capture-note,
+:root[data-color-mode="dark"] .calculator-intro { border-color: #5b523b; background: #302d25; color: #d9d0b7; }
+:root[data-color-mode="dark"] .capture-note strong,
+:root[data-color-mode="dark"] .calculator-intro strong { color: #f0d586; }
+:root[data-color-mode="dark"] .detail-hero { background: linear-gradient(125deg, #3a3430, #26313b 72%) !important; color: #f0f2f5; }
+:root[data-color-mode="dark"] .detail-id { color: #ead49a; }
+:root[data-color-mode="dark"] .section-title { border-color: #3d4854; color: #f0a0a5; }
+:root[data-color-mode="dark"] .stats > div,
+:root[data-color-mode="dark"] .stat-card { border-color: #3d4854; background: #232b34; color: #e2e8ef; }
+:root[data-color-mode="dark"] .stats small,
+:root[data-color-mode="dark"] .stat-card small,
+:root[data-color-mode="dark"] .matchup-group > small { color: #bcc7d2; }
+:root[data-color-mode="dark"] .stats b,
+:root[data-color-mode="dark"] .stat-card b { color: #f1f4f7; }
+:root[data-color-mode="dark"] .move-list > div { border-color: #3d4854; background: #232b34; color: #e2e8ef; }
+:root[data-color-mode="dark"] .move-list b,
+:root[data-color-mode="dark"] .move-list em,
+:root[data-color-mode="dark"] .move-list span { color: #e3e9ef; }
+:root[data-color-mode="dark"] .empty-moves,
+:root[data-color-mode="dark"] .no-matchup { color: #aab5c1; }
+:root[data-color-mode="dark"] .type-pill.fraquezas { border-color: #71434a; background: #39262c; color: #ffc0c4; }
+:root[data-color-mode="dark"] .type-pill.resistências { border-color: #3c6954; background: #20342d; color: #b4e7c8; }
+:root[data-color-mode="dark"] .type-pill.imunidades { border-color: #566271; background: #29323c; color: #d2dbe4; }
+
+:root[data-color-mode="dark"] .calculator-field,
+:root[data-color-mode="dark"] .calculator-field span,
+:root[data-color-mode="dark"] .comparison-section-heading > span { color: #c0ccd7; }
+:root[data-color-mode="dark"] .calculator-screen input:not([type="range"]),
+:root[data-color-mode="dark"] .calculator-screen select,
+:root[data-color-mode="dark"] .comparison-section input:not([type="range"]),
+:root[data-color-mode="dark"] .comparison-section select {
+  border-color: #485462 !important;
+  background: #171d24 !important;
+  color: #edf2f7 !important;
+}
+:root[data-color-mode="dark"] .calculator-field input:not([type="range"]),
+:root[data-color-mode="dark"] .calculator-field input[list],
+:root[data-color-mode="dark"] .pokemon-autocomplete > input { border-color: #485462; background: #171d24; color: #edf2f7; }
+:root[data-color-mode="dark"] .pokemon-autocomplete > input::placeholder { color: #9eabb8; }
+:root[data-color-mode="dark"] .pokemon-suggestions { border-color: #485462; background: #202731; color: #e8edf3; box-shadow: 0 10px 24px rgba(0, 0, 0, .38); }
+:root[data-color-mode="dark"] .pokemon-suggestions button { border-color: #39444f; background: #202731; color: #e8edf3; }
+:root[data-color-mode="dark"] .pokemon-suggestions button:hover { background: #2d3945; }
+:root[data-color-mode="dark"] .pokemon-suggestions small { color: #b8c4d0; }
+:root[data-color-mode="dark"] .training-row strong,
+:root[data-color-mode="dark"] .comparison-training-row > strong { color: #e4eaf0; }
+:root[data-color-mode="dark"] .training-input small,
+:root[data-color-mode="dark"] .comparison-training-row label { color: #b8c4d0; }
+:root[data-color-mode="dark"] .comparison-search,
+:root[data-color-mode="dark"] .comparison-options { color: #d3dce5; }
+:root[data-color-mode="dark"] .calculator-field input[type="range"] { accent-color: #83b7eb; }
+:root[data-color-mode="dark"] .calculator-field input[type="number"],
+:root[data-color-mode="dark"] .calculator-field input[list] { border-color: #485462; background: #171d24; color: #edf2f7; }
+:root[data-color-mode="dark"] .comparison-section-heading { border-color: #3d4854; }
+:root[data-color-mode="dark"] .comparison-section-heading strong,
+:root[data-color-mode="dark"] .comparison-title strong { color: #c2dcf6; }
+:root[data-color-mode="dark"] .comparison-section-heading small { color: #ff9298; }
+:root[data-color-mode="dark"] .comparison-card,
+:root[data-color-mode="dark"] .comparison-result,
+:root[data-color-mode="dark"] .comparison-attribute { border-color: #3d4854; background: #232b34; color: #e2e8ef; }
+:root[data-color-mode="dark"] .result-heading { border-color: #3d4854; }
+:root[data-color-mode="dark"] .result-heading small { color: #ff999f; }
+:root[data-color-mode="dark"] .result-heading strong { color: #d3e6f7; }
+:root[data-color-mode="dark"] .result-heading > span { border-color: #806b37; background: #3a3325; color: #f1d88e; }
+:root[data-color-mode="dark"] .result-stat { border-color: #46525e; background: #252e38; }
+:root[data-color-mode="dark"] .result-stat small { color: #bdc8d4; }
+:root[data-color-mode="dark"] .result-stat strong { color: #d3e6f7; }
+:root[data-color-mode="dark"] .calculator-formula { background: #263542; color: #c2d5e5; }
+:root[data-color-mode="dark"] .calculator-formula b { color: #d4e7f8; }
+:root[data-color-mode="dark"] .comparison-result { border-color: #3d4854; }
+:root[data-color-mode="dark"] .comparison-stats div { background: #2a3540; }
+:root[data-color-mode="dark"] .comparison-stats small { color: #bdc8d4; }
+:root[data-color-mode="dark"] .comparison-stats strong { color: #d3e6f7; }
+:root[data-color-mode="dark"] .comparison-table { border-color: #46525e; }
+:root[data-color-mode="dark"] .comparison-table-row { border-color: #39444f; background: #202731; color: #e3e9ef; }
+:root[data-color-mode="dark"] .comparison-table-row strong { color: #e3e9ef; }
+:root[data-color-mode="dark"] .comparison-table-row span { color: #c4dcf3; }
+:root[data-color-mode="dark"] .comparison-table-head { background: #2a3540; color: #d3e6f7; }
+:root[data-color-mode="dark"] .comparison-table-head span { color: #d3e6f7; }
+
+:root[data-color-mode="dark"] .mission-group { border-bottom-color: var(--element-color, #39434f); background: rgba(30, 37, 45, .9); }
+:root[data-color-mode="dark"] .mission-group-title strong,
+:root[data-color-mode="dark"] .mission-group-summary-count { color: #e5edf5; }
+:root[data-color-mode="dark"] .mission-clan-name,
+:root[data-color-mode="dark"] .mission-count { color: #bdc8d4; }
+:root[data-color-mode="dark"] .mission-card { border-color: color-mix(in srgb, var(--element-color, #526171) 45%, #202731); background: #202731; color: #e4eaf0; box-shadow: 0 3px 0 rgba(0, 0, 0, .18); }
+:root[data-color-mode="dark"] .mission-card-header h3 { color: color-mix(in srgb, var(--element-color, #b8d5f7) 62%, #f2f5f8); }
+:root[data-color-mode="dark"] .mission-part,
+:root[data-color-mode="dark"] .mission-description { color: #d1d9e2; }
+:root[data-color-mode="dark"] .mission-description strong { color: #fff; }
+:root[data-color-mode="dark"] .mission-tags span { border-color: #465465; background: #2a3541; color: #dce7f1; }
+:root[data-color-mode="dark"] .mission-tags .mission-element-chip { border-color: color-mix(in srgb, var(--element-color) 58%, #252c34); background: color-mix(in srgb, var(--element-color) 22%, #252c34); color: #f1f4f7; }
+:root[data-color-mode="dark"] .mission-tier { border: 1px solid #7a673b; background: #3a3325; color: #f3d990; }
+:root[data-color-mode="dark"] .mission-rewards div { border: 1px solid #394653; background: #252e38; }
+:root[data-color-mode="dark"] .mission-rewards dt { color: #bdc8d4; }
+:root[data-color-mode="dark"] .mission-rewards dd,
+:root[data-color-mode="dark"] .mission-advice > summary { color: #c4ddf4; }
+:root[data-color-mode="dark"] .mission-advice { border-color: #3c4652; }
+:root[data-color-mode="dark"] .mission-advice-content h4,
+:root[data-color-mode="dark"] .advice-best-map strong,
+:root[data-color-mode="dark"] .advice-single-map strong,
+:root[data-color-mode="dark"] .advice-average-hardness strong,
+:root[data-color-mode="dark"] .advice-route strong { color: #d3e6f7; }
+:root[data-color-mode="dark"] .advice-best-map,
+:root[data-color-mode="dark"] .advice-single-map { background: #28333e; }
+:root[data-color-mode="dark"] .advice-best-map span,
+:root[data-color-mode="dark"] .advice-best-map small,
+:root[data-color-mode="dark"] .advice-single-map span,
+:root[data-color-mode="dark"] .advice-single-map small,
+:root[data-color-mode="dark"] .advice-average-hardness,
+:root[data-color-mode="dark"] .advice-pokemon span,
+:root[data-color-mode="dark"] .advice-route span,
+:root[data-color-mode="dark"] .advice-route small,
+:root[data-color-mode="dark"] .advice-route-note,
+:root[data-color-mode="dark"] .mission-advice-empty { color: #bac6d1; }
+:root[data-color-mode="dark"] .advice-pokemon strong { color: #eff3f7; }
+:root[data-color-mode="dark"] .advice-route { border-color: #3c4652; }
+:root[data-color-mode="dark"] .mission-empty { border-color: #586473; color: #c6d0db; }
+:root[data-color-mode="dark"] .capture-range { border-color: #806b37; background: #3b3424; color: #f1d88e; }
+:root[data-color-mode="dark"] .capture-ball { border-color: #486d86; background: #243747; color: #c6e4fa; }
+:root[data-color-mode="dark"] .capture-types { color: #c0d9ec; }
+:root[data-color-mode="dark"] .capture-hardness { color: #ff9ca2; }
+
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-color-mode] body,
+  :root[data-color-mode] .app-shell,
+  :root[data-color-mode] .theme-switch { transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+}
+
+@media (max-width: 800px) {
+  :root[data-color-mode="dark"] .sidebar { background: linear-gradient(180deg, #202630 0%, #171c23 100%); }
+}
