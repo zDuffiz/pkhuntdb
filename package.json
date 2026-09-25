@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "sync:pokemon": "node scripts/sync-pokemon.mjs",
-    "sync:capture": "node scripts/sync-capture.mjs"
+    "sync:capture": "node scripts/sync-capture.mjs",
+    "sync:pokemondb-tms": "node scripts/sync-pokemondb-tms.mjs",
+    "sync:cooldowns": "node scripts/sync-cooldowns.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
