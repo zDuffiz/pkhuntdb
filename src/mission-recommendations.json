@@ -1,0 +1,8677 @@
+{
+  "catch-bug-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "floresta_kalos_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 19.166666666666668,
+    "pokemon": [
+      {
+        "name": "Scatterbug",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug"
+        ],
+        "media": 9,
+        "valid": true
+      },
+      {
+        "name": "Spewpa",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 11,
+        "valid": true
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true
+      }
+    ]
+  },
+  "catch-bug-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "floresta_kalos_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 19.166666666666668,
+    "pokemon": [
+      {
+        "name": "Scatterbug",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug"
+        ],
+        "media": 9,
+        "valid": true
+      },
+      {
+        "name": "Spewpa",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 11,
+        "valid": true
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true
+      }
+    ]
+  },
+  "contract-bug-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Paras",
+        "required": 1000,
+        "hunt": "Orla da Mata 8",
+        "regionId": "floresta_1_8",
+        "level": 16,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 8",
+      "regionId": "floresta_1_8",
+      "level": 16,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Paras",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "bug",
+            "grass"
+          ],
+          "media": 29
+        }
+      ]
+    }
+  },
+  "contract-bug-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Exeggcute",
+        "required": 1000,
+        "hunt": "Trilha Fechada 7",
+        "regionId": "floresta_2_7",
+        "level": 26,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Trilha Fechada 7",
+      "regionId": "floresta_2_7",
+      "level": 26,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Exeggcute",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "grass",
+            "psychic"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-bug-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Abra",
+        "required": 5000,
+        "hunt": "Claustro 3",
+        "regionId": "santuario_1_3",
+        "level": 23,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Claustro 3",
+      "regionId": "santuario_1_3",
+      "level": 23,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Abra",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "psychic"
+          ],
+          "media": 37
+        }
+      ]
+    }
+  },
+  "contract-bug-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bayleef",
+        "required": 2500,
+        "hunt": "Bosque Antigo 5",
+        "regionId": "floresta_3_5",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Bellossom",
+        "required": 2500,
+        "hunt": "Raízes Torcidas 8",
+        "regionId": "floresta_4_8",
+        "level": 67,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Espeon",
+        "required": 2680,
+        "hunt": "Câmara Interior 5",
+        "regionId": "santuario_2_5",
+        "level": 76,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-bug-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Sneasel",
+        "required": 1670,
+        "hunt": "Nave da Torre 7",
+        "regionId": "torre_1_7",
+        "level": 49,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark",
+          "ice"
+        ]
+      },
+      {
+        "species": "Umbreon",
+        "required": 2590,
+        "hunt": "Campanário 7",
+        "regionId": "torre_2_7",
+        "level": 85,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark"
+        ]
+      },
+      {
+        "species": "Kadabra",
+        "required": 1670,
+        "hunt": "Claustro 6",
+        "regionId": "santuario_1_6",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-bug-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Trilha Fechada 7",
+    "regionId": "floresta_2_7",
+    "level": 26,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Exeggcute",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Snover",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "ice"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ],
+        "media": 80,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-bug-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Trilha Fechada 7",
+    "regionId": "floresta_2_7",
+    "level": 26,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Exeggcute",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Snover",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "ice"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ],
+        "media": 80,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-bug-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Trilha Fechada 7",
+    "regionId": "floresta_2_7",
+    "level": 26,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Exeggcute",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Snover",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "ice"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ],
+        "media": 80,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-bug-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Trilha Fechada 7",
+    "regionId": "floresta_2_7",
+    "level": 26,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Exeggcute",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Snover",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "ice"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ],
+        "media": 80,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-dark-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "torre_kalos_1",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 0.6666666666666666,
+    "expected": 10.666666666666666,
+    "avgMedia": 30.999999999999996,
+    "pokemon": [
+      {
+        "name": "Inkay",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dark",
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Phantump",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ghost",
+          "grass"
+        ],
+        "media": 37,
+        "valid": false
+      },
+      {
+        "name": "Deino",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dark",
+          "dragon"
+        ],
+        "media": 34,
+        "valid": true
+      }
+    ]
+  },
+  "catch-dark-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "torre_kalos_1",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 0.6666666666666666,
+    "expected": 10.666666666666666,
+    "avgMedia": 30.999999999999996,
+    "pokemon": [
+      {
+        "name": "Inkay",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dark",
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Phantump",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ghost",
+          "grass"
+        ],
+        "media": 37,
+        "valid": false
+      },
+      {
+        "name": "Deino",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dark",
+          "dragon"
+        ],
+        "media": 34,
+        "valid": true
+      }
+    ]
+  },
+  "contract-dark-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Litwick",
+        "required": 1000,
+        "hunt": "Nave da Torre 1",
+        "regionId": "torre_1_1",
+        "level": 16,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "fire"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Nave da Torre 1",
+      "regionId": "torre_1_1",
+      "level": 16,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Litwick",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "ghost",
+            "fire"
+          ],
+          "media": 25
+        }
+      ]
+    }
+  },
+  "contract-dark-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Chingling",
+        "required": 1000,
+        "hunt": "Claustro 1",
+        "regionId": "santuario_1_1",
+        "level": 12,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Claustro 1",
+      "regionId": "santuario_1_1",
+      "level": 12,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Chingling",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "psychic"
+          ],
+          "media": 29
+        }
+      ]
+    }
+  },
+  "contract-dark-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Gastly",
+        "required": 5000,
+        "hunt": "Nave da Torre 3",
+        "regionId": "torre_1_3",
+        "level": 25,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Nave da Torre 3",
+      "regionId": "torre_1_3",
+      "level": 25,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Gastly",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "ghost",
+            "poison"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-dark-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Haunter",
+        "required": 1670,
+        "hunt": "Nave da Torre 6",
+        "regionId": "torre_1_6",
+        "level": 38,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ghost",
+          "poison"
+        ]
+      },
+      {
+        "species": "Kadabra",
+        "required": 1670,
+        "hunt": "Claustro 6",
+        "regionId": "santuario_1_6",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ]
+      },
+      {
+        "species": "Gothorita",
+        "required": 2500,
+        "hunt": "Claustro 6",
+        "regionId": "santuario_1_6",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-dark-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Hypno",
+        "required": 830,
+        "hunt": "Câmara Interior 2",
+        "regionId": "santuario_2_2",
+        "level": 62,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "psychic"
+        ]
+      },
+      {
+        "species": "Starmie",
+        "required": 2500,
+        "hunt": "Fossa 4",
+        "regionId": "mar_4_4",
+        "level": 76,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "water",
+          "psychic"
+        ]
+      },
+      {
+        "species": "Unown",
+        "required": 1430,
+        "hunt": "Claustro 5",
+        "regionId": "santuario_1_5",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.2857142857142857,
+        "expected": 4.571428571428571,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-dark-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dark-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dark-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dark-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-dragon-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "planicie_kalos_1",
+    "level": 9,
+    "spawnCount": 16,
+    "chance": 0.3333333333333333,
+    "expected": 5.333333333333333,
+    "avgMedia": 18,
+    "pokemon": [
+      {
+        "name": "Bunnelby",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 16,
+        "valid": false
+      },
+      {
+        "name": "Noibat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "flying",
+          "dragon"
+        ],
+        "media": 18,
+        "valid": true
+      },
+      {
+        "name": "Whismur",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 43,
+        "valid": false
+      }
+    ]
+  },
+  "catch-dragon-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Kalos 1",
+    "regionId": "planicie_kalos_1",
+    "level": 9,
+    "spawnCount": 16,
+    "chance": 0.3333333333333333,
+    "expected": 5.333333333333333,
+    "avgMedia": 18,
+    "pokemon": [
+      {
+        "name": "Bunnelby",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 16,
+        "valid": false
+      },
+      {
+        "name": "Noibat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "flying",
+          "dragon"
+        ],
+        "media": 18,
+        "valid": true
+      },
+      {
+        "name": "Whismur",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 43,
+        "valid": false
+      }
+    ]
+  },
+  "contract-dragon-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Gible",
+        "required": 1000,
+        "hunt": "Sopé Nevado 2",
+        "regionId": "montanha_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Sopé Nevado 2",
+      "regionId": "montanha_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Gible",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "dragon",
+            "ground"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-dragon-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Dratini",
+        "required": 1000,
+        "hunt": "Sopé Nevado 2",
+        "regionId": "montanha_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Sopé Nevado 2",
+      "regionId": "montanha_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Dratini",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "dragon"
+          ],
+          "media": 200
+        }
+      ]
+    }
+  },
+  "contract-dragon-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Axew",
+        "required": 5000,
+        "hunt": "Sopé Nevado 4",
+        "regionId": "montanha_1_4",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Sopé Nevado 4",
+      "regionId": "montanha_1_4",
+      "level": 33,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Axew",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "dragon"
+          ],
+          "media": 41
+        }
+      ]
+    }
+  },
+  "contract-dragon-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Fraxure",
+        "required": 2500,
+        "hunt": "Sopé Nevado 5",
+        "regionId": "montanha_1_5",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      },
+      {
+        "species": "Dragonair",
+        "required": 2500,
+        "hunt": "Sopé Nevado 6",
+        "regionId": "montanha_1_6",
+        "level": 50,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      },
+      {
+        "species": "Druddigon",
+        "required": 2500,
+        "hunt": "Cume 2",
+        "regionId": "montanha_2_2",
+        "level": 68,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      }
+    ]
+  },
+  "contract-dragon-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Altaria",
+        "required": 1670,
+        "hunt": "Cume 2",
+        "regionId": "montanha_2_2",
+        "level": 68,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "flying"
+        ]
+      },
+      {
+        "species": "Bagon",
+        "required": 830,
+        "hunt": "Sopé Nevado 1",
+        "regionId": "montanha_1_1",
+        "level": 16,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon"
+        ]
+      },
+      {
+        "species": "Salamence",
+        "required": 2590,
+        "hunt": "Cume 5",
+        "regionId": "montanha_2_5",
+        "level": 100,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon",
+          "flying"
+        ]
+      }
+    ]
+  },
+  "contract-dragon-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Cume 5",
+    "regionId": "montanha_2_5",
+    "level": 100,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Dragonite",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 600,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Salamence",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dragon-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Cume 5",
+    "regionId": "montanha_2_5",
+    "level": 100,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Dragonite",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 600,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Salamence",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dragon-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Cume 5",
+    "regionId": "montanha_2_5",
+    "level": 100,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Dragonite",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 600,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Salamence",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-dragon-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Cume 5",
+    "regionId": "montanha_2_5",
+    "level": 100,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Dragonite",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 600,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Salamence",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon",
+          "flying"
+        ],
+        "media": 309,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-electric-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Subúrbio 1",
+    "regionId": "cidade_1_1",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 33,
+    "pokemon": [
+      {
+        "name": "Pichu",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "electric"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Shinx",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "electric"
+        ],
+        "media": 22,
+        "valid": true
+      },
+      {
+        "name": "Tynamo",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "electric"
+        ],
+        "media": 25,
+        "valid": true
+      }
+    ]
+  },
+  "catch-electric-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Subúrbio 1",
+    "regionId": "cidade_1_1",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 33,
+    "pokemon": [
+      {
+        "name": "Pichu",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "electric"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Shinx",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "electric"
+        ],
+        "media": 22,
+        "valid": true
+      },
+      {
+        "name": "Tynamo",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "electric"
+        ],
+        "media": 25,
+        "valid": true
+      }
+    ]
+  },
+  "contract-electric-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Magikarp",
+        "required": 1000,
+        "hunt": "Costa Rasa 1",
+        "regionId": "mar_1_1",
+        "level": 4,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Costa Rasa 1",
+      "regionId": "mar_1_1",
+      "level": 4,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Magikarp",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "water"
+          ],
+          "media": 9
+        }
+      ]
+    }
+  },
+  "contract-electric-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Goldeen",
+        "required": 1000,
+        "hunt": "Costa Rasa 8",
+        "regionId": "mar_1_8",
+        "level": 24,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "water"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Costa Rasa 8",
+      "regionId": "mar_1_8",
+      "level": 24,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Goldeen",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "water"
+          ],
+          "media": 41
+        }
+      ]
+    }
+  },
+  "contract-electric-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Poliwhirl",
+        "required": 5000,
+        "hunt": "Recife 5",
+        "regionId": "mar_2_5",
+        "level": 40,
+        "spawnCount": 16,
+        "chance": 0.2857142857142857,
+        "expected": 4.571428571428571,
+        "types": [
+          "water"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Recife 5",
+      "regionId": "mar_2_5",
+      "level": 40,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Poliwhirl",
+          "weight": 20,
+          "chance": 0.2857142857142857,
+          "expected": 4.571428571428571,
+          "types": [
+            "water"
+          ],
+          "media": 75
+        }
+      ]
+    }
+  },
+  "contract-electric-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Tranquill",
+        "required": 830,
+        "hunt": "Pastagem Alta 5",
+        "regionId": "planicie_2_5",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ]
+      },
+      {
+        "species": "Azumarill",
+        "required": 3330,
+        "hunt": "Recife 8",
+        "regionId": "mar_2_8",
+        "level": 49,
+        "spawnCount": 16,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "water",
+          "fairy"
+        ]
+      },
+      {
+        "species": "Croconaw",
+        "required": 2140,
+        "hunt": "Recife 6",
+        "regionId": "mar_2_6",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.42857142857142855,
+        "expected": 6.857142857142857,
+        "types": [
+          "water"
+        ]
+      }
+    ]
+  },
+  "contract-electric-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Kingler",
+        "required": 830,
+        "hunt": "Mar Aberto 4",
+        "regionId": "mar_3_4",
+        "level": 62,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "water"
+        ]
+      },
+      {
+        "species": "Butterfree",
+        "required": 2500,
+        "hunt": "Bosque Antigo 4",
+        "regionId": "floresta_3_4",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ]
+      },
+      {
+        "species": "Qwilfish",
+        "required": 2500,
+        "hunt": "Mar Aberto 1",
+        "regionId": "mar_3_1",
+        "level": 54,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "water",
+          "poison"
+        ]
+      }
+    ]
+  },
+  "contract-electric-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 6",
+    "regionId": "planicie_1_6",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Hoothoot",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 23,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Spearow",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Pidove",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-electric-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 6",
+    "regionId": "planicie_1_6",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Hoothoot",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 23,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Spearow",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Pidove",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-electric-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 6",
+    "regionId": "planicie_1_6",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Hoothoot",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 23,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Spearow",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Pidove",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-electric-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 6",
+    "regionId": "planicie_1_6",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Hoothoot",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 23,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Spearow",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Pidove",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ],
+        "media": 22,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-fairy-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Campo Aberto 1",
+    "regionId": "planicie_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 22,
+    "pokemon": [
+      {
+        "name": "Azurill",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Igglybuff",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Sentret",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 12,
+        "valid": false
+      }
+    ]
+  },
+  "catch-fairy-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Campo Aberto 1",
+    "regionId": "planicie_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 22,
+    "pokemon": [
+      {
+        "name": "Azurill",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Igglybuff",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Sentret",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 12,
+        "valid": false
+      }
+    ]
+  },
+  "contract-fairy-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Machop",
+        "required": 1000,
+        "hunt": "Boca da Gruta 5",
+        "regionId": "caverna_1_5",
+        "level": 20,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "fighting"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 5",
+      "regionId": "caverna_1_5",
+      "level": 20,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Machop",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "fighting"
+          ],
+          "media": 35
+        }
+      ]
+    }
+  },
+  "contract-fairy-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Mankey",
+        "required": 1000,
+        "hunt": "Boca da Gruta 6",
+        "regionId": "caverna_1_6",
+        "level": 21,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 6",
+      "regionId": "caverna_1_6",
+      "level": 21,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Mankey",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "fighting"
+          ],
+          "media": 35
+        }
+      ]
+    }
+  },
+  "contract-fairy-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Tyrogue",
+        "required": 5000,
+        "hunt": "Boca da Gruta 1",
+        "regionId": "caverna_1_1",
+        "level": 9,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 1",
+      "regionId": "caverna_1_1",
+      "level": 9,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Tyrogue",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "fighting"
+          ],
+          "media": 11
+        }
+      ]
+    }
+  },
+  "contract-fairy-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Umbreon",
+        "required": 2590,
+        "hunt": "Campanário 7",
+        "regionId": "torre_2_7",
+        "level": 85,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark"
+        ]
+      },
+      {
+        "species": "Gurdurr",
+        "required": 1250,
+        "hunt": "Galeria Funda 3",
+        "regionId": "caverna_2_3",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "fighting"
+        ]
+      },
+      {
+        "species": "Gabite",
+        "required": 1670,
+        "hunt": "Sopé Nevado 5",
+        "regionId": "montanha_1_5",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dragon",
+          "ground"
+        ]
+      }
+    ]
+  },
+  "contract-fairy-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Fraxure",
+        "required": 2500,
+        "hunt": "Sopé Nevado 5",
+        "regionId": "montanha_1_5",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      },
+      {
+        "species": "Dragonair",
+        "required": 2500,
+        "hunt": "Sopé Nevado 6",
+        "regionId": "montanha_1_6",
+        "level": 50,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      },
+      {
+        "species": "Hitmonchan",
+        "required": 830,
+        "hunt": "Galeria Funda 6",
+        "regionId": "caverna_2_6",
+        "level": 54,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "fighting"
+        ]
+      }
+    ]
+  },
+  "contract-fairy-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 9",
+    "regionId": "caverna_1_9",
+    "level": 30,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Mienfoo",
+        "weight": 45,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ],
+        "media": 55,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Krokorok",
+        "weight": 15,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 56,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fairy-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 9",
+    "regionId": "caverna_1_9",
+    "level": 30,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Mienfoo",
+        "weight": 45,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ],
+        "media": 55,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Krokorok",
+        "weight": 15,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 56,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fairy-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 9",
+    "regionId": "caverna_1_9",
+    "level": 30,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Mienfoo",
+        "weight": 45,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ],
+        "media": 55,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Krokorok",
+        "weight": 15,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 56,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fairy-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 9",
+    "regionId": "caverna_1_9",
+    "level": 30,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Mienfoo",
+        "weight": 45,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ],
+        "media": 55,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Krokorok",
+        "weight": 15,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 56,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-fighting-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Boca da Gruta 1",
+    "regionId": "caverna_1_1",
+    "level": 9,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 41,
+    "pokemon": [
+      {
+        "name": "Tyrogue",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ],
+        "media": 11,
+        "valid": true
+      },
+      {
+        "name": "Makuhita",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fighting"
+        ],
+        "media": 86,
+        "valid": true
+      },
+      {
+        "name": "Diglett",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ],
+        "media": 23,
+        "valid": false
+      }
+    ]
+  },
+  "catch-fighting-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Boca da Gruta 1",
+    "regionId": "caverna_1_1",
+    "level": 9,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 41,
+    "pokemon": [
+      {
+        "name": "Tyrogue",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ],
+        "media": 11,
+        "valid": true
+      },
+      {
+        "name": "Makuhita",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fighting"
+        ],
+        "media": 86,
+        "valid": true
+      },
+      {
+        "name": "Diglett",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ],
+        "media": 23,
+        "valid": false
+      }
+    ]
+  },
+  "contract-fighting-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Dunsparce",
+        "required": 1000,
+        "hunt": "Colinas ao Vento 2",
+        "regionId": "planicie_3_2",
+        "level": 46,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Colinas ao Vento 2",
+      "regionId": "planicie_3_2",
+      "level": 46,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Dunsparce",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "normal"
+          ],
+          "media": 95
+        }
+      ]
+    }
+  },
+  "contract-fighting-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Happiny",
+        "required": 1000,
+        "hunt": "Campo Aberto 2",
+        "regionId": "planicie_1_2",
+        "level": 7,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Campo Aberto 2",
+      "regionId": "planicie_1_2",
+      "level": 7,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Happiny",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "normal"
+          ],
+          "media": 12
+        }
+      ]
+    }
+  },
+  "contract-fighting-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Aipom",
+        "required": 5000,
+        "hunt": "Pastagem Alta 6",
+        "regionId": "planicie_2_6",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Pastagem Alta 6",
+      "regionId": "planicie_2_6",
+      "level": 33,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Aipom",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "normal"
+          ],
+          "media": 121
+        }
+      ]
+    }
+  },
+  "contract-fighting-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Pupitar",
+        "required": 1790,
+        "hunt": "Galeria Funda 4",
+        "regionId": "caverna_2_4",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Sneasel",
+        "required": 1670,
+        "hunt": "Nave da Torre 7",
+        "regionId": "torre_1_7",
+        "level": 49,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark",
+          "ice"
+        ]
+      },
+      {
+        "species": "Tauros",
+        "required": 2500,
+        "hunt": "Planalto 5",
+        "regionId": "planicie_4_5",
+        "level": 68,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ]
+      }
+    ]
+  },
+  "contract-fighting-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Umbreon",
+        "required": 2590,
+        "hunt": "Campanário 7",
+        "regionId": "torre_2_7",
+        "level": 85,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark"
+        ]
+      },
+      {
+        "species": "Nosepass",
+        "required": 1670,
+        "hunt": "Galeria Funda 1",
+        "regionId": "caverna_2_1",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ]
+      },
+      {
+        "species": "Kecleon",
+        "required": 1670,
+        "hunt": "Colinas ao Vento 4",
+        "regionId": "planicie_3_4",
+        "level": 52,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ]
+      }
+    ]
+  },
+  "contract-fighting-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 5",
+    "regionId": "planicie_1_5",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Rattata",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 19,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Patrat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Skitty",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fighting-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 5",
+    "regionId": "planicie_1_5",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Rattata",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 19,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Patrat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Skitty",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fighting-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 5",
+    "regionId": "planicie_1_5",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Rattata",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 19,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Patrat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Skitty",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fighting-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Campo Aberto 5",
+    "regionId": "planicie_1_5",
+    "level": 11,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Rattata",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal"
+        ],
+        "media": 19,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Patrat",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Skitty",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-fire-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Encosta de Cinzas 1",
+    "regionId": "vulcao_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 29.166666666666664,
+    "pokemon": [
+      {
+        "name": "Slugma",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fire"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Vulpix",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fire"
+        ],
+        "media": 33,
+        "valid": true
+      },
+      {
+        "name": "Numel",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "fire",
+          "ground"
+        ],
+        "media": 52,
+        "valid": true
+      }
+    ]
+  },
+  "catch-fire-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Encosta de Cinzas 1",
+    "regionId": "vulcao_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 29.166666666666664,
+    "pokemon": [
+      {
+        "name": "Slugma",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fire"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Vulpix",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fire"
+        ],
+        "media": 33,
+        "valid": true
+      },
+      {
+        "name": "Numel",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "fire",
+          "ground"
+        ],
+        "media": 52,
+        "valid": true
+      }
+    ]
+  },
+  "contract-fire-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Kricketot",
+        "required": 1000,
+        "hunt": "Orla da Mata 1",
+        "regionId": "floresta_1_1",
+        "level": 3,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 1",
+      "regionId": "floresta_1_1",
+      "level": 3,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Kricketot",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 8
+        }
+      ]
+    }
+  },
+  "contract-fire-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Burmy",
+        "required": 1000,
+        "hunt": "Orla da Mata 4",
+        "regionId": "floresta_1_4",
+        "level": 7,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 4",
+      "regionId": "floresta_1_4",
+      "level": 7,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Burmy",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 13
+        }
+      ]
+    }
+  },
+  "contract-fire-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bulbasaur",
+        "required": 5000,
+        "hunt": "Trilha Fechada 5",
+        "regionId": "floresta_2_5",
+        "level": 23,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Trilha Fechada 5",
+      "regionId": "floresta_2_5",
+      "level": 23,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Bulbasaur",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "grass",
+            "poison"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-fire-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Whirlipede",
+        "required": 2500,
+        "hunt": "Bosque Antigo 1",
+        "regionId": "floresta_3_1",
+        "level": 36,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Delibird",
+        "required": 1670,
+        "hunt": "Sopé Nevado 4",
+        "regionId": "montanha_1_4",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ice",
+          "flying"
+        ]
+      },
+      {
+        "species": "Bayleef",
+        "required": 2500,
+        "hunt": "Bosque Antigo 5",
+        "regionId": "floresta_3_5",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      }
+    ]
+  },
+  "contract-fire-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Beedrill",
+        "required": 830,
+        "hunt": "Bosque Antigo 3",
+        "regionId": "floresta_3_3",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Bellossom",
+        "required": 2500,
+        "hunt": "Raízes Torcidas 8",
+        "regionId": "floresta_4_8",
+        "level": 67,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Butterfree",
+        "required": 2500,
+        "hunt": "Bosque Antigo 4",
+        "regionId": "floresta_3_4",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ]
+      }
+    ]
+  },
+  "contract-fire-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fire-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fire-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-fire-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-flying-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 5",
+    "regionId": "floresta_1_5",
+    "level": 10,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 17.8,
+    "pokemon": [
+      {
+        "name": "Combee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ],
+        "media": 17,
+        "valid": true
+      },
+      {
+        "name": "Hoppip",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "flying"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spinarak",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 19,
+        "valid": false
+      }
+    ]
+  },
+  "catch-flying-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 5",
+    "regionId": "floresta_1_5",
+    "level": 10,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 17.8,
+    "pokemon": [
+      {
+        "name": "Combee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ],
+        "media": 17,
+        "valid": true
+      },
+      {
+        "name": "Hoppip",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "flying"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spinarak",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 19,
+        "valid": false
+      }
+    ]
+  },
+  "contract-flying-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Kricketot",
+        "required": 1000,
+        "hunt": "Orla da Mata 1",
+        "regionId": "floresta_1_1",
+        "level": 3,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 1",
+      "regionId": "floresta_1_1",
+      "level": 3,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Kricketot",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 8
+        }
+      ]
+    }
+  },
+  "contract-flying-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Burmy",
+        "required": 1000,
+        "hunt": "Orla da Mata 4",
+        "regionId": "floresta_1_4",
+        "level": 7,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 4",
+      "regionId": "floresta_1_4",
+      "level": 7,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Burmy",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 13
+        }
+      ]
+    }
+  },
+  "contract-flying-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Croagunk",
+        "required": 5000,
+        "hunt": "Charco Raso 2",
+        "regionId": "pantano_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 2",
+      "regionId": "pantano_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Croagunk",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "poison",
+            "fighting"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-flying-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Mienfoo",
+        "required": 3750,
+        "hunt": "Boca da Gruta 9",
+        "regionId": "caverna_1_9",
+        "level": 30,
+        "spawnCount": 16,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ]
+      },
+      {
+        "species": "Whirlipede",
+        "required": 2500,
+        "hunt": "Bosque Antigo 1",
+        "regionId": "floresta_3_1",
+        "level": 36,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Larvesta",
+        "required": 710,
+        "hunt": "Trilha Fechada 8",
+        "regionId": "floresta_2_8",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "bug",
+          "fire"
+        ]
+      }
+    ]
+  },
+  "contract-flying-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bayleef",
+        "required": 2500,
+        "hunt": "Bosque Antigo 5",
+        "regionId": "floresta_3_5",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Beedrill",
+        "required": 830,
+        "hunt": "Bosque Antigo 3",
+        "regionId": "floresta_3_3",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Bellossom",
+        "required": 2500,
+        "hunt": "Raízes Torcidas 8",
+        "regionId": "floresta_4_8",
+        "level": 67,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      }
+    ]
+  },
+  "contract-flying-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-flying-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-flying-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-flying-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-ghost-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Nave da Torre 1",
+    "regionId": "torre_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.6666666666666666,
+    "expected": 10.666666666666666,
+    "avgMedia": 49,
+    "pokemon": [
+      {
+        "name": "Litwick",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "fire"
+        ],
+        "media": 25,
+        "valid": true
+      },
+      {
+        "name": "Purrloin",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark"
+        ],
+        "media": 27,
+        "valid": false
+      },
+      {
+        "name": "Duskull",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ghost"
+        ],
+        "media": 121,
+        "valid": true
+      }
+    ]
+  },
+  "catch-ghost-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Nave da Torre 1",
+    "regionId": "torre_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.6666666666666666,
+    "expected": 10.666666666666666,
+    "avgMedia": 49,
+    "pokemon": [
+      {
+        "name": "Litwick",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "fire"
+        ],
+        "media": 25,
+        "valid": true
+      },
+      {
+        "name": "Purrloin",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "dark"
+        ],
+        "media": 27,
+        "valid": false
+      },
+      {
+        "name": "Duskull",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ghost"
+        ],
+        "media": 121,
+        "valid": true
+      }
+    ]
+  },
+  "contract-ghost-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Litwick",
+        "required": 1000,
+        "hunt": "Nave da Torre 1",
+        "regionId": "torre_1_1",
+        "level": 16,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "fire"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Nave da Torre 1",
+      "regionId": "torre_1_1",
+      "level": 16,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Litwick",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "ghost",
+            "fire"
+          ],
+          "media": 25
+        }
+      ]
+    }
+  },
+  "contract-ghost-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Chingling",
+        "required": 1000,
+        "hunt": "Claustro 1",
+        "regionId": "santuario_1_1",
+        "level": 12,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Claustro 1",
+      "regionId": "santuario_1_1",
+      "level": 12,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Chingling",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "psychic"
+          ],
+          "media": 29
+        }
+      ]
+    }
+  },
+  "contract-ghost-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Gastly",
+        "required": 5000,
+        "hunt": "Nave da Torre 3",
+        "regionId": "torre_1_3",
+        "level": 25,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ghost",
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Nave da Torre 3",
+      "regionId": "torre_1_3",
+      "level": 25,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Gastly",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "ghost",
+            "poison"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-ghost-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Haunter",
+        "required": 1670,
+        "hunt": "Nave da Torre 6",
+        "regionId": "torre_1_6",
+        "level": 38,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ghost",
+          "poison"
+        ]
+      },
+      {
+        "species": "Kadabra",
+        "required": 1670,
+        "hunt": "Claustro 6",
+        "regionId": "santuario_1_6",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ]
+      },
+      {
+        "species": "Gothorita",
+        "required": 2500,
+        "hunt": "Claustro 6",
+        "regionId": "santuario_1_6",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-ghost-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Hypno",
+        "required": 830,
+        "hunt": "Câmara Interior 2",
+        "regionId": "santuario_2_2",
+        "level": 62,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "psychic"
+        ]
+      },
+      {
+        "species": "Mr. Mime",
+        "required": 830,
+        "hunt": "Câmara Interior 1",
+        "regionId": "santuario_2_1",
+        "level": 55,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic",
+          "fairy"
+        ]
+      },
+      {
+        "species": "Unown",
+        "required": 1430,
+        "hunt": "Claustro 5",
+        "regionId": "santuario_1_5",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.2857142857142857,
+        "expected": 4.571428571428571,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-ghost-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 1",
+    "regionId": "santuario_1_1",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ralts",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kirlia",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 120,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Chingling",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ghost-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 1",
+    "regionId": "santuario_1_1",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ralts",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kirlia",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 120,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Chingling",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ghost-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 1",
+    "regionId": "santuario_1_1",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ralts",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kirlia",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 120,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Chingling",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ghost-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Claustro 1",
+    "regionId": "santuario_1_1",
+    "level": 12,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ralts",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 47,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Kirlia",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic",
+          "fairy"
+        ],
+        "media": 120,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Chingling",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-grass-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 7,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": false
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": false
+      }
+    ]
+  },
+  "catch-grass-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 1",
+    "regionId": "floresta_1_1",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 7,
+    "pokemon": [
+      {
+        "name": "Sunkern",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ],
+        "media": 7,
+        "valid": true
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": false
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 8,
+        "valid": false
+      }
+    ]
+  },
+  "contract-grass-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Magikarp",
+        "required": 1000,
+        "hunt": "Costa Rasa 1",
+        "regionId": "mar_1_1",
+        "level": 4,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Costa Rasa 1",
+      "regionId": "mar_1_1",
+      "level": 4,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Magikarp",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "water"
+          ],
+          "media": 9
+        }
+      ]
+    }
+  },
+  "contract-grass-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Diglett",
+        "required": 1000,
+        "hunt": "Boca da Gruta 1",
+        "regionId": "caverna_1_1",
+        "level": 9,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 1",
+      "regionId": "caverna_1_1",
+      "level": 9,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Diglett",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "ground"
+          ],
+          "media": 23
+        }
+      ]
+    }
+  },
+  "contract-grass-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Marill",
+        "required": 5000,
+        "hunt": "Costa Rasa 2",
+        "regionId": "mar_1_2",
+        "level": 10,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water",
+          "fairy"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Costa Rasa 2",
+      "regionId": "mar_1_2",
+      "level": 10,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Marill",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "water",
+            "fairy"
+          ],
+          "media": 19
+        }
+      ]
+    }
+  },
+  "contract-grass-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Azumarill",
+        "required": 3330,
+        "hunt": "Recife 8",
+        "regionId": "mar_2_8",
+        "level": 49,
+        "spawnCount": 16,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "water",
+          "fairy"
+        ]
+      },
+      {
+        "species": "Croconaw",
+        "required": 2140,
+        "hunt": "Recife 6",
+        "regionId": "mar_2_6",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.42857142857142855,
+        "expected": 6.857142857142857,
+        "types": [
+          "water"
+        ]
+      },
+      {
+        "species": "Dugtrio",
+        "required": 1670,
+        "hunt": "Galeria Funda 5",
+        "regionId": "caverna_2_5",
+        "level": 48,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ]
+      }
+    ]
+  },
+  "contract-grass-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Graveler",
+        "required": 3750,
+        "hunt": "Galeria Funda 3",
+        "regionId": "caverna_2_3",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Kingler",
+        "required": 830,
+        "hunt": "Mar Aberto 4",
+        "regionId": "mar_3_4",
+        "level": 62,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "water"
+        ]
+      },
+      {
+        "species": "Lanturn",
+        "required": 1670,
+        "hunt": "Mar Aberto 2",
+        "regionId": "mar_3_2",
+        "level": 58,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water",
+          "electric"
+        ]
+      }
+    ]
+  },
+  "contract-grass-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-grass-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-grass-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-grass-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-ground-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Sopé Nevado 1",
+    "regionId": "montanha_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 19,
+    "pokemon": [
+      {
+        "name": "Swinub",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ice",
+          "ground"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spheal",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ice",
+          "water"
+        ],
+        "media": 86,
+        "valid": false
+      },
+      {
+        "name": "Bagon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon"
+        ],
+        "media": 433,
+        "valid": false
+      }
+    ]
+  },
+  "catch-ground-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Sopé Nevado 1",
+    "regionId": "montanha_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 19,
+    "pokemon": [
+      {
+        "name": "Swinub",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ice",
+          "ground"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spheal",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ice",
+          "water"
+        ],
+        "media": 86,
+        "valid": false
+      },
+      {
+        "name": "Bagon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon"
+        ],
+        "media": 433,
+        "valid": false
+      }
+    ]
+  },
+  "contract-ground-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Geodude",
+        "required": 1000,
+        "hunt": "Boca da Gruta 4",
+        "regionId": "caverna_1_4",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 4",
+      "regionId": "caverna_1_4",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Geodude",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "rock",
+            "ground"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-ground-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Ekans",
+        "required": 1000,
+        "hunt": "Charco Raso 2",
+        "regionId": "pantano_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 2",
+      "regionId": "pantano_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Ekans",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "poison"
+          ],
+          "media": 30
+        }
+      ]
+    }
+  },
+  "contract-ground-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Charmander",
+        "required": 5000,
+        "hunt": "Encosta de Cinzas 2",
+        "regionId": "vulcao_1_2",
+        "level": 21,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fire"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Encosta de Cinzas 2",
+      "regionId": "vulcao_1_2",
+      "level": 21,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Charmander",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "fire"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-ground-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Arbok",
+        "required": 830,
+        "hunt": "Charco Raso 5",
+        "regionId": "pantano_1_5",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "poison"
+        ]
+      },
+      {
+        "species": "Charmeleon",
+        "required": 2500,
+        "hunt": "Encosta de Cinzas 5",
+        "regionId": "vulcao_1_5",
+        "level": 40,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fire"
+        ]
+      },
+      {
+        "species": "Electrode",
+        "required": 1670,
+        "hunt": "Usina 3",
+        "regionId": "cidade_2_3",
+        "level": 66,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "electric"
+        ]
+      }
+    ]
+  },
+  "contract-ground-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Flaaffy",
+        "required": 2500,
+        "hunt": "Subúrbio 6",
+        "regionId": "cidade_1_6",
+        "level": 38,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "electric"
+        ]
+      },
+      {
+        "species": "Graveler",
+        "required": 3750,
+        "hunt": "Galeria Funda 3",
+        "regionId": "caverna_2_3",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Magcargo",
+        "required": 3330,
+        "hunt": "Caldeira 1",
+        "regionId": "vulcao_2_1",
+        "level": 54,
+        "spawnCount": 16,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "fire",
+          "rock"
+        ]
+      }
+    ]
+  },
+  "contract-ground-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 2",
+    "regionId": "pantano_1_2",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ekans",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Croagunk",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ],
+        "media": 34,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Gulpin",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 153,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ground-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 2",
+    "regionId": "pantano_1_2",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ekans",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Croagunk",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ],
+        "media": 34,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Gulpin",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 153,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ground-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 2",
+    "regionId": "pantano_1_2",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ekans",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Croagunk",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ],
+        "media": 34,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Gulpin",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 153,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ground-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 2",
+    "regionId": "pantano_1_2",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Ekans",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Croagunk",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ],
+        "media": 34,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Gulpin",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 153,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-ice-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Sopé Nevado 1",
+    "regionId": "montanha_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 45.800000000000004,
+    "pokemon": [
+      {
+        "name": "Swinub",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ice",
+          "ground"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spheal",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ice",
+          "water"
+        ],
+        "media": 86,
+        "valid": true
+      },
+      {
+        "name": "Bagon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon"
+        ],
+        "media": 433,
+        "valid": false
+      }
+    ]
+  },
+  "catch-ice-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Sopé Nevado 1",
+    "regionId": "montanha_1_1",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 0.8333333333333333,
+    "expected": 13.333333333333332,
+    "avgMedia": 45.800000000000004,
+    "pokemon": [
+      {
+        "name": "Swinub",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "ice",
+          "ground"
+        ],
+        "media": 19,
+        "valid": true
+      },
+      {
+        "name": "Spheal",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ice",
+          "water"
+        ],
+        "media": 86,
+        "valid": true
+      },
+      {
+        "name": "Bagon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "dragon"
+        ],
+        "media": 433,
+        "valid": false
+      }
+    ]
+  },
+  "contract-ice-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bellsprout",
+        "required": 1000,
+        "hunt": "Trilha Fechada 2",
+        "regionId": "floresta_2_2",
+        "level": 20,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Trilha Fechada 2",
+      "regionId": "floresta_2_2",
+      "level": 20,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Bellsprout",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "grass",
+            "poison"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-ice-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Diglett",
+        "required": 1000,
+        "hunt": "Boca da Gruta 1",
+        "regionId": "caverna_1_1",
+        "level": 9,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 1",
+      "regionId": "caverna_1_1",
+      "level": 9,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Diglett",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "ground"
+          ],
+          "media": 23
+        }
+      ]
+    }
+  },
+  "contract-ice-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Cubone",
+        "required": 5000,
+        "hunt": "Boca da Gruta 6",
+        "regionId": "caverna_1_6",
+        "level": 21,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 6",
+      "regionId": "caverna_1_6",
+      "level": 21,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Cubone",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "ground"
+          ],
+          "media": 41
+        }
+      ]
+    }
+  },
+  "contract-ice-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Sunflora",
+        "required": 830,
+        "hunt": "Bosque Antigo 7",
+        "regionId": "floresta_3_7",
+        "level": 48,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Krokorok",
+        "required": 1250,
+        "hunt": "Boca da Gruta 9",
+        "regionId": "caverna_1_9",
+        "level": 30,
+        "spawnCount": 16,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ]
+      },
+      {
+        "species": "Bayleef",
+        "required": 2500,
+        "hunt": "Bosque Antigo 5",
+        "regionId": "floresta_3_5",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      }
+    ]
+  },
+  "contract-ice-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bellossom",
+        "required": 2500,
+        "hunt": "Raízes Torcidas 8",
+        "regionId": "floresta_4_8",
+        "level": 67,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Dugtrio",
+        "required": 1670,
+        "hunt": "Galeria Funda 5",
+        "regionId": "caverna_2_5",
+        "level": 48,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ]
+      },
+      {
+        "species": "Ivysaur",
+        "required": 2500,
+        "hunt": "Bosque Antigo 6",
+        "regionId": "floresta_3_6",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "poison"
+        ]
+      }
+    ]
+  },
+  "contract-ice-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ice-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ice-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-ice-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-normal-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Campo Aberto 1",
+    "regionId": "planicie_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 20.333333333333332,
+    "pokemon": [
+      {
+        "name": "Azurill",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Igglybuff",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Sentret",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 12,
+        "valid": true
+      }
+    ]
+  },
+  "catch-normal-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Campo Aberto 1",
+    "regionId": "planicie_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 20.333333333333332,
+    "pokemon": [
+      {
+        "name": "Azurill",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Igglybuff",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "fairy"
+        ],
+        "media": 43,
+        "valid": true
+      },
+      {
+        "name": "Sentret",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal"
+        ],
+        "media": 12,
+        "valid": true
+      }
+    ]
+  },
+  "contract-normal-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Magikarp",
+        "required": 1000,
+        "hunt": "Costa Rasa 1",
+        "regionId": "mar_1_1",
+        "level": 4,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Costa Rasa 1",
+      "regionId": "mar_1_1",
+      "level": 4,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Magikarp",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "water"
+          ],
+          "media": 9
+        }
+      ]
+    }
+  },
+  "contract-normal-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Zubat",
+        "required": 1000,
+        "hunt": "Charco Raso 1",
+        "regionId": "pantano_1_1",
+        "level": 13,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 1",
+      "regionId": "pantano_1_1",
+      "level": 13,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Zubat",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "poison",
+            "flying"
+          ],
+          "media": 18
+        }
+      ]
+    }
+  },
+  "contract-normal-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Dratini",
+        "required": 5000,
+        "hunt": "Sopé Nevado 2",
+        "regionId": "montanha_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "dragon"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Sopé Nevado 2",
+      "regionId": "montanha_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Dratini",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "dragon"
+          ],
+          "media": 200
+        }
+      ]
+    }
+  },
+  "contract-normal-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Rufflet",
+        "required": 1670,
+        "hunt": "Pastagem Alta 5",
+        "regionId": "planicie_2_5",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "normal",
+          "flying"
+        ]
+      },
+      {
+        "species": "Krokorok",
+        "required": 1250,
+        "hunt": "Boca da Gruta 9",
+        "regionId": "caverna_1_9",
+        "level": 30,
+        "spawnCount": 16,
+        "chance": 0.25,
+        "expected": 4,
+        "types": [
+          "ground",
+          "dark"
+        ]
+      },
+      {
+        "species": "Espurr",
+        "required": 710,
+        "hunt": "Claustro 5",
+        "regionId": "santuario_1_5",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "psychic"
+        ]
+      }
+    ]
+  },
+  "contract-normal-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Tranquill",
+        "required": 830,
+        "hunt": "Pastagem Alta 5",
+        "regionId": "planicie_2_5",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "normal",
+          "flying"
+        ]
+      },
+      {
+        "species": "Whirlipede",
+        "required": 2500,
+        "hunt": "Bosque Antigo 1",
+        "regionId": "floresta_3_1",
+        "level": 36,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Larvesta",
+        "required": 710,
+        "hunt": "Trilha Fechada 8",
+        "regionId": "floresta_2_8",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "bug",
+          "fire"
+        ]
+      }
+    ]
+  },
+  "contract-normal-3a": {
+    "kind": "none",
+    "message": "Não há uma fraqueza padrão aplicável a este elemento."
+  },
+  "contract-normal-3b": {
+    "kind": "none",
+    "message": "Não há uma fraqueza padrão aplicável a este elemento."
+  },
+  "contract-normal-4": {
+    "kind": "none",
+    "message": "Não há uma fraqueza padrão aplicável a este elemento."
+  },
+  "contract-normal-5": {
+    "kind": "none",
+    "message": "Não há uma fraqueza padrão aplicável a este elemento."
+  },
+  "catch-poison-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 8,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": false
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": false
+      }
+    ]
+  },
+  "catch-poison-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 8,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": false
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": false
+      }
+    ]
+  },
+  "contract-poison-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Hoppip",
+        "required": 1000,
+        "hunt": "Orla da Mata 5",
+        "regionId": "floresta_1_5",
+        "level": 10,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass",
+          "flying"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 5",
+      "regionId": "floresta_1_5",
+      "level": 10,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Hoppip",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "grass",
+            "flying"
+          ],
+          "media": 19
+        }
+      ]
+    }
+  },
+  "contract-poison-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Exeggcute",
+        "required": 1000,
+        "hunt": "Trilha Fechada 7",
+        "regionId": "floresta_2_7",
+        "level": 26,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "psychic"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Trilha Fechada 7",
+      "regionId": "floresta_2_7",
+      "level": 26,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Exeggcute",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "grass",
+            "psychic"
+          ],
+          "media": 43
+        }
+      ]
+    }
+  },
+  "contract-poison-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Clefairy",
+        "required": 5000,
+        "hunt": "Pastagem Alta 3",
+        "regionId": "planicie_2_3",
+        "level": 25,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fairy"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Pastagem Alta 3",
+      "regionId": "planicie_2_3",
+      "level": 25,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Clefairy",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "fairy"
+          ],
+          "media": 121
+        }
+      ]
+    }
+  },
+  "contract-poison-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Skiploom",
+        "required": 1430,
+        "hunt": "Trilha Fechada 8",
+        "regionId": "floresta_2_8",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.2857142857142857,
+        "expected": 4.571428571428571,
+        "types": [
+          "grass",
+          "flying"
+        ]
+      },
+      {
+        "species": "Snubbull",
+        "required": 1670,
+        "hunt": "Pastagem Alta 1",
+        "regionId": "planicie_2_1",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fairy"
+        ]
+      },
+      {
+        "species": "Sunflora",
+        "required": 830,
+        "hunt": "Bosque Antigo 7",
+        "regionId": "floresta_3_7",
+        "level": 48,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "grass"
+        ]
+      }
+    ]
+  },
+  "contract-poison-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Bayleef",
+        "required": 2500,
+        "hunt": "Bosque Antigo 5",
+        "regionId": "floresta_3_5",
+        "level": 44,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Bellossom",
+        "required": 2500,
+        "hunt": "Raízes Torcidas 8",
+        "regionId": "floresta_4_8",
+        "level": 67,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass"
+        ]
+      },
+      {
+        "species": "Granbull",
+        "required": 1670,
+        "hunt": "Colinas ao Vento 6",
+        "regionId": "planicie_3_6",
+        "level": 55,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fairy"
+        ]
+      }
+    ]
+  },
+  "contract-poison-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-poison-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-poison-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-poison-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 8",
+    "regionId": "floresta_1_8",
+    "level": 16,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Cottonee",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "grass",
+          "fairy"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 4
+      },
+      {
+        "name": "Petilil",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "grass"
+        ],
+        "media": 27,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Paras",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "grass"
+        ],
+        "media": 29,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-psychic-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 30.166666666666664,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true
+      }
+    ]
+  },
+  "catch-psychic-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Claustro 2",
+    "regionId": "santuario_1_2",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 30.166666666666664,
+    "pokemon": [
+      {
+        "name": "Gothita",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Solosis",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "psychic"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Munna",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "psychic"
+        ],
+        "media": 31,
+        "valid": true
+      }
+    ]
+  },
+  "contract-psychic-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Zubat",
+        "required": 1000,
+        "hunt": "Charco Raso 1",
+        "regionId": "pantano_1_1",
+        "level": 13,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 1",
+      "regionId": "pantano_1_1",
+      "level": 13,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Zubat",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "poison",
+            "flying"
+          ],
+          "media": 18
+        }
+      ]
+    }
+  },
+  "contract-psychic-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Ekans",
+        "required": 1000,
+        "hunt": "Charco Raso 2",
+        "regionId": "pantano_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 2",
+      "regionId": "pantano_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Ekans",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "poison"
+          ],
+          "media": 30
+        }
+      ]
+    }
+  },
+  "contract-psychic-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Croagunk",
+        "required": 5000,
+        "hunt": "Charco Raso 2",
+        "regionId": "pantano_1_2",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "fighting"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Charco Raso 2",
+      "regionId": "pantano_1_2",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Croagunk",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "poison",
+            "fighting"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-psychic-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Skorupi",
+        "required": 1670,
+        "hunt": "Charco Raso 4",
+        "regionId": "pantano_1_4",
+        "level": 27,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison",
+          "bug"
+        ]
+      },
+      {
+        "species": "Tyrogue",
+        "required": 2500,
+        "hunt": "Boca da Gruta 1",
+        "regionId": "caverna_1_1",
+        "level": 9,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ]
+      },
+      {
+        "species": "Mienfoo",
+        "required": 3750,
+        "hunt": "Boca da Gruta 9",
+        "regionId": "caverna_1_9",
+        "level": 30,
+        "spawnCount": 16,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "fighting"
+        ]
+      }
+    ]
+  },
+  "contract-psychic-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Arbok",
+        "required": 830,
+        "hunt": "Charco Raso 5",
+        "regionId": "pantano_1_5",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "poison"
+        ]
+      },
+      {
+        "species": "Hitmontop",
+        "required": 1670,
+        "hunt": "Galeria Funda 7",
+        "regionId": "caverna_2_7",
+        "level": 57,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "fighting"
+        ]
+      },
+      {
+        "species": "Machoke",
+        "required": 2500,
+        "hunt": "Galeria Funda 4",
+        "regionId": "caverna_2_4",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fighting"
+        ]
+      }
+    ]
+  },
+  "contract-psychic-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 1",
+    "regionId": "pantano_1_1",
+    "level": 13,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Zubat",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ],
+        "media": 18,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Male",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Female",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-psychic-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 1",
+    "regionId": "pantano_1_1",
+    "level": 13,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Zubat",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ],
+        "media": 18,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Male",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Female",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-psychic-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 1",
+    "regionId": "pantano_1_1",
+    "level": 13,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Zubat",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ],
+        "media": 18,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Male",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Female",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-psychic-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Charco Raso 1",
+    "regionId": "pantano_1_1",
+    "level": 13,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Zubat",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "poison",
+          "flying"
+        ],
+        "media": 18,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Male",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Nidoran Female",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "poison"
+        ],
+        "media": 25,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-rock-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 30,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": false
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": false
+      }
+    ]
+  },
+  "catch-rock-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 0.5,
+    "expected": 8,
+    "avgMedia": 30,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": false
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": false
+      }
+    ]
+  },
+  "contract-rock-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Kricketot",
+        "required": 1000,
+        "hunt": "Orla da Mata 1",
+        "regionId": "floresta_1_1",
+        "level": 3,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 1",
+      "regionId": "floresta_1_1",
+      "level": 3,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Kricketot",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 8
+        }
+      ]
+    }
+  },
+  "contract-rock-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Burmy",
+        "required": 1000,
+        "hunt": "Orla da Mata 4",
+        "regionId": "floresta_1_4",
+        "level": 7,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 4",
+      "regionId": "floresta_1_4",
+      "level": 7,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Burmy",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 13
+        }
+      ]
+    }
+  },
+  "contract-rock-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Metapod",
+        "required": 5000,
+        "hunt": "Orla da Mata 3",
+        "regionId": "floresta_1_3",
+        "level": 4,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Orla da Mata 3",
+      "regionId": "floresta_1_3",
+      "level": 4,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Metapod",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "bug"
+          ],
+          "media": 10
+        }
+      ]
+    }
+  },
+  "contract-rock-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Yanma",
+        "required": 2500,
+        "hunt": "Bosque Antigo 3",
+        "regionId": "floresta_3_3",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ]
+      },
+      {
+        "species": "Whirlipede",
+        "required": 2500,
+        "hunt": "Bosque Antigo 1",
+        "regionId": "floresta_3_1",
+        "level": 36,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Larvesta",
+        "required": 710,
+        "hunt": "Trilha Fechada 8",
+        "regionId": "floresta_2_8",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.14285714285714285,
+        "expected": 2.2857142857142856,
+        "types": [
+          "bug",
+          "fire"
+        ]
+      }
+    ]
+  },
+  "contract-rock-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Beedrill",
+        "required": 830,
+        "hunt": "Bosque Antigo 3",
+        "regionId": "floresta_3_3",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug",
+          "poison"
+        ]
+      },
+      {
+        "species": "Butterfree",
+        "required": 2500,
+        "hunt": "Bosque Antigo 4",
+        "regionId": "floresta_3_4",
+        "level": 41,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "flying"
+        ]
+      },
+      {
+        "species": "Charmeleon",
+        "required": 2500,
+        "hunt": "Encosta de Cinzas 5",
+        "regionId": "vulcao_1_5",
+        "level": 40,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fire"
+        ]
+      }
+    ]
+  },
+  "contract-rock-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-rock-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-rock-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-rock-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Orla da Mata 2",
+    "regionId": "floresta_1_2",
+    "level": 3,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Weedle",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "bug",
+          "poison"
+        ],
+        "media": 8,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "bug"
+        ],
+        "media": 20,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "bug"
+        ],
+        "media": 66,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-steel-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Subúrbio 3",
+    "regionId": "cidade_1_3",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 125.5,
+    "pokemon": [
+      {
+        "name": "Beldum",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "steel",
+          "psychic"
+        ],
+        "media": 217,
+        "valid": true
+      },
+      {
+        "name": "Bronzor",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "steel",
+          "psychic"
+        ],
+        "media": 34,
+        "valid": true
+      },
+      {
+        "name": "Klink",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "steel"
+        ],
+        "media": 34,
+        "valid": true
+      }
+    ]
+  },
+  "catch-steel-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Subúrbio 3",
+    "regionId": "cidade_1_3",
+    "level": 19,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 125.5,
+    "pokemon": [
+      {
+        "name": "Beldum",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "steel",
+          "psychic"
+        ],
+        "media": 217,
+        "valid": true
+      },
+      {
+        "name": "Bronzor",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "steel",
+          "psychic"
+        ],
+        "media": 34,
+        "valid": true
+      },
+      {
+        "name": "Klink",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "steel"
+        ],
+        "media": 34,
+        "valid": true
+      }
+    ]
+  },
+  "contract-steel-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Geodude",
+        "required": 1000,
+        "hunt": "Boca da Gruta 4",
+        "regionId": "caverna_1_4",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 4",
+      "regionId": "caverna_1_4",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Geodude",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "rock",
+            "ground"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-steel-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Jigglypuff",
+        "required": 1000,
+        "hunt": "Campo Aberto 7",
+        "regionId": "planicie_1_7",
+        "level": 14,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "normal",
+          "fairy"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Campo Aberto 7",
+      "regionId": "planicie_1_7",
+      "level": 14,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Jigglypuff",
+          "weight": 30,
+          "chance": 0.5,
+          "expected": 8,
+          "types": [
+            "normal",
+            "fairy"
+          ],
+          "media": 121
+        }
+      ]
+    }
+  },
+  "contract-steel-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Larvitar",
+        "required": 5000,
+        "hunt": "Boca da Gruta 4",
+        "regionId": "caverna_1_4",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 4",
+      "regionId": "caverna_1_4",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Larvitar",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "rock",
+            "ground"
+          ],
+          "media": 217
+        }
+      ]
+    }
+  },
+  "contract-steel-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Pupitar",
+        "required": 1790,
+        "hunt": "Galeria Funda 4",
+        "regionId": "caverna_2_4",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Togetic",
+        "required": 2500,
+        "hunt": "Colinas ao Vento 1",
+        "regionId": "planicie_3_1",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fairy",
+          "flying"
+        ]
+      },
+      {
+        "species": "Nosepass",
+        "required": 1670,
+        "hunt": "Galeria Funda 1",
+        "regionId": "caverna_2_1",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ]
+      }
+    ]
+  },
+  "contract-steel-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Boldore",
+        "required": 1670,
+        "hunt": "Galeria Funda 2",
+        "regionId": "caverna_2_2",
+        "level": 38,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ]
+      },
+      {
+        "species": "Vanillish",
+        "required": 830,
+        "hunt": "Sopé Nevado 4",
+        "regionId": "montanha_1_4",
+        "level": 33,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ice"
+        ]
+      },
+      {
+        "species": "Clefable",
+        "required": 2500,
+        "hunt": "Planalto 3",
+        "regionId": "planicie_4_3",
+        "level": 65,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fairy"
+        ]
+      }
+    ]
+  },
+  "contract-steel-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Galeria Funda 2",
+    "regionId": "caverna_2_2",
+    "level": 38,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Onix",
+        "weight": 40,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "rock",
+          "ground"
+        ],
+        "media": 86,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Boldore",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ],
+        "media": 78,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-steel-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Galeria Funda 2",
+    "regionId": "caverna_2_2",
+    "level": 38,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Onix",
+        "weight": 40,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "rock",
+          "ground"
+        ],
+        "media": 86,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Boldore",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ],
+        "media": 78,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-steel-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Galeria Funda 2",
+    "regionId": "caverna_2_2",
+    "level": 38,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Onix",
+        "weight": 40,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "rock",
+          "ground"
+        ],
+        "media": 86,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Boldore",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ],
+        "media": 78,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-steel-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Galeria Funda 2",
+    "regionId": "caverna_2_2",
+    "level": 38,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Onix",
+        "weight": 40,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "rock",
+          "ground"
+        ],
+        "media": 86,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Boldore",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ],
+        "media": 78,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "catch-water-1": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Costa Rasa 1",
+    "regionId": "mar_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 46.666666666666664,
+    "pokemon": [
+      {
+        "name": "Feebas",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "water"
+        ],
+        "media": 77,
+        "valid": true
+      },
+      {
+        "name": "Magikarp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water"
+        ],
+        "media": 9,
+        "valid": true
+      },
+      {
+        "name": "Wooper",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "water",
+          "ground"
+        ],
+        "media": 31,
+        "valid": true
+      }
+    ]
+  },
+  "catch-water-2": {
+    "kind": "capture",
+    "title": "Melhor hunt para captura",
+    "hunt": "Costa Rasa 1",
+    "regionId": "mar_1_1",
+    "level": 4,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "avgMedia": 46.666666666666664,
+    "pokemon": [
+      {
+        "name": "Feebas",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "water"
+        ],
+        "media": 77,
+        "valid": true
+      },
+      {
+        "name": "Magikarp",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "water"
+        ],
+        "media": 9,
+        "valid": true
+      },
+      {
+        "name": "Wooper",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "water",
+          "ground"
+        ],
+        "media": 31,
+        "valid": true
+      }
+    ]
+  },
+  "contract-water-1a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Diglett",
+        "required": 1000,
+        "hunt": "Boca da Gruta 1",
+        "regionId": "caverna_1_1",
+        "level": 9,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 1",
+      "regionId": "caverna_1_1",
+      "level": 9,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Diglett",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "ground"
+          ],
+          "media": 23
+        }
+      ]
+    }
+  },
+  "contract-water-1b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Geodude",
+        "required": 1000,
+        "hunt": "Boca da Gruta 4",
+        "regionId": "caverna_1_4",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 4",
+      "regionId": "caverna_1_4",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Geodude",
+          "weight": 20,
+          "chance": 0.3333333333333333,
+          "expected": 5.333333333333333,
+          "types": [
+            "rock",
+            "ground"
+          ],
+          "media": 34
+        }
+      ]
+    }
+  },
+  "contract-water-1h": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Larvitar",
+        "required": 5000,
+        "hunt": "Boca da Gruta 4",
+        "regionId": "caverna_1_4",
+        "level": 19,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      }
+    ],
+    "singleHunt": {
+      "hunt": "Boca da Gruta 4",
+      "regionId": "caverna_1_4",
+      "level": 19,
+      "spawnCount": 16,
+      "pokemon": [
+        {
+          "name": "Larvitar",
+          "weight": 10,
+          "chance": 0.16666666666666666,
+          "expected": 2.6666666666666665,
+          "types": [
+            "rock",
+            "ground"
+          ],
+          "media": 217
+        }
+      ]
+    }
+  },
+  "contract-water-2a": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Dugtrio",
+        "required": 1670,
+        "hunt": "Galeria Funda 5",
+        "regionId": "caverna_2_5",
+        "level": 48,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ]
+      },
+      {
+        "species": "Graveler",
+        "required": 3750,
+        "hunt": "Galeria Funda 3",
+        "regionId": "caverna_2_3",
+        "level": 42,
+        "spawnCount": 16,
+        "chance": 0.75,
+        "expected": 12,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Magcargo",
+        "required": 3330,
+        "hunt": "Caldeira 1",
+        "regionId": "vulcao_2_1",
+        "level": 54,
+        "spawnCount": 16,
+        "chance": 0.6666666666666666,
+        "expected": 10.666666666666666,
+        "types": [
+          "fire",
+          "rock"
+        ]
+      }
+    ]
+  },
+  "contract-water-2b": {
+    "kind": "multi",
+    "title": "Melhor local para os alvos da task",
+    "targets": [
+      {
+        "species": "Pupitar",
+        "required": 1790,
+        "hunt": "Galeria Funda 4",
+        "regionId": "caverna_2_4",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "rock",
+          "ground"
+        ]
+      },
+      {
+        "species": "Quilava",
+        "required": 2500,
+        "hunt": "Encosta de Cinzas 6",
+        "regionId": "vulcao_1_6",
+        "level": 45,
+        "spawnCount": 16,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "fire"
+        ]
+      },
+      {
+        "species": "Nosepass",
+        "required": 1670,
+        "hunt": "Galeria Funda 1",
+        "regionId": "caverna_2_1",
+        "level": 31,
+        "spawnCount": 16,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "rock"
+        ]
+      }
+    ]
+  },
+  "contract-water-3a": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-water-3b": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-water-4": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  },
+  "contract-water-5": {
+    "kind": "weak",
+    "title": "Melhor hunt para abates",
+    "hunt": "Boca da Gruta 3",
+    "regionId": "caverna_1_3",
+    "level": 18,
+    "spawnCount": 16,
+    "chance": 1,
+    "expected": 16,
+    "pokemon": [
+      {
+        "name": "Bonsly",
+        "weight": 30,
+        "chance": 0.5,
+        "expected": 8,
+        "types": [
+          "rock"
+        ],
+        "media": 30,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20,
+        "chance": 0.3333333333333333,
+        "expected": 5.333333333333333,
+        "types": [
+          "ground"
+        ],
+        "media": 43,
+        "valid": true,
+        "eff": 2
+      },
+      {
+        "name": "Sandile",
+        "weight": 10,
+        "chance": 0.16666666666666666,
+        "expected": 2.6666666666666665,
+        "types": [
+          "ground",
+          "dark"
+        ],
+        "media": 31,
+        "valid": true,
+        "eff": 2
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 import React, { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BookOpen, Calculator, Crosshair, ExternalLink, Radio, ScrollText, Swords } from 'lucide-react'
+import { BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, MapPin, Radio, ScrollText, Search, Swords } from 'lucide-react'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon } from './data'
+import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import { getTypeMatchups } from './type-chart'
 import './styles.css'
 import './image-overrides.css'
@@ -11,6 +12,7 @@ import './pokedex-overrides.css'
 import './tm-overrides.css'
 import './theme-overrides.css'
 import './joy-theme.css'
+import './missions.css'
 
 const legacyAreaTms = [
   ['Flash Cannon', 'Steel', 80, '15s', 3, '7,1%'], ['Iron Tail', 'Steel', 90, '18s', 1, '3,6%'],
@@ -43,7 +45,7 @@ const moveAttackLabel = (category: string) => category === 'physical' ? 'Físico
 function App() { return <Atlas /> }
 
 function Atlas() {
-  const [view, setView] = useState<'pokemon' | 'tms' | 'captures' | 'movedex' | 'calculator' | 'detail'>('pokemon')
+  const [view, setView] = useState<'pokemon' | 'tms' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'detail'>('pokemon')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
@@ -88,9 +90,14 @@ function Atlas() {
   const captureRanges = [...new Set(captureRates.map((entry) => entry.range))]
   const regions = ['Todas Regiões', ...new Set(pokemon.map((entry) => entry.region))]
 
+  function changeView(nextView: typeof view) {
+    setQuery('')
+    setView(nextView)
+  }
+
   function openPokemon(entry: Pokemon) {
     setSelected(entry)
-    setView('detail')
+    changeView('detail')
   }
 
   return (
@@ -99,24 +106,107 @@ function Atlas() {
         <div className="brand"><span className="brand-mark"><BookOpen size={30} strokeWidth={2.4} /><img src="https://img.pokemondb.net/sprites/home/normal/pikachu.png" alt="" /></span><span>PK HUNT<br /><b>DATABASE</b></span></div>
         <p className="eyebrow">GUIA DO TREINADOR</p>
         <nav>
-          <button className={view === 'pokemon' || view === 'detail' ? 'nav-item active' : 'nav-item'} onClick={() => setView('pokemon')}><BookOpen size={18} /> <span>Pokedex</span> <strong>{pokemon.length}</strong></button>
-          <button className={view === 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => setView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
-          <button className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => setView('captures')}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong></button>
-          <button className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => setView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
-          <button className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => setView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
+          <button aria-label="Pokedex" className={view === 'pokemon' || view === 'detail' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('pokemon')}><BookOpen size={18} /> <span>Pokedex</span> <strong>{pokemon.length}</strong></button>
+          <button aria-label="TMs" className={view === 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
+          <button aria-label="Capturas" className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('captures')}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong></button>
+          <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
+          <button aria-label="Missões" className={view === 'missions' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong></button>
+          <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
         </nav>
         <div className="sidebar-foot"><span className="status-dot" /> {status === 'ready' ? 'Dados prontos para explorar' : status === 'error' ? 'Modo offline' : 'Buscando dados da wiki'}<br /><small>Uma jornada PokeHunt</small><br /><small>Auditoria, criado por zDuffi</small></div>
       </aside>
 
       <section className="content">
-        <header className="topbar"><div><p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p><h1>{view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'captures' ? 'Taxas de Captura' : view === 'calculator' ? 'Calculadora de Status' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'calculator' ? '6' : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : 'REGISTROS'} <span>WIKI</span></div></div></header>
-        {view === 'detail' ? <PokemonDetail selected={selected} onBack={() => setView('pokemon')} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : <>
+        <header className="topbar"><div><p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p><h1>{view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'captures' ? 'Taxas de Captura' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : 'REGISTROS'} <span>WIKI</span></div></div></header>
+        {view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : <>
           <div className="toolbar"><label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>{view === 'pokemon' ? <><select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Filtrar por forma" value={megaFilter} onChange={(event) => setMegaFilter(event.target.value)}><option>Todas as formas</option><option>Apenas Megas</option></select><select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select></> : view === 'tms' ? <><select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select><select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select><select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></> : view === 'captures' ? <><select aria-label="Filtrar por faixa" value={captureRange} onChange={(event) => setCaptureRange(event.target.value)}><option>Todas as faixas</option>{captureRanges.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Ordenar capturas" value={captureSort} onChange={(event) => setCaptureSort(event.target.value)}><option>Nome (A-Z)</option><option>Dureza (menor)</option><option>Dureza (maior)</option></select></> : <><select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select><select aria-label="Ordenar MoveDex" value={moveSort} onChange={(event) => setMoveSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></>}</div>
-          {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} /> : <MoveDexTable items={filteredMoveDex} />}
+          {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} /> : view === 'missions' ? <MissionBoard items={clanMissions} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
     </main>
   )
+}
+
+function MissionBoard({ items }: { items: ClanMission[] }) {
+  const [query, setQuery] = useState('')
+  const [selectedClan, setSelectedClan] = useState('Todos os clãs')
+  const colors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
+  const getElementKey = (element: string) => (element.split('/').at(-1) ?? element).trim().toLowerCase()
+  const getElementColor = (element: string) => colors[getElementKey(element)] ?? '#173b9b'
+  const getElementName = (element: string) => element.split(' / ')[0]
+  const normalizedQuery = query.trim().toLowerCase()
+  const matches = items.filter((mission) => (selectedClan === 'Todos os clãs' || mission.clan === selectedClan)
+    && `${mission.clan} ${mission.element} ${mission.name} ${mission.kind} ${mission.description} ${mission.part}`.toLowerCase().includes(normalizedQuery))
+  const visibleClans = selectedClan === 'Todos os clãs' ? clanNames : [selectedClan]
+  const elementByClan = new Map(clanNames.map((clan) => [clan, items.find((mission) => mission.clan === clan)?.element ?? '']))
+  const hardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
+  const selectedElement = elementByClan.get(selectedClan) ?? ''
+  const groups = visibleClans.map((clan) => ({
+    clan,
+    missions: matches.filter((mission) => mission.clan === clan),
+  })).filter((group) => group.missions.length > 0)
+  const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
+
+  return <section className="mission-board">
+    <div className="mission-controls">
+      <label className="mission-search"><Search size={18} /><input aria-label="Buscar missões" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar missão, clã ou elemento..." /></label>
+      <label className="mission-filter" style={{ '--element-color': selectedElement ? getElementColor(selectedElement) : '#2764e7' } as React.CSSProperties}>
+        <span className="mission-filter-swatch" aria-hidden="true" />
+        <select aria-label="Filtrar missões por clã" value={selectedClan} onChange={(event) => setSelectedClan(event.target.value)}>
+          <option value="Todos os clãs">Todos os clãs</option>
+          {clanNames.map((clan) => {
+            const element = elementByClan.get(clan) ?? ''
+            return <option key={clan} value={clan} style={{ color: getElementColor(element) }}>{clan} · {element}</option>
+          })}
+        </select>
+      </label>
+      <span className="mission-count">{matches.length} de {items.length} missões</span>
+    </div>
+    {groups.length ? <div className="mission-groups">{groups.map((group) => <details className="mission-group" key={group.clan} open={selectedClan !== 'Todos os clãs' || normalizedQuery.length > 0} style={{ '--element-color': getElementColor(group.missions[0].element) } as React.CSSProperties}>
+      <summary><span className="mission-group-title"><strong>Missões de {getElementName(group.missions[0].element)}</strong><span className="mission-group-subline"><span className="mission-element-badge">{group.missions[0].element}</span><span className="mission-clan-name">{group.clan}</span></span></span><span className="mission-group-summary-count">{group.missions.length} missões</span></summary>
+      <div className="mission-list">{group.missions.map((mission) => <article className="mission-card" key={mission.id}>
+        <div className="mission-card-header" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}><div><span className="mission-part">Parte {mission.part}</span><h3>{mission.name}</h3></div><span className="mission-tier">Tier {mission.tier}</span></div>
+        <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
+        <p className="mission-description">{mission.kind === 'Captura' ? <>Capturar <strong>{formatNumber(mission.target)}</strong> Pokémon do tipo <strong>{mission.element}</strong>.</> : mission.kind === 'Contrato específico' ? <>Derrotar os Pokémon específicos desta etapa até completar <strong>{formatNumber(mission.target)} abates</strong>.</> : <>Derrotar <strong>{formatNumber(mission.target)} Pokémon</strong> fracos ao elemento <strong>{mission.element}</strong>.</>}</p>
+        <dl className="mission-rewards"><div><dt>Gold</dt><dd>{formatNumber(mission.gold)}</dd></div><div><dt>XP</dt><dd>{formatNumber(mission.experience)}</dd></div><div><dt>Token</dt><dd>{formatNumber(mission.tokens)}</dd></div><div><dt>Pontos do clã</dt><dd>{formatNumber(mission.clanPoints)}</dd></div></dl>
+        <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} />
+      </article>)}</div>
+    </details>)}</div> : <p className="mission-empty">Nenhuma missão encontrada.</p>}
+  </section>
+}
+
+function MissionAdvice({ recommendation, hardnessByName }: { recommendation: ClanMission['recommendation']; hardnessByName: ReadonlyMap<string, number> }) {
+  const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
+  const formatExpected = (value: number) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
+  const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 2 }).format(value)
+  const summary = recommendation.kind === 'capture' ? 'Ver melhor mapa e dureza' : recommendation.kind === 'multi' ? 'Ver mapa de cada Pokémon' : recommendation.kind === 'weak' ? 'Ver melhor mapa elemental' : 'Ver recomendação'
+  const pokemon = recommendation.pokemon ?? []
+  const totalChance = pokemon.reduce((total, entry) => total + entry.chance, 0)
+  const averageCaptureHardness = totalChance ? pokemon.reduce((total, entry) => total + (hardnessByName.get(entry.name) ?? entry.media ?? 0) * entry.chance, 0) / totalChance : recommendation.avgMedia
+
+  return <details className="mission-advice">
+    <summary><MapPin size={15} />{summary}</summary>
+    <div className="mission-advice-content">
+      <h4>{recommendation.title ?? 'Sem recomendação'}</h4>
+      {recommendation.kind === 'none' ? <p className="mission-advice-empty">{recommendation.message}</p> : recommendation.kind === 'multi' ? <>
+        {recommendation.singleHunt ? <div className="advice-single-map"><span>Todos os alvos nesta hunt</span><strong>{recommendation.singleHunt.hunt}</strong><small>{recommendation.singleHunt.regionId} · nível {recommendation.singleHunt.level}</small></div> : <p className="advice-route-note">Os alvos ficam melhor distribuídos entre estas hunts:</p>}
+        <div className="advice-routes">{recommendation.targets?.map((target) => <div className="advice-route" key={`${target.species}-${target.regionId}`}>
+          <div><strong>{target.species}</strong><span>{formatNumber(target.required)} abates</span></div>
+          <div><strong>{target.hunt}</strong><small>{target.regionId} · nível {target.level}</small></div>
+          <div><span>{formatChance(target.chance)} de chance</span><small>{formatExpected(target.expected)} / {target.spawnCount} spawns</small></div>
+        </div>)}</div>
+      </> : <>
+        <div className="advice-best-map"><div><span>Melhor mapa</span><strong>{recommendation.hunt}</strong><small>{recommendation.regionId}</small></div><div><strong>Nível {recommendation.level}</strong><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong><small><strong>{formatExpected(recommendation.expected ?? 0)}</strong> / {recommendation.spawnCount} spawns</small></div></div>
+        {recommendation.kind === 'capture' && averageCaptureHardness !== undefined && <p className="advice-average-hardness">Dureza média pela aba Capturas: <strong>{formatExpected(averageCaptureHardness)}</strong></p>}
+        <div className="advice-pokemon-list">{pokemon.map((entry) => <div className="advice-pokemon" key={entry.name}>
+          <div><strong>{entry.name}</strong><span>{entry.types.map((type) => typeLabel(type.charAt(0).toUpperCase() + type.slice(1))).join(' / ')}</span></div>
+          <span><strong>{formatChance(entry.chance)}</strong> · <strong>{formatExpected(entry.expected)}</strong> / {recommendation.spawnCount} spawns</span>
+          {recommendation.kind === 'capture' && (hardnessByName.get(entry.name) ?? entry.media) !== undefined && <strong>Dureza Capturas: {formatNumber(hardnessByName.get(entry.name) ?? entry.media ?? 0)}</strong>}
+          {recommendation.kind === 'weak' && entry.eff !== undefined && <strong>Efetividade: ×{entry.eff}</strong>}
+        </div>)}</div>
+      </>}
+    </div>
+  </details>
 }
 
 type ComparisonAttribute = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
