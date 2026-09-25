@@ -9,6 +9,7 @@ import './matchup-overrides.css'
 import './pokedex-overrides.css'
 import './tm-overrides.css'
 import './theme-overrides.css'
+import './joy-theme.css'
 
 const legacyAreaTms = [
   ['Flash Cannon', 'Steel', 80, '15s', 3, '7,1%'], ['Iron Tail', 'Steel', 90, '18s', 1, '3,6%'],
@@ -36,6 +37,7 @@ const typeLabel = (type: string) => typeLabels[type] ?? type
 const typeListLabel = (types: string) => types.split(' / ').map(typeLabel).join(' / ')
 const attackCategoryLabel = (category: string) => category === 'physical' ? 'FÍSICO' : category === 'special' ? 'ESPECIAL ATAQUE' : 'STATUS'
 const attackCategoryIcon = (category: string) => category === 'physical' ? '●' : category === 'special' ? '✦' : '○'
+const moveAttackLabel = (category: string) => category === 'physical' ? 'Físico' : category === 'special' ? 'Especial Ataque' : 'Status'
 
 function App() { return <Atlas /> }
 
@@ -46,6 +48,7 @@ function Atlas() {
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
   const [region, setRegion] = useState('Todas Regiões')
+  const [megaFilter, setMegaFilter] = useState('Todas as formas')
   const [sort, setSort] = useState('Ordem A-Z')
   const [tmType, setTmType] = useState('Todos os tipos')
   const [tmRange, setTmRange] = useState('Todos os alcances')
@@ -61,8 +64,9 @@ function Atlas() {
 
   const filteredPokemon = useMemo(() => [...pokemon]
     .filter((entry) => region === 'Todas Regiões' || entry.region === region)
+    .filter((entry) => megaFilter === 'Todas as formas' || entry.form === 'Mega')
     .filter((entry) => `${entry.name} ${entry.type} ${entry.eggGroup} ${entry.region}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, sort])
+    .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, megaFilter, sort])
   const filteredTms = useMemo(() => [...tms]
     .filter((entry) => tmType === 'Todos os tipos' || entry.type === tmType)
     .filter((entry) => tmRange === 'Todos os alcances' || (tmRange === 'Área' ? entry.isArea : !entry.isArea))
@@ -78,19 +82,19 @@ function Atlas() {
   return (
     <main className="app-shell">
       <aside className="sidebar">
-        <div className="brand"><span className="brand-mark">✦</span><span>PK HUNT<br /><b>DB</b></span></div>
-        <p className="eyebrow">BANCO DE DADOS</p>
+        <div className="brand"><span className="brand-mark">✦</span><span>PK HUNT<br /><b>DATABASE</b></span></div>
+        <p className="eyebrow">GUIA DO TREINADOR</p>
         <nav>
           <button className={view !== 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => setView('pokemon')}><span>◈</span> Pokedex <strong>{pokemon.length}</strong></button>
           <button className={view === 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => setView('tms')}><span>▦</span> TMs <strong>{tms.length}</strong></button>
         </nav>
-        <div className="sidebar-foot"><span className="status-dot" /> {status === 'ready' ? 'Wiki sincronizada' : status === 'error' ? 'Modo offline' : 'Sincronizando wiki'}<br /><small>Fonte: PokeHunt Wiki</small></div>
+        <div className="sidebar-foot"><span className="status-dot" /> {status === 'ready' ? 'Dados prontos para explorar' : status === 'error' ? 'Modo offline' : 'Buscando dados da wiki'}<br /><small>Uma jornada PokeHunt</small></div>
       </aside>
 
       <section className="content">
-        <header className="topbar"><div><p className="kicker">PK HUNT DB / BANCO DE DADOS</p><h1>{view === 'detail' ? selected.name : view === 'pokemon' ? 'Pokedex' : 'Golpes e TMs'}</h1></div><div className="version">{status === 'ready' ? '747' : '...'} ESPÉCIES <span>WIKI</span></div></header>
+        <header className="topbar"><div><p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p><h1>{view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : 'Golpes & TMs'}</h1></div><div className="version">{status === 'ready' ? '747' : '...'} ESPÉCIES <span>ATUALIZADO</span></div></header>
         {view === 'detail' ? <PokemonDetail selected={selected} onBack={() => setView('pokemon')} /> : <>
-          <div className="toolbar"><label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Buscar por nome, tipo, grupo ou região...' : 'Pesquisar golpe...'} /></label>{view === 'pokemon' ? <><select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select></> : <><select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select><select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select><select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></>}</div>
+          <div className="toolbar"><label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : 'Qual golpe você procura?'} /></label>{view === 'pokemon' ? <><select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="Filtrar por forma" value={megaFilter} onChange={(event) => setMegaFilter(event.target.value)}><option>Todas as formas</option><option>Apenas Megas</option></select><select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select></> : <><select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select><select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select><select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select></>}</div>
           {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : <TmTable items={filteredTms} />}
         </>}
       </section>
@@ -118,7 +122,7 @@ function TypeMatchups({ type }: { type: string }) {
 }
 
 function MoveSection({ title, number, moves }: { title: string; number: string; moves: Move[] }) {
-  return <div className="move-section"><div className="section-title"><span>{title}</span><i>{number}</i></div>{moves.length ? <div className="move-list">{moves.map((move) => <div key={`${move.name}-${move.level}`}><b>{move.level ? `Nível ${move.level}` : 'TM'}</b><span>{move.name}</span><em data-type={move.type}>{typeLabel(move.type)} · {move.power ?? 'STATUS'} · {move.cooldown}</em></div>)}</div> : <p className="empty-moves">A wiki ainda não publicou moveset para esta espécie.</p>}</div>
+  return <div className="move-section"><div className="section-title"><span>{title}</span><i>{number}</i></div>{moves.length ? <div className="move-list">{moves.map((move) => { const details = tms.find((item) => item.name === move.name); const attackCategory = details?.attackCategory ?? (move.power === null ? 'status' : 'special'); const effectCategory = attackCategory === 'status' || move.power === null ? 'Status' : 'Dano'; return <div key={`${move.name}-${move.level}`}><b>{move.level ? `Nível ${move.level}` : 'TM'}</b><span>{move.name}</span><em data-type={move.type}>{typeLabel(move.type)} · {move.power ?? 'STATUS'} · {move.cooldown}</em><small className="move-facts">{attackCategory !== 'status' && <span className={`move-fact attack-${attackCategory}`}>{moveAttackLabel(attackCategory)}</span>}<span className="move-fact">{details?.isArea ? 'Área' : 'Alvo único'}</span><span className={`move-fact effect-${effectCategory.toLowerCase()}`}>{effectCategory}</span></small></div> })}</div> : <p className="empty-moves">A wiki ainda não publicou moveset para esta espécie.</p>}</div>
 }
 
 function Stat({ label, value }: { label: string; value: string }) { return <div><small>{label}</small><b>{value}</b></div> }

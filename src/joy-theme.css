@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  font-family: 'Nunito', sans-serif;
+  color: #17324d;
+  background: #fff8dc;
+  --line: #d7e5ed;
+  --muted: #668096;
+  --ink: #17324d;
+  --blue: #1769d2;
+  --blue-dark: #114f9e;
+  --yellow: #ffd447;
+  --red: #ef5350;
+  --mint: #d9f5e8;
+  --sky: #e3f4ff;
+}
+
+body {
+  min-width: 320px;
+  background-color: #fff8dc;
+  background-image: radial-gradient(#f4d878 1.2px, transparent 1.2px), linear-gradient(135deg, #fffdf0 0%, #fff5ce 100%);
+  background-size: 22px 22px, 100% 100%;
+  color: var(--ink);
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.sidebar {
+  width: 258px;
+  padding: 28px 18px 22px;
+  border-right: 0;
+  background: linear-gradient(180deg, #1769d2 0%, #1254aa 100%);
+  color: #fff;
+  box-shadow: 6px 0 22px rgba(23, 80, 139, .14);
+}
+
+.brand {
+  gap: 10px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border: 3px solid var(--yellow);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--red);
+  font-size: 19px;
+  box-shadow: inset 0 -10px 0 #fff, inset 0 -13px 0 var(--red), 0 3px 0 rgba(0, 0, 0, .1);
+}
+
+.brand b { color: var(--yellow); }
+.eyebrow, .kicker, .panel-heading, .tm-head { font-family: 'Nunito', sans-serif; font-weight: 800; letter-spacing: .1em; }
+.eyebrow { margin: 64px 12px 15px; color: #bfe4ff; }
+
+nav { gap: 9px; }
+.nav-item {
+  border-radius: 8px;
+  color: #dbeeff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  padding: 14px 13px;
+  transition: transform .18s ease, background .18s ease;
+}
+.nav-item:hover { background: rgba(255, 255, 255, .12); transform: translateX(3px); }
+.nav-item span, .nav-item strong { color: #91c9f2; }
+.nav-item.active {
+  background: var(--yellow);
+  color: #17324d;
+  border-left: 0;
+  box-shadow: 0 4px 0 #d2a629;
+}
+.nav-item.active span, .nav-item.active strong { color: var(--blue-dark); }
+.sidebar-foot { color: #c3e1f8; font-family: 'Nunito', sans-serif; }
+.sidebar-foot small { color: #8fc0e6; }
+.status-dot { background: #65e69b; box-shadow: 0 0 0 4px rgba(101, 230, 155, .18); }
+
+.content { max-width: 1500px; padding: 38px clamp(20px, 5vw, 82px); }
+.topbar { border-bottom: 3px solid #c8dfec; padding-bottom: 22px; }
+.kicker { color: var(--red); }
+.topbar h1 {
+  font-family: 'Baloo 2', sans-serif;
+  color: var(--blue-dark);
+  font-size: clamp(38px, 4vw, 64px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: .95;
+}
+.version { color: var(--muted); font-family: 'Nunito', sans-serif; font-weight: 800; }
+.version span { color: var(--blue-dark); border: 2px solid #8fc4e8; border-radius: 999px; background: #e4f5ff; }
+
+.toolbar { margin: 24px 0 28px; }
+.search, select, .filter, .back-button {
+  border: 2px solid #b9d8e8;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .9);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+.search { box-shadow: 0 4px 0 rgba(135, 185, 214, .2); }
+.search input { color: var(--ink); font-family: 'Nunito', sans-serif; font-size: 14px; }
+.search input::placeholder { color: #7891a3; }
+.search:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(23, 105, 210, .14); }
+select { min-width: 140px; }
+
+.pokedex-list, .tm-panel, .detail-block {
+  border: 2px solid #c8dfe9;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 10px 24px rgba(53, 104, 133, .1);
+}
+.panel-heading { color: var(--blue-dark); background: #f3fbff; border-bottom: 2px solid #d9e9f0; }
+.pokedex-grid { gap: 10px; padding: 10px; background: #d8ebf3; }
+.pokedex-card {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 14px;
+  box-shadow: 0 3px 0 rgba(103, 151, 178, .16);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.pokedex-card:hover, .pokedex-card.selected { background: #fffef7; border-color: var(--yellow); box-shadow: 0 5px 0 #e7c84f; transform: translateY(-2px); }
+.card-top, .sort { color: #6f8798; font-family: 'Nunito', sans-serif; font-weight: 800; }
+.card-image { height: 128px; background: linear-gradient(180deg, #e8f7ff, #fafff2); border-radius: 6px; }
+.card-image img { filter: drop-shadow(0 7px 4px rgba(22, 84, 125, .16)); }
+.card-name b { color: var(--blue-dark); font-family: 'Baloo 2', sans-serif; font-size: 21px; }
+.card-name span { color: var(--red); }
+.card-types em { border-radius: 999px; background: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; }
+.card-stats { border-top-color: #dce9ee; color: #668096; font-family: 'Nunito', sans-serif; font-weight: 700; }
+.card-stats b { color: var(--ink); }
+
+.detail-hero {
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff3a8, #bdeaff 72%) !important;
+  color: var(--ink);
+  box-shadow: 0 8px 18px rgba(46, 117, 157, .14);
+}
+.detail-hero:after { border-color: rgba(23, 105, 210, .2); }
+.detail-hero .kicker, .detail-id { color: var(--blue-dark); }
+.detail-hero h2 { color: var(--blue-dark); font-family: 'Baloo 2', sans-serif; font-weight: 800; }
+.detail-symbol { color: rgba(239, 83, 80, .2); }
+.detail-image { filter: drop-shadow(0 12px 10px rgba(20, 77, 120, .2)); }
+.detail-block { padding: 25px 28px; }
+.section-title { color: var(--red); font-family: 'Nunito', sans-serif; font-weight: 800; }
+.section-title i { color: #8ba3b2; }
+.stat-card { border-color: #d3e5ed; border-radius: 8px; background: #f8fdff; }
+.stat-card b, .stats b { color: var(--blue-dark); font-family: 'Baloo 2', sans-serif; }
+.stat-card span { background: var(--red); }
+.stats div { border-top-color: #d7e7ed; }
+.stats small, .stat-card small, .matchup-group>small { color: #6c8495; font-family: 'Nunito', sans-serif; font-weight: 800; }
+.move-list div { border-bottom-color: #e0ebef; }
+.move-list b { color: var(--red); }
+.move-list span { color: var(--ink); font-weight: 800; }
+.move-list .move-facts { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; grid-column: 2 / -1; }
+.move-fact { border: 1px solid #b9d8e8; border-radius: 999px; padding: 3px 7px; color: #47708a; background: #f2fbff; font: 10px 'Nunito', sans-serif; font-weight: 800; }
+.move-fact.attack-physical { color: #a64a37; border-color: #f0b6a6; background: #fff2ee; }
+.move-fact.attack-special { color: #7b5a00; border-color: #eed276; background: #fff9dc; }
+.move-fact.attack-status, .move-fact.effect-status { color: #6c4e9b; border-color: #d3c0ed; background: #f7f1ff; }
+.move-fact.effect-dano { color: #22734f; border-color: #a9dfc2; background: #effcf4; }
+.matchups { border-top-color: #d8e8ee; }
+.matchup-group { border-left-color: var(--yellow); }
+.type-pill { border-radius: 999px; background: #fff; }
+.type-pill.fraquezas { background: #fff1ed; }
+.type-pill.resistências { background: #ebfff3; }
+.type-pill.imunidades { background: #f0f5f8; }
+
+.tm-head { color: var(--blue-dark); background: #f3fbff; border-bottom-color: #d9e9f0; }
+.tm-row { background: #fff; border-bottom-color: #e1edf1; color: #3c5d74; }
+.tm-row:hover { background: #fff8d9; }
+.tm-row strong { color: var(--blue-dark); font-family: 'Baloo 2', sans-serif; }
+.tm-row b { color: var(--red); }
+.tm-row span:nth-child(7) { background: #fff4b9; border-color: #e5c13c; color: #775d00 !important; }
+.back-button { color: var(--blue-dark); }
+.back-button:hover { color: #fff; border-color: var(--blue); background: var(--blue); }
+
+@media (max-width: 800px) {
+  .sidebar { width: 78px; padding: 24px 10px; }
+  .sidebar-foot { display: none; }
+  .brand>span:last-child, .eyebrow, .nav-item strong { display: none; }
+  .nav-item { justify-content: center; }
+  .content { padding: 28px 14px; }
+  .pokedex-grid { padding: 7px; gap: 7px; }
+  .topbar h1 { font-size: 39px; }
+  .move-list .move-facts { justify-content: flex-start; }
+}

@@ -1,4 +1,4 @@
-# PokeHunt Atlas
+# PK HUNT DATABASE
 
 Base React + Vite para a database/wiki do PokeHunt.
 
