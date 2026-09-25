@@ -1,0 +1,1 @@
+.tm-head,.tm-row{grid-template-columns:1.8fr 1fr 1.4fr .7fr .9fr 1.3fr 1.1fr}.tm-row{font-size:12px}.tm-row span:nth-child(n+3){color:#9eaba0}@media(max-width:800px){.tm-head,.tm-row{grid-template-columns:1.5fr 1fr 1.3fr .7fr;gap:8px}.tm-head span:nth-child(n+5),.tm-row span:nth-child(n+5){display:none}}
