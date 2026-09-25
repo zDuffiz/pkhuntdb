@@ -1,0 +1,3992 @@
+[
+  {
+    "name": "Abomasnow",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Abra",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Absol",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Accelgor",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aegislash",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aggron",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aipom",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Alakazam",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Alomomola",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Altaria",
+    "hardness": 340,
+    "range": "Médio +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Amaura",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ambipom",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Amoonguss",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ampharos",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Anorith",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Arbok",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Arcanine",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Archen",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Archeops",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ariados",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Armaldo",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aromatisse",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aron",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Audino",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Aurorus",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Avalugg",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Axew",
+    "hardness": 600,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Azumarill",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Azurill",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bagon",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Baltoy",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Banette",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Barbaracle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Barboach",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Basculin",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bastiodon",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bayleef",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Beartic",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Beautifly",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Beedrill",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Beheeyem",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Beldum",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bellossom",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bellsprout",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bergmite",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bibarel",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bidoof",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Binacle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bisharp",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Blastoise",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Blaziken",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Blissey",
+    "hardness": 340,
+    "range": "Médio +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Blitzle",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Boldore",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bonsly",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bouffalant",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Braixen",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Braviary",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Breloom",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bronzong",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bronzor",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Budew",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Buizel",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bulbasaur",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Buneary",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Bunnelby",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Burmy",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Butterfree",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cacnea",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cacturne",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Camerupt",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Carbink",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Carnivine",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Carracosta",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Carvanha",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cascoon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Castform",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Castform Fire",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Castform Ice",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Castform Water",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Caterpie",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chandelure",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chansey",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Charizard",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Charmander",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Charmeleon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chatot",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cherrim",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cherubi",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chesnaught",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chespin",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chikorita",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chimchar",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chimecho",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chinchou",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Chingling",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cinccino",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Clamperl",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Clauncher",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Clawitzer",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Claydol",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Clefable",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Clefairy",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cleffa",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cloyster",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cofagrigus",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Combee",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Combusken",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Conkeldurr",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Corphish",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Corsola",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cottonee",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cradily",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cranidos",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Crawdaunt",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Croagunk",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Crobat",
+    "hardness": 417,
+    "range": "Difícil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Croconaw",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Crustle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cryogonal",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cubchoo",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cubone",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Cyndaquil",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Darmanitan",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Darumaka",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dedenne",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Deerling",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Deino",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Delcatty",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Delibird",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Delphox",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dewgong",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dewott",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Diggersby",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Diglett",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ditto",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dodrio",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Doduo",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Donphan",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Doublade",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dragalge",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dragonair",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dragonite",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Drapion",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dratini",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Drifblim",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Drifloon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Drilbur",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Drowzee",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Druddigon",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ducklett",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dugtrio",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dunsparce",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Duosion",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Durant",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dusclops",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dusknoir",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Duskull",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dustox",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Dwebble",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Eelektrik",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Eelektross",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Eevee",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ekans",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Electabuzz",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Electivire",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Electrike",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Electrode",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Elekid",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Elgyem",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Emboar",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Emolga",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Empoleon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Escavalier",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Espeon",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Espurr",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Excadrill",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Exeggcute",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Exeggutor",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Exploud",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Farfetch'd",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Fearow",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Feebas",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Fennekin",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Feraligatr",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ferroseed",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ferrothorn",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Finneon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Flaaffy",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Flabebe",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Flareon",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Fletchinder",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Fletchling",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Floatzel",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Floette",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Florges",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Flygon",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Foongus",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Forretress",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Fraxure",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Frillish",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Froakie",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Frogadier",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Froslass",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Furfrou",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Furret",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gabite",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gallade",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Galvantula",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Garbodor",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Garchomp",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gardevoir",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gastly",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gastrodon",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gengar",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Geodude",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gible",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gigalith",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Girafarig",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Glaceon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Glalie",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Glameow",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gligar",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gliscor",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gloom",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gogoat",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Golbat",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Goldeen",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Golduck",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Golem",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Golett",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Golurk",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Goodra",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Goomy",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gorebyss",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gothita",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gothitelle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gothorita",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gourgeist",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Granbull",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Graveler",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Greninja",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Grimer",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Grotle",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Grovyle",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Growlithe",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Grumpig",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gulpin",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gurdurr",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Gyarados",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Happiny",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hariyama",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Haunter",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hawlucha",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Haxorus",
+    "hardness": 800,
+    "range": "Durão do OT",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Heatmor",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Heliolisk",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Helioptile",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Heracross",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Herdier",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hippopotas",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hippowdon",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hitmonchan",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hitmonlee",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hitmontop",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Honchkrow",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Honedge",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hoothoot",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hoppip",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Horsea",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Houndoom",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Houndour",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Huntail",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hydreigon",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Hypno",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Igglybuff",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Illumise",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Infernape",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Inkay",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ivysaur",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Jellicent",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Jigglypuff",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Jolteon",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Joltik",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Jumpluff",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Jynx",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kadabra",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kakuna",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kangaskhan",
+    "hardness": 340,
+    "range": "Médio +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Karrablast",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kecleon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kingdra",
+    "hardness": 417,
+    "range": "Difícil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kingler",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kirlia",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Klang",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Klefki",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Klink",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Klinklang",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Koffing",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Krabby",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kricketot",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Kricketune",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Krokorok",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Krookodile",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lairon",
+    "hardness": 340,
+    "range": "Médio +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lampent",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lanturn",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lapras",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Larvesta",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Larvitar",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Leafeon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Leavanny",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ledian",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ledyba",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lickilicky",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lickitung",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Liepard",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lileep",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lilligant",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lillipup",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Linoone",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Litleo",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Litwick",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lombre",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lopunny",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lotad",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Loudred",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lucario",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ludicolo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lumineon",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Lunatone",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Luvdisc",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Luxio",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Luxray",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Machamp",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Machoke",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Machop",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magby",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magcargo",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magikarp",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magmar",
+    "hardness": 417,
+    "range": "Difícil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magmortar",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magnemite",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magneton",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Magnezone",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Makuhita",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Malamar",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mamoswine",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mandibuzz",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Manectric",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mankey",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mantine",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mantyke",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Maractus",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mareep",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Marill",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Marowak",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Marshtomp",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Masquerain",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mawile",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Medicham",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Meditite",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Meganium",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Meowstic",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Meowth",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Metagross",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Metang",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Metapod",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mienfoo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mienshao",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mightyena",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Milotic",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Miltank",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mime Jr.",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Minccino",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Minun",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Misdreavus",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mismagius",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Monferno",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mothim",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mr. Mime",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Mudkip",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Muk",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Munchlax",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Munna",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Murkrow",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Musharna",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Natu",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidoking",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidoqueen",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidoran Female",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidoran Male",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidorina",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nidorino",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nincada",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ninetales",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ninjask",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Noctowl",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Noibat",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Noivern",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nosepass",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Numel",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Nuzleaf",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Octillery",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Oddish",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Onix",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Oshawott",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pachirisu",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Palpitoad",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pancham",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pangoro",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Panpour",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pansage",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pansear",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Paras",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Parasect",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Patrat",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pawniard",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pelipper",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Persian",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Petilil",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Phanpy",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Phantump",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pichu",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pidgeot",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pidgeotto",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pidgey",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pidove",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pignite",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pikachu",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Piloswine",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pineco",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pinsir",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Piplup",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Plusle",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Politoed",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Poliwag",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Poliwhirl",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Poliwrath",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ponyta",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Poochyena",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Porygon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Porygon-Z",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Porygon2",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Primeape",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Prinplup",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Probopass",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Psyduck",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pumpkaboo",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pupitar",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Purrloin",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Purugly",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Pyroar",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Quagsire",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Quilava",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Quilladin",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Qwilfish",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Raichu",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ralts",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rampardos",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rapidash",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Raticate",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rattata",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Relicanth",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Remoraid",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Reuniclus",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rhydon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rhyhorn",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rhyperion",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Riolu",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Roggenrola",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Roselia",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Roserade",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rotom",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Rufflet",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sableye",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Salamence",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Samurott",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sandile",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sandshrew",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sandslash",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sawk",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sawsbuck",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scatterbug",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sceptile",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scizor",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scolipede",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scrafty",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scraggy",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Scyther",
+    "hardness": 503,
+    "range": "Difícil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seadra",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seaking",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sealeo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seedot",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seel",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seismitoad",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sentret",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Serperior",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Servine",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Seviper",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sewaddle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sharpedo",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shedinja",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shelgon",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shellder",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shellos",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shelmet",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shieldon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shiftry",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shinx",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shroomish",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shuckle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Shuppet",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sigilyph",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Silcoon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Simipour",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Simisage",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Simisear",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skarmory",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skiddo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skiploom",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skitty",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skorupi",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skrelp",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Skuntank",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slaking",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slakoth",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sliggoo",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slowbro",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slowking",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slowpoke",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slugma",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Slurpuff",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Smeargle",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Smoochum",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sneasel",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Snivy",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Snorlax",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Snorunt",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Snover",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Snubbull",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Solosis",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Solrock",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spearow",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spewpa",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spheal",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spinarak",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spinda",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spiritomb",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spoink",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Spritzee",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Squirtle",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Stantler",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Staraptor",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Staravia",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Starly",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Starmie",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Staryu",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Steelix",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Stoutland",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Stunfisk",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Stunky",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sudowoodo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sunflora",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sunkern",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Surskit",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swablu",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swadloon",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swalot",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swampert",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swanna",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swellow",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swinub",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swirlix",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Swoobat",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Sylveon",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Taillow",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Talonflame",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tangela",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tangrowth",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tauros",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Teddiursa",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tentacool",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tentacruel",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tepig",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Throh",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Timburr",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tirtouga",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Togekiss",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Togepi",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Togetic",
+    "hardness": 340,
+    "range": "Médio +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Torchic",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Torkoal",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Torterra",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Totodile",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Toxicroak",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tranquill",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Trapinch",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Treecko",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Trevenant",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tropius",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Trubbish",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Turtwig",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tympole",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tynamo",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Typhlosion",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tyranitar",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tyrantrum",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tyrogue",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Tyrunt",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Umbreon",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Unfezant",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Unown",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Ursaring",
+    "hardness": 417,
+    "range": "Difícil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vanillish",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vanillite",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vanilluxe",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vaporeon",
+    "hardness": 274,
+    "range": "Médio",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Venipede",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Venomoth",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Venonat",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Venusaur",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vespiquen",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vibrava",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Victreebel",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vigoroth",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vileplume",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vivillon",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Volbeat",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Volcarona",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Voltorb",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vullaby",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Vulpix",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wailmer",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wailord",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Walrein",
+    "hardness": 417,
+    "range": "Difícil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wartortle",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Watchog",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Weavile",
+    "hardness": 611,
+    "range": "Difícil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Weedle",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Weepinbell",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Weezing",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Whimsicott",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Whirlipede",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Whiscash",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Whismur",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wigglytuff",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wingull",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wobbuffet",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Woobat",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wooper",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wormadam",
+    "hardness": 117,
+    "range": "Fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wurmple",
+    "hardness": 20,
+    "range": "Muito fácil",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Wynaut",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Xatu",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Yamask",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Yanma",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Yanmega",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zangoose",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zebstrika",
+    "hardness": 158,
+    "range": "Fácil +",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zigzagoon",
+    "hardness": 70,
+    "range": "Fácil −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zoroark",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zorua",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zubat",
+    "hardness": 209,
+    "range": "Médio −",
+    "recommendedBall": "Ultraball"
+  },
+  {
+    "name": "Zweilous",
+    "hardness": 6000,
+    "range": "Prêmio",
+    "recommendedBall": "Ultraball"
+  }
+]
