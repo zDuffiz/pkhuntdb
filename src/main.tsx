@@ -554,7 +554,7 @@ function MoveSection({ title, moves }: { title: string; moves: Move[] }) {
     { key: 'category', label: 'Tipo de Dano' },
     { key: 'power', label: 'Dano' },
     { key: 'range', label: 'Alcance' },
-    { key: 'cooldown', label: 'Cooldown' },
+    { key: 'cooldown', label: 'Recarga' },
   ]
   const originLabels: Record<string, string> = {
     'golpe da lista de nível': 'Aprende por nível',
