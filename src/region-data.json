@@ -1,0 +1,10401 @@
+[
+  {
+    "id": "floresta_1_1",
+    "name": "Orla da Mata 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 3,
+    "tier": 0,
+    "levelRange": "1-10",
+    "exp": 3,
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sunkern",
+        "weight": 30
+      },
+      {
+        "name": "Kricketot",
+        "weight": 20
+      },
+      {
+        "name": "Caterpie",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_2",
+    "name": "Orla da Mata 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 3,
+    "tier": 1,
+    "levelRange": "1-10",
+    "exp": 3,
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Weedle",
+        "weight": 30
+      },
+      {
+        "name": "Wurmple",
+        "weight": 20
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_3",
+    "name": "Orla da Mata 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 4,
+    "tier": 2,
+    "levelRange": "1-10",
+    "exp": 8,
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Kakuna",
+        "weight": 30
+      },
+      {
+        "name": "Metapod",
+        "weight": 20
+      },
+      {
+        "name": "Silcoon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_kalos_1",
+    "name": "Kalos 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 6,
+    "level": 4,
+    "tier": 3,
+    "levelRange": "1-10",
+    "exp": 8,
+    "types": [
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Scatterbug",
+        "weight": 30
+      },
+      {
+        "name": "Spewpa",
+        "weight": 20
+      },
+      {
+        "name": "Cascoon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_1",
+    "name": "Costa Rasa 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 4,
+    "tier": 4,
+    "levelRange": "1-10",
+    "exp": 8,
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Feebas",
+        "weight": 30
+      },
+      {
+        "name": "Magikarp",
+        "weight": 20
+      },
+      {
+        "name": "Wooper",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_1",
+    "name": "Campo Aberto 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 4,
+    "tier": 5,
+    "levelRange": "1-10",
+    "exp": 8,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Azurill",
+        "weight": 30
+      },
+      {
+        "name": "Igglybuff",
+        "weight": 20
+      },
+      {
+        "name": "Sentret",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_4",
+    "name": "Orla da Mata 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 7,
+    "tier": 6,
+    "levelRange": "1-10",
+    "exp": 43,
+    "types": [
+      "Bug",
+      "Grass",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Seedot",
+        "weight": 30
+      },
+      {
+        "name": "Burmy",
+        "weight": 20
+      },
+      {
+        "name": "Shedinja",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_2",
+    "name": "Campo Aberto 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 7,
+    "tier": 7,
+    "levelRange": "1-10",
+    "exp": 43,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cleffa",
+        "weight": 30
+      },
+      {
+        "name": "Happiny",
+        "weight": 20
+      },
+      {
+        "name": "Whismur",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_1",
+    "name": "Boca da Gruta 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 9,
+    "tier": 8,
+    "levelRange": "1-10",
+    "exp": 91,
+    "types": [
+      "Fighting",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Tyrogue",
+        "weight": 30
+      },
+      {
+        "name": "Makuhita",
+        "weight": 20
+      },
+      {
+        "name": "Diglett",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_1",
+    "name": "Kalos 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 9,
+    "tier": 9,
+    "levelRange": "1-10",
+    "exp": 91,
+    "types": [
+      "Normal",
+      "Dragon",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bunnelby",
+        "weight": 30
+      },
+      {
+        "name": "Noibat",
+        "weight": 20
+      },
+      {
+        "name": "Whismur",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_5",
+    "name": "Orla da Mata 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 10,
+    "tier": 10,
+    "levelRange": "1-10",
+    "exp": 125,
+    "types": [
+      "Bug",
+      "Flying",
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Combee",
+        "weight": 30
+      },
+      {
+        "name": "Hoppip",
+        "weight": 20
+      },
+      {
+        "name": "Spinarak",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_2",
+    "name": "Costa Rasa 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 10,
+    "tier": 11,
+    "levelRange": "1-10",
+    "exp": 125,
+    "types": [
+      "Water",
+      "Grass",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Lotad",
+        "weight": 30
+      },
+      {
+        "name": "Marill",
+        "weight": 20
+      },
+      {
+        "name": "Wingull",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_3",
+    "name": "Campo Aberto 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 3,
+    "level": 10,
+    "tier": 12,
+    "levelRange": "1-10",
+    "exp": 125,
+    "types": [
+      "Normal",
+      "Flying",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Zigzagoon",
+        "weight": 30
+      },
+      {
+        "name": "Starly",
+        "weight": 20
+      },
+      {
+        "name": "Togepi",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_4",
+    "name": "Campo Aberto 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 4,
+    "level": 10,
+    "tier": 13,
+    "levelRange": "1-10",
+    "exp": 125,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bidoof",
+        "weight": 30
+      },
+      {
+        "name": "Smeargle",
+        "weight": 20
+      },
+      {
+        "name": "Pidgey",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_1",
+    "name": "Subúrbio 1",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 11,
+    "tier": 14,
+    "levelRange": "11-20",
+    "exp": 166,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pichu",
+        "weight": 30
+      },
+      {
+        "name": "Shinx",
+        "weight": 20
+      },
+      {
+        "name": "Tynamo",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_5",
+    "name": "Campo Aberto 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 11,
+    "tier": 15,
+    "levelRange": "11-20",
+    "exp": 166,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Rattata",
+        "weight": 30
+      },
+      {
+        "name": "Patrat",
+        "weight": 20
+      },
+      {
+        "name": "Skitty",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_6",
+    "name": "Campo Aberto 6",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 12,
+    "tier": 16,
+    "levelRange": "11-20",
+    "exp": 216,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Hoothoot",
+        "weight": 30
+      },
+      {
+        "name": "Spearow",
+        "weight": 20
+      },
+      {
+        "name": "Pidove",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_1",
+    "name": "Claustro 1",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 12,
+    "tier": 17,
+    "levelRange": "11-20",
+    "exp": 216,
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Ralts",
+        "weight": 30
+      },
+      {
+        "name": "Kirlia",
+        "weight": 20
+      },
+      {
+        "name": "Chingling",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_6",
+    "name": "Orla da Mata 6",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 13,
+    "tier": 18,
+    "levelRange": "11-20",
+    "exp": 275,
+    "types": [
+      "Bug",
+      "Poison",
+      "Flying",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Venipede",
+        "weight": 30
+      },
+      {
+        "name": "Ledyba",
+        "weight": 20
+      },
+      {
+        "name": "Nincada",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_1_1",
+    "name": "Charco Raso 1",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 13,
+    "tier": 19,
+    "levelRange": "11-20",
+    "exp": 275,
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Zubat",
+        "weight": 30
+      },
+      {
+        "name": "Nidoran Male",
+        "weight": 20
+      },
+      {
+        "name": "Nidoran Female",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_7",
+    "name": "Campo Aberto 7",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 14,
+    "tier": 20,
+    "levelRange": "11-20",
+    "exp": 343,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Jigglypuff",
+        "weight": 30
+      },
+      {
+        "name": "Taillow",
+        "weight": 20
+      },
+      {
+        "name": "Lillipup",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_7",
+    "name": "Orla da Mata 7",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 15,
+    "tier": 21,
+    "levelRange": "11-20",
+    "exp": 422,
+    "types": [
+      "Grass",
+      "Bug",
+      "Water",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Surskit",
+        "weight": 30
+      },
+      {
+        "name": "Cherubi",
+        "weight": 20
+      },
+      {
+        "name": "Budew",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_2",
+    "name": "Boca da Gruta 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 3,
+    "level": 16,
+    "tier": 22,
+    "levelRange": "11-20",
+    "exp": 512,
+    "types": [
+      "Fighting",
+      "Psychic",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Meditite",
+        "weight": 30
+      },
+      {
+        "name": "Roggenrola",
+        "weight": 20
+      },
+      {
+        "name": "Riolu",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_1_8",
+    "name": "Orla da Mata 8",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 16,
+    "tier": 23,
+    "levelRange": "11-20",
+    "exp": 512,
+    "types": [
+      "Grass",
+      "Fairy",
+      "Bug"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cottonee",
+        "weight": 30
+      },
+      {
+        "name": "Petilil",
+        "weight": 20
+      },
+      {
+        "name": "Paras",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_1",
+    "name": "Sopé Nevado 1",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 16,
+    "tier": 24,
+    "levelRange": "11-20",
+    "exp": 512,
+    "types": [
+      "Ice",
+      "Ground",
+      "Water",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Swinub",
+        "weight": 30
+      },
+      {
+        "name": "Spheal",
+        "weight": 20
+      },
+      {
+        "name": "Bagon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_1",
+    "name": "Nave da Torre 1",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 16,
+    "tier": 25,
+    "levelRange": "11-20",
+    "exp": 512,
+    "types": [
+      "Ghost",
+      "Fire",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Litwick",
+        "weight": 30
+      },
+      {
+        "name": "Purrloin",
+        "weight": 20
+      },
+      {
+        "name": "Duskull",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_1",
+    "name": "Encosta de Cinzas 1",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 16,
+    "tier": 26,
+    "levelRange": "11-20",
+    "exp": 512,
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Slugma",
+        "weight": 30
+      },
+      {
+        "name": "Vulpix",
+        "weight": 20
+      },
+      {
+        "name": "Numel",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_2",
+    "name": "Subúrbio 2",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 17,
+    "tier": 27,
+    "levelRange": "11-20",
+    "exp": 614,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Mareep",
+        "weight": 30
+      },
+      {
+        "name": "Blitzle",
+        "weight": 20
+      },
+      {
+        "name": "Electrike",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_1_8",
+    "name": "Campo Aberto 8",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 17,
+    "tier": 28,
+    "levelRange": "11-20",
+    "exp": 614,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Slakoth",
+        "weight": 30
+      },
+      {
+        "name": "Meowth",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_3",
+    "name": "Boca da Gruta 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 4,
+    "level": 18,
+    "tier": 29,
+    "levelRange": "11-20",
+    "exp": 729,
+    "types": [
+      "Ground",
+      "Rock",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bonsly",
+        "weight": 30
+      },
+      {
+        "name": "Trapinch",
+        "weight": 20
+      },
+      {
+        "name": "Sandile",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_1",
+    "name": "Trilha Fechada 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 18,
+    "tier": 30,
+    "levelRange": "11-20",
+    "exp": 729,
+    "types": [
+      "Grass",
+      "Bug",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pineco",
+        "weight": 30
+      },
+      {
+        "name": "Foongus",
+        "weight": 20
+      },
+      {
+        "name": "Shroomish",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_3",
+    "name": "Costa Rasa 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 18,
+    "tier": 31,
+    "levelRange": "11-20",
+    "exp": 729,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Tympole",
+        "weight": 30
+      },
+      {
+        "name": "Horsea",
+        "weight": 20
+      },
+      {
+        "name": "Poliwag",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_2",
+    "name": "Kalos 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 18,
+    "tier": 32,
+    "levelRange": "11-20",
+    "exp": 729,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Fletchling",
+        "weight": 30
+      },
+      {
+        "name": "Flabebe",
+        "weight": 20
+      },
+      {
+        "name": "Meowth",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_2",
+    "name": "Claustro 2",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 18,
+    "tier": 33,
+    "levelRange": "11-20",
+    "exp": 729,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gothita",
+        "weight": 30
+      },
+      {
+        "name": "Solosis",
+        "weight": 20
+      },
+      {
+        "name": "Munna",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_4",
+    "name": "Boca da Gruta 4",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 3,
+    "level": 19,
+    "tier": 34,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Ground",
+      "Rock",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Baltoy",
+        "weight": 30
+      },
+      {
+        "name": "Geodude",
+        "weight": 20
+      },
+      {
+        "name": "Larvitar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_3",
+    "name": "Subúrbio 3",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 3,
+    "level": 19,
+    "tier": 35,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Beldum",
+        "weight": 30
+      },
+      {
+        "name": "Bronzor",
+        "weight": 20
+      },
+      {
+        "name": "Klink",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_2",
+    "name": "Sopé Nevado 2",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 1,
+    "level": 19,
+    "tier": 36,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Dragon",
+      "Ground",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dratini",
+        "weight": 30
+      },
+      {
+        "name": "Gible",
+        "weight": 20
+      },
+      {
+        "name": "Snorunt",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_1_2",
+    "name": "Charco Raso 2",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 19,
+    "tier": 37,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Poison",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Ekans",
+        "weight": 30
+      },
+      {
+        "name": "Croagunk",
+        "weight": 20
+      },
+      {
+        "name": "Gulpin",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_1",
+    "name": "Pastagem Alta 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 5,
+    "level": 19,
+    "tier": 38,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Minccino",
+        "weight": 20
+      },
+      {
+        "name": "Snubbull",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_2",
+    "name": "Nave da Torre 2",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 19,
+    "tier": 39,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Ghost",
+      "Dark",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Shuppet",
+        "weight": 30
+      },
+      {
+        "name": "Deino",
+        "weight": 20
+      },
+      {
+        "name": "Yamask",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_kalos_1",
+    "name": "Kalos 1",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 6,
+    "level": 19,
+    "tier": 40,
+    "levelRange": "11-20",
+    "exp": 857,
+    "types": [
+      "Dark",
+      "Dragon",
+      "Ghost",
+      "Grass",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Inkay",
+        "weight": 30
+      },
+      {
+        "name": "Phantump",
+        "weight": 20
+      },
+      {
+        "name": "Deino",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_5",
+    "name": "Boca da Gruta 5",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 20,
+    "tier": 41,
+    "levelRange": "11-20",
+    "exp": 1000,
+    "types": [
+      "Ground",
+      "Ghost",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sandshrew",
+        "weight": 30
+      },
+      {
+        "name": "Golett",
+        "weight": 20
+      },
+      {
+        "name": "Machop",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_2",
+    "name": "Trilha Fechada 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 20,
+    "tier": 42,
+    "levelRange": "11-20",
+    "exp": 1000,
+    "types": [
+      "Grass",
+      "Poison",
+      "Steel",
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bellsprout",
+        "weight": 30
+      },
+      {
+        "name": "Ferroseed",
+        "weight": 20
+      },
+      {
+        "name": "Shelmet",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_4",
+    "name": "Costa Rasa 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 20,
+    "tier": 43,
+    "levelRange": "11-20",
+    "exp": 1000,
+    "types": [
+      "Water",
+      "Dark",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Remoraid",
+        "weight": 30
+      },
+      {
+        "name": "Carvanha",
+        "weight": 20
+      },
+      {
+        "name": "Ducklett",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_3",
+    "name": "Sopé Nevado 3",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 5,
+    "level": 20,
+    "tier": 44,
+    "levelRange": "11-20",
+    "exp": 1000,
+    "types": [
+      "Ice",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cubchoo",
+        "weight": 30
+      },
+      {
+        "name": "Smoochum",
+        "weight": 20
+      },
+      {
+        "name": "Vanillite",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_kalos_1",
+    "name": "Kalos 1",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 6,
+    "level": 20,
+    "tier": 45,
+    "levelRange": "11-20",
+    "exp": 1000,
+    "types": [
+      "Ice",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Goomy",
+        "weight": 30
+      },
+      {
+        "name": "Bergmite",
+        "weight": 20
+      },
+      {
+        "name": "Cubchoo",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_6",
+    "name": "Boca da Gruta 6",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 21,
+    "tier": 46,
+    "levelRange": "21-30",
+    "exp": 1158,
+    "types": [
+      "Fighting",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Mankey",
+        "weight": 30
+      },
+      {
+        "name": "Timburr",
+        "weight": 20
+      },
+      {
+        "name": "Cubone",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_kalos_1",
+    "name": "Kalos 1",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 6,
+    "level": 21,
+    "tier": 47,
+    "levelRange": "21-30",
+    "exp": 1158,
+    "types": [
+      "Steel",
+      "Electric",
+      "Ghost",
+      "Normal",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Helioptile",
+        "weight": 30
+      },
+      {
+        "name": "Honedge",
+        "weight": 20
+      },
+      {
+        "name": "Beldum",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_3",
+    "name": "Trilha Fechada 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 21,
+    "tier": 48,
+    "levelRange": "21-30",
+    "exp": 1158,
+    "types": [
+      "Bug",
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Venonat",
+        "weight": 30
+      },
+      {
+        "name": "Snivy",
+        "weight": 20
+      },
+      {
+        "name": "Sewaddle",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_5",
+    "name": "Costa Rasa 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 21,
+    "tier": 49,
+    "levelRange": "21-30",
+    "exp": 1158,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Shellder",
+        "weight": 30
+      },
+      {
+        "name": "Corphish",
+        "weight": 20
+      },
+      {
+        "name": "Oshawott",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_2",
+    "name": "Encosta de Cinzas 2",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 5,
+    "level": 21,
+    "tier": 50,
+    "levelRange": "21-30",
+    "exp": 1158,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Tepig",
+        "weight": 30
+      },
+      {
+        "name": "Charmander",
+        "weight": 20
+      },
+      {
+        "name": "Chimchar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_6",
+    "name": "Costa Rasa 6",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 22,
+    "tier": 51,
+    "levelRange": "21-30",
+    "exp": 1331,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Mudkip",
+        "weight": 30
+      },
+      {
+        "name": "Piplup",
+        "weight": 20
+      },
+      {
+        "name": "Squirtle",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_2",
+    "name": "Pastagem Alta 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 22,
+    "tier": 52,
+    "levelRange": "21-30",
+    "exp": 1331,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Doduo",
+        "weight": 30
+      },
+      {
+        "name": "Glameow",
+        "weight": 20
+      },
+      {
+        "name": "Swablu",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_3",
+    "name": "Encosta de Cinzas 3",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 22,
+    "tier": 53,
+    "levelRange": "21-30",
+    "exp": 1331,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cyndaquil",
+        "weight": 30
+      },
+      {
+        "name": "Torchic",
+        "weight": 20
+      },
+      {
+        "name": "Darumaka",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_4",
+    "name": "Trilha Fechada 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 23,
+    "tier": 54,
+    "levelRange": "21-30",
+    "exp": 1521,
+    "types": [
+      "Grass",
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Treecko",
+        "weight": 30
+      },
+      {
+        "name": "Karrablast",
+        "weight": 20
+      },
+      {
+        "name": "Pansage",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_5",
+    "name": "Trilha Fechada 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 23,
+    "tier": 55,
+    "levelRange": "21-30",
+    "exp": 1521,
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bulbasaur",
+        "weight": 30
+      },
+      {
+        "name": "Chikorita",
+        "weight": 20
+      },
+      {
+        "name": "Turtwig",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_7",
+    "name": "Costa Rasa 7",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 23,
+    "tier": 56,
+    "levelRange": "21-30",
+    "exp": 1521,
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Totodile",
+        "weight": 30
+      },
+      {
+        "name": "Slowpoke",
+        "weight": 20
+      },
+      {
+        "name": "Panpour",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_3",
+    "name": "Claustro 3",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 1,
+    "level": 23,
+    "tier": 57,
+    "levelRange": "21-30",
+    "exp": 1521,
+    "types": [
+      "Psychic",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Abra",
+        "weight": 30
+      },
+      {
+        "name": "Mime Jr.",
+        "weight": 20
+      },
+      {
+        "name": "Natu",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_6",
+    "name": "Trilha Fechada 6",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 24,
+    "tier": 58,
+    "levelRange": "21-30",
+    "exp": 1728,
+    "types": [
+      "Bug",
+      "Electric",
+      "Grass",
+      "Poison",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Joltik",
+        "weight": 30
+      },
+      {
+        "name": "Oddish",
+        "weight": 20
+      },
+      {
+        "name": "Dwebble",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_1_8",
+    "name": "Costa Rasa 8",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 24,
+    "tier": 59,
+    "levelRange": "21-30",
+    "exp": 1728,
+    "types": [
+      "Water"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Goldeen",
+        "weight": 30
+      },
+      {
+        "name": "Psyduck",
+        "weight": 20
+      },
+      {
+        "name": "Krabby",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_kalos_1",
+    "name": "Kalos 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 6,
+    "level": 24,
+    "tier": 60,
+    "levelRange": "21-30",
+    "exp": 1728,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Froakie",
+        "weight": 30
+      },
+      {
+        "name": "Clauncher",
+        "weight": 20
+      },
+      {
+        "name": "Goldeen",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_4",
+    "name": "Subúrbio 4",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 1,
+    "level": 25,
+    "tier": 61,
+    "levelRange": "21-30",
+    "exp": 1953,
+    "types": [
+      "Electric",
+      "Steel",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pikachu",
+        "weight": 30
+      },
+      {
+        "name": "Magnemite",
+        "weight": 20
+      },
+      {
+        "name": "Aron",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_1",
+    "name": "Recife 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 4,
+    "level": 25,
+    "tier": 62,
+    "levelRange": "21-30",
+    "exp": 1953,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Seel",
+        "weight": 30
+      },
+      {
+        "name": "Shellos",
+        "weight": 20
+      },
+      {
+        "name": "Buizel",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_3",
+    "name": "Pastagem Alta 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 25,
+    "tier": 63,
+    "levelRange": "21-30",
+    "exp": 1953,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Clefairy",
+        "weight": 30
+      },
+      {
+        "name": "Eevee",
+        "weight": 20
+      },
+      {
+        "name": "Teddiursa",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_4",
+    "name": "Claustro 4",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 25,
+    "tier": 64,
+    "levelRange": "21-30",
+    "exp": 1953,
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Woobat",
+        "weight": 30
+      },
+      {
+        "name": "Drowzee",
+        "weight": 20
+      },
+      {
+        "name": "Spoink",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_3",
+    "name": "Nave da Torre 3",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 1,
+    "level": 25,
+    "tier": 65,
+    "levelRange": "21-30",
+    "exp": 1953,
+    "types": [
+      "Dark",
+      "Ghost",
+      "Poison",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gastly",
+        "weight": 30
+      },
+      {
+        "name": "Houndour",
+        "weight": 20
+      },
+      {
+        "name": "Zorua",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_7",
+    "name": "Boca da Gruta 7",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 26,
+    "tier": 66,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Drilbur",
+        "weight": 45
+      },
+      {
+        "name": "Phanpy",
+        "weight": 15
+      }
+    ]
+  },
+  {
+    "id": "caverna_kalos_1",
+    "name": "Kalos 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 6,
+    "level": 26,
+    "tier": 67,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Fighting",
+      "Ground",
+      "Rock",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Binacle",
+        "weight": 30
+      },
+      {
+        "name": "Pancham",
+        "weight": 20
+      },
+      {
+        "name": "Hippopotas",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_7",
+    "name": "Trilha Fechada 7",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 26,
+    "tier": 68,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Grass",
+      "Psychic",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Exeggcute",
+        "weight": 30
+      },
+      {
+        "name": "Snover",
+        "weight": 20
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_kalos_2",
+    "name": "Kalos 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 6,
+    "level": 26,
+    "tier": 69,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Chespin",
+        "weight": 30
+      },
+      {
+        "name": "Skiddo",
+        "weight": 20
+      },
+      {
+        "name": "Cacnea",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_2",
+    "name": "Recife 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 26,
+    "tier": 70,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Water",
+      "Electric",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Chinchou",
+        "weight": 30
+      },
+      {
+        "name": "Finneon",
+        "weight": 20
+      },
+      {
+        "name": "Frillish",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_1_3",
+    "name": "Charco Raso 3",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 26,
+    "tier": 71,
+    "levelRange": "21-30",
+    "exp": 2197,
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Grimer",
+        "weight": 20
+      },
+      {
+        "name": "Stunky",
+        "weight": 10
+      },
+      {
+        "name": "Skrelp",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_1_4",
+    "name": "Charco Raso 4",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 5,
+    "level": 27,
+    "tier": 72,
+    "levelRange": "21-30",
+    "exp": 2460,
+    "types": [
+      "Poison",
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Trubbish",
+        "weight": 30
+      },
+      {
+        "name": "Skorupi",
+        "weight": 20
+      },
+      {
+        "name": "Koffing",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_3",
+    "name": "Recife 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 28,
+    "tier": 73,
+    "levelRange": "21-30",
+    "exp": 2744,
+    "types": [
+      "Water",
+      "Poison",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Tentacool",
+        "weight": 30
+      },
+      {
+        "name": "Lombre",
+        "weight": 20
+      },
+      {
+        "name": "Staryu",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_4",
+    "name": "Pastagem Alta 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 5,
+    "level": 28,
+    "tier": 74,
+    "levelRange": "21-30",
+    "exp": 2744,
+    "types": [
+      "Normal",
+      "Flying",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Deerling",
+        "weight": 30
+      },
+      {
+        "name": "Staravia",
+        "weight": 20
+      },
+      {
+        "name": "Pidgeotto",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_3",
+    "name": "Kalos 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 28,
+    "tier": 75,
+    "levelRange": "21-30",
+    "exp": 2744,
+    "types": [
+      "Fairy",
+      "Flying",
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Spritzee",
+        "weight": 30
+      },
+      {
+        "name": "Swirlix",
+        "weight": 20
+      },
+      {
+        "name": "Staravia",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_kalos_1",
+    "name": "Kalos 1",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 6,
+    "level": 28,
+    "tier": 76,
+    "levelRange": "21-30",
+    "exp": 2744,
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Fennekin",
+        "weight": 30
+      },
+      {
+        "name": "Litleo",
+        "weight": 20
+      },
+      {
+        "name": "Growlithe",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_8",
+    "name": "Boca da Gruta 8",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 3,
+    "level": 29,
+    "tier": 77,
+    "levelRange": "21-30",
+    "exp": 3049,
+    "types": [
+      "Ground",
+      "Rock",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Vibrava",
+        "weight": 36
+      },
+      {
+        "name": "Rhyhorn",
+        "weight": 24
+      }
+    ]
+  },
+  {
+    "id": "torre_1_4",
+    "name": "Nave da Torre 4",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 29,
+    "tier": 78,
+    "levelRange": "21-30",
+    "exp": 3049,
+    "types": [
+      "Dark",
+      "Steel",
+      "Ghost",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pawniard",
+        "weight": 20
+      },
+      {
+        "name": "Drifloon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_1_9",
+    "name": "Boca da Gruta 9",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 30,
+    "tier": 79,
+    "levelRange": "21-30",
+    "exp": 3375,
+    "types": [
+      "Fighting",
+      "Rock",
+      "Steel",
+      "Ground",
+      "Dark"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Mienfoo",
+        "weight": 45
+      },
+      {
+        "name": "Krokorok",
+        "weight": 15
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_1",
+    "name": "Galeria Funda 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 31,
+    "tier": 80,
+    "levelRange": "31-40",
+    "exp": 3724,
+    "types": [
+      "Rock",
+      "Water",
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Hippopotas",
+        "weight": 40
+      },
+      {
+        "name": "Nosepass",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_5",
+    "name": "Subúrbio 5",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 1,
+    "level": 31,
+    "tier": 81,
+    "levelRange": "31-40",
+    "exp": 3724,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Voltorb",
+        "weight": 30
+      },
+      {
+        "name": "Elekid",
+        "weight": 20
+      },
+      {
+        "name": "Luxio",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_5",
+    "name": "Pastagem Alta 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 5,
+    "level": 31,
+    "tier": 82,
+    "levelRange": "31-40",
+    "exp": 3724,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Buneary",
+        "weight": 30
+      },
+      {
+        "name": "Rufflet",
+        "weight": 20
+      },
+      {
+        "name": "Tranquill",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_4",
+    "name": "Encosta de Cinzas 4",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 5,
+    "level": 32,
+    "tier": 83,
+    "levelRange": "21-30",
+    "exp": 4096,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pansear",
+        "weight": 30
+      },
+      {
+        "name": "Growlithe",
+        "weight": 20
+      },
+      {
+        "name": "Magby",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_2_8",
+    "name": "Trilha Fechada 8",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 33,
+    "tier": 84,
+    "levelRange": "21-30",
+    "exp": 4492,
+    "types": [
+      "Grass",
+      "Dark",
+      "Flying",
+      "Bug",
+      "Fire"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Nuzleaf",
+        "weight": 30
+      },
+      {
+        "name": "Skiploom",
+        "weight": 20
+      },
+      {
+        "name": "Larvesta",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_4",
+    "name": "Recife 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 33,
+    "tier": 85,
+    "levelRange": "21-30",
+    "exp": 4492,
+    "types": [
+      "Water",
+      "Flying",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Clamperl",
+        "weight": 36
+      },
+      {
+        "name": "Mantyke",
+        "weight": 24
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_4",
+    "name": "Sopé Nevado 4",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 5,
+    "level": 33,
+    "tier": 86,
+    "levelRange": "21-30",
+    "exp": 4492,
+    "types": [
+      "Ice",
+      "Dragon",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Axew",
+        "weight": 30
+      },
+      {
+        "name": "Delibird",
+        "weight": 20
+      },
+      {
+        "name": "Vanillish",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_6",
+    "name": "Pastagem Alta 6",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 3,
+    "level": 33,
+    "tier": 87,
+    "levelRange": "31-40",
+    "exp": 4492,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Aipom",
+        "weight": 30
+      },
+      {
+        "name": "Loudred",
+        "weight": 20
+      },
+      {
+        "name": "Spinda",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_5",
+    "name": "Claustro 5",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 33,
+    "tier": 88,
+    "levelRange": "21-30",
+    "exp": 4492,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Elgyem",
+        "weight": 30
+      },
+      {
+        "name": "Unown",
+        "weight": 20
+      },
+      {
+        "name": "Duosion",
+        "weight": 10
+      },
+      {
+        "name": "Espurr",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_5",
+    "name": "Nave da Torre 5",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 33,
+    "tier": 89,
+    "levelRange": "31-40",
+    "exp": 4492,
+    "types": [
+      "Dark",
+      "Fighting",
+      "Ghost",
+      "Fire",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Scraggy",
+        "weight": 30
+      },
+      {
+        "name": "Lampent",
+        "weight": 20
+      },
+      {
+        "name": "Vullaby",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_1",
+    "name": "Bosque Antigo 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 36,
+    "tier": 90,
+    "levelRange": "31-40",
+    "exp": 5832,
+    "types": [
+      "Bug",
+      "Poison",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Whirlipede",
+        "weight": 30
+      },
+      {
+        "name": "Swadloon",
+        "weight": 20
+      },
+      {
+        "name": "Kricketune",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_7",
+    "name": "Pastagem Alta 7",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 37,
+    "tier": 91,
+    "levelRange": "31-40",
+    "exp": 6332,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Herdier",
+        "weight": 30
+      },
+      {
+        "name": "Farfetch'd",
+        "weight": 20
+      },
+      {
+        "name": "Lickitung",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_2",
+    "name": "Galeria Funda 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 3,
+    "level": 38,
+    "tier": 92,
+    "levelRange": "31-40",
+    "exp": 6859,
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Onix",
+        "weight": 40
+      },
+      {
+        "name": "Boldore",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_6",
+    "name": "Subúrbio 6",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 38,
+    "tier": 93,
+    "levelRange": "31-40",
+    "exp": 6859,
+    "types": [
+      "Electric",
+      "Steel",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Flaaffy",
+        "weight": 30
+      },
+      {
+        "name": "Mawile",
+        "weight": 20
+      },
+      {
+        "name": "Eelektrik",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_6",
+    "name": "Nave da Torre 6",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 3,
+    "level": 38,
+    "tier": 94,
+    "levelRange": "41-50",
+    "exp": 6859,
+    "types": [
+      "Dark",
+      "Ghost",
+      "Poison",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sableye",
+        "weight": 30
+      },
+      {
+        "name": "Haunter",
+        "weight": 20
+      },
+      {
+        "name": "Murkrow",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_2",
+    "name": "Bosque Antigo 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 40,
+    "tier": 95,
+    "levelRange": "31-40",
+    "exp": 8000,
+    "types": [
+      "Bug",
+      "Poison",
+      "Flying",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dustox",
+        "weight": 30
+      },
+      {
+        "name": "Ledian",
+        "weight": 20
+      },
+      {
+        "name": "Weepinbell",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_5",
+    "name": "Recife 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 40,
+    "tier": 96,
+    "levelRange": "31-40",
+    "exp": 8000,
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Palpitoad",
+        "weight": 30
+      },
+      {
+        "name": "Poliwhirl",
+        "weight": 20
+      },
+      {
+        "name": "Wailmer",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_5",
+    "name": "Encosta de Cinzas 5",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 1,
+    "level": 40,
+    "tier": 97,
+    "levelRange": "41-50",
+    "exp": 8000,
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Charmeleon",
+        "weight": 30
+      },
+      {
+        "name": "Combusken",
+        "weight": 20
+      },
+      {
+        "name": "Monferno",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_3",
+    "name": "Bosque Antigo 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 41,
+    "tier": 98,
+    "levelRange": "41-50",
+    "exp": 8615,
+    "types": [
+      "Bug",
+      "Flying",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Yanma",
+        "weight": 30
+      },
+      {
+        "name": "Beautifly",
+        "weight": 20
+      },
+      {
+        "name": "Beedrill",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_4",
+    "name": "Bosque Antigo 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 41,
+    "tier": 99,
+    "levelRange": "41-50",
+    "exp": 8615,
+    "types": [
+      "Bug",
+      "Poison",
+      "Flying",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Butterfree",
+        "weight": 30
+      },
+      {
+        "name": "Gloom",
+        "weight": 20
+      },
+      {
+        "name": "Ariados",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_1_5",
+    "name": "Charco Raso 5",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 41,
+    "tier": 100,
+    "levelRange": "41-50",
+    "exp": 8615,
+    "types": [
+      "Poison"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Nidorina",
+        "weight": 30
+      },
+      {
+        "name": "Nidorino",
+        "weight": 20
+      },
+      {
+        "name": "Arbok",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_2_8",
+    "name": "Pastagem Alta 8",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 4,
+    "level": 41,
+    "tier": 101,
+    "levelRange": "41-50",
+    "exp": 8615,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Munchlax",
+        "weight": 30
+      },
+      {
+        "name": "Porygon",
+        "weight": 20
+      },
+      {
+        "name": "Delcatty",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_3",
+    "name": "Galeria Funda 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 42,
+    "tier": 102,
+    "levelRange": "41-50",
+    "exp": 9261,
+    "types": [
+      "Rock",
+      "Ground",
+      "Flying",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Graveler",
+        "weight": 45
+      },
+      {
+        "name": "Gurdurr",
+        "weight": 15
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_4",
+    "name": "Kalos 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 42,
+    "tier": 103,
+    "levelRange": "41-50",
+    "exp": 9261,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Floette",
+        "weight": 30
+      },
+      {
+        "name": "Diggersby",
+        "weight": 20
+      },
+      {
+        "name": "Delcatty",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_1_6",
+    "name": "Claustro 6",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 42,
+    "tier": 104,
+    "levelRange": "41-50",
+    "exp": 9261,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gothorita",
+        "weight": 30
+      },
+      {
+        "name": "Kadabra",
+        "weight": 20
+      },
+      {
+        "name": "Wobbuffet",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_kalos_2",
+    "name": "Kalos 2",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 6,
+    "level": 42,
+    "tier": 105,
+    "levelRange": "41-50",
+    "exp": 9261,
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Fletchinder",
+        "weight": 30
+      },
+      {
+        "name": "Braixen",
+        "weight": 20
+      },
+      {
+        "name": "Charmeleon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_7",
+    "name": "Subúrbio 7",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 3,
+    "level": 44,
+    "tier": 106,
+    "levelRange": "41-50",
+    "exp": 10648,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Minun",
+        "weight": 30
+      },
+      {
+        "name": "Pachirisu",
+        "weight": 20
+      },
+      {
+        "name": "Plusle",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_5",
+    "name": "Bosque Antigo 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 44,
+    "tier": 107,
+    "levelRange": "41-50",
+    "exp": 10648,
+    "types": [
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bayleef",
+        "weight": 30
+      },
+      {
+        "name": "Grotle",
+        "weight": 20
+      },
+      {
+        "name": "Grovyle",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_6",
+    "name": "Recife 6",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 44,
+    "tier": 108,
+    "levelRange": "41-50",
+    "exp": 10648,
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Croconaw",
+        "weight": 30
+      },
+      {
+        "name": "Marshtomp",
+        "weight": 20
+      },
+      {
+        "name": "Prinplup",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_kalos_2",
+    "name": "Kalos 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 6,
+    "level": 44,
+    "tier": 109,
+    "levelRange": "41-50",
+    "exp": 10648,
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Frogadier",
+        "weight": 30
+      },
+      {
+        "name": "Croconaw",
+        "weight": 20
+      },
+      {
+        "name": "Marshtomp",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_4",
+    "name": "Galeria Funda 4",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 45,
+    "tier": 110,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Fighting",
+      "Psychic",
+      "Rock",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Machoke",
+        "weight": 30
+      },
+      {
+        "name": "Medicham",
+        "weight": 20
+      },
+      {
+        "name": "Pupitar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_6",
+    "name": "Bosque Antigo 6",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 45,
+    "tier": 111,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Grass",
+      "Poison",
+      "Bug"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Ivysaur",
+        "weight": 30
+      },
+      {
+        "name": "Parasect",
+        "weight": 20
+      },
+      {
+        "name": "Servine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_kalos_3",
+    "name": "Kalos 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 6,
+    "level": 45,
+    "tier": 112,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Grass",
+      "Bug",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Quilladin",
+        "weight": 30
+      },
+      {
+        "name": "Vivillon",
+        "weight": 20
+      },
+      {
+        "name": "Bayleef",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_7",
+    "name": "Recife 7",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 45,
+    "tier": 113,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Wartortle",
+        "weight": 30
+      },
+      {
+        "name": "Corsola",
+        "weight": 20
+      },
+      {
+        "name": "Dewott",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_5",
+    "name": "Sopé Nevado 5",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 5,
+    "level": 45,
+    "tier": 114,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Dragon",
+      "Ground",
+      "Ice",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Fraxure",
+        "weight": 30
+      },
+      {
+        "name": "Gabite",
+        "weight": 20
+      },
+      {
+        "name": "Sealeo",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_1",
+    "name": "Colinas ao Vento 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 4,
+    "level": 45,
+    "tier": 115,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Flying",
+      "Normal",
+      "Fairy",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Togetic",
+        "weight": 30
+      },
+      {
+        "name": "Bibarel",
+        "weight": 20
+      },
+      {
+        "name": "Chatot",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_kalos_2",
+    "name": "Kalos 2",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 6,
+    "level": 45,
+    "tier": 116,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Ghost",
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pumpkaboo",
+        "weight": 30
+      },
+      {
+        "name": "Trevenant",
+        "weight": 20
+      },
+      {
+        "name": "Haunter",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_1_6",
+    "name": "Encosta de Cinzas 6",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 45,
+    "tier": 117,
+    "levelRange": "41-50",
+    "exp": 11391,
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Quilava",
+        "weight": 30
+      },
+      {
+        "name": "Ponyta",
+        "weight": 20
+      },
+      {
+        "name": "Pignite",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_2",
+    "name": "Colinas ao Vento 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 46,
+    "tier": 118,
+    "levelRange": "41-50",
+    "exp": 12167,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Raticate",
+        "weight": 30
+      },
+      {
+        "name": "Dunsparce",
+        "weight": 20
+      },
+      {
+        "name": "Furret",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_3",
+    "name": "Colinas ao Vento 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 3,
+    "level": 47,
+    "tier": 119,
+    "levelRange": "41-50",
+    "exp": 12978,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Castform",
+        "weight": 30
+      },
+      {
+        "name": "Linoone",
+        "weight": 20
+      },
+      {
+        "name": "Watchog",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_5",
+    "name": "Galeria Funda 5",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 48,
+    "tier": 120,
+    "levelRange": "41-50",
+    "exp": 13824,
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sudowoodo",
+        "weight": 30
+      },
+      {
+        "name": "Dugtrio",
+        "weight": 20
+      },
+      {
+        "name": "Marowak",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_1_8",
+    "name": "Subúrbio 8",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 3,
+    "level": 48,
+    "tier": 121,
+    "levelRange": "41-50",
+    "exp": 13824,
+    "types": [
+      "Steel",
+      "Psychic",
+      "Electric",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Metang",
+        "weight": 20
+      },
+      {
+        "name": "Emolga",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_7",
+    "name": "Bosque Antigo 7",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 48,
+    "tier": 122,
+    "levelRange": "41-50",
+    "exp": 13824,
+    "types": [
+      "Bug",
+      "Grass",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Mothim",
+        "weight": 30
+      },
+      {
+        "name": "Wormadam",
+        "weight": 20
+      },
+      {
+        "name": "Sunflora",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_2_8",
+    "name": "Recife 8",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 49,
+    "tier": 123,
+    "levelRange": "41-50",
+    "exp": 14706,
+    "types": [
+      "Water",
+      "Fairy",
+      "Ground"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Azumarill",
+        "weight": 20
+      },
+      {
+        "name": "Quagsire",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_1_7",
+    "name": "Nave da Torre 7",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 2,
+    "level": 49,
+    "tier": 124,
+    "levelRange": "41-50",
+    "exp": 14706,
+    "types": [
+      "Dark",
+      "Dragon",
+      "Ice",
+      "Ghost"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Zweilous",
+        "weight": 30
+      },
+      {
+        "name": "Sneasel",
+        "weight": 20
+      },
+      {
+        "name": "Misdreavus",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_3_8",
+    "name": "Bosque Antigo 8",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 50,
+    "tier": 125,
+    "levelRange": "41-50",
+    "exp": 15625,
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Illumise",
+        "weight": 30
+      },
+      {
+        "name": "Volbeat",
+        "weight": 20
+      },
+      {
+        "name": "Tangela",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_1_6",
+    "name": "Sopé Nevado 6",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 1,
+    "level": 50,
+    "tier": 126,
+    "levelRange": "41-50",
+    "exp": 15625,
+    "types": [
+      "Dragon",
+      "Ice",
+      "Ground"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dragonair",
+        "weight": 30
+      },
+      {
+        "name": "Shelgon",
+        "weight": 20
+      },
+      {
+        "name": "Piloswine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_1",
+    "name": "Usina 1",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 3,
+    "level": 52,
+    "tier": 127,
+    "levelRange": "51-60",
+    "exp": 17576,
+    "types": [
+      "Steel",
+      "Rock",
+      "Electric",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Lairon",
+        "weight": 30
+      },
+      {
+        "name": "Klang",
+        "weight": 20
+      },
+      {
+        "name": "Rotom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_4",
+    "name": "Colinas ao Vento 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 52,
+    "tier": 128,
+    "levelRange": "51-60",
+    "exp": 17576,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Wigglytuff",
+        "weight": 30
+      },
+      {
+        "name": "Kecleon",
+        "weight": 20
+      },
+      {
+        "name": "Persian",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_kalos_2",
+    "name": "Kalos 2",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 6,
+    "level": 53,
+    "tier": 129,
+    "levelRange": "51-60",
+    "exp": 18610,
+    "types": [
+      "Steel",
+      "Electric",
+      "Fairy",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dedenne",
+        "weight": 30
+      },
+      {
+        "name": "Doublade",
+        "weight": 20
+      },
+      {
+        "name": "Klang",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_5",
+    "name": "Colinas ao Vento 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 3,
+    "level": 53,
+    "tier": 130,
+    "levelRange": "51-60",
+    "exp": 18610,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Vigoroth",
+        "weight": 30
+      },
+      {
+        "name": "Fearow",
+        "weight": 20
+      },
+      {
+        "name": "Audino",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_6",
+    "name": "Galeria Funda 6",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 54,
+    "tier": 131,
+    "levelRange": "51-60",
+    "exp": 19683,
+    "types": [
+      "Ground",
+      "Flying",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gligar",
+        "weight": 30
+      },
+      {
+        "name": "Sandslash",
+        "weight": 20
+      },
+      {
+        "name": "Hitmonchan",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_1",
+    "name": "Mar Aberto 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 54,
+    "tier": 132,
+    "levelRange": "51-60",
+    "exp": 19683,
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Qwilfish",
+        "weight": 30
+      },
+      {
+        "name": "Seadra",
+        "weight": 20
+      },
+      {
+        "name": "Seaking",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_1",
+    "name": "Caldeira 1",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 54,
+    "tier": 133,
+    "levelRange": "51-60",
+    "exp": 19683,
+    "types": [
+      "Fire",
+      "Rock",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Magcargo",
+        "weight": 20
+      },
+      {
+        "name": "Camerupt",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_1",
+    "name": "Raízes Torcidas 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 55,
+    "tier": 134,
+    "levelRange": "51-60",
+    "exp": 20797,
+    "types": [
+      "Grass",
+      "Bug",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cherrim",
+        "weight": 30
+      },
+      {
+        "name": "Venomoth",
+        "weight": 20
+      },
+      {
+        "name": "Carnivine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_6",
+    "name": "Colinas ao Vento 6",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 55,
+    "tier": 135,
+    "levelRange": "51-60",
+    "exp": 20797,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Chansey",
+        "weight": 30
+      },
+      {
+        "name": "Granbull",
+        "weight": 20
+      },
+      {
+        "name": "Noctowl",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_2_1",
+    "name": "Câmara Interior 1",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 55,
+    "tier": 136,
+    "levelRange": "51-60",
+    "exp": 20797,
+    "types": [
+      "Psychic",
+      "Flying",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Swoobat",
+        "weight": 30
+      },
+      {
+        "name": "Chimecho",
+        "weight": 20
+      },
+      {
+        "name": "Mr. Mime",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_kalos_2",
+    "name": "Kalos 2",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 6,
+    "level": 56,
+    "tier": 137,
+    "levelRange": "51-60",
+    "exp": 21952,
+    "types": [
+      "Ice",
+      "Dragon",
+      "Ground",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sliggoo",
+        "weight": 30
+      },
+      {
+        "name": "Piloswine",
+        "weight": 20
+      },
+      {
+        "name": "Jynx",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_1",
+    "name": "Campanário 1",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 3,
+    "level": 56,
+    "tier": 138,
+    "levelRange": "51-60",
+    "exp": 21952,
+    "types": [
+      "Ghost",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Liepard",
+        "weight": 30
+      },
+      {
+        "name": "Banette",
+        "weight": 20
+      },
+      {
+        "name": "Dusclops",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_7",
+    "name": "Galeria Funda 7",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 57,
+    "tier": 139,
+    "levelRange": "51-60",
+    "exp": 23149,
+    "types": [
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Hitmonlee",
+        "weight": 30
+      },
+      {
+        "name": "Hitmontop",
+        "weight": 20
+      },
+      {
+        "name": "Primeape",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_2",
+    "name": "Raízes Torcidas 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 57,
+    "tier": 140,
+    "levelRange": "51-60",
+    "exp": 23149,
+    "types": [
+      "Bug",
+      "Flying",
+      "Grass",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Masquerain",
+        "weight": 30
+      },
+      {
+        "name": "Ninjask",
+        "weight": 20
+      },
+      {
+        "name": "Breloom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_7",
+    "name": "Colinas ao Vento 7",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 4,
+    "level": 57,
+    "tier": 141,
+    "levelRange": "51-60",
+    "exp": 23149,
+    "types": [
+      "Normal",
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Purugly",
+        "weight": 30
+      },
+      {
+        "name": "Girafarig",
+        "weight": 20
+      },
+      {
+        "name": "Swellow",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_3",
+    "name": "Raízes Torcidas 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 58,
+    "tier": 142,
+    "levelRange": "51-60",
+    "exp": 24389,
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Jumpluff",
+        "weight": 30
+      },
+      {
+        "name": "Tropius",
+        "weight": 20
+      },
+      {
+        "name": "Maractus",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_2",
+    "name": "Mar Aberto 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 58,
+    "tier": 143,
+    "levelRange": "51-60",
+    "exp": 24389,
+    "types": [
+      "Water",
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Basculin",
+        "weight": 30
+      },
+      {
+        "name": "Lanturn",
+        "weight": 20
+      },
+      {
+        "name": "Lumineon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_8",
+    "name": "Galeria Funda 8",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 59,
+    "tier": 144,
+    "levelRange": "51-60",
+    "exp": 25672,
+    "types": [
+      "Fighting",
+      "Rock",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Lunatone",
+        "weight": 30
+      },
+      {
+        "name": "Sawk",
+        "weight": 20
+      },
+      {
+        "name": "Throh",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_2_1",
+    "name": "Lodaçal 1",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 59,
+    "tier": 145,
+    "levelRange": "51-60",
+    "exp": 25672,
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Golbat",
+        "weight": 30
+      },
+      {
+        "name": "Seviper",
+        "weight": 20
+      },
+      {
+        "name": "Garbodor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_3_8",
+    "name": "Colinas ao Vento 8",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 3,
+    "level": 59,
+    "tier": 146,
+    "levelRange": "51-60",
+    "exp": 25672,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Zangoose",
+        "weight": 30
+      },
+      {
+        "name": "Stantler",
+        "weight": 20
+      },
+      {
+        "name": "Cinccino",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_2",
+    "name": "Usina 2",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 1,
+    "level": 60,
+    "tier": 147,
+    "levelRange": "51-60",
+    "exp": 27000,
+    "types": [
+      "Electric",
+      "Steel",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Magneton",
+        "weight": 30
+      },
+      {
+        "name": "Skarmory",
+        "weight": 20
+      },
+      {
+        "name": "Manectric",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_4",
+    "name": "Raízes Torcidas 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 60,
+    "tier": 148,
+    "levelRange": "51-60",
+    "exp": 27000,
+    "types": [
+      "Bug",
+      "Grass",
+      "Poison",
+      "Steel",
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Amoonguss",
+        "weight": 30
+      },
+      {
+        "name": "Forretress",
+        "weight": 20
+      },
+      {
+        "name": "Galvantula",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_5",
+    "name": "Kalos 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 60,
+    "tier": 149,
+    "levelRange": "51-60",
+    "exp": 27000,
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Aromatisse",
+        "weight": 30
+      },
+      {
+        "name": "Furfrou",
+        "weight": 20
+      },
+      {
+        "name": "Cinccino",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_kalos_3",
+    "name": "Kalos 3",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 6,
+    "level": 61,
+    "tier": 150,
+    "levelRange": "61-70",
+    "exp": 28373,
+    "types": [
+      "Electric",
+      "Steel",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Klefki",
+        "weight": 30
+      },
+      {
+        "name": "Magneton",
+        "weight": 20
+      },
+      {
+        "name": "Manectric",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_3",
+    "name": "Mar Aberto 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 61,
+    "tier": 151,
+    "levelRange": "61-70",
+    "exp": 28373,
+    "types": [
+      "Water",
+      "Dark",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Crawdaunt",
+        "weight": 30
+      },
+      {
+        "name": "Alomomola",
+        "weight": 20
+      },
+      {
+        "name": "Swanna",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_4",
+    "name": "Mar Aberto 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 62,
+    "tier": 152,
+    "levelRange": "61-70",
+    "exp": 29791,
+    "types": [
+      "Water",
+      "Ice",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dewgong",
+        "weight": 30
+      },
+      {
+        "name": "Gastrodon",
+        "weight": 20
+      },
+      {
+        "name": "Kingler",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_2_1",
+    "name": "Cume 1",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 1,
+    "level": 62,
+    "tier": 153,
+    "levelRange": "61-70",
+    "exp": 29791,
+    "types": [
+      "Ice",
+      "Psychic",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Jynx",
+        "weight": 30
+      },
+      {
+        "name": "Froslass",
+        "weight": 20
+      },
+      {
+        "name": "Glalie",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_1",
+    "name": "Planalto 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 62,
+    "tier": 154,
+    "levelRange": "61-70",
+    "exp": 29791,
+    "types": [
+      "Normal",
+      "Flying",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dodrio",
+        "weight": 20
+      },
+      {
+        "name": "Sawsbuck",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_2_2",
+    "name": "Câmara Interior 2",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 62,
+    "tier": 155,
+    "levelRange": "61-70",
+    "exp": 29791,
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Grumpig",
+        "weight": 30
+      },
+      {
+        "name": "Xatu",
+        "weight": 20
+      },
+      {
+        "name": "Hypno",
+        "weight": 10
+      },
+      {
+        "name": "Meowstic",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_2_9",
+    "name": "Galeria Funda 9",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 63,
+    "tier": 156,
+    "levelRange": "61-70",
+    "exp": 31256,
+    "types": [
+      "Ground",
+      "Electric",
+      "Fighting",
+      "Ghost"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Stunfisk",
+        "weight": 36
+      },
+      {
+        "name": "Hariyama",
+        "weight": 24
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_5",
+    "name": "Raízes Torcidas 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 63,
+    "tier": 157,
+    "levelRange": "61-70",
+    "exp": 31256,
+    "types": [
+      "Grass",
+      "Bug",
+      "Flying",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Vespiquen",
+        "weight": 30
+      },
+      {
+        "name": "Cacturne",
+        "weight": 20
+      },
+      {
+        "name": "Lilligant",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_2",
+    "name": "Campanário 2",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 3,
+    "level": 63,
+    "tier": 158,
+    "levelRange": "61-70",
+    "exp": 31256,
+    "types": [
+      "Dark",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Absol",
+        "weight": 30
+      },
+      {
+        "name": "Cofagrigus",
+        "weight": 20
+      },
+      {
+        "name": "Spiritomb",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_2",
+    "name": "Caldeira 2",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 5,
+    "level": 63,
+    "tier": 159,
+    "levelRange": "61-70",
+    "exp": 31256,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Torkoal",
+        "weight": 30
+      },
+      {
+        "name": "Darmanitan",
+        "weight": 20
+      },
+      {
+        "name": "Heatmor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_6",
+    "name": "Raízes Torcidas 6",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 64,
+    "tier": 160,
+    "levelRange": "61-70",
+    "exp": 32768,
+    "types": [
+      "Grass",
+      "Dark",
+      "Fairy",
+      "Bug",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Shiftry",
+        "weight": 30
+      },
+      {
+        "name": "Whimsicott",
+        "weight": 20
+      },
+      {
+        "name": "Durant",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_5",
+    "name": "Mar Aberto 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 64,
+    "tier": 161,
+    "levelRange": "61-70",
+    "exp": 32768,
+    "types": [
+      "Water",
+      "Ghost",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Jellicent",
+        "weight": 30
+      },
+      {
+        "name": "Ludicolo",
+        "weight": 20
+      },
+      {
+        "name": "Octillery",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_2",
+    "name": "Planalto 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 4,
+    "level": 64,
+    "tier": 162,
+    "levelRange": "61-70",
+    "exp": 32768,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pidgeot",
+        "weight": 30
+      },
+      {
+        "name": "Lopunny",
+        "weight": 20
+      },
+      {
+        "name": "Ambipom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_7",
+    "name": "Raízes Torcidas 7",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 65,
+    "tier": 163,
+    "levelRange": "61-70",
+    "exp": 34328,
+    "types": [
+      "Bug",
+      "Rock",
+      "Poison",
+      "Grass",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Crustle",
+        "weight": 30
+      },
+      {
+        "name": "Scolipede",
+        "weight": 20
+      },
+      {
+        "name": "Ferrothorn",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_6",
+    "name": "Mar Aberto 6",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 65,
+    "tier": 164,
+    "levelRange": "61-70",
+    "exp": 34328,
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gorebyss",
+        "weight": 30
+      },
+      {
+        "name": "Huntail",
+        "weight": 20
+      },
+      {
+        "name": "Mantine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_2_2",
+    "name": "Lodaçal 2",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 4,
+    "level": 65,
+    "tier": 165,
+    "levelRange": "61-70",
+    "exp": 34328,
+    "types": [
+      "Poison",
+      "Dark",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Skuntank",
+        "weight": 20
+      },
+      {
+        "name": "Toxicroak",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_3",
+    "name": "Planalto 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 65,
+    "tier": 166,
+    "levelRange": "61-70",
+    "exp": 34328,
+    "types": [
+      "Normal",
+      "Flying",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Clefable",
+        "weight": 30
+      },
+      {
+        "name": "Staraptor",
+        "weight": 20
+      },
+      {
+        "name": "Unfezant",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_3",
+    "name": "Usina 3",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 1,
+    "level": 66,
+    "tier": 167,
+    "levelRange": "61-70",
+    "exp": 35937,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Raichu",
+        "weight": 30
+      },
+      {
+        "name": "Electabuzz",
+        "weight": 20
+      },
+      {
+        "name": "Electrode",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_3_7",
+    "name": "Mar Aberto 7",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 66,
+    "tier": 168,
+    "levelRange": "61-70",
+    "exp": 35937,
+    "types": [
+      "Water",
+      "Psychic",
+      "Rock"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Relicanth",
+        "weight": 30
+      },
+      {
+        "name": "Slowbro",
+        "weight": 20
+      },
+      {
+        "name": "Slowking",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_2_3",
+    "name": "Câmara Interior 3",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 66,
+    "tier": 169,
+    "levelRange": "61-70",
+    "exp": 35937,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Beheeyem",
+        "weight": 30
+      },
+      {
+        "name": "Musharna",
+        "weight": 20
+      },
+      {
+        "name": "Gothitelle",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_kalos_3",
+    "name": "Kalos 3",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 6,
+    "level": 66,
+    "tier": 170,
+    "levelRange": "61-70",
+    "exp": 35937,
+    "types": [
+      "Dark",
+      "Fighting",
+      "Ghost",
+      "Grass",
+      "Psychic"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Malamar",
+        "weight": 30
+      },
+      {
+        "name": "Gourgeist",
+        "weight": 20
+      },
+      {
+        "name": "Scrafty",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_1",
+    "name": "Veio de Rocha 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 67,
+    "tier": 171,
+    "levelRange": "61-70",
+    "exp": 37595,
+    "types": [
+      "Rock",
+      "Ground",
+      "Bug",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Rhydon",
+        "weight": 30
+      },
+      {
+        "name": "Golurk",
+        "weight": 30
+      }
+    ]
+  },
+  {
+    "id": "cidade_kalos_4",
+    "name": "Kalos 4",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 6,
+    "level": 67,
+    "tier": 172,
+    "levelRange": "61-70",
+    "exp": 37595,
+    "types": [
+      "Electric",
+      "Ghost",
+      "Normal",
+      "Steel"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Heliolisk",
+        "weight": 30
+      },
+      {
+        "name": "Aegislash",
+        "weight": 20
+      },
+      {
+        "name": "Electrode",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_4_8",
+    "name": "Raízes Torcidas 8",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 67,
+    "tier": 173,
+    "levelRange": "61-70",
+    "exp": 37595,
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bellossom",
+        "weight": 30
+      },
+      {
+        "name": "Victreebel",
+        "weight": 20
+      },
+      {
+        "name": "Vileplume",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_4",
+    "name": "Planalto 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 5,
+    "level": 67,
+    "tier": 174,
+    "levelRange": "61-70",
+    "exp": 37595,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Bouffalant",
+        "weight": 30
+      },
+      {
+        "name": "Exploud",
+        "weight": 20
+      },
+      {
+        "name": "Kangaskhan",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_3",
+    "name": "Campanário 3",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 67,
+    "tier": 175,
+    "levelRange": "61-70",
+    "exp": 37595,
+    "types": [
+      "Dark",
+      "Fighting",
+      "Steel",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Scrafty",
+        "weight": 30
+      },
+      {
+        "name": "Bisharp",
+        "weight": 20
+      },
+      {
+        "name": "Mismagius",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_2",
+    "name": "Veio de Rocha 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 1,
+    "level": 68,
+    "tier": 176,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Rock",
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Golem",
+        "weight": 30
+      },
+      {
+        "name": "Conkeldurr",
+        "weight": 30
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_1",
+    "name": "Coração Verde 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 68,
+    "tier": 177,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Bug",
+      "Grass",
+      "Ice",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Abomasnow",
+        "weight": 30
+      },
+      {
+        "name": "Accelgor",
+        "weight": 20
+      },
+      {
+        "name": "Escavalier",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_1",
+    "name": "Fossa 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 68,
+    "tier": 178,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Floatzel",
+        "weight": 40
+      },
+      {
+        "name": "Simipour",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "montanha_2_2",
+    "name": "Cume 2",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 5,
+    "level": 68,
+    "tier": 179,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Druddigon",
+        "weight": 30
+      },
+      {
+        "name": "Altaria",
+        "weight": 20
+      },
+      {
+        "name": "Beartic",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_2_3",
+    "name": "Lodaçal 3",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 68,
+    "tier": 180,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Weezing",
+        "weight": 30
+      },
+      {
+        "name": "Drapion",
+        "weight": 20
+      },
+      {
+        "name": "Muk",
+        "weight": 10
+      },
+      {
+        "name": "Dragalge",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_5",
+    "name": "Planalto 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 68,
+    "tier": 181,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Miltank",
+        "weight": 30
+      },
+      {
+        "name": "Tauros",
+        "weight": 20
+      },
+      {
+        "name": "Stoutland",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_2_4",
+    "name": "Câmara Interior 4",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 5,
+    "level": 68,
+    "tier": 182,
+    "levelRange": "61-70",
+    "exp": 39304,
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Reuniclus",
+        "weight": 30
+      },
+      {
+        "name": "Sigilyph",
+        "weight": 20
+      },
+      {
+        "name": "Alakazam",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_3",
+    "name": "Veio de Rocha 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 4,
+    "level": 69,
+    "tier": 183,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Ground",
+      "Rock",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Claydol",
+        "weight": 40
+      },
+      {
+        "name": "Donphan",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "caverna_kalos_2",
+    "name": "Kalos 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 6,
+    "level": 69,
+    "tier": 184,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Dark",
+      "Fighting",
+      "Ground",
+      "Psychic",
+      "Rock",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pangoro",
+        "weight": 30
+      },
+      {
+        "name": "Barbaracle",
+        "weight": 20
+      },
+      {
+        "name": "Claydol",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_kalos_3",
+    "name": "Kalos 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 6,
+    "level": 69,
+    "tier": 185,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Fairy",
+      "Fighting",
+      "Flying",
+      "Ground",
+      "Rock"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Carbink",
+        "weight": 30
+      },
+      {
+        "name": "Hawlucha",
+        "weight": 20
+      },
+      {
+        "name": "Donphan",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_2",
+    "name": "Coração Verde 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 5,
+    "level": 69,
+    "tier": 186,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Grass",
+      "Bug",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Simisage",
+        "weight": 30
+      },
+      {
+        "name": "Heracross",
+        "weight": 20
+      },
+      {
+        "name": "Leavanny",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_3",
+    "name": "Coração Verde 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 69,
+    "tier": 187,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Bug",
+      "Steel",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pinsir",
+        "weight": 30
+      },
+      {
+        "name": "Scizor",
+        "weight": 20
+      },
+      {
+        "name": "Scyther",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_2",
+    "name": "Fossa 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 69,
+    "tier": 188,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Golduck",
+        "weight": 30
+      },
+      {
+        "name": "Politoed",
+        "weight": 20
+      },
+      {
+        "name": "Wailord",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_4",
+    "name": "Campanário 4",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 4,
+    "level": 69,
+    "tier": 189,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Ghost",
+      "Flying",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Drifblim",
+        "weight": 20
+      },
+      {
+        "name": "Gengar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_3",
+    "name": "Caldeira 3",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 1,
+    "level": 69,
+    "tier": 190,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Magmar",
+        "weight": 30
+      },
+      {
+        "name": "Simisear",
+        "weight": 20
+      },
+      {
+        "name": "Rapidash",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_kalos_3",
+    "name": "Kalos 3",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 6,
+    "level": 69,
+    "tier": 191,
+    "levelRange": "61-70",
+    "exp": 41064,
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Talonflame",
+        "weight": 30
+      },
+      {
+        "name": "Rapidash",
+        "weight": 20
+      },
+      {
+        "name": "Simisear",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_4",
+    "name": "Usina 4",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 5,
+    "level": 70,
+    "tier": 192,
+    "levelRange": "61-70",
+    "exp": 42875,
+    "types": [
+      "Electric",
+      "Steel",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Zebstrika",
+        "weight": 30
+      },
+      {
+        "name": "Bronzong",
+        "weight": 20
+      },
+      {
+        "name": "Ampharos",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_4",
+    "name": "Veio de Rocha 4",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 71,
+    "tier": 193,
+    "levelRange": "71-80",
+    "exp": 44739,
+    "types": [
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Machamp",
+        "weight": 40
+      },
+      {
+        "name": "Excadrill",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_6",
+    "name": "Kalos 6",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 71,
+    "tier": 194,
+    "levelRange": "71-80",
+    "exp": 44739,
+    "types": [
+      "Fairy",
+      "Flying",
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Slurpuff",
+        "weight": 30
+      },
+      {
+        "name": "Sylveon",
+        "weight": 20
+      },
+      {
+        "name": "Braviary",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_5",
+    "name": "Campanário 5",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 2,
+    "level": 71,
+    "tier": 195,
+    "levelRange": "71-80",
+    "exp": 44739,
+    "types": [
+      "Dark",
+      "Flying",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Houndoom",
+        "weight": 30
+      },
+      {
+        "name": "Honchkrow",
+        "weight": 20
+      },
+      {
+        "name": "Mandibuzz",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_6",
+    "name": "Planalto 6",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 72,
+    "tier": 196,
+    "levelRange": "71-80",
+    "exp": 46656,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Ursaring",
+        "weight": 30
+      },
+      {
+        "name": "Braviary",
+        "weight": 20
+      },
+      {
+        "name": "Lickilicky",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_5",
+    "name": "Veio de Rocha 5",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 4,
+    "level": 73,
+    "tier": 197,
+    "levelRange": "71-80",
+    "exp": 48627,
+    "types": [
+      "Flying",
+      "Ground",
+      "Fighting",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gliscor",
+        "weight": 36
+      },
+      {
+        "name": "Mienshao",
+        "weight": 24
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_4",
+    "name": "Coração Verde 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 73,
+    "tier": 198,
+    "levelRange": "71-80",
+    "exp": 48627,
+    "types": [
+      "Bug",
+      "Rock",
+      "Grass",
+      "Poison",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Shuckle",
+        "weight": 30
+      },
+      {
+        "name": "Roserade",
+        "weight": 20
+      },
+      {
+        "name": "Yanmega",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_3",
+    "name": "Fossa 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 73,
+    "tier": 199,
+    "levelRange": "71-80",
+    "exp": 48627,
+    "types": [
+      "Water",
+      "Ground",
+      "Fighting",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Seismitoad",
+        "weight": 30
+      },
+      {
+        "name": "Poliwrath",
+        "weight": 20
+      },
+      {
+        "name": "Tentacruel",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_6",
+    "name": "Campanário 6",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 73,
+    "tier": 200,
+    "levelRange": "71-80",
+    "exp": 48627,
+    "types": [
+      "Dark",
+      "Ice",
+      "Ghost",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Weavile",
+        "weight": 30
+      },
+      {
+        "name": "Zoroark",
+        "weight": 20
+      },
+      {
+        "name": "Chandelure",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_5",
+    "name": "Usina 5",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 5,
+    "level": 74,
+    "tier": 201,
+    "levelRange": "71-80",
+    "exp": 50653,
+    "types": [
+      "Steel",
+      "Ground",
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Steelix",
+        "weight": 30
+      },
+      {
+        "name": "Eelektross",
+        "weight": 20
+      },
+      {
+        "name": "Klinklang",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_kalos_3",
+    "name": "Kalos 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 6,
+    "level": 74,
+    "tier": 202,
+    "levelRange": "71-80",
+    "exp": 50653,
+    "types": [
+      "Water",
+      "Dark",
+      "Poison"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Clawitzer",
+        "weight": 30
+      },
+      {
+        "name": "Greninja",
+        "weight": 20
+      },
+      {
+        "name": "Tentacruel",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_2_4",
+    "name": "Lodaçal 4",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 74,
+    "tier": 203,
+    "levelRange": "71-80",
+    "exp": 50653,
+    "types": [
+      "Poison",
+      "Ground",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Nidoking",
+        "weight": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "weight": 20
+      },
+      {
+        "name": "Crobat",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_6",
+    "name": "Veio de Rocha 6",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 5,
+    "level": 75,
+    "tier": 204,
+    "levelRange": "71-80",
+    "exp": 52734,
+    "types": [
+      "Ground",
+      "Rock",
+      "Dark",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gigalith",
+        "weight": 30
+      },
+      {
+        "name": "Krookodile",
+        "weight": 20
+      },
+      {
+        "name": "Flygon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_4",
+    "name": "Caldeira 4",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 1,
+    "level": 75,
+    "tier": 205,
+    "levelRange": "71-80",
+    "exp": 52734,
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Ninetales",
+        "weight": 30
+      },
+      {
+        "name": "Flareon",
+        "weight": 20
+      },
+      {
+        "name": "Emboar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_kalos_4",
+    "name": "Kalos 4",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 6,
+    "level": 75,
+    "tier": 206,
+    "levelRange": "71-80",
+    "exp": 52734,
+    "types": [
+      "Fire",
+      "Normal",
+      "Psychic"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Pyroar",
+        "weight": 30
+      },
+      {
+        "name": "Delphox",
+        "weight": 20
+      },
+      {
+        "name": "Flareon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_4",
+    "name": "Fossa 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 76,
+    "tier": 207,
+    "levelRange": "71-80",
+    "exp": 54872,
+    "types": [
+      "Water",
+      "Psychic",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Starmie",
+        "weight": 30
+      },
+      {
+        "name": "Cloyster",
+        "weight": 20
+      },
+      {
+        "name": "Vaporeon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_2_3",
+    "name": "Cume 3",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 4,
+    "level": 76,
+    "tier": 208,
+    "levelRange": "71-80",
+    "exp": 54872,
+    "types": [
+      "Ice",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Cryogonal",
+        "weight": 30
+      },
+      {
+        "name": "Glaceon",
+        "weight": 20
+      },
+      {
+        "name": "Mamoswine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_2_5",
+    "name": "Câmara Interior 5",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 4,
+    "level": 76,
+    "tier": 209,
+    "levelRange": "71-80",
+    "exp": 54872,
+    "types": [
+      "Psychic",
+      "Fighting",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gallade",
+        "weight": 30
+      },
+      {
+        "name": "Gardevoir",
+        "weight": 20
+      },
+      {
+        "name": "Espeon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_7",
+    "name": "Veio de Rocha 7",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 4,
+    "level": 77,
+    "tier": 210,
+    "levelRange": "71-80",
+    "exp": 57067,
+    "types": [
+      "Steel",
+      "Ground",
+      "Fighting",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Hippowdon",
+        "weight": 30
+      },
+      {
+        "name": "Lucario",
+        "weight": 20
+      },
+      {
+        "name": "Probopass",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_6",
+    "name": "Usina 6",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 4,
+    "level": 77,
+    "tier": 211,
+    "levelRange": "71-80",
+    "exp": 57067,
+    "types": [
+      "Electric",
+      "Steel",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Luxray",
+        "weight": 30
+      },
+      {
+        "name": "Jolteon",
+        "weight": 20
+      },
+      {
+        "name": "Aggron",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_5",
+    "name": "Coração Verde 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 4,
+    "level": 77,
+    "tier": 212,
+    "levelRange": "71-80",
+    "exp": 57067,
+    "types": [
+      "Grass",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Leafeon",
+        "weight": 30
+      },
+      {
+        "name": "Meganium",
+        "weight": 20
+      },
+      {
+        "name": "Torterra",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_6",
+    "name": "Coração Verde 6",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 1,
+    "level": 78,
+    "tier": 213,
+    "levelRange": "71-80",
+    "exp": 59319,
+    "types": [
+      "Grass",
+      "Poison",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Venusaur",
+        "weight": 30
+      },
+      {
+        "name": "Serperior",
+        "weight": 20
+      },
+      {
+        "name": "Exeggutor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_5",
+    "name": "Fossa 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 5,
+    "level": 78,
+    "tier": 214,
+    "levelRange": "71-80",
+    "exp": 59319,
+    "types": [
+      "Water",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Samurott",
+        "weight": 30
+      },
+      {
+        "name": "Blastoise",
+        "weight": 20
+      },
+      {
+        "name": "Empoleon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_7",
+    "name": "Planalto 7",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 78,
+    "tier": 215,
+    "levelRange": "71-80",
+    "exp": 59319,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Porygon2",
+        "weight": 30
+      },
+      {
+        "name": "Porygon-Z",
+        "weight": 20
+      },
+      {
+        "name": "Blissey",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_kalos_4",
+    "name": "Kalos 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 6,
+    "level": 79,
+    "tier": 216,
+    "levelRange": "71-80",
+    "exp": 61630,
+    "types": [
+      "Grass",
+      "Fighting",
+      "Psychic"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Chesnaught",
+        "weight": 30
+      },
+      {
+        "name": "Gogoat",
+        "weight": 20
+      },
+      {
+        "name": "Exeggutor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_6",
+    "name": "Fossa 6",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 2,
+    "level": 79,
+    "tier": 217,
+    "levelRange": "71-80",
+    "exp": 61630,
+    "types": [
+      "Water",
+      "Ice",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Feraligatr",
+        "weight": 30
+      },
+      {
+        "name": "Lapras",
+        "weight": 20
+      },
+      {
+        "name": "Swampert",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_5",
+    "name": "Caldeira 5",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 3,
+    "level": 79,
+    "tier": 218,
+    "levelRange": "71-80",
+    "exp": 61630,
+    "types": [
+      "Fire",
+      "Fighting",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Blaziken",
+        "weight": 30
+      },
+      {
+        "name": "Charizard",
+        "weight": 20
+      },
+      {
+        "name": "Infernape",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_2_4",
+    "name": "Cume 4",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 5,
+    "level": 80,
+    "tier": 219,
+    "levelRange": "71-80",
+    "exp": 64000,
+    "types": [
+      "Ice",
+      "Water",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Walrein",
+        "weight": 30
+      },
+      {
+        "name": "Vanilluxe",
+        "weight": 20
+      },
+      {
+        "name": "Haxorus",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_5_7",
+    "name": "Coração Verde 7",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 3,
+    "level": 81,
+    "tier": 220,
+    "levelRange": "81-90",
+    "exp": 66430,
+    "types": [
+      "Grass",
+      "Bug",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Sceptile",
+        "weight": 30
+      },
+      {
+        "name": "Tangrowth",
+        "weight": 20
+      },
+      {
+        "name": "Volcarona",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_4_7",
+    "name": "Fossa 7",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 1,
+    "level": 81,
+    "tier": 221,
+    "levelRange": "81-90",
+    "exp": 66430,
+    "types": [
+      "Water",
+      "Flying",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Gyarados",
+        "weight": 30
+      },
+      {
+        "name": "Kingdra",
+        "weight": 20
+      },
+      {
+        "name": "Milotic",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_2_6",
+    "name": "Caldeira 6",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 82,
+    "tier": 222,
+    "levelRange": "81-90",
+    "exp": 68921,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Typhlosion",
+        "weight": 30
+      },
+      {
+        "name": "Magmortar",
+        "weight": 20
+      },
+      {
+        "name": "Arcanine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_kalos_7",
+    "name": "Kalos 7",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 6,
+    "level": 83,
+    "tier": 223,
+    "levelRange": "81-90",
+    "exp": 71473,
+    "types": [
+      "Fairy",
+      "Flying",
+      "Dragon"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Noivern",
+        "weight": 30
+      },
+      {
+        "name": "Florges",
+        "weight": 20
+      },
+      {
+        "name": "Togekiss",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_elite_1",
+    "name": "Elite 1",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 84,
+    "tier": 224,
+    "levelRange": "84-100",
+    "exp": 74088,
+    "types": [
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Nidorino",
+        "weight": 30
+      },
+      {
+        "name": "Nidorina",
+        "weight": 20
+      },
+      {
+        "name": "Arbok",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_elite_1",
+    "name": "Elite 1",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 84,
+    "tier": 225,
+    "levelRange": "84-100",
+    "exp": 74088,
+    "types": [
+      "Psychic",
+      "Flying",
+      "Fairy"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Swoobat",
+        "weight": 30
+      },
+      {
+        "name": "Chimecho",
+        "weight": 20
+      },
+      {
+        "name": "Mr. Mime",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_elite_1",
+    "name": "Elite 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 85,
+    "tier": 226,
+    "levelRange": "84-100",
+    "exp": 76766,
+    "types": [
+      "Bug",
+      "Grass",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Pinsir",
+        "weight": 30
+      },
+      {
+        "name": "Leavanny",
+        "weight": 20
+      },
+      {
+        "name": "Heracross",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_elite_1",
+    "name": "Elite 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 85,
+    "tier": 227,
+    "levelRange": "84-100",
+    "exp": 76766,
+    "types": [
+      "Water",
+      "Ground",
+      "Fighting",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Seismitoad",
+        "weight": 30
+      },
+      {
+        "name": "Poliwrath",
+        "weight": 20
+      },
+      {
+        "name": "Tentacruel",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_2_7",
+    "name": "Campanário 7",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 4,
+    "level": 85,
+    "tier": 228,
+    "levelRange": "81-90",
+    "exp": 76766,
+    "types": [
+      "Dark",
+      "Ghost",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dusknoir",
+        "weight": 30
+      },
+      {
+        "name": "Umbreon",
+        "weight": 20
+      },
+      {
+        "name": "Hydreigon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_elite_1",
+    "name": "Elite 1",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 86,
+    "tier": 229,
+    "levelRange": "84-100",
+    "exp": 79507,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Torkoal",
+        "weight": 30
+      },
+      {
+        "name": "Darmanitan",
+        "weight": 20
+      },
+      {
+        "name": "Heatmor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_2_7",
+    "name": "Usina 7",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 4,
+    "level": 87,
+    "tier": 230,
+    "levelRange": "81-90",
+    "exp": 82313,
+    "types": [
+      "Electric",
+      "Steel",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Magnezone",
+        "weight": 30
+      },
+      {
+        "name": "Electivire",
+        "weight": 20
+      },
+      {
+        "name": "Metagross",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_kalos_3",
+    "name": "Kalos 3",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 6,
+    "level": 87,
+    "tier": 231,
+    "levelRange": "81-90",
+    "exp": 82313,
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "archetype": "boss",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Avalugg",
+        "weight": 30
+      },
+      {
+        "name": "Goodra",
+        "weight": 20
+      },
+      {
+        "name": "Haxorus",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_elite_2",
+    "name": "Elite 2",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 88,
+    "tier": 232,
+    "levelRange": "84-100",
+    "exp": 85184,
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Golbat",
+        "weight": 30
+      },
+      {
+        "name": "Seviper",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "planicie_4_8",
+    "name": "Planalto 8",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 1,
+    "level": 88,
+    "tier": 233,
+    "levelRange": "81-90",
+    "exp": 85184,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Snorlax",
+        "weight": 30
+      },
+      {
+        "name": "Togekiss",
+        "weight": 20
+      },
+      {
+        "name": "Slaking",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_elite_2",
+    "name": "Elite 2",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 88,
+    "tier": 234,
+    "levelRange": "84-100",
+    "exp": 85184,
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Xatu",
+        "weight": 30
+      },
+      {
+        "name": "Grumpig",
+        "weight": 20
+      },
+      {
+        "name": "Hypno",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_elite_2",
+    "name": "Elite 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 89,
+    "tier": 235,
+    "levelRange": "84-100",
+    "exp": 88121,
+    "types": [
+      "Bug",
+      "Rock",
+      "Flying",
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Shuckle",
+        "weight": 30
+      },
+      {
+        "name": "Yanmega",
+        "weight": 20
+      },
+      {
+        "name": "Roserade",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_elite_2",
+    "name": "Elite 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 89,
+    "tier": 236,
+    "levelRange": "84-100",
+    "exp": 88121,
+    "types": [
+      "Water",
+      "Psychic",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Starmie",
+        "weight": 30
+      },
+      {
+        "name": "Vaporeon",
+        "weight": 20
+      },
+      {
+        "name": "Cloyster",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_elite_1",
+    "name": "Elite 1",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 89,
+    "tier": 237,
+    "levelRange": "84-100",
+    "exp": 88121,
+    "types": [
+      "Ghost",
+      "Dark",
+      "Fighting",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Spiritomb",
+        "weight": 30
+      },
+      {
+        "name": "Scrafty",
+        "weight": 20
+      },
+      {
+        "name": "Bisharp",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_3_8",
+    "name": "Veio de Rocha 8",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 4,
+    "level": 90,
+    "tier": 238,
+    "levelRange": "81-90",
+    "exp": 91125,
+    "types": [
+      "Rock",
+      "Ground",
+      "Flying",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Rhyperion",
+        "weight": 45
+      },
+      {
+        "name": "Tyranitar",
+        "weight": 15
+      }
+    ]
+  },
+  {
+    "id": "vulcao_elite_2",
+    "name": "Elite 2",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 90,
+    "tier": 239,
+    "levelRange": "84-100",
+    "exp": 91125,
+    "types": [
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Magmar",
+        "weight": 30
+      },
+      {
+        "name": "Simisear",
+        "weight": 20
+      },
+      {
+        "name": "Rapidash",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_elite_1",
+    "name": "Elite 1",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 91,
+    "tier": 240,
+    "levelRange": "84-100",
+    "exp": 94196,
+    "types": [
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Raichu",
+        "weight": 30
+      },
+      {
+        "name": "Electrode",
+        "weight": 20
+      },
+      {
+        "name": "Electabuzz",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_elite_3",
+    "name": "Elite 3",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 92,
+    "tier": 241,
+    "levelRange": "84-100",
+    "exp": 97336,
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Garbodor",
+        "weight": 30
+      },
+      {
+        "name": "Skuntank",
+        "weight": 20
+      },
+      {
+        "name": "Weezing",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_elite_1",
+    "name": "Elite 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 92,
+    "tier": 242,
+    "levelRange": "84-100",
+    "exp": 97336,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Tauros",
+        "weight": 30
+      },
+      {
+        "name": "Miltank",
+        "weight": 20
+      },
+      {
+        "name": "Kangaskhan",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_elite_3",
+    "name": "Elite 3",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 92,
+    "tier": 243,
+    "levelRange": "84-100",
+    "exp": 97336,
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Beheeyem",
+        "weight": 30
+      },
+      {
+        "name": "Musharna",
+        "weight": 20
+      },
+      {
+        "name": "Sigilyph",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_elite_2",
+    "name": "Elite 2",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 92,
+    "tier": 244,
+    "levelRange": "84-100",
+    "exp": 97336,
+    "types": [
+      "Ghost",
+      "Flying",
+      "Dark",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Mismagius",
+        "weight": 30
+      },
+      {
+        "name": "Drifblim",
+        "weight": 20
+      },
+      {
+        "name": "Houndoom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_elite_2",
+    "name": "Elite 2",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 93,
+    "tier": 245,
+    "levelRange": "84-100",
+    "exp": 100545,
+    "types": [
+      "Electric",
+      "Steel",
+      "Psychic",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Zebstrika",
+        "weight": 30
+      },
+      {
+        "name": "Bronzong",
+        "weight": 20
+      },
+      {
+        "name": "Steelix",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_elite_3",
+    "name": "Elite 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 93,
+    "tier": 246,
+    "levelRange": "84-100",
+    "exp": 100545,
+    "types": [
+      "Grass",
+      "Poison",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Venusaur",
+        "weight": 30
+      },
+      {
+        "name": "Torterra",
+        "weight": 20
+      },
+      {
+        "name": "Meganium",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_elite_3",
+    "name": "Elite 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 93,
+    "tier": 247,
+    "levelRange": "84-100",
+    "exp": 100545,
+    "types": [
+      "Water",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Samurott",
+        "weight": 30
+      },
+      {
+        "name": "Feraligatr",
+        "weight": 20
+      },
+      {
+        "name": "Empoleon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_elite_3",
+    "name": "Elite 3",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 93,
+    "tier": 248,
+    "levelRange": "84-100",
+    "exp": 100545,
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Ninetales",
+        "weight": 30
+      },
+      {
+        "name": "Flareon",
+        "weight": 20
+      },
+      {
+        "name": "Emboar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_elite_1",
+    "name": "Elite 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 94,
+    "tier": 249,
+    "levelRange": "84-100",
+    "exp": 103823,
+    "types": [
+      "Fighting",
+      "Ground",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Machamp",
+        "weight": 30
+      },
+      {
+        "name": "Conkeldurr",
+        "weight": 20
+      },
+      {
+        "name": "Excadrill",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_elite_2",
+    "name": "Elite 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 94,
+    "tier": 250,
+    "levelRange": "84-100",
+    "exp": 103823,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Exploud",
+        "weight": 30
+      },
+      {
+        "name": "Bouffalant",
+        "weight": 20
+      },
+      {
+        "name": "Ursaring",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_elite_3",
+    "name": "Elite 3",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 95,
+    "tier": 251,
+    "levelRange": "84-100",
+    "exp": 107172,
+    "types": [
+      "Ghost",
+      "Poison",
+      "Dark",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Gengar",
+        "weight": 30
+      },
+      {
+        "name": "Honchkrow",
+        "weight": 20
+      },
+      {
+        "name": "Zoroark",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_elite_2",
+    "name": "Elite 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 96,
+    "tier": 252,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Fighting",
+      "Ground",
+      "Flying",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Mienshao",
+        "weight": 30
+      },
+      {
+        "name": "Gliscor",
+        "weight": 20
+      },
+      {
+        "name": "Gigalith",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_elite_3",
+    "name": "Elite 3",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 96,
+    "tier": 253,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Ampharos",
+        "weight": 30
+      },
+      {
+        "name": "Eelektross",
+        "weight": 20
+      },
+      {
+        "name": "Klinklang",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_elite_4",
+    "name": "Elite 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 96,
+    "tier": 254,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Leafeon",
+        "weight": 30
+      },
+      {
+        "name": "Serperior",
+        "weight": 20
+      },
+      {
+        "name": "Sceptile",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_elite_4",
+    "name": "Elite 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 96,
+    "tier": 255,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Water",
+      "Ground",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Blastoise",
+        "weight": 30
+      },
+      {
+        "name": "Swampert",
+        "weight": 20
+      },
+      {
+        "name": "Lapras",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_elite_1",
+    "name": "Elite 1",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 96,
+    "tier": 256,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Ice",
+      "Psychic",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Jynx",
+        "weight": 30
+      },
+      {
+        "name": "Glalie",
+        "weight": 20
+      },
+      {
+        "name": "Froslass",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_elite_4",
+    "name": "Elite 4",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 96,
+    "tier": 257,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Poison",
+      "Fighting",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Toxicroak",
+        "weight": 30
+      },
+      {
+        "name": "Muk",
+        "weight": 20
+      },
+      {
+        "name": "Drapion",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_elite_3",
+    "name": "Elite 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 96,
+    "tier": 258,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Stoutland",
+        "weight": 30
+      },
+      {
+        "name": "Braviary",
+        "weight": 20
+      },
+      {
+        "name": "Porygon2",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_elite_4",
+    "name": "Elite 4",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 96,
+    "tier": 259,
+    "levelRange": "84-100",
+    "exp": 110592,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Reuniclus",
+        "weight": 30
+      },
+      {
+        "name": "Gothitelle",
+        "weight": 20
+      },
+      {
+        "name": "Alakazam",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_elite_3",
+    "name": "Elite 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 97,
+    "tier": 260,
+    "levelRange": "84-100",
+    "exp": 114084,
+    "types": [
+      "Rock",
+      "Flying",
+      "Ground",
+      "Dark",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Gligar",
+        "weight": 30
+      },
+      {
+        "name": "Krookodile",
+        "weight": 20
+      },
+      {
+        "name": "Flygon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_elite_2",
+    "name": "Elite 2",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 97,
+    "tier": 261,
+    "levelRange": "84-100",
+    "exp": 114084,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Druddigon",
+        "weight": 30
+      },
+      {
+        "name": "Altaria",
+        "weight": 20
+      },
+      {
+        "name": "Beartic",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_elite_4",
+    "name": "Elite 4",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 97,
+    "tier": 262,
+    "levelRange": "84-100",
+    "exp": 114084,
+    "types": [
+      "Dark",
+      "Ice",
+      "Flying",
+      "Ghost",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Weavile",
+        "weight": 30
+      },
+      {
+        "name": "Mandibuzz",
+        "weight": 20
+      },
+      {
+        "name": "Chandelure",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_elite_4",
+    "name": "Elite 4",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 97,
+    "tier": 263,
+    "levelRange": "84-100",
+    "exp": 114084,
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Blaziken",
+        "weight": 30
+      },
+      {
+        "name": "Typhlosion",
+        "weight": 20
+      },
+      {
+        "name": "Infernape",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_elite_4",
+    "name": "Elite 4",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 98,
+    "tier": 264,
+    "levelRange": "84-100",
+    "exp": 117649,
+    "types": [
+      "Electric",
+      "Steel",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Luxray",
+        "weight": 30
+      },
+      {
+        "name": "Jolteon",
+        "weight": 20
+      },
+      {
+        "name": "Aggron",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_elite_3",
+    "name": "Elite 3",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 98,
+    "tier": 265,
+    "levelRange": "84-100",
+    "exp": 117649,
+    "types": [
+      "Ice",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Cryogonal",
+        "weight": 30
+      },
+      {
+        "name": "Glaceon",
+        "weight": 20
+      },
+      {
+        "name": "Walrein",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_elite_4",
+    "name": "Elite 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 98,
+    "tier": 266,
+    "levelRange": "84-100",
+    "exp": 117649,
+    "types": [
+      "Normal"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Lickilicky",
+        "weight": 30
+      },
+      {
+        "name": "Porygon-Z",
+        "weight": 20
+      },
+      {
+        "name": "Snorlax",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_elite_4",
+    "name": "Elite 4",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 99,
+    "tier": 267,
+    "levelRange": "84-100",
+    "exp": 121287,
+    "types": [
+      "Rock",
+      "Steel",
+      "Fighting",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Probopass",
+        "weight": 30
+      },
+      {
+        "name": "Lucario",
+        "weight": 20
+      },
+      {
+        "name": "Hippowdon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_elite_4",
+    "name": "Elite 4",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 99,
+    "tier": 268,
+    "levelRange": "84-100",
+    "exp": 121287,
+    "types": [
+      "Ice",
+      "Ground",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Mamoswine",
+        "weight": 30
+      },
+      {
+        "name": "Vanilluxe",
+        "weight": 20
+      },
+      {
+        "name": "Haxorus",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_elite_5",
+    "name": "Elite 5",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 100,
+    "tier": 269,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Ground",
+      "Rock",
+      "Flying",
+      "Dark"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Rhyperion",
+        "weight": 30
+      },
+      {
+        "name": "Pupitar",
+        "weight": 20
+      },
+      {
+        "name": "Tyranitar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_elite_5",
+    "name": "Elite 5",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 100,
+    "tier": 270,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Electric",
+      "Steel",
+      "Psychic"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Magnezone",
+        "weight": 30
+      },
+      {
+        "name": "Electivire",
+        "weight": 20
+      },
+      {
+        "name": "Metagross",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_elite_5",
+    "name": "Elite 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 100,
+    "tier": 271,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Grass",
+      "Psychic",
+      "Bug",
+      "Fire"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Exeggutor",
+        "weight": 30
+      },
+      {
+        "name": "Tangrowth",
+        "weight": 20
+      },
+      {
+        "name": "Volcarona",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_elite_5",
+    "name": "Elite 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 100,
+    "tier": 272,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Water",
+      "Dragon",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Milotic",
+        "weight": 30
+      },
+      {
+        "name": "Kingdra",
+        "weight": 20
+      },
+      {
+        "name": "Gyarados",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_2_5",
+    "name": "Cume 5",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 1,
+    "level": 100,
+    "tier": 273,
+    "levelRange": "91-100",
+    "exp": 125000,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "region",
+    "spawns": [
+      {
+        "name": "Dragonite",
+        "weight": 30
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20
+      },
+      {
+        "name": "Salamence",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_elite_5",
+    "name": "Elite 5",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 100,
+    "tier": 274,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Ground"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Salamence",
+        "weight": 30
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20
+      },
+      {
+        "name": "Dragonite",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_elite_5",
+    "name": "Elite 5",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 100,
+    "tier": 275,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Poison",
+      "Ground",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Nidoqueen",
+        "weight": 30
+      },
+      {
+        "name": "Nidoking",
+        "weight": 20
+      },
+      {
+        "name": "Crobat",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_elite_5",
+    "name": "Elite 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 100,
+    "tier": 276,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Blissey",
+        "weight": 30
+      },
+      {
+        "name": "Togekiss",
+        "weight": 20
+      },
+      {
+        "name": "Slaking",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_elite_5",
+    "name": "Elite 5",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 100,
+    "tier": 277,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Psychic",
+      "Fairy",
+      "Fighting"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Gardevoir",
+        "weight": 30
+      },
+      {
+        "name": "Gallade",
+        "weight": 20
+      },
+      {
+        "name": "Espeon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_elite_5",
+    "name": "Elite 5",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 100,
+    "tier": 278,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Dark",
+      "Ghost",
+      "Dragon"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Umbreon",
+        "weight": 30
+      },
+      {
+        "name": "Dusknoir",
+        "weight": 20
+      },
+      {
+        "name": "Hydreigon",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_elite_5",
+    "name": "Elite 5",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 100,
+    "tier": 279,
+    "levelRange": "84-100",
+    "exp": 125000,
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "elite",
+    "spawns": [
+      {
+        "name": "Charizard",
+        "weight": 30
+      },
+      {
+        "name": "Magmortar",
+        "weight": 20
+      },
+      {
+        "name": "Arcanine",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_mega_1",
+    "name": "Mega 1",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 104,
+    "tier": 280,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Rock",
+      "Dark",
+      "Flying",
+      "Steel",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Tyranitar",
+        "weight": 30
+      },
+      {
+        "name": "Pupitar",
+        "weight": 20
+      },
+      {
+        "name": "Mega Steelix",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "cidade_mega_1",
+    "name": "Mega 1",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 104,
+    "tier": 281,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Steel",
+      "Psychic",
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Metagross",
+        "weight": 30
+      },
+      {
+        "name": "Electivire",
+        "weight": 20
+      },
+      {
+        "name": "Mega Manectric",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "floresta_mega_1",
+    "name": "Mega 1",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 104,
+    "tier": 282,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Bug",
+      "Fire",
+      "Grass",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Volcarona",
+        "weight": 30
+      },
+      {
+        "name": "Tangrowth",
+        "weight": 20
+      },
+      {
+        "name": "Mega Scizor",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "mar_mega_1",
+    "name": "Mega 1",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 104,
+    "tier": 283,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Water",
+      "Flying",
+      "Dragon",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Gyarados",
+        "weight": 30
+      },
+      {
+        "name": "Kingdra",
+        "weight": 20
+      },
+      {
+        "name": "Mega Slowbro",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "montanha_mega_1",
+    "name": "Mega 1",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 104,
+    "tier": 284,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Ground",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Dragonite",
+        "weight": 30
+      },
+      {
+        "name": "Garchomp",
+        "weight": 20
+      },
+      {
+        "name": "Mega Glalie",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "pantano_mega_1",
+    "name": "Mega 1",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 104,
+    "tier": 285,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Poison",
+      "Flying",
+      "Ground",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Crobat",
+        "weight": 30
+      },
+      {
+        "name": "Nidoking",
+        "weight": 20
+      },
+      {
+        "name": "Mega Gengar",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "planicie_mega_1",
+    "name": "Mega 1",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 104,
+    "tier": 286,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Normal",
+      "Fairy",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Slaking",
+        "weight": 30
+      },
+      {
+        "name": "Togekiss",
+        "weight": 20
+      },
+      {
+        "name": "Mega Kangaskhan",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "santuario_mega_1",
+    "name": "Mega 1",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 104,
+    "tier": 287,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Psychic",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Espeon",
+        "weight": 30
+      },
+      {
+        "name": "Gallade",
+        "weight": 20
+      },
+      {
+        "name": "Mega Wobbuffet",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "torre_mega_1",
+    "name": "Mega 1",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 104,
+    "tier": 288,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Dark",
+      "Dragon",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Hydreigon",
+        "weight": 30
+      },
+      {
+        "name": "Dusknoir",
+        "weight": 20
+      },
+      {
+        "name": "Mega Absol",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "vulcao_mega_1",
+    "name": "Mega 1",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 104,
+    "tier": 289,
+    "levelRange": "101-126",
+    "exp": 140608,
+    "types": [
+      "Fire",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Arcanine",
+        "weight": 30
+      },
+      {
+        "name": "Magmortar",
+        "weight": 20
+      },
+      {
+        "name": "Mega Houndoom",
+        "weight": 6
+      }
+    ]
+  },
+  {
+    "id": "caverna_mega_2",
+    "name": "Mega 2",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 108,
+    "tier": 290,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Ground",
+      "Rock",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Rhyperion",
+        "weight": 30
+      },
+      {
+        "name": "Hippowdon",
+        "weight": 20
+      },
+      {
+        "name": "Gigalith",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "cidade_mega_2",
+    "name": "Mega 2",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 108,
+    "tier": 291,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Electric",
+      "Steel",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Magnezone",
+        "weight": 30
+      },
+      {
+        "name": "Aggron",
+        "weight": 20
+      },
+      {
+        "name": "Mega Raichu",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "floresta_mega_2",
+    "name": "Mega 2",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 108,
+    "tier": 292,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Grass",
+      "Psychic",
+      "Bug",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Exeggutor",
+        "weight": 30
+      },
+      {
+        "name": "Sceptile",
+        "weight": 20
+      },
+      {
+        "name": "Mega Pinsir",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "mar_mega_2",
+    "name": "Mega 2",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 108,
+    "tier": 293,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Milotic",
+        "weight": 30
+      },
+      {
+        "name": "Lapras",
+        "weight": 20
+      },
+      {
+        "name": "Mega Blastoise",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "montanha_mega_2",
+    "name": "Mega 2",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 108,
+    "tier": 294,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Dragon",
+      "Flying",
+      "Electric"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Salamence",
+        "weight": 30
+      },
+      {
+        "name": "Haxorus",
+        "weight": 20
+      },
+      {
+        "name": "Mega Ampharos",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "pantano_mega_2",
+    "name": "Mega 2",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 108,
+    "tier": 295,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Poison",
+      "Ground",
+      "Dark",
+      "Grass"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Nidoqueen",
+        "weight": 30
+      },
+      {
+        "name": "Drapion",
+        "weight": 20
+      },
+      {
+        "name": "Mega Venusaur",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "planicie_mega_2",
+    "name": "Mega 2",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 108,
+    "tier": 296,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Normal",
+      "Bug",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Blissey",
+        "weight": 30
+      },
+      {
+        "name": "Snorlax",
+        "weight": 20
+      },
+      {
+        "name": "Mega Pinsir",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "santuario_mega_2",
+    "name": "Mega 2",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 108,
+    "tier": 297,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Psychic",
+      "Fairy",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Gardevoir",
+        "weight": 30
+      },
+      {
+        "name": "Alakazam",
+        "weight": 20
+      },
+      {
+        "name": "Mega Slowbro",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "torre_mega_2",
+    "name": "Mega 2",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 108,
+    "tier": 298,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Dark",
+      "Ghost",
+      "Fire",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Umbreon",
+        "weight": 30
+      },
+      {
+        "name": "Chandelure",
+        "weight": 20
+      },
+      {
+        "name": "Mega Gengar",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "vulcao_mega_2",
+    "name": "Mega 2",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 108,
+    "tier": 299,
+    "levelRange": "101-126",
+    "exp": 157464,
+    "types": [
+      "Fire",
+      "Flying",
+      "Fighting"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Charizard",
+        "weight": 30
+      },
+      {
+        "name": "Infernape",
+        "weight": 20
+      },
+      {
+        "name": "Mega Blaziken",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "id": "caverna_mega_3",
+    "name": "Mega 3",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 112,
+    "tier": 300,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Fighting",
+      "Steel",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Lucario",
+        "weight": 28
+      },
+      {
+        "name": "Probopass",
+        "weight": 14
+      },
+      {
+        "name": "Mega Lucario",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "cidade_mega_3",
+    "name": "Mega 3",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 112,
+    "tier": 301,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Electric",
+      "Bug",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Jolteon",
+        "weight": 28
+      },
+      {
+        "name": "Luxray",
+        "weight": 14
+      },
+      {
+        "name": "Mega Scizor",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "floresta_mega_3",
+    "name": "Mega 3",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 112,
+    "tier": 302,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Serperior",
+        "weight": 28
+      },
+      {
+        "name": "Leafeon",
+        "weight": 14
+      },
+      {
+        "name": "Mega Venusaur",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "mar_mega_3",
+    "name": "Mega 3",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 112,
+    "tier": 303,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Swampert",
+        "weight": 28
+      },
+      {
+        "name": "Blastoise",
+        "weight": 14
+      },
+      {
+        "name": "Mega Swampert",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "montanha_mega_3",
+    "name": "Mega 3",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 112,
+    "tier": 304,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Ice",
+      "Ground",
+      "Grass",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Vanilluxe",
+        "weight": 28
+      },
+      {
+        "name": "Mamoswine",
+        "weight": 14
+      },
+      {
+        "name": "Mega Sceptile",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "pantano_mega_3",
+    "name": "Mega 3",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 112,
+    "tier": 305,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Poison",
+      "Fighting",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Muk",
+        "weight": 28
+      },
+      {
+        "name": "Toxicroak",
+        "weight": 14
+      },
+      {
+        "name": "Mega Gengar",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "planicie_mega_3",
+    "name": "Mega 3",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 112,
+    "tier": 306,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Normal",
+      "Rock",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Porygon-Z",
+        "weight": 28
+      },
+      {
+        "name": "Lickilicky",
+        "weight": 14
+      },
+      {
+        "name": "Togekiss",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "santuario_mega_3",
+    "name": "Mega 3",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 112,
+    "tier": 307,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Gothitelle",
+        "weight": 28
+      },
+      {
+        "name": "Reuniclus",
+        "weight": 14
+      },
+      {
+        "name": "Mega Alakazam",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "torre_mega_3",
+    "name": "Mega 3",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 112,
+    "tier": 308,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Dark",
+      "Flying",
+      "Ice",
+      "Fire"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mandibuzz",
+        "weight": 28
+      },
+      {
+        "name": "Weavile",
+        "weight": 14
+      },
+      {
+        "name": "Mega Houndoom",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "vulcao_mega_3",
+    "name": "Mega 3",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 112,
+    "tier": 309,
+    "levelRange": "101-126",
+    "exp": 175616,
+    "types": [
+      "Fire",
+      "Fighting",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Typhlosion",
+        "weight": 28
+      },
+      {
+        "name": "Blaziken",
+        "weight": 14
+      },
+      {
+        "name": "Mega Charizard X",
+        "weight": 14
+      }
+    ]
+  },
+  {
+    "id": "caverna_mega_4",
+    "name": "Mega 4",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 116,
+    "tier": 310,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Ground",
+      "Dragon",
+      "Fire",
+      "Fighting",
+      "Water"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Flygon",
+        "weight": 18
+      },
+      {
+        "name": "Mega Blaziken",
+        "weight": 14
+      },
+      {
+        "name": "Mega Swampert",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_mega_4",
+    "name": "Mega 4",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 116,
+    "tier": 311,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Steel",
+      "Ground",
+      "Electric",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Klinklang",
+        "weight": 18
+      },
+      {
+        "name": "Mega Steelix",
+        "weight": 14
+      },
+      {
+        "name": "Mega Ampharos",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_mega_4",
+    "name": "Mega 4",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 116,
+    "tier": 312,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Grass",
+      "Dragon",
+      "Bug",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Meganium",
+        "weight": 18
+      },
+      {
+        "name": "Mega Sceptile",
+        "weight": 14
+      },
+      {
+        "name": "Mega Scizor",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_mega_4",
+    "name": "Mega 4",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 116,
+    "tier": 313,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Water",
+      "Steel",
+      "Dark",
+      "Psychic"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Empoleon",
+        "weight": 18
+      },
+      {
+        "name": "Mega Gyarados",
+        "weight": 14
+      },
+      {
+        "name": "Mega Slowbro",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_mega_4",
+    "name": "Mega 4",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 116,
+    "tier": 314,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Ice",
+      "Water",
+      "Fire",
+      "Dragon"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Walrein",
+        "weight": 18
+      },
+      {
+        "name": "Mega Charizard X",
+        "weight": 14
+      },
+      {
+        "name": "Mega Glalie",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_mega_4",
+    "name": "Mega 4",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 116,
+    "tier": 315,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Poison",
+      "Grass",
+      "Ghost"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Weezing",
+        "weight": 18
+      },
+      {
+        "name": "Mega Venusaur",
+        "weight": 14
+      },
+      {
+        "name": "Mega Gengar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "planicie_mega_4",
+    "name": "Mega 4",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 116,
+    "tier": 316,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Normal",
+      "Fire",
+      "Flying"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Porygon2",
+        "weight": 18
+      },
+      {
+        "name": "Mega Charizard Y",
+        "weight": 14
+      },
+      {
+        "name": "Mega Kangaskhan",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_mega_4",
+    "name": "Mega 4",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 116,
+    "tier": 317,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Psychic",
+      "Flying",
+      "Steel"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Sigilyph",
+        "weight": 18
+      },
+      {
+        "name": "Mega Metagross",
+        "weight": 14
+      },
+      {
+        "name": "Mega Wobbuffet",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_mega_4",
+    "name": "Mega 4",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 116,
+    "tier": 318,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Dark",
+      "Water",
+      "Rock"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Zoroark",
+        "weight": 18
+      },
+      {
+        "name": "Mega Gyarados",
+        "weight": 14
+      },
+      {
+        "name": "Mega Tyranitar",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_mega_4",
+    "name": "Mega 4",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 116,
+    "tier": 319,
+    "levelRange": "101-126",
+    "exp": 195112,
+    "types": [
+      "Fire",
+      "Fighting",
+      "Flying",
+      "Dark"
+    ],
+    "archetype": "exp",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Emboar",
+        "weight": 18
+      },
+      {
+        "name": "Mega Charizard Y",
+        "weight": 14
+      },
+      {
+        "name": "Mega Houndoom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "caverna_mega_5",
+    "name": "Mega 5",
+    "biome": "caverna",
+    "biomeLabel": "Cavernas",
+    "generation": 2,
+    "level": 120,
+    "tier": 320,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Rock",
+      "Dark",
+      "Water",
+      "Ground",
+      "Fire",
+      "Fighting"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Tyranitar",
+        "weight": 30
+      },
+      {
+        "name": "Mega Swampert",
+        "weight": 20
+      },
+      {
+        "name": "Mega Blaziken",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "cidade_mega_5",
+    "name": "Mega 5",
+    "biome": "cidade",
+    "biomeLabel": "Cidades",
+    "generation": 2,
+    "level": 120,
+    "tier": 321,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Steel",
+      "Psychic",
+      "Fighting",
+      "Electric",
+      "Dragon"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Metagross",
+        "weight": 30
+      },
+      {
+        "name": "Mega Lucario",
+        "weight": 20
+      },
+      {
+        "name": "Mega Ampharos",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "floresta_mega_5",
+    "name": "Mega 5",
+    "biome": "floresta",
+    "biomeLabel": "Florestas",
+    "generation": 2,
+    "level": 120,
+    "tier": 322,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Grass",
+      "Dragon",
+      "Poison",
+      "Bug",
+      "Flying"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Sceptile",
+        "weight": 30
+      },
+      {
+        "name": "Mega Venusaur",
+        "weight": 20
+      },
+      {
+        "name": "Mega Pinsir",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "mar_mega_5",
+    "name": "Mega 5",
+    "biome": "mar",
+    "biomeLabel": "Mares",
+    "generation": 3,
+    "level": 120,
+    "tier": 323,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Water",
+      "Dark",
+      "Ground"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Gyarados",
+        "weight": 30
+      },
+      {
+        "name": "Mega Swampert",
+        "weight": 20
+      },
+      {
+        "name": "Mega Blastoise",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "montanha_mega_5",
+    "name": "Mega 5",
+    "biome": "montanha",
+    "biomeLabel": "Montanhas",
+    "generation": 3,
+    "level": 120,
+    "tier": 324,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Fire",
+      "Dragon",
+      "Grass",
+      "Electric"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Charizard X",
+        "weight": 30
+      },
+      {
+        "name": "Mega Sceptile",
+        "weight": 20
+      },
+      {
+        "name": "Mega Ampharos",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "pantano_mega_5",
+    "name": "Mega 5",
+    "biome": "pantano",
+    "biomeLabel": "Pântanos",
+    "generation": 1,
+    "level": 120,
+    "tier": 325,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Grass",
+      "Poison",
+      "Ghost"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Venusaur",
+        "weight": 30
+      },
+      {
+        "name": "Mega Gengar",
+        "weight": 20
+      }
+    ]
+  },
+  {
+    "id": "planicie_mega_5",
+    "name": "Mega 5",
+    "biome": "planicie",
+    "biomeLabel": "Planícies",
+    "generation": 2,
+    "level": 120,
+    "tier": 326,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Fire",
+      "Flying",
+      "Rock",
+      "Bug"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Charizard Y",
+        "weight": 30
+      },
+      {
+        "name": "Togekiss",
+        "weight": 20
+      },
+      {
+        "name": "Mega Pinsir",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "santuario_mega_5",
+    "name": "Mega 5",
+    "biome": "santuario",
+    "biomeLabel": "Santuários",
+    "generation": 3,
+    "level": 120,
+    "tier": 327,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Steel",
+      "Psychic",
+      "Water"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Metagross",
+        "weight": 30
+      },
+      {
+        "name": "Mega Alakazam",
+        "weight": 20
+      },
+      {
+        "name": "Mega Slowbro",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "torre_mega_5",
+    "name": "Mega 5",
+    "biome": "torre",
+    "biomeLabel": "Torres",
+    "generation": 5,
+    "level": 120,
+    "tier": 328,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Rock",
+      "Dark",
+      "Water",
+      "Fire"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Tyranitar",
+        "weight": 30
+      },
+      {
+        "name": "Mega Gyarados",
+        "weight": 20
+      },
+      {
+        "name": "Mega Houndoom",
+        "weight": 10
+      }
+    ]
+  },
+  {
+    "id": "vulcao_mega_5",
+    "name": "Mega 5",
+    "biome": "vulcao",
+    "biomeLabel": "Vulcões",
+    "generation": 2,
+    "level": 120,
+    "tier": 329,
+    "levelRange": "101-126",
+    "exp": 216000,
+    "types": [
+      "Fire",
+      "Flying",
+      "Dragon",
+      "Fighting"
+    ],
+    "archetype": "boss",
+    "stage": "mega",
+    "spawns": [
+      {
+        "name": "Mega Charizard Y",
+        "weight": 30
+      },
+      {
+        "name": "Mega Charizard X",
+        "weight": 20
+      },
+      {
+        "name": "Mega Blaziken",
+        "weight": 10
+      }
+    ]
+  }
+]

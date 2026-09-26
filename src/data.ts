@@ -14,22 +14,20 @@ export type Stats = {
 export type Move = {
   name: string
   type: string
-  power: number | null
-  cooldown: string
   level: number | null
+  origins?: string[]
+  requiredLevel?: number | null
 }
 
 export type TechnicalMove = {
   id: string
   name: string
   type: string
-  power: number | null
-  cooldown: string
-  category: string
-  attackCategory: 'physical' | 'special' | 'status'
-  range: string
-  isArea: boolean
-  chest: string
+  compatibleSpecies: number
+  attackCategory: 'physical' | 'special' | 'status' | 'unknown'
+  range?: string
+  power?: number | null
+  cooldown?: string
 }
 
 export type CaptureEntry = {
@@ -57,6 +55,7 @@ export type Pokemon = {
   form: 'Base' | 'Mega' | 'Forma'
   accent: string
   image: string
+  hasMoveset: boolean
   levelMoves: Move[]
   tmMoves: Move[]
 }
@@ -81,13 +80,8 @@ for (const entry of catalog as Pokemon[]) {
       id: `LEVEL-${moveDexMap.size + 1}`,
       name: move.name,
       type: move.type,
-      power: move.power,
-      cooldown: move.cooldown,
-      category: move.power === null ? 'Status' : 'Dano',
-      attackCategory: move.power === null ? 'status' : 'special',
-      range: 'Alvo único',
-      isArea: false,
-      chest: '—',
+      compatibleSpecies: 0,
+      attackCategory: 'unknown',
       learnedByLevel: 1,
       learnedByTm: false,
     })

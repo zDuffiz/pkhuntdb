@@ -49,6 +49,11 @@
 .advice-best-map > div { display: grid; justify-items: center; gap: 3px; }
 .advice-best-map span, .advice-single-map span, .advice-average-hardness { color: #637590; font-size: 13px; }
 .advice-best-map strong, .advice-single-map strong { color: #173b9b; font-size: 17px; font-weight: 800; }
+.advice-map-link { padding: 0; border: 0; background: transparent; color: #173b9b; font-family: inherit; font-size: 17px; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.advice-map-link:hover { color: #0b55ad; }
+.advice-map-link:focus-visible { outline: 2px solid #287db1; outline-offset: 3px; border-radius: 3px; }
+.advice-route-map-link { font-size: 14px; overflow-wrap: anywhere; }
+.advice-map-link:disabled { color: #637590; cursor: default; text-decoration: none; }
 .advice-best-map small, .advice-single-map small { color: #637590; font-size: 12px; overflow-wrap: anywhere; }
 .advice-pokemon-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
 .advice-pokemon { display: grid; justify-items: center; gap: 4px; min-width: 0; padding: 8px 4px; border-bottom: 2px solid var(--element-color, #2764e7); text-align: center; }

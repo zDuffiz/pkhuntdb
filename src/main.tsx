@@ -1,8 +1,9 @@
 import React, { StrictMode, useEffect, useMemo, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, Home, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords } from 'lucide-react'
-import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon } from './data'
+import { ArrowRight, BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
+import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
+import regionCatalog from './region-data.json'
 import { getTypeMatchups } from './type-chart'
 import './styles.css'
 import './image-overrides.css'
@@ -15,39 +16,40 @@ import './joy-theme.css'
 import './missions.css'
 import './home.css'
 import './color-mode.css'
+import './world.css'
 
-const legacyAreaTms = [
-  ['Flash Cannon', 'Steel', 80, '15s', 3, '7,1%'], ['Iron Tail', 'Steel', 90, '18s', 1, '3,6%'],
-  ['Bubble', 'Water', 40, '8s', 3, '7,7%'], ['Surf', 'Water', 90, '15s', 3, '2,6%'], ['Muddy Water', 'Water', 90, '30s', 3, '2,6%'], ['Water Spout', 'Water', 150, '30s', 3, '2,6%'],
-  ['Twister', 'Dragon', 40, '12s', 3, '13,0%'], ['Dragon Pulse', 'Dragon', 80, '15s', 3, '8,7%'], ['Draco Meteor', 'Dragon', 140, '30s', 3, '4,3%'],
-  ['Discharge', 'Electric', 80, '18s', 4, '7,1%'], ['Thunder', 'Electric', 110, '30s', 3, '3,6%'],
-  ['Dazzling Gleam', 'Fairy', 80, '15s', 10, '12,5%'], ['Play Rough', 'Fairy', 90, '18s', 1, '6,3%'], ['Moonblast', 'Fairy', 95, '25s', 3, '6,3%'],
-  ['Shadow Ball', 'Ghost', 80, '15s', 10, '6,5%'], ['Phantom Force', 'Ghost', 90, '30s', 1, '3,2%'],
-  ['Incinerate', 'Fire', 60, '20s', 3, '8,8%'], ['Lava Plume', 'Fire', 80, '18s', 3, '5,9%'], ['Eruption', 'Fire', 150, '30s', 3, '2,9%'],
-  ['Powder Snow', 'Ice', 40, '12s', 3, '12,0%'], ['Icy Wind', 'Ice', 55, '12s', 3, '12,0%'], ['Blizzard', 'Ice', 110, '30s', 3, '4,0%'],
-  ['Struggle Bug', 'Bug', 50, '11s', 3, '11,1%'], ['Signal Beam', 'Bug', 75, '15s', 3, '7,4%'], ['Bug Buzz', 'Bug', 90, '15s', 4, '3,7%'],
-  ['Aura Sphere', 'Fighting', 80, '15s', 3, '3,5%'], ['Cross Chop', 'Fighting', 100, '30s', 1, '1,8%'],
-  ['Swift', 'Normal', 60, '11s', 10, '1,9%'], ['Razor Wind', 'Normal', 80, '20s', 4, '1,3%'], ['Hyper Voice', 'Normal', 90, '18s', 3, '0,6%'], ['Boomburst', 'Normal', 140, '30s', 3, '0,6%'], ['Self-Destruct', 'Normal', 200, '120s', 1, '0,6%'],
-  ['Rock Slide', 'Rock', 75, '15s', 10, '9,1%'], ['Stone Edge', 'Rock', 100, '30s', 10, '4,5%'],
-  ['Razor Leaf', 'Grass', 55, '10s', 10, '7,5%'], ['Seed Bomb', 'Grass', 80, '15s', 3, '5,0%'], ['Frenzy Plant', 'Grass', 150, '30s', 3, '2,5%'],
-  ['Psyshock', 'Psychic', 80, '15s', 3, '3,8%'], ['Zen Headbutt', 'Psychic', 80, '15s', 1, '3,8%'], ['Psychic', 'Psychic', 90, '30s', 3, '1,9%'],
-  ['Dark Pulse', 'Dark', 80, '15s', 3, '6,7%'], ['Crunch', 'Dark', 80, '15s', 1, '6,7%'], ['Night Daze', 'Dark', 95, '25s', 3, '3,3%'],
-  ['Bulldoze', 'Ground', 60, '18s', 1, '8,3%'], ['Magnitude', 'Ground', 71, '18s', 1, '5,6%'], ['Earthquake', 'Ground', 100, '30s', 1, '2,8%'],
-  ['Acid', 'Poison', 40, '10s', 10, '7,7%'], ['Sludge Wave', 'Poison', 95, '25s', 3, '2,6%'],
-  ['Air Cutter', 'Flying', 60, '18s', 3, '9,1%'], ['Air Slash', 'Flying', 75, '15s', 3, '6,1%'], ['Hurricane', 'Flying', 110, '30s', 3, '3,0%'],
-].map(([name, type, power, cooldown, range, chest], index) => ({ id: `TM-A${String(index + 1).padStart(2, '0')}`, name: name as string, type: type as string, category: 'Área', power: String(power), accuracy: `${range} casas`, cooldown: cooldown as string, chest: chest as string }))
+type WorldRegion = {
+  id: string
+  name: string
+  biome: string
+  biomeLabel: string
+  generation: number
+  level: number
+  tier: number
+  levelRange: string
+  exp: number
+  types: string[]
+  archetype: string
+  stage: 'region' | 'elite' | 'mega'
+  spawns: { name: string; weight: number }[]
+}
+
+const worldRegions = regionCatalog as WorldRegion[]
+const captureHardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
+
 const tms = technicalMoves
+const moveCategoryLabels: Record<TechnicalMove['attackCategory'], string> = { physical: 'Físico', special: 'Ataque Especial', status: 'Status', unknown: 'Categoria indisponível' }
+const moveRangeLabels: Record<string, string> = { 'Área': 'Área', 'Só em si': 'Só em si', 'Alvo único': 'Alvo Único', Time: 'Time', Aposentado: 'Aposentado' }
+const moveRangeClasses: Record<string, string> = { 'Área': 'area', 'Só em si': 'self', 'Alvo único': 'single', Time: 'team', Aposentado: 'retired' }
+const moveMetadataByName = new Map(tms.map((move) => [move.name, move]))
 const typeLabels: Record<string, string> = { Normal: 'Normal', Fire: 'Fogo', Water: 'Água', Electric: 'Elétrico', Grass: 'Planta', Ice: 'Gelo', Fighting: 'Lutador', Poison: 'Veneno', Ground: 'Terra', Flying: 'Voador', Psychic: 'Psíquico', Bug: 'Inseto', Rock: 'Pedra', Ghost: 'Fantasma', Dragon: 'Dragão', Dark: 'Sombrio', Steel: 'Aço', Fairy: 'Fada' }
 const typeLabel = (type: string) => typeLabels[type] ?? type
 const typeListLabel = (types: string) => types.split(' / ').map(typeLabel).join(' / ')
-const attackCategoryLabel = (category: string) => category === 'physical' ? 'FÍSICO' : category === 'special' ? 'ESPECIAL ATAQUE' : 'STATUS'
-const attackCategoryIcon = (category: string) => category === 'physical' ? '●' : category === 'special' ? '✦' : '○'
-const moveAttackLabel = (category: string) => category === 'physical' ? 'Físico' : category === 'special' ? 'Especial Ataque' : 'Status'
 
 function App() { return <Atlas /> }
 
 function Atlas() {
-  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'detail'>('home')
+  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'detail'>('home')
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'dark' ? 'dark' : 'light')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
@@ -59,12 +61,14 @@ function Atlas() {
   const [sort, setSort] = useState('Ordem A-Z')
   const [tmType, setTmType] = useState('Todos os tipos')
   const [tmRange, setTmRange] = useState('Todos os alcances')
-  const [tmSort, setTmSort] = useState('Nome (A-Z)')
+  const [tmCategory, setTmCategory] = useState('Todas as categorias')
+  const [tmSort, setTmSort] = useState<{ key: 'power' | 'cooldown'; direction: 'asc' | 'desc' } | null>(null)
+  const [selectedTm, setSelectedTm] = useState<TechnicalMove | null>(null)
+  const [worldFocusMapId, setWorldFocusMapId] = useState<string | null>(null)
   const [captureRange, setCaptureRange] = useState('Todas as faixas')
   const [captureType, setCaptureType] = useState('Todos os tipos')
   const [captureSort, setCaptureSort] = useState('Nome (A-Z)')
   const [moveSource, setMoveSource] = useState('Todas as origens')
-  const [moveSort, setMoveSort] = useState('Nome (A-Z)')
 
   useEffect(() => {
     document.documentElement.dataset.colorMode = colorMode
@@ -85,11 +89,32 @@ function Atlas() {
     .filter((entry) => megaFilter === 'Todas as formas' || entry.form === 'Mega')
     .filter((entry) => `${entry.name} ${entry.type} ${entry.eggGroup} ${entry.region}`.toLowerCase().includes(query.toLowerCase()))
     .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, eggGroupFilter, megaFilter, sort])
-  const filteredTms = useMemo(() => [...tms]
-    .filter((entry) => tmType === 'Todos os tipos' || entry.type === tmType)
-    .filter((entry) => tmRange === 'Todos os alcances' || (tmRange === 'Área' ? entry.isArea : !entry.isArea))
-    .filter((entry) => `${entry.id} ${entry.name} ${entry.type} ${entry.range}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => tmSort === 'Poder (maior)' ? (b.power ?? 0) - (a.power ?? 0) : tmSort === 'Cooldown (menor)' ? Number.parseFloat(a.cooldown) - Number.parseFloat(b.cooldown) : a.name.localeCompare(b.name)), [query, tmRange, tmSort, tmType])
+  const filteredTms = useMemo(() => {
+    const entries = [...tms]
+      .filter((entry) => tmType === 'Todos os tipos' || entry.type === tmType)
+      .filter((entry) => tmRange === 'Todos os alcances' || entry.range === tmRange)
+      .filter((entry) => tmCategory === 'Todas as categorias' || entry.attackCategory === tmCategory)
+      .filter((entry) => `${entry.id} ${entry.name} ${entry.type} ${moveCategoryLabels[entry.attackCategory]} ${entry.range ?? ''}`.toLowerCase().includes(query.toLowerCase()))
+    if (!tmSort) return entries.sort((first, second) => first.name.localeCompare(second.name))
+    return entries.sort((first, second) => {
+      const firstValue = tmSort.key === 'power' ? first.power : Number.parseInt(first.cooldown ?? '', 10)
+      const secondValue = tmSort.key === 'power' ? second.power : Number.parseInt(second.cooldown ?? '', 10)
+      if (firstValue == null && secondValue == null) return 0
+      if (firstValue == null || Number.isNaN(firstValue)) return 1
+      if (secondValue == null || Number.isNaN(secondValue)) return -1
+      const difference = firstValue - secondValue
+      return tmSort.direction === 'desc' ? -difference : difference
+    })
+  }, [query, tmCategory, tmRange, tmSort, tmType])
+  const compatiblePokemon = useMemo(() => {
+    if (!selectedTm) return []
+    const name = normalizeMoveName(selectedTm.name)
+    return pokemon.filter((entry) => entry.hasMoveset && (
+      entry.levelMoves.some((move) => normalizeMoveName(move.name) === name)
+      || entry.tmMoves.some((move) => normalizeMoveName(move.name) === name)
+      || entry.type.split(' / ').some((type) => type.toLowerCase() === selectedTm.type.toLowerCase())
+    )).sort((first, second) => first.name.localeCompare(second.name))
+  }, [pokemon, selectedTm])
   const filteredCaptures = useMemo(() => [...captureRates]
     .filter((entry) => captureRange === 'Todas as faixas' || entry.range === captureRange)
     .filter((entry) => captureType === 'Todos os tipos' || pokemon.find((item) => item.name === entry.name)?.type.split(' / ').includes(captureType))
@@ -97,8 +122,8 @@ function Atlas() {
     .sort((a, b) => captureSort === 'Dureza (menor)' ? a.hardness - b.hardness : captureSort === 'Dureza (maior)' ? b.hardness - a.hardness : a.name.localeCompare(b.name)), [captureRange, captureSort, captureType, pokemon, query])
   const filteredMoveDex = useMemo(() => [...moveDex]
     .filter((entry) => moveSource === 'Todas as origens' || (moveSource === 'Por nível' ? entry.learnedByLevel > 0 : entry.learnedByTm))
-    .filter((entry) => `${entry.name} ${entry.type} ${entry.category} ${entry.range}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => moveSort === 'Poder (maior)' ? (b.power ?? 0) - (a.power ?? 0) : moveSort === 'Recarga (menor)' ? Number.parseFloat(a.cooldown) - Number.parseFloat(b.cooldown) : a.name.localeCompare(b.name)), [moveSource, moveSort, query])
+    .filter((entry) => `${entry.name} ${entry.type}`.toLowerCase().includes(query.toLowerCase()))
+    .sort((a, b) => a.name.localeCompare(b.name)), [moveSource, query])
   const captureRanges = [...new Set(captureRates.map((entry) => entry.range))]
   const captureTypes = [...new Set(pokemon.flatMap((entry) => entry.type.split(' / ')))].sort((a, b) => typeLabel(a).localeCompare(typeLabel(b)))
   const eggGroups = [...new Set(pokemon.flatMap((entry) => entry.eggGroup.split(',').map((group) => group.trim()).filter(Boolean)))].sort((a, b) => a.localeCompare(b))
@@ -106,12 +131,20 @@ function Atlas() {
 
   function changeView(nextView: typeof view) {
     setQuery('')
+    setWorldFocusMapId(null)
     setView(nextView)
   }
 
   function openPokemon(entry: Pokemon) {
     setSelected(entry)
     changeView('detail')
+  }
+
+  function openRecommendedMap(mapId: string) {
+    if (!worldRegions.some((entry) => entry.id === mapId)) return
+    setQuery('')
+    setWorldFocusMapId(mapId)
+    setView('world')
   }
 
   return (
@@ -122,8 +155,9 @@ function Atlas() {
         <nav>
           <button aria-label="Início" className={view === 'home' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('home')}><Home size={18} /> <span>Início</span></button>
           <button aria-label="Pokedex" className={view === 'pokemon' || view === 'detail' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('pokemon')}><BookOpen size={18} /> <span>Pokedex</span> <strong>{pokemon.length}</strong></button>
-          <button aria-label="TMs" className={view === 'tms' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
+          <button aria-label="TMs" className={view === 'tms' || view === 'tm-compatible' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
           <button aria-label="Capturas" className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('captures')}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong></button>
+          <button aria-label="Mundo" className={view === 'world' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('world')}><MapIcon size={18} /> <span>Mundo</span> <strong>{worldRegions.length}</strong></button>
           <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
           <button aria-label="Missões" className={view === 'missions' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong></button>
           <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
@@ -132,14 +166,14 @@ function Atlas() {
       </aside>
 
       <section className="content">
-        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'captures' ? 'Taxas de Captura' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
-        {view === 'home' ? <HomeDashboard onNavigate={changeView} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : <>
+        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
+        {view === 'home' ? <HomeDashboard onNavigate={changeView} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
           <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
               <select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select>
               <select aria-label="Filtrar por Egg Group" value={eggGroupFilter} onChange={(event) => setEggGroupFilter(event.target.value)}>
-                <option>Todos os grupos</option>
+                <option value="Todos os grupos">Egg Group</option>
                 {eggGroups.map((group) => <option key={group} value={group}>{group}</option>)}
                 <option>Sem grupo</option>
               </select>
@@ -147,26 +181,25 @@ function Atlas() {
               <select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select>
             </> : view === 'tms' ? <>
               <select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
-              <select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option><option>Área</option><option>Alvo único</option></select>
-              <select aria-label="Ordenar TMs" value={tmSort} onChange={(event) => setTmSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select>
+              <select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option>{Object.entries(moveRangeLabels).map(([range, label]) => <option key={range} value={range}>{label}</option>)}</select>
+              <select aria-label="Filtrar TMs por categoria" value={tmCategory} onChange={(event) => setTmCategory(event.target.value)}><option value="Todas as categorias">Todas as categorias</option>{(['physical', 'special', 'status'] as const).map((category) => <option key={category} value={category}>{moveCategoryLabels[category]}</option>)}</select>
             </> : view === 'captures' ? <>
               <select aria-label="Filtrar por faixa" value={captureRange} onChange={(event) => setCaptureRange(event.target.value)}><option>Todas as faixas</option>{captureRanges.map((item) => <option key={item}>{item}</option>)}</select>
               <select aria-label="Filtrar capturas por tipo" value={captureType} onChange={(event) => setCaptureType(event.target.value)}><option>Todos os tipos</option>{captureTypes.map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
               <select aria-label="Ordenar capturas" value={captureSort} onChange={(event) => setCaptureSort(event.target.value)}><option>Nome (A-Z)</option><option>Dureza (menor)</option><option>Dureza (maior)</option></select>
             </> : <>
               <select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select>
-              <select aria-label="Ordenar MoveDex" value={moveSort} onChange={(event) => setMoveSort(event.target.value)}><option>Nome (A-Z)</option><option>Poder (maior)</option><option>Recarga (menor)</option></select>
             </>}
           </div>
-          {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} /> : view === 'missions' ? <MissionBoard items={clanMissions} /> : <MoveDexTable items={filteredMoveDex} />}
+          {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
     </main>
   )
 }
 
-type HomeDestination = 'pokemon' | 'missions' | 'calculator' | 'tms' | 'captures'
-type HomeCounts = Pick<Record<HomeDestination, number>, 'pokemon' | 'missions' | 'tms' | 'captures'>
+type HomeDestination = 'pokemon' | 'missions' | 'calculator' | 'tms' | 'captures' | 'world'
+type HomeCounts = Pick<Record<HomeDestination, number>, 'pokemon' | 'missions' | 'tms' | 'captures' | 'world'>
 
 function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeDestination) => void; counts: HomeCounts }) {
   const shortcuts = [
@@ -175,6 +208,7 @@ function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeD
     { destination: 'calculator', label: 'Calculadora', detail: '6 atributos', icon: Calculator, tone: 'calculator' },
     { destination: 'tms', label: 'TMs', detail: `${counts.tms} golpes`, icon: ScrollText, tone: 'tms' },
     { destination: 'captures', label: 'Capturas', detail: `${counts.captures} espécies`, icon: Crosshair, tone: 'captures' },
+    { destination: 'world', label: 'Mundo', detail: `${counts.world} mapas`, icon: MapIcon, tone: 'world' },
   ] as const
 
   return <section className="home-screen" aria-label="Navegação principal">
@@ -189,7 +223,67 @@ function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeD
   </section>
 }
 
-function MissionBoard({ items }: { items: ClanMission[] }) {
+function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapId: string | null }) {
+  const focusedMap = entries.find((entry) => entry.id === focusMapId)
+  const [query, setQuery] = useState(focusedMap?.name ?? '')
+  const [focusedMapFilter, setFocusedMapFilter] = useState(focusMapId)
+  const [selectedBiome, setSelectedBiome] = useState(focusedMap?.biomeLabel ?? 'Todos os biomas')
+  const [selectedStage, setSelectedStage] = useState('Todos os estágios')
+  useEffect(() => {
+    if (focusMapId) document.getElementById(`world-map-${focusMapId}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, [focusMapId])
+  const normalizedQuery = query.trim().toLowerCase()
+  const biomes = [...new Set(entries.map((entry) => entry.biomeLabel))]
+  const visibleEntries = entries.filter((entry) => {
+    const stageLabel = entry.stage === 'mega' ? 'Domínio Mega' : entry.stage === 'elite' ? 'Elite' : 'Região'
+    const matchesQuery = (!focusedMapFilter || entry.id === focusedMapFilter) && `${entry.id} ${entry.name} ${entry.types.join(' ')} ${entry.levelRange} ${entry.spawns.map((spawn) => spawn.name).join(' ')}`.toLowerCase().includes(normalizedQuery)
+    return (selectedBiome === 'Todos os biomas' || entry.biomeLabel === selectedBiome)
+      && (selectedStage === 'Todos os estágios' || stageLabel === selectedStage)
+      && matchesQuery
+  })
+  const groups = biomes.map((biomeLabel) => ({
+    biomeLabel,
+    entries: visibleEntries.filter((entry) => entry.biomeLabel === biomeLabel),
+  })).filter((group) => group.entries.length > 0)
+  const formatChance = new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 2 })
+
+  return <section className="world-atlas">
+    <div className="world-controls">
+      <label className="world-search"><Search size={18} /><input aria-label="Buscar mapas ou Pokémon" value={query} onChange={(event) => { setQuery(event.target.value); setFocusedMapFilter(null) }} placeholder="Buscar mapa ou Pokémon..." /></label>
+      <select aria-label="Filtrar mapas por bioma" value={selectedBiome} onChange={(event) => setSelectedBiome(event.target.value)}>
+        <option>Todos os biomas</option>
+        {biomes.map((biome) => <option key={biome}>{biome}</option>)}
+      </select>
+      <select aria-label="Filtrar mapas por estágio" value={selectedStage} onChange={(event) => setSelectedStage(event.target.value)}>
+        <option>Todos os estágios</option><option>Região</option><option>Elite</option><option>Domínio Mega</option>
+      </select>
+      <span className="world-count">{visibleEntries.length} de {entries.length} mapas</span>
+    </div>
+    <p className="world-note">Chance calculada pelos pesos de spawn publicados para cada mapa.</p>
+    {groups.length ? <div className="world-biomes">{groups.map((group) => <details className={`world-biome world-biome-${group.entries[0].biome}`} key={group.biomeLabel} open={selectedBiome !== 'Todos os biomas' || normalizedQuery.length > 0}>
+      <summary><span><strong>{group.biomeLabel}</strong></span><b>{group.entries.length}</b></summary>
+      <div className="world-map-list">{group.entries.map((entry) => {
+        const totalWeight = entry.spawns.reduce((total, spawn) => total + spawn.weight, 0)
+        const stageLabel = entry.stage === 'mega' ? 'Domínio Mega' : entry.stage === 'elite' ? 'Elite' : 'Região'
+        return <article className={`world-map world-map-${entry.biome}${entry.id === focusedMapFilter ? ' world-map-focused' : ''}`} id={`world-map-${entry.id}`} key={entry.id}>
+          <header className="world-map-heading"><div><span className="world-map-id">{entry.id}</span><h3>{entry.name}</h3></div><span className={`world-stage world-stage-${entry.stage}`}>{stageLabel}</span></header>
+          <p className="world-map-types">{typeListLabel(entry.types.join(' / '))}</p>
+          <div className="world-spawns" aria-label={`Pokémon e chances em ${entry.name}`}>
+            {entry.spawns.map((spawn) => {
+              const chance = spawn.weight / totalWeight
+              const hardness = captureHardnessByName.get(spawn.name)
+              return <div className="world-spawn" key={spawn.name}>
+                <div className="world-spawn-identity"><strong>{spawn.name}</strong><small className="world-capture-hardness">Dureza {hardness ?? 'N/D'}</small></div><span className="world-chance-track"><i style={{ width: `${chance * 100}%` }} /></span><b>{formatChance.format(chance)}</b>
+              </div>
+            })}
+          </div>
+        </article>
+      })}</div>
+    </details>)}</div> : <p className="world-empty">Nenhum mapa encontrado com esses filtros.</p>}
+  </section>
+}
+
+function MissionBoard({ items, onOpenMap }: { items: ClanMission[]; onOpenMap: (mapId: string) => void }) {
   const [query, setQuery] = useState('')
   const [selectedClan, setSelectedClan] = useState('Todos os clãs')
   const colors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
@@ -231,13 +325,13 @@ function MissionBoard({ items }: { items: ClanMission[] }) {
         <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
         <p className="mission-description">{mission.kind === 'Captura' ? <>Capturar <strong>{formatNumber(mission.target)}</strong> Pokémon do tipo <strong>{mission.element}</strong>.</> : mission.kind === 'Contrato específico' ? <>Derrotar os Pokémon específicos desta etapa até completar <strong>{formatNumber(mission.target)} abates</strong>.</> : <>Derrotar <strong>{formatNumber(mission.target)} Pokémon</strong> fracos ao elemento <strong>{mission.element}</strong>.</>}</p>
         <dl className="mission-rewards"><div><dt>Gold</dt><dd>{formatNumber(mission.gold)}</dd></div><div><dt>XP</dt><dd>{formatNumber(mission.experience)}</dd></div><div><dt>Token</dt><dd>{formatNumber(mission.tokens)}</dd></div><div><dt>Pontos do clã</dt><dd>{formatNumber(mission.clanPoints)}</dd></div></dl>
-        <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} />
+        <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} onOpenMap={onOpenMap} />
       </article>)}</div>
     </details>)}</div> : <p className="mission-empty">Nenhuma missão encontrada.</p>}
   </section>
 }
 
-function MissionAdvice({ recommendation, hardnessByName }: { recommendation: ClanMission['recommendation']; hardnessByName: ReadonlyMap<string, number> }) {
+function MissionAdvice({ recommendation, hardnessByName, onOpenMap }: { recommendation: ClanMission['recommendation']; hardnessByName: ReadonlyMap<string, number>; onOpenMap: (mapId: string) => void }) {
   const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
   const formatExpected = (value: number) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
   const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 2 }).format(value)
@@ -251,14 +345,14 @@ function MissionAdvice({ recommendation, hardnessByName }: { recommendation: Cla
     <div className="mission-advice-content">
       <h4>{recommendation.title ?? 'Sem recomendação'}</h4>
       {recommendation.kind === 'none' ? <p className="mission-advice-empty">{recommendation.message}</p> : recommendation.kind === 'multi' ? <>
-        {recommendation.singleHunt ? <div className="advice-single-map"><span>Todos os alvos nesta hunt</span><strong>{recommendation.singleHunt.hunt}</strong><small>{recommendation.singleHunt.regionId} · nível {recommendation.singleHunt.level}</small></div> : <p className="advice-route-note">Os alvos ficam melhor distribuídos entre estas hunts:</p>}
+        {recommendation.singleHunt ? <div className="advice-single-map"><span>Todos os alvos nesta hunt</span><button type="button" className="advice-map-link" onClick={() => onOpenMap(recommendation.singleHunt!.regionId)}>{recommendation.singleHunt.hunt}</button><small>{recommendation.singleHunt.regionId} · nível {recommendation.singleHunt.level}</small></div> : <p className="advice-route-note">Os alvos ficam melhor distribuídos entre estas hunts:</p>}
         <div className="advice-routes">{recommendation.targets?.map((target) => <div className="advice-route" key={`${target.species}-${target.regionId}`}>
           <div><strong>{target.species}</strong><span>{formatNumber(target.required)} abates</span></div>
-          <div><strong>{target.hunt}</strong><small>{target.regionId} · nível {target.level}</small></div>
+          <div><button type="button" className="advice-map-link advice-route-map-link" onClick={() => onOpenMap(target.regionId)}>{target.hunt}</button><small>{target.regionId} · nível {target.level}</small></div>
           <div><span>{formatChance(target.chance)} de chance</span><small>{formatExpected(target.expected)} / {target.spawnCount} spawns</small></div>
         </div>)}</div>
       </> : <>
-        <div className="advice-best-map"><div><span>Melhor mapa</span><strong>{recommendation.hunt}</strong><small>{recommendation.regionId}</small></div><div><strong>Nível {recommendation.level}</strong><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong><small><strong>{formatExpected(recommendation.expected ?? 0)}</strong> / {recommendation.spawnCount} spawns</small></div></div>
+        <div className="advice-best-map"><div><span>Melhor mapa</span><button type="button" className="advice-map-link" disabled={!recommendation.regionId} onClick={() => recommendation.regionId && onOpenMap(recommendation.regionId)}>{recommendation.hunt}</button><small>{recommendation.regionId}</small></div><div><strong>Nível {recommendation.level}</strong><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong><small><strong>{formatExpected(recommendation.expected ?? 0)}</strong> / {recommendation.spawnCount} spawns</small></div></div>
         {recommendation.kind === 'capture' && averageCaptureHardness !== undefined && <p className="advice-average-hardness">Dureza média pela aba Capturas: <strong>{formatExpected(averageCaptureHardness)}</strong></p>}
         <div className="advice-pokemon-list">{pokemon.map((entry) => <div className="advice-pokemon" key={entry.name}>
           <div><strong>{entry.name}</strong><span>{entry.types.map((type) => typeLabel(type.charAt(0).toUpperCase() + type.slice(1))).join(' / ')}</span></div>
@@ -351,9 +445,92 @@ function PokemonList({ entries, selected, status, sort, onSelect }: { entries: P
   return <div className="pokedex-list"><div className="panel-heading"><span>REGISTROS / {entries.length}{status === 'loading' && ' · carregando...'}</span><span className="sort">{sort === 'Ordem A-Z' ? 'A-Z' : 'DEX'} ↕</span></div><div className="pokedex-grid">{entries.map((entry) => <button className={selected.name === entry.name ? 'pokedex-card selected' : 'pokedex-card'} key={`${entry.region}-${entry.name}`} onClick={() => onSelect(entry)}><div className="card-top"><span>#{String(entry.id).padStart(3, '0')}</span><span>{entry.region}</span></div><div className="card-image"><img src={entry.image} alt={entry.name} /></div><div className="card-name"><b>{entry.name}</b><span>↗</span></div><div className="card-types">{entry.type.split(' / ').map((type) => <em data-type={type} key={type}>{typeLabel(type)}</em>)}</div><div className="card-stats" data-type={entry.type.split(' / ')[0]}><span>HP <b>{entry.stats.hp}</b></span><span>ATK <b>{entry.stats.attack}</b></span><span>DEF <b>{entry.stats.defense}</b></span><span>SPA <b>{entry.stats.specialAttack}</b></span><span>SPD <b>{entry.stats.specialDefense}</b></span><span>SPE <b>{entry.stats.speed}</b></span></div></button>)}</div></div>
 }
 
+const normalizeMoveName = (name: string) => name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’]/g, "'").replace(/♀/g, ' female').replace(/♂/g, ' male').replace(/\s+/g, ' ').trim()
+
+function compatibleTmsForPokemon(selected: Pokemon): Move[] {
+  if (!selected.hasMoveset) return []
+  const levelByName = new Map<string, number>()
+  for (const move of selected.levelMoves) {
+    if (move.level === null) continue
+    const key = normalizeMoveName(move.name)
+    levelByName.set(key, Math.min(levelByName.get(key) ?? Number.POSITIVE_INFINITY, move.level))
+  }
+  const explicitTms = new Set(selected.tmMoves.map((move) => normalizeMoveName(move.name)))
+  const pokemonTypes = new Set(selected.type.split(' / ').map((type) => type.toLowerCase()))
+
+  return tms.flatMap((move) => {
+    const key = normalizeMoveName(move.name)
+    const requiredLevel = levelByName.get(key)
+    const origins: string[] = []
+    if (requiredLevel !== undefined) origins.push('golpe da lista de nível')
+    if (explicitTms.has(key)) origins.push('TM indicada na wiki')
+    if (pokemonTypes.has(move.type.toLowerCase())) origins.push('TM da tipagem')
+    return origins.length ? [{ name: move.name, type: move.type, level: null, origins, requiredLevel: requiredLevel ?? null }] : []
+  })
+}
+
 function PokemonDetail({ selected, onBack }: { selected: Pokemon; onBack: () => void }) {
   const stats = { HP: selected.stats.hp, ATAQUE: selected.stats.attack, DEFESA: selected.stats.defense, SPA: selected.stats.specialAttack, SPD: selected.stats.specialDefense, SPEED: selected.stats.speed }
-  return <div className="detail-screen"><button className="back-button" onClick={onBack}>← Voltar para Pokedex</button><div className="detail-hero detail-hero-screen" style={{ '--accent': selected.accent } as React.CSSProperties}><img className="detail-image" src={selected.image} alt={selected.name} /><span className="detail-id">#{String(selected.id).padStart(3, '0')} · GERAÇÃO {selected.generation}</span><span className="detail-symbol">◒</span><div><p className="kicker">{selected.region.toUpperCase()} / ESPÉCIE POKÉMON</p><h2>{selected.name}</h2><div className="chips">{selected.type.split(' / ').map((type) => <span data-type={type} key={type}>{typeLabel(type)}</span>)}</div></div></div><div className="detail-columns"><section className="detail-block"><div className="section-title"><span>STATUS BASE</span><i>01</i></div><div className="stats-grid">{Object.entries(stats).map(([label, value]) => <div className="stat-card" key={label}><small>{label}</small><b>{value}</b><span style={{ width: `${Math.min(100, value / 2.55)}%` }} /></div>)}</div><div className="section-title move-title"><span>DADOS BASE</span><i>02</i></div><div className="stats"><Stat label="GRUPO-OVO" value={selected.eggGroup || '—'} /><Stat label="EXP BASE" value={String(selected.baseExp)} /><Stat label="FORMA" value={selected.form} /></div><TypeMatchups type={selected.type} /></section><section className="detail-block moves-block"><MoveSection title="GOLPES POR NÍVEL" number="03" moves={selected.levelMoves} /><MoveSection title="TMs QUE APRENDE" number="04" moves={selected.tmMoves} /></section></div></div>
+  const compatibleTms = compatibleTmsForPokemon(selected)
+  return <div className="detail-screen">
+    <button className="back-button" onClick={onBack}>← Voltar para Pokedex</button>
+    <div className="detail-hero detail-hero-screen" style={{ '--accent': selected.accent } as React.CSSProperties}>
+      <img className="detail-image" src={selected.image} alt={selected.name} />
+      <span className="detail-id">#{String(selected.id).padStart(3, '0')} · GERAÇÃO {selected.generation}</span>
+      <span className="detail-symbol">◒</span>
+      <div><p className="kicker">{selected.region.toUpperCase()} / ESPÉCIE POKÉMON</p><h2>{selected.name}</h2><div className="chips">{selected.type.split(' / ').map((type) => <span data-type={type} key={type}>{typeLabel(type)}</span>)}</div></div>
+    </div>
+    <div className="detail-columns">
+      <section className="detail-block">
+        <div className="section-title"><span>STATUS BASE</span></div>
+        <PokemonStatsChart stats={selected.stats} type={selected.type.split(' / ')[0]} />
+        <div className="section-title move-title"><span>DADOS BASE</span></div>
+        <div className="stats"><Stat label="GRUPO-OVO" value={selected.eggGroup || '—'} /><Stat label="FORMA" value={selected.form} /></div>
+        <TypeMatchups type={selected.type} />
+      </section>
+      <section className="detail-block moves-block">
+        <MoveSection key={`${selected.name}-level-moves`} title="GOLPES POR NÍVEL" moves={selected.levelMoves} />
+        <MoveSection key={`${selected.name}-compatible-tms`} title="TMs QUE APRENDE" moves={compatibleTms} />
+      </section>
+    </div>
+  </div>
+}
+
+function PokemonStatsChart({ stats, type }: { stats: Pokemon['stats']; type: string }) {
+  const attributes = [
+    { key: 'hp', label: 'PS', value: stats.hp },
+    { key: 'attack', label: 'Ataque', value: stats.attack },
+    { key: 'defense', label: 'Defesa', value: stats.defense },
+    { key: 'specialAttack', label: 'Atq. Esp.', value: stats.specialAttack },
+    { key: 'specialDefense', label: 'Def. Esp.', value: stats.specialDefense },
+    { key: 'speed', label: 'Velocidade', value: stats.speed },
+  ]
+  const baseTotal = attributes.reduce((sum, attribute) => sum + attribute.value, 0)
+  const minimumAtLevel100 = (base: number, key: string) => key === 'hp' ? 2 * base + 110 : Math.floor((2 * base + 5) * 0.9)
+  const maximumAtLevel100 = (base: number, key: string) => key === 'hp' ? 2 * base + 204 : Math.floor((2 * base + 99) * 1.1)
+  const maximumBase = Math.max(...attributes.map(({ value }) => value), 1)
+  const statBand = (value: number) => value < 50 ? 'low' : value < 90 ? 'medium' : 'high'
+
+  return <div className="base-stats-graph" data-type={type} role="table" aria-label={`Status base de ${type}, com intervalos mínimo e máximo no nível 100`}>
+    <div className="base-stat-row base-stat-heading" role="row">
+      <span role="columnheader">Atributo</span><span role="columnheader">Base</span><span aria-hidden="true" />
+      <span role="columnheader">Mín.<small>Lv. 100</small></span><span role="columnheader">Máx.<small>Lv. 100</small></span>
+    </div>
+    {attributes.map((attribute) => <div className="base-stat-row" role="row" key={attribute.key}>
+      <strong className="base-stat-name" role="rowheader">{attribute.label}</strong>
+      <b className="base-stat-value" data-band={statBand(attribute.value)} role="cell">{attribute.value}</b>
+      <span className="base-stat-track" aria-hidden="true"><i data-band={statBand(attribute.value)} style={{ width: `${attribute.value / maximumBase * 100}%` }} /></span>
+      <span className="base-stat-range" role="cell">{minimumAtLevel100(attribute.value, attribute.key)}</span>
+      <span className="base-stat-range" role="cell">{maximumAtLevel100(attribute.value, attribute.key)}</span>
+    </div>)}
+    <div className="base-stat-row base-stat-total" role="row">
+      <strong className="base-stat-name" role="rowheader">Total</strong>
+      <b className="base-stat-value" role="cell">{baseTotal}</b>
+      <span aria-hidden="true" />
+      <span className="base-stat-range" role="cell">—</span>
+      <span className="base-stat-range" role="cell">—</span>
+    </div>
+  </div>
 }
 
 function TypeMatchups({ type }: { type: string }) {
@@ -363,32 +540,148 @@ function TypeMatchups({ type }: { type: string }) {
     { title: 'RESISTÊNCIAS', values: matchups.filter(({ multiplier }) => multiplier > 0 && multiplier < 1) },
     { title: 'IMUNIDADES', values: matchups.filter(({ multiplier }) => multiplier === 0) },
   ]
-  return <div className="matchups"><div className="section-title"><span>FRAQUEZAS E RESISTÊNCIAS</span><i>03</i></div>{groups.map((group) => <div className="matchup-group" key={group.title}><small>{group.title}</small><div className="type-pills">{group.values.length ? group.values.map(({ type: attackType, multiplier }) => <span data-type={attackType} className={`type-pill ${group.title.toLowerCase()}`} key={attackType}><b>{typeLabel(attackType)}</b><em>{multiplier === 0.25 ? '×¼' : multiplier === 0.5 ? '×½' : multiplier === 2 ? '×2' : multiplier === 4 ? '×4' : '×0'}</em></span>) : <span className="no-matchup">Nenhuma</span>}</div></div>)}</div>
+  return <div className="matchups"><div className="section-title"><span>FRAQUEZAS E RESISTÊNCIAS</span></div>{groups.map((group) => <div className="matchup-group" key={group.title}><small>{group.title}</small><div className="type-pills">{group.values.length ? group.values.map(({ type: attackType, multiplier }) => <span data-type={attackType} className={`type-pill ${group.title.toLowerCase()}`} key={attackType}><b>{typeLabel(attackType)}</b><em>{multiplier === 0.25 ? '×¼' : multiplier === 0.5 ? '×½' : multiplier === 2 ? '×2' : multiplier === 4 ? '×4' : '×0'}</em></span>) : <span className="no-matchup">Nenhuma</span>}</div></div>)}</div>
 }
 
-function MoveSection({ title, number, moves }: { title: string; number: string; moves: Move[] }) {
-  return <div className="move-section"><div className="section-title"><span>{title}</span><i>{number}</i></div>{title === 'TMs QUE APRENDE' && <p className="tm-warning">Aviso: algumas TMs podem não ser ensináveis ao Pokémon, pois ainda não temos 100% das informações disponíveis pelo PokeHunt. Os dados estão sendo baseados na wiki oficial do Pokémon.</p>}{moves.length ? <div className="move-list">{moves.map((move) => { const details = tms.find((item) => item.name === move.name); const attackCategory = details?.attackCategory ?? (move.power === null ? 'status' : 'special'); const effectCategory = attackCategory === 'status' || move.power === null ? 'Status' : 'Dano'; return <div key={`${move.name}-${move.level}`}><b>{move.level ? `Nível ${move.level}` : 'TM'}</b><span>{move.name}</span><em className="move-summary"><span className="move-detail move-element">{typeLabel(move.type)}</span><span className="move-detail move-power">{move.power ?? 'STATUS'}</span><span className="move-detail move-cooldown">{move.cooldown}</span></em><small className="move-facts">{attackCategory !== 'status' && <span className={`move-fact attack-${attackCategory}`}>{moveAttackLabel(attackCategory)}</span>}<span className="move-fact">{details?.isArea ? 'Área' : 'Alvo único'}</span><span className={`move-fact effect-${effectCategory.toLowerCase()}`}>{effectCategory}</span></small></div> })}</div> : <p className="empty-moves">A wiki ainda não publicou moveset para esta espécie.</p>}</div>
+function MoveSection({ title, moves }: { title: string; moves: Move[] }) {
+  const [search, setSearch] = useState('')
+  type SortKey = 'level' | 'name' | 'type' | 'category' | 'power' | 'range' | 'cooldown'
+  const [sort, setSort] = useState<{ key: SortKey; direction: 'asc' | 'desc' } | null>(null)
+  const columns: { key: SortKey; label: string }[] = [
+    { key: 'level', label: 'Nível' },
+    { key: 'name', label: 'Golpe' },
+    { key: 'type', label: 'Elemento' },
+    { key: 'category', label: 'Tipo de Dano' },
+    { key: 'power', label: 'Dano' },
+    { key: 'range', label: 'Alcance' },
+    { key: 'cooldown', label: 'Cooldown' },
+  ]
+  const originLabels: Record<string, string> = {
+    'golpe da lista de nível': 'Aprende por nível',
+    'TM indicada na wiki': 'TM específica',
+    'TM da tipagem': 'TM do próprio tipo',
+  }
+  const showMoveMetadata = title === 'GOLPES POR NÍVEL'
+  const normalizedSearch = search.trim().toLowerCase()
+  const filteredMoves = moves.filter((move) => {
+    const metadata = moveMetadataByName.get(move.name)
+    const category = metadata ? moveCategoryLabels[metadata.attackCategory] : ''
+    const range = metadata?.range ? moveRangeLabels[metadata.range] ?? metadata.range : ''
+    return `${move.name} ${move.type} ${category} ${range} ${move.level ?? ''}`.toLowerCase().includes(normalizedSearch)
+  })
+  const getSortValue = (move: Move, key: SortKey): string | number | null => {
+    const metadata = moveMetadataByName.get(move.name)
+    switch (key) {
+      case 'level': return move.level
+      case 'name': return move.name
+      case 'type': return typeLabel(move.type)
+      case 'category': return metadata ? moveCategoryLabels[metadata.attackCategory] : null
+      case 'power': return metadata?.power ?? null
+      case 'range': return metadata?.range ? moveRangeLabels[metadata.range] ?? metadata.range : null
+      case 'cooldown': return metadata?.cooldown ? Number.parseInt(metadata.cooldown, 10) : null
+    }
+  }
+  const sortedMoves = sort ? [...filteredMoves].sort((first, second) => {
+    const firstValue = getSortValue(first, sort.key)
+    const secondValue = getSortValue(second, sort.key)
+    if (firstValue === null && secondValue === null) return 0
+    if (firstValue === null) return 1
+    if (secondValue === null) return -1
+    const comparison = typeof firstValue === 'number' && typeof secondValue === 'number'
+      ? firstValue - secondValue
+      : String(firstValue).localeCompare(String(secondValue), 'pt-BR', { numeric: true, sensitivity: 'base' })
+    return sort.direction === 'desc' ? -comparison : comparison
+  }) : filteredMoves
+  const toggleSort = (key: SortKey) => setSort((current) => current?.key === key
+    ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' }
+    : { key, direction: 'desc' })
+
+  return <div className="move-section">
+    <div className="section-title"><span>{title}</span></div>
+    <div className="move-list source-move-list">
+      <label className="search move-section-search">
+        <Search size={15} aria-hidden="true" />
+        <input aria-label={`Buscar em ${title.toLowerCase()}`} value={search} onChange={(event) => setSearch(event.target.value)} placeholder={title === 'TMs QUE APRENDE' ? 'Buscar TM compatível...' : 'Buscar golpe por nível...'} />
+        {search && <button type="button" aria-label={`Limpar busca em ${title.toLowerCase()}`} onClick={() => setSearch('')}><X size={15} /></button>}
+      </label>
+      {filteredMoves.length ? <div className="move-table-scroll"><table className={`source-move-table ${showMoveMetadata ? 'level-move-table' : 'tm-move-table'}`}>
+      <thead><tr>{columns.filter(({ key }) => showMoveMetadata || key !== 'level').map(({ key, label }) => <th scope="col" aria-sort={sort?.key === key ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'} key={key}><button type="button" className="move-sort-button" onClick={() => toggleSort(key)} aria-label={`Ordenar por ${label}${sort?.key === key ? sort.direction === 'desc' ? ', decrescente' : ', crescente' : ''}`}><span>{label}</span><small aria-hidden="true">{sort?.key === key ? sort.direction === 'desc' ? '↓' : '↑' : '↕'}</small></button></th>)}</tr></thead>
+      <tbody>{sortedMoves.map((move) => {
+        const metadata = moveMetadataByName.get(move.name)
+        const category = metadata?.attackCategory
+        const range = metadata?.range
+        return <tr key={`${move.name}-${move.level ?? 'tm'}`}>
+          {showMoveMetadata && <td><b className={move.level !== null ? 'move-level' : undefined} aria-label={move.level !== null ? `Nível ${move.level}` : 'TM'}>{move.level}</b></td>}
+          <td><strong>{move.name}</strong>{showMoveMetadata && (move.origins?.length || move.requiredLevel !== null && move.requiredLevel !== undefined) && <small className="move-facts">{move.origins?.map((origin) => <span className="move-fact" key={origin}>{originLabels[origin] ?? origin}</span>)}{move.requiredLevel !== null && move.requiredLevel !== undefined && <span className="move-fact">Nível {move.requiredLevel}</span>}</small>}</td>
+          <td><span className="move-detail move-element" data-type={move.type}>{typeLabel(move.type)}</span></td>
+          <td><span className={`move-category move-category-${category ?? 'unknown'}`}>{category ? moveCategoryLabels[category] : 'Categoria indisponível'}</span></td>
+          <td><span className={`move-metric move-power ${metadata?.power === null ? 'move-no-power' : ''}`} aria-label={metadata?.power === null ? 'Sem dano direto' : undefined} title={metadata?.power === null ? 'Sem dano direto' : undefined}>{metadata?.power === null ? '—' : metadata?.power !== undefined ? metadata.power : 'Indisponível'}</span></td>
+          <td><span className={`move-range move-range-${range ? moveRangeClasses[range] ?? 'unknown' : 'unknown'}`}>{range ? moveRangeLabels[range] ?? range : 'Alcance indisponível'}</span></td>
+          <td><span className="move-metric move-cooldown">{metadata?.cooldown ?? 'Indisponível'}</span></td>
+        </tr>
+      })}</tbody>
+    </table></div> : <p className="empty-moves">{moves.length === 0 ? 'A wiki não lista golpes para esta espécie.' : 'Nenhum golpe ou TM encontrado.'}</p>}
+    </div>
+  </div>
 }
 
 function Stat({ label, value }: { label: string; value: string }) { return <div><small>{label}</small><b>{value}</b></div> }
-function TmTable({ items }: { items: typeof tms }) { return <div className="tm-panel"><div className="panel-heading"><span>GOLPES E TMs / {items.length}</span><span className="sort">TIPO ↕</span></div><div className="tm-head"><span>GOLPE</span><span>TIPO</span><span>ATAQUE</span><span>PODER</span><span>RECARGA</span><span>CATEGORIA</span><span>ALCANCE</span></div>{items.map((tm) => <div className="tm-row" key={tm.id}><strong data-type={tm.type}>{tm.name}</strong><span data-type={tm.type} className={`type ${tm.type.toLowerCase()}`}>{typeLabel(tm.type)}</span><span className={`attack-category ${tm.attackCategory}`}><i>{attackCategoryIcon(tm.attackCategory)}</i>{attackCategoryLabel(tm.attackCategory)}</span><span>{tm.power ?? '—'}</span><span>{tm.cooldown}</span><span>{tm.category.replace('Utilitário / Status', 'Utilitário / Estado')}</span><span>{tm.range.replace('Alvo único', 'Alvo único')}</span></div>)}</div> }
+function CompatiblePokemonScreen({ move, entries, onBack, onSelect }: { move: TechnicalMove | null; entries: Pokemon[]; onBack: () => void; onSelect: (entry: Pokemon) => void }) {
+  return <section className="compatible-pokemon-screen">
+    <button type="button" className="back-button" onClick={onBack}>← Voltar para TMs</button>
+    <div className="compatible-pokemon-heading"><span>POKÉMON COMPATÍVEIS</span><h2>{move?.name}</h2></div>
+    {entries.length ? <div className="compatible-pokemon-grid">{entries.map((entry) => <button type="button" className="compatible-pokemon-card" key={`${entry.region}-${entry.name}`} onClick={() => onSelect(entry)}><img src={entry.image} alt="" /><strong>{entry.name}</strong></button>)}</div> : <p className="empty-moves">Nenhum Pokémon compatível encontrado.</p>}
+  </section>
+}
 
-function MoveDexTable({ items }: { items: MoveDexEntry[] }) { return <div className="tm-panel movedex-panel"><div className="capture-note"><strong>MoveDex:</strong> catálogo unificado dos golpes que aparecem nos movesets por nível e no catálogo de TMs do PokeHunt.</div><div className="panel-heading"><span>GOLPES DISPONÍVEIS / {items.length}</span><span className="sort">NOME ↕</span></div><div className="tm-head movedex-head"><span>GOLPE</span><span>TIPO</span><span>ATAQUE</span><span>PODER</span><span>RECARGA</span><span>EFEITO</span><span>ALCANCE</span><span>ORIGEM</span></div>{items.map((move) => <div className="tm-row movedex-row" key={move.name}><strong data-type={move.type}>{move.name}</strong><span data-type={move.type} className="type">{typeLabel(move.type)}</span><span className={`attack-category ${move.attackCategory}`}><i>{attackCategoryIcon(move.attackCategory)}</i>{attackCategoryLabel(move.attackCategory)}</span><span>{move.power ?? '—'}</span><span>{move.cooldown}</span><span>{move.category.replace('Utilitário/Status', 'Status')}</span><span>{move.isArea ? 'Área' : 'Alvo único'}</span><span className="move-source">{move.learnedByLevel && move.learnedByTm ? 'Nível + TM' : move.learnedByTm ? 'TM' : 'Nível'}</span></div>)}</div> }
+function TmTable({ items, sort, onSort, onSelectMove }: { items: typeof tms; sort: { key: 'power' | 'cooldown'; direction: 'asc' | 'desc' } | null; onSort: (key: 'power' | 'cooldown') => void; onSelectMove: (move: TechnicalMove) => void }) {
+  return <div className="tm-panel canonical-tm-panel">
+    <div className="panel-heading"><span>GOLPES COMPATÍVEIS / {items.length}</span><span className="sort">TIPO ↕</span></div>
+    <div className="tm-head canonical-tm-head"><span>GOLPE</span><span>TIPO</span><span>CATEGORIA</span><span>ALCANCE</span><span role="columnheader" aria-sort={sort?.key === 'power' ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'}><button type="button" className="tm-sort-button" onClick={() => onSort('power')} aria-label={`Ordenar por dano${sort?.key === 'power' ? sort.direction === 'desc' ? ', decrescente' : ', crescente' : ''}`}>DANO<span aria-hidden="true">{sort?.key === 'power' ? sort.direction === 'desc' ? '↓' : '↑' : '↕'}</span></button></span><span role="columnheader" aria-sort={sort?.key === 'cooldown' ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'}><button type="button" className="tm-sort-button" onClick={() => onSort('cooldown')} aria-label={`Ordenar por cooldown${sort?.key === 'cooldown' ? sort.direction === 'desc' ? ', decrescente' : ', crescente' : ''}`}>COOLDOWN<span aria-hidden="true">{sort?.key === 'cooldown' ? sort.direction === 'desc' ? '↓' : '↑' : '↕'}</span></button></span><span>POKÉMON COMPATÍVEIS</span></div>
+    {items.map((tm) => <div className="tm-row canonical-tm-row" key={tm.id}>
+      <strong data-type={tm.type}>{tm.name}</strong>
+      <span data-type={tm.type} className={`type ${tm.type.toLowerCase()}`}>{typeLabel(tm.type)}</span>
+      <span className={`move-category move-category-${tm.attackCategory}`}>{moveCategoryLabels[tm.attackCategory]}</span>
+      <span className={`move-range move-range-${tm.range ? moveRangeClasses[tm.range] ?? 'unknown' : 'unknown'}`}>{tm.range ? moveRangeLabels[tm.range] ?? tm.range : 'Alcance indisponível'}</span>
+      <span className={`move-metric move-power ${tm.power === null ? 'move-no-power' : ''}`}>{tm.power === null ? 'Sem dano' : tm.power ?? 'Indisponível'}</span>
+      <span className="move-metric move-cooldown">{tm.cooldown ?? 'Indisponível'}</span>
+      <span><button type="button" className="compatible-pokemon-trigger" aria-label={`Ver Pokémon que aprendem ${tm.name}: ${tm.compatibleSpecies} espécies`} onClick={() => onSelectMove(tm)}>{tm.compatibleSpecies} espécies</button></span>
+    </div>)}
+  </div>
+}
 
-function CaptureTable({ items, pokemon }: { items: CaptureEntry[]; pokemon: Pokemon[] }) {
+function MoveDexTable({ items }: { items: MoveDexEntry[] }) {
+  return <div className="tm-panel movedex-panel">
+    <div className="panel-heading"><span>GOLPES DISPONÍVEIS / {items.length}</span><span className="sort">NOME A-Z</span></div>
+    <div className="tm-head canonical-tm-head"><span>GOLPE</span><span>TIPO</span><span>CATEGORIA</span><span>ALCANCE</span><span>DANO</span><span>COOLDOWN</span><span>POKÉMON COMPATÍVEIS</span></div>
+    {items.map((move) => <div className="tm-row canonical-tm-row" key={move.name}>
+      <strong data-type={move.type}>{move.name}</strong>
+      <span data-type={move.type} className={`type ${move.type.toLowerCase()}`}>{typeLabel(move.type)}</span>
+      <span className={`move-category move-category-${move.attackCategory}`}>{moveCategoryLabels[move.attackCategory]}</span>
+      <span className={`move-range move-range-${move.range ? moveRangeClasses[move.range] ?? 'unknown' : 'unknown'}`}>{move.range ? moveRangeLabels[move.range] ?? move.range : 'Alcance indisponível'}</span>
+      <span className={`move-metric move-power ${move.power === null ? 'move-no-power' : ''}`}>{move.power === null ? 'Sem dano' : move.power ?? 'Indisponível'}</span>
+      <span className="move-metric move-cooldown">{move.cooldown ?? 'Indisponível'}</span>
+      <span>{move.compatibleSpecies} espécies</span>
+    </div>)}
+  </div>
+}
+
+function CaptureTable({ items, pokemon, sort, onSort }: { items: CaptureEntry[]; pokemon: Pokemon[]; sort: string; onSort: (value: string) => void }) {
   const pokemonByName = new Map(pokemon.map((entry) => [entry.name, entry]))
 
   return <div className="tm-panel capture-panel">
     <div className="capture-note"><strong>Como ler:</strong> quanto menor a dureza, mais fácil é capturar. A wiki recomenda Ultraball para a tabela de caça. As 8 espécies não capturáveis e os 74 lendários/Megas ficam fora destes registros.</div>
     <div className="panel-heading">
       <span>ESPÉCIES NA TABELA / {items.length}</span>
-      <span className="sort">DUREZA ↕</span>
+      <span className="sort">{sort === 'Nome (A-Z)' ? 'NOME A-Z' : sort === 'Dureza (maior)' ? 'DUREZA ↓' : 'DUREZA ↑'}</span>
     </div>
-    <div className="tm-head capture-head"><span>ESPÉCIE</span><span>ELEMENTO</span><span>DUREZA</span><span>FAIXA</span><span>BALL RECOMENDADA</span></div>
+    <div className="tm-head capture-head"><span>ESPÉCIE</span><span>ELEMENTO</span><span><button type="button" className="capture-sort-button" onClick={() => onSort(sort === 'Dureza (maior)' ? 'Dureza (menor)' : 'Dureza (maior)')} aria-label={`Ordenar dureza${sort === 'Dureza (maior)' ? ', do menor para o maior' : ', do maior para o menor'}`}>DUREZA<span aria-hidden="true">{sort === 'Dureza (maior)' ? '↓' : sort === 'Dureza (menor)' ? '↑' : '↕'}</span></button></span><span>FAIXA</span><span>BALL RECOMENDADA</span></div>
     {items.map((entry) => {
       const match = pokemonByName.get(entry.name)
       const elements = match ? match.type.split(' / ').map(typeLabel).join(' e ') : '—'
-      return <div className="tm-row capture-row" key={entry.name}><strong>{entry.name}</strong><span className="capture-types">{elements}</span><span className="capture-hardness">{entry.hardness}</span><span className={`capture-range range-${entry.range.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{entry.range}</span><span className="capture-ball">{entry.recommendedBall}</span></div>
+      const normalizedRange = entry.range.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+      const rangeTone = normalizedRange.includes('facil') ? 'easy' : normalizedRange.includes('medio') ? 'medium' : normalizedRange.includes('dificil') ? 'hard' : normalizedRange.startsWith('premio') ? 'prize' : normalizedRange.startsWith('durao') ? 'tough' : 'medium'
+      return <div className="tm-row capture-row" key={entry.name}><strong>{entry.name}</strong><span className="capture-types">{elements}</span><span className="capture-hardness">{entry.hardness}</span><span className={`capture-range capture-range-${rangeTone}`}>{entry.range}</span><span className="capture-ball">{entry.recommendedBall}</span></div>
     })}
   </div>
 }

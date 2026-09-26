@@ -1,0 +1,88 @@
+.content:has(.world-atlas) .toolbar { display: none; }
+.home-shortcut-world { --home-accent: #27815f; }
+
+.world-atlas { display: grid; gap: 12px; }
+.world-controls { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(160px, .45fr) minmax(180px, .5fr); align-items: center; gap: 10px; }
+.world-search { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #637590; }
+.world-search:focus-within { border-color: #27815f; box-shadow: 0 0 0 3px rgba(39, 129, 95, .12); }
+.world-search input { width: 100%; min-width: 0; height: 44px; border: 0; outline: 0; background: transparent; color: #17243d; font: inherit; }
+.world-search input::placeholder { color: #74839a; }
+.world-controls select { width: 100%; min-width: 0; height: 48px; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #17243d; font: inherit; font-weight: 700; }
+.world-count { grid-column: 1 / -1; color: #4e5f54; font-size: 13px; font-weight: 800; text-align: right; }
+.world-note { margin: -5px 0 0; color: #52645a; font-size: 13px; }
+.world-biomes { display: grid; gap: 8px; }
+.world-biome { --biome-accent: #27815f; --biome-tint: #245d48; --biome-dark-tint: #a8d4b7; overflow: hidden; border-bottom: 2px solid var(--biome-accent); background: rgba(255, 255, 255, .45); }
+.world-biome-floresta, .world-map-floresta { --biome-accent: #378552; --biome-tint: #245d38; --biome-dark-tint: #aad3b1; --biome-wash: #e9f2e4; --biome-night: #203329; }
+.world-biome-planicie, .world-map-planicie { --biome-accent: #a17c2e; --biome-tint: #755718; --biome-dark-tint: #e6d29a; --biome-wash: #f3eddd; --biome-night: #322c1e; }
+.world-biome-mar, .world-map-mar { --biome-accent: #197f91; --biome-tint: #176173; --biome-dark-tint: #9dd4da; --biome-wash: #e4f1f3; --biome-night: #1d3035; }
+.world-biome-caverna, .world-map-caverna { --biome-accent: #8a6248; --biome-tint: #684831; --biome-dark-tint: #d6b498; --biome-wash: #f1e7df; --biome-night: #382b25; }
+.world-biome-montanha, .world-map-montanha { --biome-accent: #687b8c; --biome-tint: #4b5c6b; --biome-dark-tint: #b9ccdb; --biome-wash: #e9eff2; --biome-night: #26313a; }
+.world-biome-cidade, .world-map-cidade { --biome-accent: #627489; --biome-tint: #46586c; --biome-dark-tint: #b9cadd; --biome-wash: #e8eef2; --biome-night: #252e37; }
+.world-biome-santuario, .world-map-santuario { --biome-accent: #5978a1; --biome-tint: #405d82; --biome-dark-tint: #b8cce9; --biome-wash: #e9eef7; --biome-night: #252e3d; }
+.world-biome-pantano, .world-map-pantano { --biome-accent: #75813f; --biome-tint: #56622b; --biome-dark-tint: #c6d092; --biome-wash: #eef0e0; --biome-night: #303424; }
+.world-biome-vulcao, .world-map-vulcao { --biome-accent: #b55b36; --biome-tint: #914629; --biome-dark-tint: #f0b394; --biome-wash: #f8e9df; --biome-night: #3b2924; }
+.world-biome-torre, .world-map-torre { --biome-accent: #655d67; --biome-tint: #514752; --biome-dark-tint: #c9bdcc; --biome-wash: #edeaf0; --biome-night: #302b34; }
+.world-biome > summary { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 68px; padding: 12px 48px 12px 16px; cursor: pointer; list-style: none; }
+.world-biome > summary::-webkit-details-marker { display: none; }
+.world-biome > summary::after { position: absolute; top: 50%; right: 18px; color: var(--biome-accent); content: '+'; font-size: 22px; font-weight: 800; transform: translateY(-50%); }
+.world-biome[open] > summary::after { content: '−'; }
+.world-biome > summary > span { display: grid; gap: 3px; min-width: 0; }
+.world-biome > summary strong { color: var(--biome-tint); font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 800; }
+.world-biome > summary > b { display: grid; width: 32px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--biome-accent) 14%, white); color: var(--biome-tint); font-size: 13px; font-weight: 800; }
+.world-map-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 12px 14px; }
+.world-map { min-width: 0; padding: 13px; border: 1px solid color-mix(in srgb, var(--biome-accent, #6caa88) 32%, white); border-top: 3px solid var(--biome-accent, #6caa88); border-radius: 6px; background: var(--biome-wash, #fff); }
+.world-map-focused { scroll-margin-top: 24px; box-shadow: 0 0 0 3px var(--biome-accent, #378552); }
+.world-map-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.world-map-heading > div { display: grid; gap: 2px; min-width: 0; }
+.world-map-id { color: #45564c; font-size: 12px; font-weight: 800; overflow-wrap: anywhere; }
+.world-map-heading h3 { margin: 0; color: #203c30; font-family: 'DM Sans', sans-serif; font-size: 19px; font-weight: 800; line-height: 1.3; overflow-wrap: anywhere; }
+.world-stage { flex: 0 0 auto; padding: 5px 7px; border-radius: 4px; background: #e6f2e9; color: #286345; font-size: 12px; font-weight: 800; }
+.world-stage-elite { background: #f8eed5; color: #805d16; }
+.world-stage-mega { background: #f6e4df; color: #9b4a35; }
+.world-map-types { margin: 8px 0; color: #45564c; font-size: 13px; font-weight: 700; }
+.world-spawns { display: grid; }
+.world-spawn { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(60px, .8fr) 64px; align-items: center; gap: 9px; min-height: 38px; border-top: 1px solid #edf1ec; }
+.world-spawn-identity { display: flex; min-width: 0; flex-wrap: wrap; align-items: baseline; gap: 2px 7px; }
+.world-spawn strong { min-width: 0; color: #253b30; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.world-capture-hardness { flex: 0 0 auto; color: #7d6740; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.world-chance-track { display: block; height: 5px; overflow: hidden; border-radius: 4px; background: #e7eee8; }
+.world-chance-track i { display: block; height: 100%; border-radius: inherit; background: #4a9a70; }
+.world-spawn > b { color: #245d48; font-size: 14px; font-weight: 800; text-align: right; }
+.world-empty { padding: 30px 16px; border: 1px dashed #b9cde8; color: #637590; text-align: center; }
+
+:root[data-color-mode="dark"] .world-search,
+:root[data-color-mode="dark"] .world-controls select { border-color: #485462; background: #202731; color: #e4eaf0; }
+:root[data-color-mode="dark"] .world-search input { color: #edf2f7; }
+:root[data-color-mode="dark"] .world-search input::placeholder { color: #a6b1bd; }
+:root[data-color-mode="dark"] .world-note,
+:root[data-color-mode="dark"] .world-count,
+:root[data-color-mode="dark"] .world-map-id,
+:root[data-color-mode="dark"] .world-map-types { color: #aab5c1; }
+:root[data-color-mode="dark"] .world-biome { border-bottom-color: color-mix(in srgb, var(--biome-accent) 72%, #26313b); background: rgba(28, 35, 43, .72); }
+:root[data-color-mode="dark"] .world-biome > summary strong { color: var(--biome-dark-tint); }
+:root[data-color-mode="dark"] .world-biome > summary > b { background: color-mix(in srgb, var(--biome-accent) 22%, #202731); color: var(--biome-dark-tint); }
+:root[data-color-mode="dark"] .world-map { border-color: color-mix(in srgb, var(--biome-accent, #394a40) 55%, #1c232b); border-top-color: var(--biome-accent, #5c9871); background: var(--biome-night, #1c232b); }
+:root[data-color-mode="dark"] .world-map-focused { box-shadow: 0 0 0 3px var(--biome-dark-tint, #aad3b1); }
+:root[data-color-mode="dark"] .world-map-heading h3,
+:root[data-color-mode="dark"] .world-spawn strong { color: #e2ece4; }
+:root[data-color-mode="dark"] .world-capture-hardness { color: #e5c98a; }
+:root[data-color-mode="dark"] .world-stage { background: #283b30; color: #b9e2c6; }
+:root[data-color-mode="dark"] .world-stage-elite { background: #403820; color: #f2d88e; }
+:root[data-color-mode="dark"] .world-stage-mega { background: #422b32; color: #ffc4ca; }
+:root[data-color-mode="dark"] .world-spawn { border-color: #303b34; }
+:root[data-color-mode="dark"] .world-chance-track { background: #344139; }
+:root[data-color-mode="dark"] .world-spawn > b { color: #a8d4b7; }
+
+@media (max-width: 850px) {
+  .world-map-list { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .world-controls { grid-template-columns: minmax(0, 1fr); }
+  .world-count { grid-column: auto; }
+  .world-map-list { padding-inline: 8px; }
+  .world-map { padding: 11px; }
+  .world-spawn { grid-template-columns: minmax(80px, 1fr) 56px; gap: 7px; }
+  .world-chance-track { grid-column: 1 / -1; grid-row: 2; margin-bottom: 5px; }
+  .world-spawn > b { grid-column: 2; grid-row: 1; }
+}
