@@ -186,7 +186,12 @@ function Atlas() {
 
       <section className="content">
         <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
-        {view === 'home' ? <HomeDashboard onNavigate={changeView} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
+        {view === 'home' ? <HomeDashboard onNavigate={(destination) => {
+          if (destination === 'capture-calculator') {
+            setCaptureSubTab('calculator')
+            changeView('captures')
+          } else changeView(destination)
+        }} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
           {(view !== 'captures' || captureSubTab === 'rates') && <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
@@ -218,15 +223,17 @@ function Atlas() {
 }
 
 type HomeDestination = 'pokemon' | 'missions' | 'calculator' | 'tms' | 'captures' | 'world'
+type HomeShortcutDestination = HomeDestination | 'capture-calculator'
 type HomeCounts = Pick<Record<HomeDestination, number>, 'pokemon' | 'missions' | 'tms' | 'captures' | 'world'>
 
-function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeDestination) => void; counts: HomeCounts }) {
+function HomeDashboard({ onNavigate, counts }: { onNavigate: (destination: HomeShortcutDestination) => void; counts: HomeCounts }) {
   const shortcuts = [
     { destination: 'pokemon', label: 'Pokédex', detail: `${counts.pokemon} espécies`, icon: BookOpen, tone: 'pokedex' },
     { destination: 'missions', label: 'Missões', detail: `${counts.missions} missões de clã`, icon: ClipboardList, tone: 'missions' },
     { destination: 'calculator', label: 'Calculadora', detail: '6 atributos', icon: Calculator, tone: 'calculator' },
     { destination: 'tms', label: 'TMs', detail: `${counts.tms} golpes`, icon: ScrollText, tone: 'tms' },
     { destination: 'captures', label: 'Capturas', detail: `${counts.captures} espécies`, icon: Crosshair, tone: 'captures' },
+    { destination: 'capture-calculator', label: 'Calculadora de Captura', detail: 'Chance e média esperada', icon: Calculator, tone: 'capture-calculator' },
     { destination: 'world', label: 'Mundo', detail: `${counts.world} mapas`, icon: MapIcon, tone: 'world' },
   ] as const
 
