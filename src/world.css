@@ -29,6 +29,12 @@
 .world-biome > summary > span { display: grid; gap: 3px; min-width: 0; }
 .world-biome > summary strong { color: var(--biome-tint); font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 800; }
 .world-biome > summary > b { display: grid; width: 32px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--biome-accent) 14%, white); color: var(--biome-tint); font-size: 13px; font-weight: 800; }
+.world-biome-header { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(180px, .45fr); gap: 10px; padding: 0 12px 12px; }
+.world-biome-search { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #637590; }
+.world-biome-search:focus-within { border-color: var(--biome-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--biome-accent) 14%, transparent); }
+.world-biome-search input { width: 100%; min-width: 0; height: 42px; border: 0; outline: 0; background: transparent; color: #17243d; font: inherit; }
+.world-biome-search input::placeholder { color: #74839a; }
+.world-biome-header select { width: 100%; min-width: 0; height: 46px; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #17243d; font: inherit; font-weight: 700; }
 .world-map-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 12px 14px; }
 .world-map { min-width: 0; padding: 13px; border: 1px solid color-mix(in srgb, var(--biome-accent, #6caa88) 32%, white); border-top: 3px solid var(--biome-accent, #6caa88); border-radius: 6px; background: var(--biome-wash, #fff); }
 .world-map-focused { scroll-margin-top: 24px; box-shadow: 0 0 0 3px var(--biome-accent, #378552); }
@@ -51,9 +57,13 @@
 .world-empty { padding: 30px 16px; border: 1px dashed #b9cde8; color: #637590; text-align: center; }
 
 :root[data-color-mode="dark"] .world-search,
-:root[data-color-mode="dark"] .world-controls select { border-color: #485462; background: #202731; color: #e4eaf0; }
+:root[data-color-mode="dark"] .world-controls select,
+:root[data-color-mode="dark"] .world-biome-search,
+:root[data-color-mode="dark"] .world-biome-header select { border-color: #485462; background: #202731; color: #e4eaf0; }
 :root[data-color-mode="dark"] .world-search input { color: #edf2f7; }
+:root[data-color-mode="dark"] .world-biome-search input { color: #edf2f7; }
 :root[data-color-mode="dark"] .world-search input::placeholder { color: #a6b1bd; }
+:root[data-color-mode="dark"] .world-biome-search input::placeholder { color: #a6b1bd; }
 :root[data-color-mode="dark"] .world-note,
 :root[data-color-mode="dark"] .world-count,
 :root[data-color-mode="dark"] .world-map-id,
@@ -74,6 +84,7 @@
 :root[data-color-mode="dark"] .world-spawn > b { color: #a8d4b7; }
 
 @media (max-width: 850px) {
+  .world-biome-header { grid-template-columns: minmax(0, 1fr); }
   .world-map-list { grid-template-columns: minmax(0, 1fr); }
 }
 

@@ -1,6 +1,6 @@
-import React, { StrictMode, useEffect, useMemo, useState } from 'react'
+import React, { StrictMode, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, BookOpen, Calculator, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
+import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import regionCatalog from './region-data.json'
@@ -36,6 +36,18 @@ type WorldRegion = {
 
 const worldRegions = regionCatalog as WorldRegion[]
 const captureHardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
+const captureBallPower = { 'Poké Ball': 4, 'Great Ball': 7, 'Ultra Ball': 13 } as const
+const captureRarityDivisors = { Comum: 1, Incomum: 10, Raro: 26, 'Épico': 39, Prismático: 90, Mítico: 174, Astral: 283 } as const
+const captureLevelPenaltyPoints = [[0.24, 0.98], [0.3, 0.96], [0.5, 0.83], [0.6, 0.7], [0.75, 0.42], [0.8, 0.3], [0.9, 0]] as const
+const getCaptureLevelPenalty = (teamToTargetRatio: number) => {
+  if (teamToTargetRatio >= 0.9) return 0
+  if (teamToTargetRatio <= 0.24) return 0.98
+  const upperIndex = captureLevelPenaltyPoints.findIndex(([ratio]) => teamToTargetRatio <= ratio)
+  const [upperRatio, upperPenalty] = captureLevelPenaltyPoints[upperIndex]
+  const [lowerRatio, lowerPenalty] = captureLevelPenaltyPoints[upperIndex - 1]
+  const progress = (teamToTargetRatio - lowerRatio) / (upperRatio - lowerRatio)
+  return lowerPenalty + (upperPenalty - lowerPenalty) * progress
+}
 
 const tms = technicalMoves
 const moveCategoryLabels: Record<TechnicalMove['attackCategory'], string> = { physical: 'Físico', special: 'Ataque Especial', status: 'Status', unknown: 'Categoria indisponível' }
@@ -68,6 +80,7 @@ function Atlas() {
   const [captureRange, setCaptureRange] = useState('Todas as faixas')
   const [captureType, setCaptureType] = useState('Todos os tipos')
   const [captureSort, setCaptureSort] = useState('Nome (A-Z)')
+  const [captureSubTab, setCaptureSubTab] = useState<'rates' | 'calculator'>('rates')
   const [moveSource, setMoveSource] = useState('Todas as origens')
 
   useEffect(() => {
@@ -156,7 +169,13 @@ function Atlas() {
           <button aria-label="Início" className={view === 'home' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('home')}><Home size={18} /> <span>Início</span></button>
           <button aria-label="Pokedex" className={view === 'pokemon' || view === 'detail' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('pokemon')}><BookOpen size={18} /> <span>Pokedex</span> <strong>{pokemon.length}</strong></button>
           <button aria-label="TMs" className={view === 'tms' || view === 'tm-compatible' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('tms')}><ScrollText size={18} /> <span>TMs</span> <strong>{tms.length}</strong></button>
-          <button aria-label="Capturas" className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('captures')}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong></button>
+          <div className="nav-group">
+            <button aria-label="Capturas" aria-expanded={view === 'captures'} className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => { setCaptureSubTab('rates'); changeView('captures') }}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong><ChevronDown className={view === 'captures' ? 'nav-chevron expanded' : 'nav-chevron'} size={16} aria-hidden="true" /></button>
+            {view === 'captures' && <div className="nav-submenu" role="group" aria-label="Menu de Capturas">
+              <button type="button" className={captureSubTab === 'rates' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'rates' ? 'page' : undefined} title="Taxas de Captura" onClick={() => { setQuery(''); setCaptureSubTab('rates') }}><Crosshair size={15} /><span>Taxas de Captura</span></button>
+              <button type="button" className={captureSubTab === 'calculator' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'calculator' ? 'page' : undefined} title="Calculadora de Captura" onClick={() => { setQuery(''); setCaptureSubTab('calculator') }}><Calculator size={15} /><span>Calculadora de Captura</span></button>
+            </div>}
+          </div>
           <button aria-label="Mundo" className={view === 'world' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('world')}><MapIcon size={18} /> <span>Mundo</span> <strong>{worldRegions.length}</strong></button>
           <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
           <button aria-label="Missões" className={view === 'missions' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong></button>
@@ -166,9 +185,9 @@ function Atlas() {
       </aside>
 
       <section className="content">
-        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
+        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
         {view === 'home' ? <HomeDashboard onNavigate={changeView} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
-          <div className="toolbar">
+          {(view !== 'captures' || captureSubTab === 'rates') && <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
               <select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select>
@@ -190,8 +209,8 @@ function Atlas() {
             </> : <>
               <select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select>
             </>}
-          </div>
-          {view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
+          </div>}
+          {view === 'captures' && captureSubTab === 'calculator' ? <CaptureCalculator entries={captureRates} pokemon={pokemon} /> : view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
     </main>
@@ -229,11 +248,21 @@ function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapI
   const [focusedMapFilter, setFocusedMapFilter] = useState(focusMapId)
   const [selectedBiome, setSelectedBiome] = useState(focusedMap?.biomeLabel ?? 'Todos os biomas')
   const [selectedStage, setSelectedStage] = useState('Todos os estágios')
+  const [biomeQueries, setBiomeQueries] = useState<Record<string, string>>({})
+  const [biomeFloorFilters, setBiomeFloorFilters] = useState<Record<string, string>>({})
   useEffect(() => {
     if (focusMapId) document.getElementById(`world-map-${focusMapId}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }, [focusMapId])
   const normalizedQuery = query.trim().toLowerCase()
   const biomes = [...new Set(entries.map((entry) => entry.biomeLabel))]
+  const getFloorLabel = (entry: WorldRegion) => {
+    const floorKey = entry.id.split('_')[1]
+    if (/^\d+$/.test(floorKey ?? '')) return `Andar ${Number(floorKey)}`
+    if (floorKey === 'kalos') return 'Kalos'
+    if (floorKey === 'elite') return 'Elite'
+    if (floorKey === 'mega') return 'Domínio Mega'
+    return 'Outros'
+  }
   const visibleEntries = entries.filter((entry) => {
     const stageLabel = entry.stage === 'mega' ? 'Domínio Mega' : entry.stage === 'elite' ? 'Elite' : 'Região'
     const matchesQuery = (!focusedMapFilter || entry.id === focusedMapFilter) && `${entry.id} ${entry.name} ${entry.types.join(' ')} ${entry.levelRange} ${entry.spawns.map((spawn) => spawn.name).join(' ')}`.toLowerCase().includes(normalizedQuery)
@@ -260,9 +289,29 @@ function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapI
       <span className="world-count">{visibleEntries.length} de {entries.length} mapas</span>
     </div>
     <p className="world-note">Chance calculada pelos pesos de spawn publicados para cada mapa.</p>
-    {groups.length ? <div className="world-biomes">{groups.map((group) => <details className={`world-biome world-biome-${group.entries[0].biome}`} key={group.biomeLabel} open={selectedBiome !== 'Todos os biomas' || normalizedQuery.length > 0}>
-      <summary><span><strong>{group.biomeLabel}</strong></span><b>{group.entries.length}</b></summary>
-      <div className="world-map-list">{group.entries.map((entry) => {
+    {groups.length ? <div className="world-biomes">{groups.map((group) => {
+      const biomeQuery = (biomeQueries[group.biomeLabel] ?? '').trim().toLowerCase()
+      const biomeFloor = biomeFloorFilters[group.biomeLabel] ?? 'Todos os andares'
+      const floorOptions = [...new Set(group.entries.map(getFloorLabel))].sort((first, second) => {
+        const firstNumber = Number(first.match(/\d+/)?.[0] ?? Number.MAX_SAFE_INTEGER)
+        const secondNumber = Number(second.match(/\d+/)?.[0] ?? Number.MAX_SAFE_INTEGER)
+        return firstNumber - secondNumber || first.localeCompare(second)
+      })
+      const biomeEntries = group.entries.filter((entry) => {
+        const matchesFloor = biomeFloor === 'Todos os andares' || getFloorLabel(entry) === biomeFloor
+        const matchesQuery = `${entry.id} ${entry.name} ${entry.types.join(' ')} ${entry.levelRange} ${entry.spawns.map((spawn) => spawn.name).join(' ')}`.toLowerCase().includes(biomeQuery)
+        return matchesFloor && matchesQuery
+      })
+      return <details className={`world-biome world-biome-${group.entries[0].biome}`} key={group.biomeLabel} open={selectedBiome !== 'Todos os biomas' || normalizedQuery.length > 0}>
+      <summary><span><strong>{group.biomeLabel}</strong></span><b>{biomeEntries.length}</b></summary>
+      <div className="world-biome-header">
+        <label className="world-biome-search"><Search size={17} /><input aria-label={`Pesquisar em ${group.biomeLabel}`} value={biomeQueries[group.biomeLabel] ?? ''} onChange={(event) => setBiomeQueries((current) => ({ ...current, [group.biomeLabel]: event.target.value }))} placeholder="Pesquisar mapa, Pokémon ou andar..." /></label>
+        <select aria-label={`Filtrar ${group.biomeLabel} por andar`} value={biomeFloor} onChange={(event) => setBiomeFloorFilters((current) => ({ ...current, [group.biomeLabel]: event.target.value }))}>
+          <option>Todos os andares</option>
+          {floorOptions.map((floor) => <option key={floor}>{floor}</option>)}
+        </select>
+      </div>
+      {biomeEntries.length ? <div className="world-map-list">{biomeEntries.map((entry) => {
         const totalWeight = entry.spawns.reduce((total, spawn) => total + spawn.weight, 0)
         const stageLabel = entry.stage === 'mega' ? 'Domínio Mega' : entry.stage === 'elite' ? 'Elite' : 'Região'
         return <article className={`world-map world-map-${entry.biome}${entry.id === focusedMapFilter ? ' world-map-focused' : ''}`} id={`world-map-${entry.id}`} key={entry.id}>
@@ -278,8 +327,8 @@ function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapI
             })}
           </div>
         </article>
-      })}</div>
-    </details>)}</div> : <p className="world-empty">Nenhum mapa encontrado com esses filtros.</p>}
+      })}</div> : <p className="world-empty">Nenhum mapa encontrado nesse bioma com esses filtros.</p>}
+    </details>})}</div> : <p className="world-empty">Nenhum mapa encontrado com esses filtros.</p>}
   </section>
 }
 
@@ -684,6 +733,117 @@ function CaptureTable({ items, pokemon, sort, onSort }: { items: CaptureEntry[];
       return <div className="tm-row capture-row" key={entry.name}><strong>{entry.name}</strong><span className="capture-types">{elements}</span><span className="capture-hardness">{entry.hardness}</span><span className={`capture-range capture-range-${rangeTone}`}>{entry.range}</span><span className="capture-ball">{entry.recommendedBall}</span></div>
     })}
   </div>
+}
+
+function getCapturePhaseSuggestion(pokemonName: string) {
+  const missionRoutes = clanMissions.flatMap(({ recommendation }) => {
+    const routes: { level: number; mapName: string }[] = []
+    if (recommendation.regionId && recommendation.level != null && recommendation.pokemon?.some((entry) => entry.name === pokemonName)) {
+      routes.push({ level: recommendation.level, mapName: recommendation.hunt ?? recommendation.regionId })
+    }
+    if (recommendation.singleHunt?.pokemon.some((entry) => entry.name === pokemonName)) {
+      routes.push({ level: recommendation.singleHunt.level, mapName: recommendation.singleHunt.hunt })
+    }
+    recommendation.targets?.filter((entry) => entry.species === pokemonName).forEach((entry) => {
+      routes.push({ level: entry.level, mapName: entry.hunt })
+    })
+    return routes
+  }).sort((first, second) => first.level - second.level || first.mapName.localeCompare(second.mapName))
+  if (missionRoutes.length) return { ...missionRoutes[0], source: 'Missões' as const }
+
+  const worldPhase = worldRegions
+    .filter((entry) => entry.spawns.some((spawn) => spawn.name === pokemonName))
+    .sort((first, second) => first.level - second.level || first.name.localeCompare(second.name))[0]
+  return worldPhase ? { level: worldPhase.level, mapName: worldPhase.name, source: 'Mundo' as const } : null
+}
+
+function CaptureCalculator({ entries, pokemon }: { entries: CaptureEntry[]; pokemon: Pokemon[] }) {
+  type Rarity = keyof typeof captureRarityDivisors
+  type Ball = keyof typeof captureBallPower
+  const [pokemonSearch, setPokemonSearch] = useState('')
+  const [showPokemonOptions, setShowPokemonOptions] = useState(false)
+  const [rarity, setRarity] = useState<Rarity | ''>('')
+  const [ball, setBall] = useState<Ball | ''>('')
+  const [teamLevel, setTeamLevel] = useState<number | ''>('')
+  const [targetLevel, setTargetLevel] = useState<number | ''>('')
+  const [partyLevels, setPartyLevels] = useState<Array<number | ''>>(['', '', ''])
+  const pokemonPickerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const closeOptionsOnOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Node && !pokemonPickerRef.current?.contains(event.target)) setShowPokemonOptions(false)
+    }
+    document.addEventListener('pointerdown', closeOptionsOnOutsideClick)
+    return () => document.removeEventListener('pointerdown', closeOptionsOnOutsideClick)
+  }, [])
+  const normalizedPokemonSearch = pokemonSearch.trim().toLocaleLowerCase()
+  const captureEntry = entries.find((entry) => entry.name.toLocaleLowerCase() === normalizedPokemonSearch)
+  const phaseSuggestion = captureEntry ? getCapturePhaseSuggestion(captureEntry.name) : null
+  useEffect(() => {
+    setTargetLevel(phaseSuggestion?.level ?? '')
+  }, [captureEntry?.name, phaseSuggestion?.level])
+  const pokemonEntry = captureEntry ? pokemon.find((entry) => entry.name === captureEntry.name) : undefined
+  const matchingPokemon = normalizedPokemonSearch ? entries.filter((entry) => entry.name.toLocaleLowerCase().includes(normalizedPokemonSearch)).slice(0, 8) : entries.slice(0, 8)
+  const rarityOptions = Object.keys(captureRarityDivisors) as Rarity[]
+  const ballOptions = Object.keys(captureBallPower) as Ball[]
+  const teamToTargetRatio = teamLevel !== '' && targetLevel !== '' ? teamLevel / Math.max(1, targetLevel) : null
+  const levelPenalty = teamToTargetRatio === null ? 0 : getCaptureLevelPenalty(teamToTargetRatio)
+  const hardnessFactor = captureEntry ? (209 / Math.max(1, captureEntry.hardness)) ** 2 : 0
+  const chance = captureEntry && rarity !== '' && ball !== '' && teamToTargetRatio !== null ? Math.min(1, Math.max(0, 0.214 * (captureBallPower[ball] / 13) * hardnessFactor * (1 - levelPenalty) / captureRarityDivisors[rarity])) : null
+  const expectedBalls = chance !== null && chance > 0 ? 1 / chance : null
+  const percentFormat = new Intl.NumberFormat('pt-BR', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 5 })
+  const ballsFormat = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 })
+  const averagePartyLevel = partyLevels.every((level) => level !== '') ? Math.round(partyLevels.reduce((total, level) => total + level, 0) / partyLevels.length) : null
+
+  function updatePartyLevel(index: number, value: string) {
+    setPartyLevels((current) => current.map((level, currentIndex) => currentIndex === index ? value === '' ? '' : Math.min(1000, Math.max(1, Number(value) || 1)) : level))
+  }
+
+  return <section className="capture-calculator" aria-label="Calculadora de Captura">
+    <div className="capture-calculator-note"><strong>Estimativa baseada na wiki.</strong> A fórmula completa não é publicada. O modelo usa a referência de 21,4% (Ultra Ball, Comum, dificuldade mediana, fase 50), força da bola, divisores de raridade e penalidade de nível; dureza recebe uma aproximação quadrática. A wiki usa a média dos três Pokémon ativos contra o nível do alvo, não o nível da conta.</div>
+    <div className="capture-calculator-layout">
+      <div className="capture-calculator-controls">
+        <h2>Dados do encontro</h2>
+        <div className="capture-calculator-grid">
+          <div className="capture-pokemon-picker" ref={pokemonPickerRef}>
+            <label className="capture-calculator-field" htmlFor="capture-pokemon-search"><span>Pokémon</span><input id="capture-pokemon-search" type="text" role="combobox" aria-autocomplete="list" aria-expanded={showPokemonOptions && !captureEntry} aria-controls="capture-pokemon-options" autoComplete="off" placeholder="Digite o nome do Pokémon..." value={pokemonSearch} onFocus={() => setShowPokemonOptions(true)} onChange={(event) => { setPokemonSearch(event.target.value); setShowPokemonOptions(true) }} onKeyDown={(event) => {
+              if (event.key === 'Escape') setShowPokemonOptions(false)
+              if (event.key === 'Enter' && matchingPokemon.length) { event.preventDefault(); setPokemonSearch(matchingPokemon[0].name); setShowPokemonOptions(false) }
+            }} /></label>
+            {showPokemonOptions && !captureEntry && <div className="capture-pokemon-options" id="capture-pokemon-options" role="listbox" aria-label="Sugestões de Pokémon">
+              {matchingPokemon.length ? matchingPokemon.map((entry) => <button type="button" role="option" aria-selected="false" key={entry.name} onMouseDown={(event) => event.preventDefault()} onClick={() => { setPokemonSearch(entry.name); setShowPokemonOptions(false) }}>{entry.name}</button>) : <span>Nenhum Pokémon encontrado no catálogo capturável.</span>}
+            </div>}
+          </div>
+          <label className="capture-calculator-field"><span>Raridade</span><select value={rarity} onChange={(event) => setRarity(event.target.value as Rarity | '')}><option value="">Selecione a raridade</option>{rarityOptions.map((option) => <option key={option} value={option}>{option}</option>)}</select></label>
+          <label className="capture-calculator-field"><span>Pokébola</span><select value={ball} onChange={(event) => setBall(event.target.value as Ball | '')}><option value="">Selecione a Pokébola</option>{ballOptions.map((option) => <option key={option} value={option}>{option} · força {captureBallPower[option]}</option>)}</select></label>
+          <label className="capture-calculator-field"><span>Média do nível do time (3 ativos)</span><input type="number" min="1" max="1000" placeholder="Digite a média" value={teamLevel} onChange={(event) => { const value = event.target.value; setTeamLevel(value === '' ? '' : Math.min(1000, Math.max(1, Number(value)))) }} /></label>
+          <label className="capture-calculator-field"><span>Nível da fase/alvo</span><input type="number" min="1" max="1000" placeholder="Digite o nível da fase" value={targetLevel} onChange={(event) => { const value = event.target.value; setTargetLevel(value === '' ? '' : Math.min(1000, Math.max(1, Number(value)))) }} /></label>
+          {phaseSuggestion && <small className="capture-phase-suggestion">Fase sugerida: {phaseSuggestion.mapName} · nível {phaseSuggestion.level} ({phaseSuggestion.source})</small>}
+        </div>
+        <p className="capture-selected-hardness">Dureza oficial: <strong>{captureEntry?.hardness ?? '—'}</strong> · Faixa: <strong>{captureEntry?.range ?? 'Selecione um Pokémon'}</strong></p>
+      </div>
+      <div className="capture-calculator-results" aria-live="polite">
+        <h2>Resultado estimado</h2>
+        <div className="capture-calculator-metric"><span>Chance por arremesso</span><strong>{chance !== null ? percentFormat.format(chance) : '—'}</strong></div>
+        <div className="capture-calculator-metric"><span>Média esperada para capturar 1</span><strong>{expectedBalls !== null && Number.isFinite(expectedBalls) ? `~${ballsFormat.format(expectedBalls)} ${expectedBalls === 1 ? 'bola' : 'bolas'}` : '—'}</strong></div>
+        <p>Tipo do Pokémon: {pokemonEntry ? pokemonEntry.type.split(' / ').map(typeLabel).join(' / ') : captureEntry ? 'indisponível' : 'selecione uma espécie válida'}</p>
+        <small>A média usa tentativas independentes com a mesma chance. Lendários, shiny e o piso especial de dificuldade em fases 45+ não são modelados.</small>
+      </div>
+    </div>
+    <section className="capture-party-average" aria-label="Calculadora da média de nível do time">
+      <div className="capture-party-average-fields">
+        {partyLevels.map((level, index) => <label className="capture-party-average-field" key={index}>
+          <span>Pokémon {index + 1}</span>
+          <input type="number" min="1" max="1000" placeholder="Nível" aria-label={`Nível do Pokémon ${index + 1}`} value={level} onChange={(event) => updatePartyLevel(index, event.target.value)} />
+        </label>)}
+      </div>
+      <div className="capture-party-average-result">
+        <span>Média do time</span>
+        <strong>{averagePartyLevel === null ? '—' : averagePartyLevel}</strong>
+        <button type="button" disabled={averagePartyLevel === null} onClick={() => { if (averagePartyLevel !== null) setTeamLevel(averagePartyLevel) }}><Calculator size={16} /> Usar média</button>
+      </div>
+    </section>
+    <a className="capture-calculator-source" href="https://pokehunt-wiki.gitbook.io/pokehunt-wiki/captura-e-colecao/captura" target="_blank" rel="noreferrer">Consultar regras de captura na wiki</a>
+  </section>
 }
 
 createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>)
