@@ -1,9 +1,12 @@
 import React, { StrictMode, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
+import liveGif from '../assets/Emote-animado-explodindo-a-cabeça.gif'
+import discordGif from '../assets/Dançando animado.gif'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import regionCatalog from './region-data.json'
+import RaidPlanner from './RaidPlanner'
 import { getTypeMatchups } from './type-chart'
 import './styles.css'
 import './image-overrides.css'
@@ -17,6 +20,7 @@ import './missions.css'
 import './home.css'
 import './color-mode.css'
 import './world.css'
+import './raids.css'
 
 type WorldRegion = {
   id: string
@@ -61,7 +65,7 @@ const typeListLabel = (types: string) => types.split(' / ').map(typeLabel).join(
 function App() { return <Atlas /> }
 
 function Atlas() {
-  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'detail'>('home')
+  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'dark' ? 'dark' : 'light')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
@@ -179,14 +183,14 @@ function Atlas() {
           <button aria-label="Mundo" className={view === 'world' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('world')}><MapIcon size={18} /> <span>Mundo</span> <strong>{worldRegions.length}</strong></button>
           <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
           <button aria-label="Missões" className={view === 'missions' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong></button>
+          <button aria-label="RAIDS" className={view === 'raids' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('raids')}><Swords size={18} /> <span>RAIDS</span> <strong>74</strong></button>
           <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
         </nav>
-        <div className="sidebar-foot"><span className="status-dot" /> {status === 'ready' ? 'Dados prontos para explorar' : status === 'error' ? 'Modo offline' : 'Buscando dados da wiki'}<br /><small>Uma jornada PokeHunt</small><br /><small>Auditoria, criado por zDuffi</small></div>
       </aside>
 
-      <section className="content">
-        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="topbar-actions"><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
-        {view === 'home' ? <HomeDashboard onNavigate={(destination) => {
+      <section className={view === 'raids' ? 'content raids-view' : 'content'}>
+        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="creator-showcase"><img className="creator-gif" src={discordGif} alt="" aria-hidden="true" /><div className="creator-credit"><span>Criado por:</span><a className="creator-link" href="https://discord.com/users/337805709561561088" target="_blank" rel="noreferrer" aria-label="Abrir o perfil Discord de zDuffi">zDuffi<ExternalLink size={13} /></a></div></div><div className="topbar-actions"><div className="live-showcase"><img className="live-gif" src={liveGif} alt="" aria-hidden="true" /><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a></div><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
+        {view === 'raids' ? <RaidPlanner pokemon={pokemon} status={status} /> : view === 'home' ? <HomeDashboard onNavigate={(destination) => {
           if (destination === 'capture-calculator') {
             setCaptureSubTab('calculator')
             changeView('captures')

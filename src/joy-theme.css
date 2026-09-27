@@ -38,10 +38,20 @@ body { background-color: #edf5ff; background-image: radial-gradient(#c7d9f1 1px,
 .topbar { border-bottom: 3px solid #b9cde8; align-items: center; }
 .kicker { color: var(--red); font-family: 'DM Sans', sans-serif; font-weight: 800; }
 .topbar h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 4vw, 70px); letter-spacing: .025em; color: #172e78; }
+.creator-showcase { position: relative; display: grid; flex: 0 0 176px; grid-template-rows: 78px 30px; gap: 2px; height: 110px; justify-items: center; isolation: isolate; margin-left: auto; margin-right: clamp(8px, 1vw, 16px); }
+.creator-gif { position: absolute; z-index: 0; top: 0; width: 100%; height: 78px; object-fit: contain; pointer-events: none; }
+.creator-credit { position: relative; z-index: 1; grid-row: 2; display: inline-flex; align-items: center; gap: 8px; margin: 0; color: #536989; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.creator-link { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border: 1px solid #8eabe0; border-radius: 8px; background: linear-gradient(145deg, #f7fbff, #d9e8ff); color: #173b9b; box-shadow: 0 2px 0 #adc2e3, inset 0 1px rgba(255, 255, 255, .85); font-weight: 800; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease; }
+.creator-link::before { content: ''; position: absolute; top: -50%; bottom: -50%; left: -35%; width: 35%; transform: translateX(-160%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .7), transparent); pointer-events: none; }
+.creator-link:hover { transform: translateY(-3px) scale(1.03); border-color: #2764e7; background: linear-gradient(145deg, #fff, #c9ddff); box-shadow: 0 6px 14px rgba(39, 100, 231, .28), inset 0 1px rgba(255, 255, 255, .95); }
+.creator-link:hover::before { transform: translateX(480%) skewX(-18deg); transition: transform 550ms ease; }
+.creator-link:active { transform: translateY(0) scale(.97); box-shadow: 0 1px 3px rgba(39, 100, 231, .2); }
+.creator-link:focus-visible { outline: 2px solid #2764e7; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .creator-link, .creator-link::before { transition: none; } }
 .topbar-actions { display: flex; align-items: center; gap: 14px; }
-.live-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 2px solid #ef8790; border-radius: 999px; background: #fff0f2; color: #b92939; font-size: 11px; font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #e9c1c5; }
+.live-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 2px solid #ef8790; border-radius: 999px; background: rgba(255, 240, 242, .84); color: #b92939; font-size: 10px; font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #e9c1c5; }
 .live-link svg:first-child { fill: #e8474f; animation: live-pulse 1.5s ease-in-out infinite; }
-.live-link:hover { background: #e8474f; color: #fff; border-color: #e8474f; }
+.live-link:hover { background: rgba(232, 71, 79, .84); color: #fff; border-color: #e8474f; }
 .version { color: #5c6e89; }
 .version span { color: #173b9b; border-color: #8eabe0; background: #e3efff; }
 .pokedex-list, .tm-panel, .detail-block, .calculator-controls, .calculator-results, .comparison-section { border-color: #b9cde8; box-shadow: 0 12px 28px rgba(41, 84, 144, .12); }
@@ -56,9 +66,15 @@ body { background-color: #edf5ff; background-image: radial-gradient(#c7d9f1 1px,
 @keyframes live-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
 
 @media (max-width: 800px) {
+  .creator-showcase { flex-basis: 45px; grid-template-rows: 42px 30px; height: 74px; margin: 0; }
+  .creator-gif { height: 42px; }
+  .creator-credit { gap: 0; font-size: 11px; }
+  .creator-credit > span { display: none; }
+  .creator-link { gap: 0; padding: 6px; }
+  .creator-link svg { display: none; }
   .topbar-actions { gap: 7px; }
   .live-link span { display: none; }
-  .live-link { padding: 8px; }
+  .live-link { padding: 5px; }
 }
 
 body {
@@ -548,9 +564,12 @@ body { background-color: #edf5ff; background-image: radial-gradient(#c7d9f1 1px,
 .topbar { border-bottom-color: #b9cde8; align-items: center; }
 .topbar h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 4vw, 70px); letter-spacing: .025em; color: #172e78; }
 .topbar-actions { display: flex; align-items: center; gap: 14px; }
-.live-link { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 2px solid #ef8790; border-radius: 999px; background: #fff0f2; color: #b92939; font-size: 11px; font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #e9c1c5; }
+.live-link { display: inline-flex; align-items: center; gap: 6px; padding: 5px 8px; border: 2px solid #ef8790; border-radius: 999px; background: rgba(255, 240, 242, .84); color: #b92939; font-size: 10px; font-weight: 800; text-decoration: none; box-shadow: 0 3px 0 #e9c1c5; }
 .live-link svg:first-child { fill: #e8474f; animation: live-pulse 1.5s ease-in-out infinite; }
-.live-link:hover { background: #e8474f; color: #fff; border-color: #e8474f; }
+.live-link:hover { background: rgba(232, 71, 79, .84); color: #fff; border-color: #e8474f; }
+.live-showcase { position: relative; display: grid; flex: 0 0 176px; grid-template-rows: 78px 30px; gap: 2px; height: 110px; justify-items: center; isolation: isolate; }
+.live-gif { position: absolute; z-index: 0; top: 0; width: 100%; height: 78px; object-fit: contain; pointer-events: none; }
+.live-link { position: relative; z-index: 1; grid-row: 2; }
 .version { color: #5c6e89; }
 .version span { color: #173b9b; border-color: #8eabe0; background: #e3efff; }
 .pokedex-list, .tm-panel, .detail-block, .calculator-controls, .calculator-results, .comparison-section { border-color: #b9cde8; box-shadow: 0 12px 28px rgba(41, 84, 144, .12); }
@@ -563,6 +582,8 @@ body { background-color: #edf5ff; background-image: radial-gradient(#c7d9f1 1px,
 
 @media (max-width: 800px) {
   .topbar-actions { gap: 7px; }
+  .live-showcase { flex-basis: 88px; grid-template-rows: 70px 30px; height: 102px; }
   .live-link span { display: none; }
-  .live-link { padding: 8px; }
+  .live-gif { height: 70px; }
+  .live-link { padding: 5px; }
 }
