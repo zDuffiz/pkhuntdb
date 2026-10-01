@@ -514,15 +514,15 @@ function MissionAdvice({ recommendation, hardnessByName, easiestCapture, onOpenM
 }
 
 type ComparisonAttribute = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
-type ComparisonProfile = { name: string; level: number; rarity: string; category: string; stars: number; bond: number; nature: string; ivs: Record<ComparisonAttribute, number | ''>; evs: Record<ComparisonAttribute, number | ''> }
+type ComparisonProfile = { name: string; level: number | ''; rarity: string; category: string; stars: number; bond: number; nature: string; ivs: Record<ComparisonAttribute, number | ''>; evs: Record<ComparisonAttribute, number | ''> }
 
 function PokemonComparison({ entries, resetVersion }: { entries: Pokemon[]; resetVersion: number }) {
   const attributes: Array<{ key: ComparisonAttribute; label: string }> = [{ key: 'hp', label: 'PS' }, { key: 'attack', label: 'Ataque' }, { key: 'defense', label: 'Defesa' }, { key: 'specialAttack', label: 'Ataque Especial' }, { key: 'specialDefense', label: 'Defesa Especial' }, { key: 'speed', label: 'Velocidade' }]
   const rarityMultipliers: Record<string, number> = { Comum: 1, Incomum: 1.03, Raro: 1.06, Épico: 1.1, Prismático: 1.15, Mítico: 1.21, Astral: 1.28, Divino: 1.36 }
   const categoryMultipliers: Record<string, number> = { Nenhuma: 1, Fundador: 1.5, Shiny: 1.45, Gênesis: 1.42 }
-  const natureEffects: Record<string, { up: ComparisonAttribute | null; down: ComparisonAttribute | null }> = { Hardy: { up: null, down: null }, Lonely: { up: 'attack', down: 'defense' }, Brave: { up: 'attack', down: 'speed' }, Adamant: { up: 'attack', down: 'specialAttack' }, Naughty: { up: 'attack', down: 'specialDefense' }, Bold: { up: 'defense', down: 'attack' }, Docile: { up: null, down: null }, Relaxed: { up: 'defense', down: 'speed' }, Impish: { up: 'defense', down: 'specialAttack' }, Lax: { up: 'defense', down: 'specialDefense' }, Modest: { up: 'specialAttack', down: 'attack' }, Mild: { up: 'specialAttack', down: 'defense' }, Quiet: { up: 'specialAttack', down: 'speed' }, Bashful: { up: null, down: null }, Rash: { up: 'specialAttack', down: 'specialDefense' }, Calm: { up: 'specialDefense', down: 'attack' }, Gentle: { up: 'specialDefense', down: 'defense' }, Sassy: { up: 'specialDefense', down: 'speed' }, Quirky: { up: null, down: null }, Careful: { up: 'specialDefense', down: 'specialAttack' }, Timid: { up: 'speed', down: 'attack' }, Hasty: { up: 'speed', down: 'defense' }, Jolly: { up: 'speed', down: 'specialAttack' }, Naive: { up: 'speed', down: 'specialDefense' }, Serious: { up: null, down: null } }
+  const natureEffects: Record<string, { up: ComparisonAttribute | null; down: ComparisonAttribute | null }> = { '': { up: null, down: null }, Hardy: { up: null, down: null }, Lonely: { up: 'attack', down: 'defense' }, Brave: { up: 'attack', down: 'speed' }, Adamant: { up: 'attack', down: 'specialAttack' }, Naughty: { up: 'attack', down: 'specialDefense' }, Bold: { up: 'defense', down: 'attack' }, Docile: { up: null, down: null }, Relaxed: { up: 'defense', down: 'speed' }, Impish: { up: 'defense', down: 'specialAttack' }, Lax: { up: 'defense', down: 'specialDefense' }, Modest: { up: 'specialAttack', down: 'attack' }, Mild: { up: 'specialAttack', down: 'defense' }, Quiet: { up: 'specialAttack', down: 'speed' }, Bashful: { up: null, down: null }, Rash: { up: 'specialAttack', down: 'specialDefense' }, Calm: { up: 'specialDefense', down: 'attack' }, Gentle: { up: 'specialDefense', down: 'defense' }, Sassy: { up: 'specialDefense', down: 'speed' }, Quirky: { up: null, down: null }, Careful: { up: 'specialDefense', down: 'specialAttack' }, Timid: { up: 'speed', down: 'attack' }, Hasty: { up: 'speed', down: 'defense' }, Jolly: { up: 'speed', down: 'specialAttack' }, Naive: { up: 'speed', down: 'specialDefense' }, Serious: { up: null, down: null } }
   const zeroValues = { hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' } as Record<ComparisonAttribute, number | ''>
-  const createProfile = (name: string): ComparisonProfile => ({ name, level: 100, rarity: 'Comum', category: 'Nenhuma', stars: 0, bond: 0, nature: 'Hardy', ivs: { ...zeroValues }, evs: { ...zeroValues } })
+  const createProfile = (name: string): ComparisonProfile => ({ name, level: '', rarity: 'Comum', category: 'Nenhuma', stars: 0, bond: 0, nature: '', ivs: { ...zeroValues }, evs: { ...zeroValues } })
   const [profiles, setProfiles] = useState([createProfile(''), createProfile('')])
   const [openComparisonSearch, setOpenComparisonSearch] = useState<number | null>(null)
   useEffect(() => {
@@ -530,7 +530,7 @@ function PokemonComparison({ entries, resetVersion }: { entries: Pokemon[]; rese
     setOpenComparisonSearch(null)
   }, [resetVersion])
   const selected = profiles.map((profile) => profile.name ? entries.find((entry) => entry.name === profile.name) : undefined)
-  const calculate = (profile: ComparisonProfile, entry: Pokemon | undefined) => { const effect = natureEffects[profile.nature] ?? natureEffects.Hardy; const bondMultiplier = profile.bond >= 100 ? 1.06 : profile.bond >= 75 ? 1.03 : 1; const multiplier = rarityMultipliers[profile.rarity] * categoryMultipliers[profile.category] * bondMultiplier * (1 + profile.stars * 0.04); return Object.fromEntries(attributes.map(({ key }) => { const base = entry?.stats[key] ?? 0; const core = Math.floor(((2 * base * multiplier + (Number(profile.ivs[key]) || 0) + Math.floor((Number(profile.evs[key]) || 0) / 4)) * profile.level) / 100); const natureMultiplier = key === 'hp' || effect.up === null ? 1 : effect.up === key ? 1.1 : effect.down === key ? 0.9 : 1; return [key, key === 'hp' ? core + profile.level + 10 : Math.floor((core + 5) * natureMultiplier)] })) as Record<ComparisonAttribute, number> }
+  const calculate = (profile: ComparisonProfile, entry: Pokemon | undefined) => { const effect = natureEffects[profile.nature]; const level = Number(profile.level) || 0; const bondMultiplier = profile.bond >= 100 ? 1.06 : profile.bond >= 75 ? 1.03 : 1; const multiplier = rarityMultipliers[profile.rarity] * categoryMultipliers[profile.category] * bondMultiplier * (1 + profile.stars * 0.04); return Object.fromEntries(attributes.map(({ key }) => { const base = entry?.stats[key] ?? 0; const core = Math.floor(((2 * base * multiplier + (Number(profile.ivs[key]) || 0) + Math.floor((Number(profile.evs[key]) || 0) / 4)) * level) / 100); const natureMultiplier = key === 'hp' || !effect || effect.up === null ? 1 : effect.up === key ? 1.1 : effect.down === key ? 0.9 : 1; return [key, key === 'hp' ? core + level + 10 : Math.floor((core + 5) * natureMultiplier)] })) as Record<ComparisonAttribute, number> }
   const results = profiles.map((profile, index) => calculate(profile, selected[index]))
   const updateProfile = (index: number, patch: Partial<ComparisonProfile>) => setProfiles((current) => current.map((profile, profileIndex) => profileIndex === index ? { ...profile, ...patch } : profile))
   const updateTraining = (index: number, group: 'ivs' | 'evs', key: ComparisonAttribute, value: string) => {
@@ -550,23 +550,23 @@ function PokemonComparison({ entries, resetVersion }: { entries: Pokemon[]; rese
 function PokemonCalculator({ entries, resetVersion }: { entries: Pokemon[]; resetVersion: number }) {
   const [selectedName, setSelectedName] = useState('')
   const [showPokemonSuggestions, setShowPokemonSuggestions] = useState(false)
-  const [level, setLevel] = useState(100)
+  const [level, setLevel] = useState<number | ''>('')
   const [rarity, setRarity] = useState('Comum')
   const [seal, setSeal] = useState('Nenhum')
   const [stars, setStars] = useState(0)
   const [bond, setBond] = useState(0)
-  const [nature, setNature] = useState('Hardy')
+  const [nature, setNature] = useState('')
   const [ivs, setIvs] = useState<Record<'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed', number | ''>>({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
   const [evs, setEvs] = useState<Record<'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed', number | ''>>({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
   useEffect(() => {
     setSelectedName('')
     setShowPokemonSuggestions(false)
-    setLevel(100)
+    setLevel('')
     setRarity('Comum')
     setSeal('Nenhum')
     setStars(0)
     setBond(0)
-    setNature('Hardy')
+    setNature('')
     setIvs({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
     setEvs({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
   }, [resetVersion])
@@ -575,6 +575,7 @@ function PokemonCalculator({ entries, resetVersion }: { entries: Pokemon[]; rese
   const rarityMultipliers: Record<string, number> = { Comum: 1, Incomum: 1.03, Raro: 1.06, Épico: 1.1, Prismático: 1.15, Mítico: 1.21, Astral: 1.28, Divino: 1.36 }
   const sealMultipliers: Record<string, number> = { Nenhum: 1, Fundador: 1.5, Shiny: 1.45, Gênesis: 1.42 }
   const natureEffects: Record<string, { up: keyof typeof ivs | null; down: keyof typeof ivs | null }> = {
+    '': { up: null, down: null },
     Hardy: { up: null, down: null }, Lonely: { up: 'attack', down: 'defense' }, Brave: { up: 'attack', down: 'speed' }, Adamant: { up: 'attack', down: 'specialAttack' }, Naughty: { up: 'attack', down: 'specialDefense' },
     Bold: { up: 'defense', down: 'attack' }, Docile: { up: null, down: null }, Relaxed: { up: 'defense', down: 'speed' }, Impish: { up: 'defense', down: 'specialAttack' }, Lax: { up: 'defense', down: 'specialDefense' },
     Modest: { up: 'specialAttack', down: 'attack' }, Mild: { up: 'specialAttack', down: 'defense' }, Quiet: { up: 'specialAttack', down: 'speed' }, Bashful: { up: null, down: null }, Rash: { up: 'specialAttack', down: 'specialDefense' },
@@ -582,15 +583,16 @@ function PokemonCalculator({ entries, resetVersion }: { entries: Pokemon[]; rese
     Timid: { up: 'speed', down: 'attack' }, Hasty: { up: 'speed', down: 'defense' }, Jolly: { up: 'speed', down: 'specialAttack' }, Naive: { up: 'speed', down: 'specialDefense' }, Serious: { up: null, down: null },
   }
   const effect = natureEffects[nature]
+  const currentLevel = Number(level) || 0
   const bondMultiplier = bond >= 100 ? 1.06 : bond >= 75 ? 1.03 : 1
   const totalMultiplier = rarityMultipliers[rarity] * sealMultipliers[seal] * bondMultiplier * (1 + stars * 0.04)
   const attributeLabels: Record<keyof typeof ivs, string> = { hp: 'PS', attack: 'Ataque', defense: 'Defesa', specialAttack: 'Ataque Especial', specialDefense: 'Defesa Especial', speed: 'Velocidade' }
   const calculatedStats = Object.keys(attributeLabels).reduce((result, key) => {
     const statKey = key as keyof typeof ivs
     const base = selected?.stats[statKey] ?? 0
-    const core = Math.floor(((2 * base * totalMultiplier + (Number(ivs[statKey]) || 0) + Math.floor((Number(evs[statKey]) || 0) / 4)) * level) / 100)
-    const natureMultiplier = statKey === 'hp' || effect.up === null ? 1 : effect.up === statKey ? 1.1 : effect.down === statKey ? 0.9 : 1
-    result[statKey] = statKey === 'hp' ? core + level + 10 : Math.floor((core + 5) * natureMultiplier)
+    const core = Math.floor(((2 * base * totalMultiplier + (Number(ivs[statKey]) || 0) + Math.floor((Number(evs[statKey]) || 0) / 4)) * currentLevel) / 100)
+    const natureMultiplier = statKey === 'hp' || !effect || effect.up === null ? 1 : effect.up === statKey ? 1.1 : effect.down === statKey ? 0.9 : 1
+    result[statKey] = statKey === 'hp' ? core + currentLevel + 10 : Math.floor((core + 5) * natureMultiplier)
     return result
   }, {} as Record<keyof typeof ivs, number>)
   const updateValue = (group: 'ivs' | 'evs', key: keyof typeof ivs, value: string) => {
