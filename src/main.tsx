@@ -85,7 +85,7 @@ function App() { return <Atlas /> }
 
 function Atlas() {
   const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
-  const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'light' ? 'light' : 'dark')
+  const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode-v2') === 'light' ? 'light' : 'dark')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
@@ -107,7 +107,7 @@ function Atlas() {
 
   useEffect(() => {
     document.documentElement.dataset.colorMode = colorMode
-    window.localStorage.setItem('pkhuntdb-color-mode', colorMode)
+    window.localStorage.setItem('pkhuntdb-color-mode-v2', colorMode)
   }, [colorMode])
 
   useEffect(() => {
