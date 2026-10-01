@@ -95,6 +95,14 @@ body { min-width: 320px; background-color: var(--app-canvas); background-image: 
 .capture-row, .tm-row { font-family: var(--app-font-body) !important; }
 .move-metric, .move-category, .move-range, .capture-range, .capture-ball { font-family: var(--app-font-body) !important; font-size: 11px; }
 .calculator-controls, .calculator-results, .comparison-section { border-radius: 7px; }
+.calculator-reset-toolbar { display: flex; justify-content: flex-end; width: min(1280px, 100%); margin: 12px auto -12px; }
+.calculator-reset-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 0 11px; border: 1px solid var(--app-line); border-radius: 6px; background: var(--app-surface); color: var(--app-muted); font: 600 12px var(--app-font-body); cursor: pointer; transition: color .15s ease, border-color .15s ease, background-color .15s ease; }
+.calculator-reset-button:hover { border-color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 8%, var(--app-surface)); color: var(--app-accent); }
+.calculator-reset-button:focus-visible { outline: 2px solid var(--app-focus); outline-offset: 2px; }
+.calculator-results:not(:has(.result-identity small:not(:empty))) > * { display: none; }
+.calculator-results:not(:has(.result-identity small:not(:empty)))::before { display: grid; min-height: 230px; place-items: center; padding: 18px; color: var(--app-muted); content: 'Selecione um Pokémon para ver os atributos calculados.'; font-size: 14px; font-weight: 600; text-align: center; }
+.comparison-title strong:empty::after { color: var(--app-muted); content: 'Aguardando Pokémon'; font: 600 15px var(--app-font-body); }
+.comparison-card:not(:has(.comparison-title strong:not(:empty))) .comparison-result { display: none; }
 button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline-color: var(--app-focus); }
 
 :root[data-color-mode="dark"] body { background-color: var(--app-canvas) !important; background-image: radial-gradient(#283139 .8px, transparent .8px), linear-gradient(135deg, #1a2026, #13181d) !important; color: var(--app-ink) !important; }

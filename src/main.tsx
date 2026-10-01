@@ -86,6 +86,8 @@ function App() { return <Atlas /> }
 function Atlas() {
   const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode-v2') === 'light' ? 'light' : 'dark')
+  const [calculatorResetVersion, setCalculatorResetVersion] = useState(0)
+  const [comparisonResetVersion, setComparisonResetVersion] = useState(0)
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
@@ -225,7 +227,12 @@ function Atlas() {
             setCaptureSubTab('calculator')
             changeView('captures')
           } else changeView(destination)
-        }} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <><PokemonCalculator entries={pokemon} /><PokemonComparison entries={pokemon} /></> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
+        }} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <>
+          <div className="calculator-reset-toolbar"><button type="button" className="calculator-reset-button" onClick={() => setCalculatorResetVersion((version) => version + 1)}><RotateCcw size={15} aria-hidden="true" /><span>Resetar calculadora</span></button></div>
+          <PokemonCalculator entries={pokemon} resetVersion={calculatorResetVersion} />
+          <div className="calculator-reset-toolbar comparison-reset-toolbar"><button type="button" className="calculator-reset-button" onClick={() => setComparisonResetVersion((version) => version + 1)}><RotateCcw size={15} aria-hidden="true" /><span>Resetar comparação</span></button></div>
+          <PokemonComparison entries={pokemon} resetVersion={comparisonResetVersion} />
+        </> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
           {(view !== 'captures' || captureSubTab === 'rates') && <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
@@ -509,16 +516,20 @@ function MissionAdvice({ recommendation, hardnessByName, easiestCapture, onOpenM
 type ComparisonAttribute = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
 type ComparisonProfile = { name: string; level: number; rarity: string; category: string; stars: number; bond: number; nature: string; ivs: Record<ComparisonAttribute, number | ''>; evs: Record<ComparisonAttribute, number | ''> }
 
-function PokemonComparison({ entries }: { entries: Pokemon[] }) {
+function PokemonComparison({ entries, resetVersion }: { entries: Pokemon[]; resetVersion: number }) {
   const attributes: Array<{ key: ComparisonAttribute; label: string }> = [{ key: 'hp', label: 'PS' }, { key: 'attack', label: 'Ataque' }, { key: 'defense', label: 'Defesa' }, { key: 'specialAttack', label: 'Ataque Especial' }, { key: 'specialDefense', label: 'Defesa Especial' }, { key: 'speed', label: 'Velocidade' }]
   const rarityMultipliers: Record<string, number> = { Comum: 1, Incomum: 1.03, Raro: 1.06, Épico: 1.1, Prismático: 1.15, Mítico: 1.21, Astral: 1.28, Divino: 1.36 }
   const categoryMultipliers: Record<string, number> = { Nenhuma: 1, Fundador: 1.5, Shiny: 1.45, Gênesis: 1.42 }
   const natureEffects: Record<string, { up: ComparisonAttribute | null; down: ComparisonAttribute | null }> = { Hardy: { up: null, down: null }, Lonely: { up: 'attack', down: 'defense' }, Brave: { up: 'attack', down: 'speed' }, Adamant: { up: 'attack', down: 'specialAttack' }, Naughty: { up: 'attack', down: 'specialDefense' }, Bold: { up: 'defense', down: 'attack' }, Docile: { up: null, down: null }, Relaxed: { up: 'defense', down: 'speed' }, Impish: { up: 'defense', down: 'specialAttack' }, Lax: { up: 'defense', down: 'specialDefense' }, Modest: { up: 'specialAttack', down: 'attack' }, Mild: { up: 'specialAttack', down: 'defense' }, Quiet: { up: 'specialAttack', down: 'speed' }, Bashful: { up: null, down: null }, Rash: { up: 'specialAttack', down: 'specialDefense' }, Calm: { up: 'specialDefense', down: 'attack' }, Gentle: { up: 'specialDefense', down: 'defense' }, Sassy: { up: 'specialDefense', down: 'speed' }, Quirky: { up: null, down: null }, Careful: { up: 'specialDefense', down: 'specialAttack' }, Timid: { up: 'speed', down: 'attack' }, Hasty: { up: 'speed', down: 'defense' }, Jolly: { up: 'speed', down: 'specialAttack' }, Naive: { up: 'speed', down: 'specialDefense' }, Serious: { up: null, down: null } }
   const zeroValues = { hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' } as Record<ComparisonAttribute, number | ''>
   const createProfile = (name: string): ComparisonProfile => ({ name, level: 100, rarity: 'Comum', category: 'Nenhuma', stars: 0, bond: 0, nature: 'Hardy', ivs: { ...zeroValues }, evs: { ...zeroValues } })
-  const [profiles, setProfiles] = useState([createProfile(entries[0]?.name ?? ''), createProfile(entries[1]?.name ?? entries[0]?.name ?? '')])
+  const [profiles, setProfiles] = useState([createProfile(''), createProfile('')])
   const [openComparisonSearch, setOpenComparisonSearch] = useState<number | null>(null)
-  const selected = profiles.map((profile) => entries.find((entry) => entry.name === profile.name) ?? entries[0])
+  useEffect(() => {
+    setProfiles([createProfile(''), createProfile('')])
+    setOpenComparisonSearch(null)
+  }, [resetVersion])
+  const selected = profiles.map((profile) => profile.name ? entries.find((entry) => entry.name === profile.name) : undefined)
   const calculate = (profile: ComparisonProfile, entry: Pokemon | undefined) => { const effect = natureEffects[profile.nature] ?? natureEffects.Hardy; const bondMultiplier = profile.bond >= 100 ? 1.06 : profile.bond >= 75 ? 1.03 : 1; const multiplier = rarityMultipliers[profile.rarity] * categoryMultipliers[profile.category] * bondMultiplier * (1 + profile.stars * 0.04); return Object.fromEntries(attributes.map(({ key }) => { const base = entry?.stats[key] ?? 0; const core = Math.floor(((2 * base * multiplier + (Number(profile.ivs[key]) || 0) + Math.floor((Number(profile.evs[key]) || 0) / 4)) * profile.level) / 100); const natureMultiplier = key === 'hp' || effect.up === null ? 1 : effect.up === key ? 1.1 : effect.down === key ? 0.9 : 1; return [key, key === 'hp' ? core + profile.level + 10 : Math.floor((core + 5) * natureMultiplier)] })) as Record<ComparisonAttribute, number> }
   const results = profiles.map((profile, index) => calculate(profile, selected[index]))
   const updateProfile = (index: number, patch: Partial<ComparisonProfile>) => setProfiles((current) => current.map((profile, profileIndex) => profileIndex === index ? { ...profile, ...patch } : profile))
@@ -536,8 +547,8 @@ function PokemonComparison({ entries }: { entries: Pokemon[] }) {
   return <section className="comparison-section"><div className="comparison-section-heading"><div><small>COMPARAÇÃO COMPLETA</small><strong>Dois Pokémon lado a lado</strong></div><span>MESMAS REGRAS DA CALCULADORA</span></div><div className="comparison-grid">{profiles.map(profileCard)}</div></section>
 }
 
-function PokemonCalculator({ entries }: { entries: Pokemon[] }) {
-  const [selectedName, setSelectedName] = useState(entries[0]?.name ?? '')
+function PokemonCalculator({ entries, resetVersion }: { entries: Pokemon[]; resetVersion: number }) {
+  const [selectedName, setSelectedName] = useState('')
   const [showPokemonSuggestions, setShowPokemonSuggestions] = useState(false)
   const [level, setLevel] = useState(100)
   const [rarity, setRarity] = useState('Comum')
@@ -547,7 +558,19 @@ function PokemonCalculator({ entries }: { entries: Pokemon[] }) {
   const [nature, setNature] = useState('Hardy')
   const [ivs, setIvs] = useState<Record<'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed', number | ''>>({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
   const [evs, setEvs] = useState<Record<'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed', number | ''>>({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
-  const selected = entries.find((entry) => entry.name === selectedName) ?? entries[0]
+  useEffect(() => {
+    setSelectedName('')
+    setShowPokemonSuggestions(false)
+    setLevel(100)
+    setRarity('Comum')
+    setSeal('Nenhum')
+    setStars(0)
+    setBond(0)
+    setNature('Hardy')
+    setIvs({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
+    setEvs({ hp: '', attack: '', defense: '', specialAttack: '', specialDefense: '', speed: '' })
+  }, [resetVersion])
+  const selected = entries.find((entry) => entry.name === selectedName)
   const pokemonSuggestions = entries.filter((entry) => entry.name.toLowerCase().includes(selectedName.toLowerCase())).slice(0, 8)
   const rarityMultipliers: Record<string, number> = { Comum: 1, Incomum: 1.03, Raro: 1.06, Épico: 1.1, Prismático: 1.15, Mítico: 1.21, Astral: 1.28, Divino: 1.36 }
   const sealMultipliers: Record<string, number> = { Nenhum: 1, Fundador: 1.5, Shiny: 1.45, Gênesis: 1.42 }
