@@ -1,0 +1,133 @@
+:root {
+  --app-font-body: 'Barlow', sans-serif;
+  --app-font-display: 'Barlow Condensed', sans-serif;
+  --app-canvas: #f0f3f4;
+  --app-surface: #fff;
+  --app-surface-muted: #f6f8f9;
+  --app-line: #d8e0e4;
+  --app-ink: #27343c;
+  --app-muted: #68757e;
+  --app-accent: #c83d49;
+  --app-focus: #187b91;
+  --app-shadow: 0 5px 16px rgba(32, 48, 60, .07);
+  --line: var(--app-line);
+  --ink: var(--app-ink);
+  --muted: var(--app-muted);
+  --red: var(--app-accent);
+  --blue: var(--app-focus);
+  --blue-dark: #34434b;
+  color-scheme: light;
+}
+
+:root[data-color-mode="dark"] {
+  --app-canvas: #151a1f;
+  --app-surface: #20272e;
+  --app-surface-muted: #252e36;
+  --app-line: #39434c;
+  --app-ink: #e5eaee;
+  --app-muted: #aab5be;
+  --app-accent: #ef858d;
+  --app-focus: #7ab9cf;
+  --app-shadow: 0 8px 22px rgba(0, 0, 0, .2);
+  --line: var(--app-line);
+  --ink: var(--app-ink);
+  --muted: var(--app-muted);
+  --red: var(--app-accent);
+  --blue: var(--app-focus);
+  --blue-dark: #dce6eb;
+  color-scheme: dark;
+}
+
+body,
+body :not(svg) { font-family: var(--app-font-body) !important; letter-spacing: 0; }
+body { min-width: 320px; background-color: var(--app-canvas); background-image: radial-gradient(#dce4e7 .8px, transparent .8px), linear-gradient(135deg, #fafbfb 0%, #eef2f3 100%); background-size: 20px 20px, 100% 100%; color: var(--app-ink); font-size: 14px; line-height: 1.45; }
+.app-shell, .content { min-width: 0; background: transparent; color: var(--app-ink); }
+.sidebar { border-right: 1px solid var(--app-line); background: #fbfcfc; box-shadow: 4px 0 18px rgba(35, 52, 62, .06); }
+.brand, .brand b { color: var(--app-ink); }
+.brand-mark { color: var(--app-accent); }
+.eyebrow, .sidebar-foot { color: var(--app-muted); }
+.nav-item { border-radius: 6px; color: #56636c; }
+.nav-item span, .nav-item strong { color: #78858d; }
+.nav-item > svg { color: #6b828b; }
+.nav-item.active { border-left: 3px solid var(--app-accent); background: color-mix(in srgb, var(--app-accent) 10%, white); box-shadow: none; color: #81323a; }
+.nav-item.active span, .nav-item.active strong, .nav-item.active > svg { color: var(--app-accent); }
+.content { padding-top: 28px; }
+.topbar { gap: 18px; border-bottom: 1px solid var(--app-line); padding-bottom: 18px; }
+.topbar h1, .raid-screen-heading h1 { color: var(--app-ink); font: 700 46px/1 'Barlow Condensed', sans-serif !important; letter-spacing: 0; }
+.kicker, .eyebrow, .panel-heading, .tm-head { font-family: var(--app-font-display) !important; font-weight: 700; letter-spacing: .04em; }
+.version { color: var(--app-muted); }
+.search, .toolbar select, .filter, .mission-search, .mission-filter, .world-search, .world-controls select, .world-biome-search, .world-biome-header select {
+  border-color: var(--app-line);
+  border-radius: 6px;
+  background-color: var(--app-surface);
+  color: var(--app-ink);
+  box-shadow: none;
+}
+.search:focus-within, .mission-search:focus-within, .world-search:focus-within, .world-biome-search:focus-within { border-color: var(--app-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-focus) 16%, transparent); }
+.search input, .mission-search input, .world-search input, .world-biome-search input { color: var(--app-ink); }
+.search input::placeholder, .mission-search input::placeholder, .world-search input::placeholder, .world-biome-search input::placeholder { color: var(--app-muted); }
+.pokedex-list, .tm-panel, .detail-block, .calculator-controls, .calculator-results, .comparison-section, .capture-panel {
+  border: 1px solid var(--app-line);
+  border-radius: 7px;
+  background: var(--app-surface);
+  box-shadow: var(--app-shadow);
+  color: var(--app-ink);
+}
+.panel-heading, .tm-head { border-color: var(--app-line); background: var(--app-surface-muted); color: var(--app-ink); }
+.home-shortcut { border-color: var(--app-line); background: var(--app-surface); color: var(--app-ink); box-shadow: var(--app-shadow); }
+.home-shortcut-copy strong { color: var(--app-ink); font-family: var(--app-font-display) !important; font-size: 17px; }
+.home-shortcut-copy small { color: var(--app-muted); }
+.section-title { color: var(--app-accent); font-family: var(--app-font-display) !important; letter-spacing: .02em; }
+.mission-group, .mission-card, .world-biome, .world-map { box-shadow: var(--app-shadow); }
+.mission-description, .world-note { color: var(--app-muted); }
+.mission-description strong { color: var(--app-ink); }
+.mission-rewards div { border: 1px solid var(--app-line); background: var(--app-surface-muted); }
+.mission-rewards dt { color: var(--app-muted); }
+.mission-rewards dd { color: var(--app-ink); }
+.mission-group-title strong, .mission-card-header h3, .world-biome > summary strong, .world-map-heading h3,
+.detail-screen .detail-hero-screen h2, .compatible-pokemon-heading h2, .capture-calculator-controls h2,
+.capture-calculator-results h2, .calculator-intro strong, .result-heading strong {
+  font-family: var(--app-font-display) !important;
+  letter-spacing: 0;
+}
+.capture-note, .calculator-intro { border-color: var(--app-line); border-radius: 6px; background: var(--app-surface-muted); color: var(--app-muted); }
+.capture-note strong, .calculator-intro strong { color: var(--app-ink); }
+.capture-row, .tm-row { font-family: var(--app-font-body) !important; }
+.move-metric, .move-category, .move-range, .capture-range, .capture-ball { font-family: var(--app-font-body) !important; font-size: 11px; }
+.calculator-controls, .calculator-results, .comparison-section { border-radius: 7px; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline-color: var(--app-focus); }
+
+:root[data-color-mode="dark"] body { background-color: var(--app-canvas) !important; background-image: radial-gradient(#283139 .8px, transparent .8px), linear-gradient(135deg, #1a2026, #13181d) !important; color: var(--app-ink) !important; }
+:root[data-color-mode="dark"] .sidebar { border-right-color: var(--app-line); background: linear-gradient(180deg, #20272e, #181e24); box-shadow: 4px 0 18px rgba(0, 0, 0, .18); }
+:root[data-color-mode="dark"] .brand, :root[data-color-mode="dark"] .brand b { color: #f0d184; }
+:root[data-color-mode="dark"] .brand-mark { color: var(--app-accent); }
+:root[data-color-mode="dark"] .eyebrow, :root[data-color-mode="dark"] .sidebar-foot { color: #b3bec7; }
+:root[data-color-mode="dark"] .nav-item, :root[data-color-mode="dark"] .nav-item span, :root[data-color-mode="dark"] .nav-item strong { color: #bdc7ce; }
+:root[data-color-mode="dark"] .nav-item > svg { color: #8eabb9; }
+:root[data-color-mode="dark"] .nav-item.active { border-left-color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 17%, #20272e); color: #ffc2c6; }
+:root[data-color-mode="dark"] .nav-item.active span, :root[data-color-mode="dark"] .nav-item.active strong, :root[data-color-mode="dark"] .nav-item.active > svg { color: #ffc2c6; }
+:root[data-color-mode="dark"] .topbar { border-bottom-color: var(--app-line); }
+:root[data-color-mode="dark"] .topbar h1, :root[data-color-mode="dark"] .raid-screen-heading h1 { color: #f0f3f5; }
+:root[data-color-mode="dark"] .search, :root[data-color-mode="dark"] .toolbar select, :root[data-color-mode="dark"] .filter,
+:root[data-color-mode="dark"] .mission-search, :root[data-color-mode="dark"] .mission-filter,
+:root[data-color-mode="dark"] .world-search, :root[data-color-mode="dark"] .world-controls select,
+:root[data-color-mode="dark"] .world-biome-search, :root[data-color-mode="dark"] .world-biome-header select { border-color: #46515b; background-color: #20272e; color: var(--app-ink); }
+:root[data-color-mode="dark"] .search input, :root[data-color-mode="dark"] .mission-search input, :root[data-color-mode="dark"] .world-search input, :root[data-color-mode="dark"] .world-biome-search input { color: var(--app-ink); }
+:root[data-color-mode="dark"] .pokedex-list, :root[data-color-mode="dark"] .tm-panel, :root[data-color-mode="dark"] .detail-block,
+:root[data-color-mode="dark"] .calculator-controls, :root[data-color-mode="dark"] .calculator-results,
+:root[data-color-mode="dark"] .comparison-section, :root[data-color-mode="dark"] .capture-panel { border-color: var(--app-line); background: var(--app-surface); color: var(--app-ink); box-shadow: var(--app-shadow); }
+:root[data-color-mode="dark"] .panel-heading, :root[data-color-mode="dark"] .tm-head { border-color: var(--app-line); background: var(--app-surface-muted); color: var(--app-ink); }
+:root[data-color-mode="dark"] .home-shortcut { border-color: var(--app-line); background: var(--app-surface); color: var(--app-ink); box-shadow: var(--app-shadow); }
+:root[data-color-mode="dark"] .home-shortcut-copy strong { color: #f0f3f5; }
+:root[data-color-mode="dark"] .home-shortcut-copy small, :root[data-color-mode="dark"] .mission-description, :root[data-color-mode="dark"] .world-note { color: var(--app-muted); }
+:root[data-color-mode="dark"] .mission-description strong, :root[data-color-mode="dark"] .mission-rewards dd { color: #edf1f4; }
+:root[data-color-mode="dark"] .mission-rewards div { border-color: var(--app-line); background: var(--app-surface-muted); }
+:root[data-color-mode="dark"] .mission-rewards dt { color: var(--app-muted); }
+:root[data-color-mode="dark"] .capture-note, :root[data-color-mode="dark"] .calculator-intro { border-color: var(--app-line); background: var(--app-surface-muted); color: var(--app-muted); }
+:root[data-color-mode="dark"] .capture-note strong, :root[data-color-mode="dark"] .calculator-intro strong { color: var(--app-ink); }
+
+@media (max-width: 800px) {
+  .content { min-width: 0; padding: 24px 14px; }
+  .topbar { flex-wrap: wrap; gap: 12px; }
+  .topbar h1, .raid-screen-heading h1 { font-size: 36px !important; }
+}

@@ -9,10 +9,14 @@
 .raid-controls { display: grid; grid-template-columns: minmax(230px, 360px) minmax(0, 1fr); align-items: end; gap: 18px; border-bottom: 1px solid var(--line); padding: 2px 0 16px; }
 .raid-boss-field { display: grid; gap: 7px; color: #536989; font-size: 12px; font-weight: 800; }
 .raid-boss-picker { position: relative; min-width: 0; }
-.raid-boss-search { width: 100%; max-width: none; box-sizing: border-box; }
+.raid-boss-search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; gap: 8px; min-width: 0; }
+.raid-boss-search { width: 100%; max-width: none; min-width: 0; box-sizing: border-box; }
 .raid-boss-search:focus-within { border-color: #7194c5; box-shadow: 0 0 0 2px rgba(39, 100, 231, .13); }
 .raid-boss-search > svg { flex: 0 0 auto; color: #77869a; }
 .raid-boss-search input { min-width: 0; }
+.raid-search-reset { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; padding: 0 12px; border: 1px solid #d5dfe6; border-radius: 6px; background: #f4f6f7; color: #4b5963; font: 600 12px 'Barlow', sans-serif; white-space: nowrap; cursor: pointer; transition: border-color .14s ease, background .14s ease, color .14s ease; }
+.raid-search-reset:hover { border-color: #9cb3c1; background: #e9eff2; color: #263a46; }
+.raid-search-reset:focus-visible { outline: 2px solid #187b91; outline-offset: 2px; }
 .raid-boss-suggestions { position: absolute; z-index: 20; top: calc(100% + 5px); right: 0; left: 0; max-height: 280px; overflow-y: auto; border: 1px solid #c7d5e6; border-radius: 6px; background: #fff; box-shadow: 0 8px 22px rgba(30, 52, 79, .18); }
 .raid-boss-suggestion-group { padding: 5px; }
 .raid-boss-suggestion-group + .raid-boss-suggestion-group { border-top: 1px solid #e2e8f0; }
@@ -67,6 +71,9 @@
 :root[data-color-mode="dark"] .raid-candidate { border-color: #3b4857; background: #202832; }
 :root[data-color-mode="dark"] .raid-boss-field { color: #c0ccd8; }
 :root[data-color-mode="dark"] .raid-boss-search { border-color: #46515e; background: #202731; }
+:root[data-color-mode="dark"] .raid-search-reset { border-color: #46515e; background: #252e36; color: #dce4eb; }
+:root[data-color-mode="dark"] .raid-search-reset:hover { border-color: #708596; background: #303b45; color: #f0f4f7; }
+:root[data-color-mode="dark"] .raid-search-reset:focus-visible { outline-color: #7ab9cf; }
 :root[data-color-mode="dark"] .raid-boss-search input { color: #e4eaf0; }
 :root[data-color-mode="dark"] .raid-boss-suggestions { border-color: #46515e; background: #202731; box-shadow: 0 8px 22px rgba(0, 0, 0, .42); }
 :root[data-color-mode="dark"] .raid-boss-suggestion-group + .raid-boss-suggestion-group { border-top-color: #3b4653; }

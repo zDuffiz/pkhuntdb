@@ -38,3 +38,15 @@ export function getTypeMatchups(typeString: string): TypeMatchup[] {
     return { type: attackingType, multiplier }
   })
 }
+
+export function getSuperEffectiveTypes(typeString: string): TypeMatchup[] {
+  const attackingTypes = typeString.split(' / ') as PokemonType[]
+  return (Object.keys(chart) as PokemonType[])
+    .map((defendingType) => {
+      const multiplier = getTypeMatchups(defendingType)
+        .filter(({ type }) => attackingTypes.includes(type))
+        .reduce((maximum, matchup) => Math.max(maximum, matchup.multiplier), 0)
+      return { type: defendingType, multiplier }
+    })
+    .filter(({ multiplier }) => multiplier > 1)
+}

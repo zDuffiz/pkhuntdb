@@ -1,13 +1,13 @@
 import React, { StrictMode, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
+import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, RotateCcw, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
 import liveGif from '../assets/Emote-animado-explodindo-a-cabeça.gif'
 import discordGif from '../assets/Dançando animado.gif'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import regionCatalog from './region-data.json'
 import RaidPlanner from './RaidPlanner'
-import { getTypeMatchups } from './type-chart'
+import { getSuperEffectiveTypes, getTypeMatchups } from './type-chart'
 import './styles.css'
 import './image-overrides.css'
 import './detail-overrides.css'
@@ -21,6 +21,7 @@ import './home.css'
 import './color-mode.css'
 import './world.css'
 import './raids.css'
+import './visual-system.css'
 
 type WorldRegion = {
   id: string
@@ -38,7 +39,25 @@ type WorldRegion = {
   spawns: { name: string; weight: number }[]
 }
 
+type EasiestCaptureRecommendation = {
+  pokemonName: string
+  hardness: number
+  mapId: string
+  mapName: string
+  levelRange: string
+  spawnChance: number
+}
+
 const worldRegions = regionCatalog as WorldRegion[]
+const worldAppearancesByPokemon = new Map<string, { map: WorldRegion; chance: number }[]>()
+for (const map of worldRegions) {
+  const totalWeight = map.spawns.reduce((total, spawn) => total + spawn.weight, 0) || 1
+  for (const spawn of map.spawns) {
+    const appearances = worldAppearancesByPokemon.get(spawn.name) ?? []
+    appearances.push({ map, chance: spawn.weight / totalWeight })
+    worldAppearancesByPokemon.set(spawn.name, appearances)
+  }
+}
 const captureHardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
 const captureBallPower = { 'Poké Ball': 4, 'Great Ball': 7, 'Ultra Ball': 13 } as const
 const captureRarityDivisors = { Comum: 1, Incomum: 10, Raro: 26, 'Épico': 39, Prismático: 90, Mítico: 174, Astral: 283 } as const
@@ -66,15 +85,14 @@ function App() { return <Atlas /> }
 
 function Atlas() {
   const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
-  const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'dark' ? 'dark' : 'light')
+  const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode') === 'light' ? 'light' : 'dark')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<Pokemon>(pokemonFallback[0])
   const [pokemon, setPokemon] = useState<Pokemon[]>(pokemonFallback)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
-  const [region, setRegion] = useState('Todas Regiões')
   const [eggGroupFilter, setEggGroupFilter] = useState('Todos os grupos')
-  const [megaFilter, setMegaFilter] = useState('Todas as formas')
-  const [sort, setSort] = useState('Ordem A-Z')
+  const [pokemonTypeFilter, setPokemonTypeFilter] = useState('Todos os elementos')
+  const [statSort, setStatSort] = useState('Nenhum')
   const [tmType, setTmType] = useState('Todos os tipos')
   const [tmRange, setTmRange] = useState('Todos os alcances')
   const [tmCategory, setTmCategory] = useState('Todas as categorias')
@@ -101,11 +119,24 @@ function Atlas() {
   }, [])
 
   const filteredPokemon = useMemo(() => [...pokemon]
-    .filter((entry) => region === 'Todas Regiões' || entry.region === region)
     .filter((entry) => eggGroupFilter === 'Todos os grupos' || (eggGroupFilter === 'Sem grupo' ? !entry.eggGroup : entry.eggGroup.split(',').map((group) => group.trim()).includes(eggGroupFilter)))
-    .filter((entry) => megaFilter === 'Todas as formas' || entry.form === 'Mega')
+    .filter((entry) => pokemonTypeFilter === 'Todos os elementos' || entry.type.split(' / ').includes(pokemonTypeFilter))
     .filter((entry) => `${entry.name} ${entry.type} ${entry.eggGroup} ${entry.region}`.toLowerCase().includes(query.toLowerCase()))
-    .sort((a, b) => sort === 'Ordem A-Z' ? a.name.localeCompare(b.name) : a.id - b.id), [pokemon, query, region, eggGroupFilter, megaFilter, sort])
+    .sort((first, second) => {
+      const baseOrder = () => first.id - second.id
+      if (statSort === 'Status total') {
+        const firstTotal = Object.values(first.stats).reduce((total, value) => total + value, 0)
+        const secondTotal = Object.values(second.stats).reduce((total, value) => total + value, 0)
+        return secondTotal - firstTotal || baseOrder()
+      }
+      if (statSort === 'HP') return second.stats.hp - first.stats.hp || baseOrder()
+      if (statSort === 'Ataque') return second.stats.attack - first.stats.attack || baseOrder()
+      if (statSort === 'Defesa') return second.stats.defense - first.stats.defense || baseOrder()
+      if (statSort === 'Ataque Especial') return second.stats.specialAttack - first.stats.specialAttack || baseOrder()
+      if (statSort === 'Defesa Especial') return second.stats.specialDefense - first.stats.specialDefense || baseOrder()
+      if (statSort === 'Speed') return second.stats.speed - first.stats.speed || baseOrder()
+      return baseOrder()
+    }), [pokemon, query, eggGroupFilter, pokemonTypeFilter, statSort])
   const filteredTms = useMemo(() => {
     const entries = [...tms]
       .filter((entry) => tmType === 'Todos os tipos' || entry.type === tmType)
@@ -144,7 +175,6 @@ function Atlas() {
   const captureRanges = [...new Set(captureRates.map((entry) => entry.range))]
   const captureTypes = [...new Set(pokemon.flatMap((entry) => entry.type.split(' / ')))].sort((a, b) => typeLabel(a).localeCompare(typeLabel(b)))
   const eggGroups = [...new Set(pokemon.flatMap((entry) => entry.eggGroup.split(',').map((group) => group.trim()).filter(Boolean)))].sort((a, b) => a.localeCompare(b))
-  const regions = ['Todas Regiões', ...new Set(pokemon.map((entry) => entry.region))]
 
   function changeView(nextView: typeof view) {
     setQuery('')
@@ -199,14 +229,14 @@ function Atlas() {
           {(view !== 'captures' || captureSubTab === 'rates') && <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
-              <select aria-label="Filtrar por região" value={region} onChange={(event) => setRegion(event.target.value)}>{regions.map((item) => <option key={item}>{item}</option>)}</select>
               <select aria-label="Filtrar por Egg Group" value={eggGroupFilter} onChange={(event) => setEggGroupFilter(event.target.value)}>
                 <option value="Todos os grupos">Egg Group</option>
                 {eggGroups.map((group) => <option key={group} value={group}>{group}</option>)}
                 <option>Sem grupo</option>
               </select>
-              <select aria-label="Filtrar por forma" value={megaFilter} onChange={(event) => setMegaFilter(event.target.value)}><option>Todas as formas</option><option>Apenas Megas</option></select>
-              <select aria-label="Ordenar Pokémon" value={sort} onChange={(event) => setSort(event.target.value)}><option>Nome (A-Z)</option><option>Ordem Pokédex</option></select>
+              <select aria-label="Filtrar por elemento" value={pokemonTypeFilter} onChange={(event) => setPokemonTypeFilter(event.target.value)}><option value="Todos os elementos">Todos elementos</option>{captureTypes.map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
+              <select aria-label="Priorizar status" value={statSort} onChange={(event) => setStatSort(event.target.value)}><option value="Nenhum">Priorizar status</option><option value="Status total">Status total (maior)</option><option value="HP">HP (maior)</option><option value="Ataque">Ataque (maior)</option><option value="Defesa">Defesa (maior)</option><option value="Ataque Especial">Ataque Especial (maior)</option><option value="Defesa Especial">Defesa Especial (maior)</option><option value="Speed">Speed (maior)</option></select>
+              <button type="button" className="pokedex-reset-button" onClick={() => { setQuery(''); setEggGroupFilter('Todos os grupos'); setPokemonTypeFilter('Todos os elementos'); setStatSort('Nenhum') }}><RotateCcw size={15} aria-hidden="true" /><span>Reset filtros</span></button>
             </> : view === 'tms' ? <>
               <select aria-label="Filtrar TMs por tipo" value={tmType} onChange={(event) => setTmType(event.target.value)}><option>Todos os tipos</option>{[...new Set(tms.map((item) => item.type))].sort().map((type) => <option key={type} value={type}>{typeLabel(type)}</option>)}</select>
               <select aria-label="Filtrar TMs por alcance" value={tmRange} onChange={(event) => setTmRange(event.target.value)}><option>Todos os alcances</option>{Object.entries(moveRangeLabels).map(([range, label]) => <option key={range} value={range}>{label}</option>)}</select>
@@ -219,7 +249,7 @@ function Atlas() {
               <select aria-label="Filtrar origem do golpe" value={moveSource} onChange={(event) => setMoveSource(event.target.value)}><option>Todas as origens</option><option>Por nível</option><option>Por TM</option></select>
             </>}
           </div>}
-          {view === 'captures' && captureSubTab === 'calculator' ? <CaptureCalculator entries={captureRates} pokemon={pokemon} /> : view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} sort={sort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
+          {view === 'captures' && captureSubTab === 'calculator' ? <CaptureCalculator entries={captureRates} pokemon={pokemon} /> : view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} statSort={statSort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} pokemon={pokemon} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
     </main>
@@ -343,7 +373,7 @@ function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapI
   </section>
 }
 
-function MissionBoard({ items, onOpenMap }: { items: ClanMission[]; onOpenMap: (mapId: string) => void }) {
+function MissionBoard({ items, pokemon, onOpenMap }: { items: ClanMission[]; pokemon: Pokemon[]; onOpenMap: (mapId: string) => void }) {
   const [query, setQuery] = useState('')
   const [selectedClan, setSelectedClan] = useState('Todos os clãs')
   const colors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
@@ -355,11 +385,32 @@ function MissionBoard({ items, onOpenMap }: { items: ClanMission[]; onOpenMap: (
     && `${mission.clan} ${mission.element} ${mission.name} ${mission.kind} ${mission.description} ${mission.part}`.toLowerCase().includes(normalizedQuery))
   const visibleClans = selectedClan === 'Todos os clãs' ? clanNames : [selectedClan]
   const elementByClan = new Map(clanNames.map((clan) => [clan, items.find((mission) => mission.clan === clan)?.element ?? '']))
-  const hardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
+  const hardnessByName = captureHardnessByName
+  const easiestCaptureByElement = useMemo(() => {
+    const elements = [...new Set(pokemon.flatMap((entry) => entry.type.split(' / ')))]
+    return new Map(elements.map((element) => {
+      const candidate = pokemon.flatMap((entry) => {
+        if (!entry.type.split(' / ').includes(element)) return []
+        const hardness = hardnessByName.get(entry.name)
+        const appearances = worldAppearancesByPokemon.get(entry.name)
+        if (hardness === undefined || !appearances?.length) return []
+        const bestAppearance = [...appearances].sort((first, second) => second.chance - first.chance || first.map.level - second.map.level || first.map.id.localeCompare(second.map.id))[0]
+        return [{
+          pokemonName: entry.name,
+          hardness,
+          mapId: bestAppearance.map.id,
+          mapName: bestAppearance.map.name,
+          levelRange: bestAppearance.map.levelRange,
+          spawnChance: bestAppearance.chance,
+        }]
+      }).sort((first, second) => first.hardness - second.hardness || second.spawnChance - first.spawnChance || first.pokemonName.localeCompare(second.pokemonName))[0] ?? null
+      return [element, candidate]
+    }))
+  }, [pokemon, hardnessByName])
   const selectedElement = elementByClan.get(selectedClan) ?? ''
   const groups = visibleClans.map((clan) => ({
     clan,
-    missions: matches.filter((mission) => mission.clan === clan),
+    missions: matches.filter((mission) => mission.clan === clan).sort((first, second) => first.tier - second.tier),
   })).filter((group) => group.missions.length > 0)
   const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
 
@@ -380,49 +431,79 @@ function MissionBoard({ items, onOpenMap }: { items: ClanMission[]; onOpenMap: (
     </div>
     {groups.length ? <div className="mission-groups">{groups.map((group) => <details className="mission-group" key={group.clan} open={selectedClan !== 'Todos os clãs' || normalizedQuery.length > 0} style={{ '--element-color': getElementColor(group.missions[0].element) } as React.CSSProperties}>
       <summary><span className="mission-group-title"><strong>Missões de {getElementName(group.missions[0].element)}</strong><span className="mission-group-subline"><span className="mission-element-badge">{group.missions[0].element}</span><span className="mission-clan-name">{group.clan}</span></span></span><span className="mission-group-summary-count">{group.missions.length} missões</span></summary>
-      <div className="mission-list">{group.missions.map((mission) => <article className="mission-card" key={mission.id}>
-        <div className="mission-card-header" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}><div><span className="mission-part">Parte {mission.part}</span><h3>{mission.name}</h3></div><span className="mission-tier">Tier {mission.tier}</span></div>
-        <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
-        <p className="mission-description">{mission.kind === 'Captura' ? <>Capturar <strong>{formatNumber(mission.target)}</strong> Pokémon do tipo <strong>{mission.element}</strong>.</> : mission.kind === 'Contrato específico' ? <>Derrotar os Pokémon específicos desta etapa até completar <strong>{formatNumber(mission.target)} abates</strong>.</> : <>Derrotar <strong>{formatNumber(mission.target)} Pokémon</strong> fracos ao elemento <strong>{mission.element}</strong>.</>}</p>
-        <dl className="mission-rewards"><div><dt>Gold</dt><dd>{formatNumber(mission.gold)}</dd></div><div><dt>XP</dt><dd>{formatNumber(mission.experience)}</dd></div><div><dt>Token</dt><dd>{formatNumber(mission.tokens)}</dd></div><div><dt>Pontos do clã</dt><dd>{formatNumber(mission.clanPoints)}</dd></div></dl>
-        <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} onOpenMap={onOpenMap} />
-      </article>)}</div>
+      <div className="mission-list">{group.missions.map((mission) => {
+        const elementType = mission.element.split('/').at(-1)?.trim()
+        const easiestCapture = elementType ? easiestCaptureByElement.get(elementType) ?? null : null
+        return <article className="mission-card" key={mission.id}>
+          <div className="mission-card-header" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}><div><span className="mission-part">Parte {mission.part}</span><h3>{mission.name}</h3></div><span className="mission-tier">Tier {mission.tier}</span></div>
+          <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
+          <p className="mission-description">{mission.kind === 'Captura' ? <>Capturar <strong>{formatNumber(mission.target)}</strong> Pokémon do tipo <strong>{mission.element}</strong>.</> : mission.kind === 'Contrato específico' ? <>Derrotar os Pokémon específicos desta etapa até completar <strong>{formatNumber(mission.target)} abates</strong>.</> : <>Derrotar <strong>{formatNumber(mission.target)} Pokémon</strong> fracos ao elemento <strong>{mission.element}</strong>.</>}</p>
+          <dl className="mission-rewards"><div><dt>Gold</dt><dd>{formatNumber(mission.gold)}</dd></div><div><dt>XP</dt><dd>{formatNumber(mission.experience)}</dd></div><div><dt>Token</dt><dd>{formatNumber(mission.tokens)}</dd></div><div><dt>Pontos do clã</dt><dd>{formatNumber(mission.clanPoints)}</dd></div></dl>
+          <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} easiestCapture={easiestCapture} onOpenMap={onOpenMap} />
+        </article>
+      })}</div>
     </details>)}</div> : <p className="mission-empty">Nenhuma missão encontrada.</p>}
   </section>
 }
 
-function MissionAdvice({ recommendation, hardnessByName, onOpenMap }: { recommendation: ClanMission['recommendation']; hardnessByName: ReadonlyMap<string, number>; onOpenMap: (mapId: string) => void }) {
+function MissionAdvice({ recommendation, hardnessByName, easiestCapture, onOpenMap }: { recommendation: ClanMission['recommendation']; hardnessByName: ReadonlyMap<string, number>; easiestCapture: EasiestCaptureRecommendation | null; onOpenMap: (mapId: string) => void }) {
   const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
   const formatExpected = (value: number) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)
   const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 2 }).format(value)
-  const summary = recommendation.kind === 'capture' ? 'Ver Melhor Mapa' : recommendation.kind === 'multi' ? 'Ver mapa de cada Pokémon' : recommendation.kind === 'weak' ? 'Ver melhor mapa elemental' : 'Ver recomendação'
+  const summary = recommendation.kind === 'capture' ? 'Mais opções de Mapas' : recommendation.kind === 'multi' ? 'Ver mapa de cada Pokémon' : recommendation.kind === 'weak' ? 'Ver melhor mapa elemental' : 'Ver recomendação'
   const pokemon = recommendation.pokemon ?? []
   const totalChance = pokemon.reduce((total, entry) => total + entry.chance, 0)
   const averageCaptureHardness = totalChance ? pokemon.reduce((total, entry) => total + (hardnessByName.get(entry.name) ?? entry.media ?? 0) * entry.chance, 0) / totalChance : recommendation.avgMedia
+  const pokemonRecommendationList = <div className="advice-pokemon-list">{pokemon.map((entry) => <div className="advice-pokemon" key={entry.name}>
+    <div><strong>{entry.name}</strong><span>{entry.types.map((type) => typeLabel(type.charAt(0).toUpperCase() + type.slice(1))).join(' / ')}</span></div>
+    <span><strong>{formatChance(entry.chance)}</strong> · <strong>{formatExpected(entry.expected)}</strong> / {recommendation.spawnCount} spawns</span>
+    {recommendation.kind === 'capture' && (hardnessByName.get(entry.name) ?? entry.media) !== undefined && <strong>Dureza Capturas: {formatNumber(hardnessByName.get(entry.name) ?? entry.media ?? 0)}</strong>}
+    {recommendation.kind === 'weak' && entry.eff !== undefined && <strong>Efetividade: ×{entry.eff}</strong>}
+  </div>)}</div>
 
-  return <details className="mission-advice">
-    <summary><MapPin size={15} />{summary}</summary>
-    <div className="mission-advice-content">
-      <h4>{recommendation.title ?? 'Sem recomendação'}</h4>
-      {recommendation.kind === 'none' ? <p className="mission-advice-empty">{recommendation.message}</p> : recommendation.kind === 'multi' ? <>
-        {recommendation.singleHunt ? <div className="advice-single-map"><span>Todos os alvos nesta hunt</span><button type="button" className="advice-map-link" onClick={() => onOpenMap(recommendation.singleHunt!.regionId)}>{recommendation.singleHunt.hunt}</button><small>{recommendation.singleHunt.regionId} · nível {recommendation.singleHunt.level}</small></div> : <p className="advice-route-note">Os alvos ficam melhor distribuídos entre estas hunts:</p>}
-        <div className="advice-routes">{recommendation.targets?.map((target) => <div className="advice-route" key={`${target.species}-${target.regionId}`}>
+  if (recommendation.kind === 'multi') {
+    return <div className="mission-advice mission-advice-inline">
+      <div className="mission-advice-content">
+        <h4>{recommendation.title ?? 'Recomendação de mapas'}</h4>
+        {recommendation.singleHunt ? <button type="button" className="advice-single-map advice-map-card" aria-label={`Abrir ${recommendation.singleHunt.hunt} no Mundo`} onClick={() => onOpenMap(recommendation.singleHunt!.regionId)}><span>Todos os alvos nesta hunt</span><strong>{recommendation.singleHunt.hunt}</strong><small>{recommendation.singleHunt.regionId} · nível {recommendation.singleHunt.level}</small></button> : <p className="advice-route-note">Os alvos ficam melhor distribuídos entre estas hunts:</p>}
+        <div className="advice-routes">{recommendation.targets?.map((target) => <button type="button" className="advice-route advice-route-link" aria-label={`Abrir ${target.hunt} no Mundo para ${target.species}`} onClick={() => onOpenMap(target.regionId)} key={`${target.species}-${target.regionId}`}>
           <div><strong>{target.species}</strong><span>{formatNumber(target.required)} abates</span></div>
-          <div><button type="button" className="advice-map-link advice-route-map-link" onClick={() => onOpenMap(target.regionId)}>{target.hunt}</button><small>{target.regionId} · nível {target.level}</small></div>
+          <div><strong className="advice-route-map-name">{target.hunt}</strong><small>{target.regionId} · nível {target.level}</small></div>
           <div><span>{formatChance(target.chance)} de chance</span><small>{formatExpected(target.expected)} / {target.spawnCount} spawns</small></div>
-        </div>)}</div>
-      </> : <>
-        <div className="advice-best-map"><div><span>Melhor mapa</span><button type="button" className="advice-map-link" disabled={!recommendation.regionId} onClick={() => recommendation.regionId && onOpenMap(recommendation.regionId)}>{recommendation.hunt}</button><small>{recommendation.regionId}</small></div><div><strong>Nível {recommendation.level}</strong><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong><small><strong>{formatExpected(recommendation.expected ?? 0)}</strong> / {recommendation.spawnCount} spawns</small></div></div>
-        {recommendation.kind === 'capture' && averageCaptureHardness !== undefined && <p className="advice-average-hardness">Dureza média pela aba Capturas: <strong>{formatExpected(averageCaptureHardness)}</strong></p>}
-        <div className="advice-pokemon-list">{pokemon.map((entry) => <div className="advice-pokemon" key={entry.name}>
-          <div><strong>{entry.name}</strong><span>{entry.types.map((type) => typeLabel(type.charAt(0).toUpperCase() + type.slice(1))).join(' / ')}</span></div>
-          <span><strong>{formatChance(entry.chance)}</strong> · <strong>{formatExpected(entry.expected)}</strong> / {recommendation.spawnCount} spawns</span>
-          {recommendation.kind === 'capture' && (hardnessByName.get(entry.name) ?? entry.media) !== undefined && <strong>Dureza Capturas: {formatNumber(hardnessByName.get(entry.name) ?? entry.media ?? 0)}</strong>}
-          {recommendation.kind === 'weak' && entry.eff !== undefined && <strong>Efetividade: ×{entry.eff}</strong>}
-        </div>)}</div>
-      </>}
+        </button>)}</div>
+      </div>
     </div>
-  </details>
+  }
+
+  if (recommendation.kind === 'weak') {
+    return <div className="mission-advice mission-advice-inline">
+      <div className="mission-advice-content">
+        <h4>{recommendation.title ?? 'Melhor mapa elemental'}</h4>
+        <button type="button" className="advice-best-map advice-map-card" aria-label={`Abrir ${recommendation.hunt ?? 'melhor mapa'} no Mundo`} disabled={!recommendation.regionId} onClick={() => recommendation.regionId && onOpenMap(recommendation.regionId)}><div><span>Melhor mapa</span><strong className="advice-best-map-name">{recommendation.hunt}</strong><small>{recommendation.regionId}</small></div><div><strong>Nível {recommendation.level}</strong><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong><small><strong>{formatExpected(recommendation.expected ?? 0)}</strong> / {recommendation.spawnCount} spawns</small></div></button>
+        {pokemonRecommendationList}
+      </div>
+    </div>
+  }
+
+  return <>
+    {recommendation.kind === 'capture' && <button type="button" className="advice-option-one advice-option-one-link" aria-label={`Abrir ${recommendation.hunt ?? 'mapa'} no Mundo`} disabled={!recommendation.regionId} onClick={() => recommendation.regionId && onOpenMap(recommendation.regionId)}>
+      <div><span>Opção 1 · Melhor lugar para captura</span><strong>{recommendation.hunt ?? 'Mapa não disponível'}</strong><small>{recommendation.regionId} · nível {recommendation.level}</small></div>
+      <div><strong>{formatChance(recommendation.chance ?? 0)} de chance</strong>{averageCaptureHardness !== undefined && <small>Dureza média: {formatExpected(averageCaptureHardness)}</small>}<small>{formatExpected(recommendation.expected ?? 0)} / {recommendation.spawnCount} spawns</small></div>
+    </button>}
+    {recommendation.kind === 'capture' && pokemon.length > 0 && <div className="advice-option-one-pokemon"><h4>Pokémon considerados na Opção 1</h4>{pokemonRecommendationList}</div>}
+    <details className="mission-advice">
+      <summary><MapPin size={15} />{summary}</summary>
+      <div className="mission-advice-content">
+        <h4>{recommendation.title ?? 'Sem recomendação'}</h4>
+        {recommendation.kind === 'none' ? <p className="mission-advice-empty">{recommendation.message}</p> : <>
+          {recommendation.kind === 'capture' && easiestCapture && <button type="button" className="advice-easiest-capture advice-option-two advice-easiest-capture-link" aria-label={`Abrir ${easiestCapture.mapName} no Mundo para capturar ${easiestCapture.pokemonName}`} onClick={() => onOpenMap(easiestCapture.mapId)}>
+            <div><span>Opção 2 · Pokémon de menor dureza</span><strong>{easiestCapture.pokemonName}</strong><small>Dureza {formatNumber(easiestCapture.hardness)}</small></div>
+            <div><span>Mapa com maior spawn</span><strong className="advice-easiest-capture-map-name">{easiestCapture.mapName}</strong><small>{easiestCapture.mapId} · níveis {easiestCapture.levelRange} · {formatChance(easiestCapture.spawnChance)} dos spawns</small></div>
+          </button>}
+        </>}
+      </div>
+    </details>
+  </>
 }
 
 type ComparisonAttribute = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
@@ -501,8 +582,22 @@ function PokemonCalculator({ entries }: { entries: Pokemon[] }) {
   return <div className="calculator-screen"><div className="calculator-intro"><strong>Calculadora de Status</strong><span>Use a fórmula da wiki para simular um indivíduo completo. Raridade e selos multiplicam os atributos base; IVs, EVs, nível e natureza completam a conta.</span></div><div className="calculator-layout"><section className="calculator-controls"><div className="calculator-field pokemon-search-field"><span>Pokémon</span><div className="pokemon-autocomplete"><input aria-label="Buscar Pokémon" placeholder="Digite o nome do Pokémon..." value={selectedName} onFocus={() => setShowPokemonSuggestions(true)} onChange={(event) => { setSelectedName(event.target.value); setShowPokemonSuggestions(true) }} onBlur={() => setTimeout(() => setShowPokemonSuggestions(false), 120)} />{showPokemonSuggestions && <div className="pokemon-suggestions">{pokemonSuggestions.length ? pokemonSuggestions.map((entry) => <button type="button" key={`${entry.region}-${entry.name}`} onMouseDown={() => { setSelectedName(entry.name); setShowPokemonSuggestions(false) }}><strong>{entry.name}</strong><small>{entry.region} · {entry.type.split(' / ').map(typeLabel).join(' / ')}</small></button>) : <p>Nenhum Pokémon encontrado</p>}</div>}</div></div><div className="calculator-grid"><label className="calculator-field"><span>Nível</span><input type="number" min="1" max="1000" value={level} onChange={(event) => setLevel(Math.min(1000, Math.max(1, Number(event.target.value) || 1)))} /></label><label className="calculator-field"><span>Natureza</span><select value={nature} onChange={(event) => setNature(event.target.value)}>{Object.keys(natureEffects).map((item) => <option key={item}>{item}</option>)}</select></label><label className="calculator-field"><span>Raridade</span><select value={rarity} onChange={(event) => setRarity(event.target.value)}>{Object.keys(rarityMultipliers).map((item) => <option key={item}>{item}</option>)}</select></label><label className="calculator-field"><span>Selo</span><select value={seal} onChange={(event) => setSeal(event.target.value)}>{Object.keys(sealMultipliers).map((item) => <option key={item}>{item}</option>)}</select></label><label className="calculator-field"><span>Estrelas</span><select value={stars} onChange={(event) => setStars(Number(event.target.value))}>{[0, 1, 2, 3, 4, 5].map((value) => <option key={value} value={value}>{value}</option>)}</select></label><label className="calculator-field"><span>Laço</span><select value={bond} onChange={(event) => setBond(Number(event.target.value))}><option value="0">0%</option><option value="25">25%</option><option value="75">75%</option><option value="100">100%</option></select></label></div><div className="training-heading"><span>Atributo</span><span>IV / DNA</span><span>EV / TREINO</span></div><div className="training-grid">{Object.keys(attributeLabels).map((key) => { const statKey = key as keyof typeof ivs; return <div className="training-row" key={key}><strong>{attributeLabels[statKey]}</strong><label className="training-input"><small>IV</small><input aria-label={`IV ${attributeLabels[statKey]}`} type="number" min="0" max="31" value={ivs[statKey]} onChange={(event) => updateValue('ivs', statKey, event.target.value)} /></label><label className="training-input"><small>EV</small><input aria-label={`EV ${attributeLabels[statKey]}`} type="number" min="0" max="252" value={evs[statKey]} onChange={(event) => updateValue('evs', statKey, event.target.value)} /></label></div> })}</div></section><section className="calculator-results"><div className="result-heading"><div className="result-identity"><img src={selected?.image} alt={selected?.name} /><div><small>{selected?.name}</small><strong>ATRIBUTOS FINAIS</strong></div></div><span>×{totalMultiplier.toFixed(2)}</span></div><div className="result-grid">{Object.keys(attributeLabels).map((key) => { const statKey = key as keyof typeof ivs; return <div className="result-stat" key={key}><small>{attributeLabels[statKey]}</small><strong>{calculatedStats[statKey]}</strong><span style={{ width: `${Math.min(100, calculatedStats[statKey] / 2.55)}%` }} /></div> })}</div><div className="calculator-formula"><b>Camadas aplicadas</b><span>Raridade × Selo × Laço × Estrelas</span><span>{rarity} × {seal} × {bond >= 100 ? 'Laço 100% (+6%)' : bond >= 75 ? 'Laço 75% (+3%)' : 'Laço base'} × {stars} estrelas</span></div></section></div></div>
 }
 
-function PokemonList({ entries, selected, status, sort, onSelect }: { entries: Pokemon[]; selected: Pokemon; status: string; sort: string; onSelect: (entry: Pokemon) => void }) {
-  return <div className="pokedex-list"><div className="panel-heading"><span>REGISTROS / {entries.length}{status === 'loading' && ' · carregando...'}</span><span className="sort">{sort === 'Ordem A-Z' ? 'A-Z' : 'DEX'} ↕</span></div><div className="pokedex-grid">{entries.map((entry) => <button className={selected.name === entry.name ? 'pokedex-card selected' : 'pokedex-card'} key={`${entry.region}-${entry.name}`} onClick={() => onSelect(entry)}><div className="card-top"><span>#{String(entry.id).padStart(3, '0')}</span><span>{entry.region}</span></div><div className="card-image"><img src={entry.image} alt={entry.name} /></div><div className="card-name"><b>{entry.name}</b><span>↗</span></div><div className="card-types">{entry.type.split(' / ').map((type) => <em data-type={type} key={type}>{typeLabel(type)}</em>)}</div><div className="card-stats" data-type={entry.type.split(' / ')[0]}><span>HP <b>{entry.stats.hp}</b></span><span>ATK <b>{entry.stats.attack}</b></span><span>DEF <b>{entry.stats.defense}</b></span><span>SPA <b>{entry.stats.specialAttack}</b></span><span>SPD <b>{entry.stats.specialDefense}</b></span><span>SPE <b>{entry.stats.speed}</b></span></div></button>)}</div></div>
+function PokemonList({ entries, selected, status, statSort, onSelect }: { entries: Pokemon[]; selected: Pokemon; status: string; statSort: string; onSelect: (entry: Pokemon) => void }) {
+  const sortLabel = statSort === 'Nenhum' ? 'DEX' : `${statSort.toUpperCase()} ↓`
+  return <div className="pokedex-list">
+    <div className="panel-heading">
+      <span>REGISTROS / {entries.length}{status === 'loading' && ' · carregando...'}</span>
+      <span className="sort">{sortLabel}</span>
+    </div>
+    <div className="pokedex-grid">
+      {entries.map((entry) => <button className={selected.name === entry.name ? 'pokedex-card selected' : 'pokedex-card'} data-type={entry.type.split(' / ')[0]} key={`${entry.region}-${entry.name}`} onClick={() => onSelect(entry)}>
+        <div className="card-top"><span>#{String(entry.id).padStart(3, '0')}</span><span>{entry.region}</span></div>
+        <div className="card-image"><img src={entry.image} alt={entry.name} /></div>
+        <div className="card-name"><b>{entry.name}</b><span>↗</span></div>
+        <div className="card-types">{entry.type.split(' / ').map((type) => <em data-type={type} key={type}>{typeLabel(type)}</em>)}</div>
+      </button>)}
+    </div>
+  </div>
 }
 
 const normalizeMoveName = (name: string) => name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’]/g, "'").replace(/♀/g, ' female').replace(/♂/g, ' male').replace(/\s+/g, ' ').trim()
@@ -534,7 +629,7 @@ function PokemonDetail({ selected, onBack }: { selected: Pokemon; onBack: () => 
   const compatibleTms = compatibleTmsForPokemon(selected)
   return <div className="detail-screen">
     <button className="back-button" onClick={onBack}>← Voltar para Pokedex</button>
-    <div className="detail-hero detail-hero-screen" style={{ '--accent': selected.accent } as React.CSSProperties}>
+    <div className="detail-hero detail-hero-screen" data-type={selected.type.split(' / ')[0]} style={{ '--accent': selected.accent } as React.CSSProperties}>
       <img className="detail-image" src={selected.image} alt={selected.name} />
       <span className="detail-id">#{String(selected.id).padStart(3, '0')} · GERAÇÃO {selected.generation}</span>
       <span className="detail-symbol">◒</span>
@@ -595,19 +690,22 @@ function PokemonStatsChart({ stats, type }: { stats: Pokemon['stats']; type: str
 
 function TypeMatchups({ type }: { type: string }) {
   const matchups = getTypeMatchups(type)
+  const superEffectiveTypes = getSuperEffectiveTypes(type)
   const groups = [
     { title: 'FRAQUEZAS', values: matchups.filter(({ multiplier }) => multiplier > 1) },
     { title: 'RESISTÊNCIAS', values: matchups.filter(({ multiplier }) => multiplier > 0 && multiplier < 1) },
     { title: 'IMUNIDADES', values: matchups.filter(({ multiplier }) => multiplier === 0) },
+    { title: 'SUPER EFETIVO CONTRA', values: superEffectiveTypes },
   ]
-  return <div className="matchups"><div className="section-title"><span>FRAQUEZAS E RESISTÊNCIAS</span></div>{groups.map((group) => <div className="matchup-group" key={group.title}><small>{group.title}</small><div className="type-pills">{group.values.length ? group.values.map(({ type: attackType, multiplier }) => <span data-type={attackType} className={`type-pill ${group.title.toLowerCase()}`} key={attackType}><b>{typeLabel(attackType)}</b><em>{multiplier === 0.25 ? '×¼' : multiplier === 0.5 ? '×½' : multiplier === 2 ? '×2' : multiplier === 4 ? '×4' : '×0'}</em></span>) : <span className="no-matchup">Nenhuma</span>}</div></div>)}</div>
+  return <div className="matchups"><div className="section-title"><span>FRAQUEZAS E RESISTÊNCIAS</span></div>{groups.map((group) => <div className="matchup-group" key={group.title}><small>{group.title}</small><div className="type-pills">{group.values.length ? group.values.map(({ type: attackType, multiplier }) => <span data-type={attackType} className={`type-pill ${group.title.toLowerCase().replaceAll(' ', '-')}`} key={attackType}><b>{typeLabel(attackType)}</b><em>{multiplier === 0.25 ? '×¼' : multiplier === 0.5 ? '×½' : multiplier === 2 ? '×2' : multiplier === 4 ? '×4' : '×0'}</em></span>) : <span className="no-matchup">Nenhuma</span>}</div></div>)}</div>
 }
 
 function MoveSection({ title, moves }: { title: string; moves: Move[] }) {
   const [search, setSearch] = useState('')
-  type SortKey = 'level' | 'name' | 'type' | 'category' | 'power' | 'range' | 'cooldown'
-  const [sort, setSort] = useState<{ key: SortKey; direction: 'asc' | 'desc' } | null>(null)
-  const columns: { key: SortKey; label: string }[] = [
+  const [elementFilter, setElementFilter] = useState('Todos os elementos')
+  const [damageFilter, setDamageFilter] = useState('Todos os tipos de dano')
+  const [rangeFilter, setRangeFilter] = useState('Todos os alcances')
+  const columns: { key: string; label: string }[] = [
     { key: 'level', label: 'Nível' },
     { key: 'name', label: 'Golpe' },
     { key: 'type', label: 'Elemento' },
@@ -622,51 +720,54 @@ function MoveSection({ title, moves }: { title: string; moves: Move[] }) {
     'TM da tipagem': 'TM do próprio tipo',
   }
   const showMoveMetadata = title === 'GOLPES POR NÍVEL'
+  const rangeValue = (move: Move) => moveMetadataByName.get(move.name)?.range ?? 'Indisponível'
+  const rangeLabel = (range: string) => range === 'Indisponível' ? 'Alcance indisponível' : moveRangeLabels[range] ?? range
+  const availableElements = [...new Set(moves.map((move) => move.type))]
+    .sort((first, second) => typeLabel(first).localeCompare(typeLabel(second), 'pt-BR'))
+  const availableCategories = [...new Set(moves.map((move) => moveMetadataByName.get(move.name)?.attackCategory ?? 'unknown'))]
+    .sort((first, second) => moveCategoryLabels[first].localeCompare(moveCategoryLabels[second], 'pt-BR'))
+  const availableRanges = [...new Set(moves.map(rangeValue))]
+    .sort((first, second) => rangeLabel(first).localeCompare(rangeLabel(second), 'pt-BR'))
   const normalizedSearch = search.trim().toLowerCase()
   const filteredMoves = moves.filter((move) => {
     const metadata = moveMetadataByName.get(move.name)
-    const category = metadata ? moveCategoryLabels[metadata.attackCategory] : ''
-    const range = metadata?.range ? moveRangeLabels[metadata.range] ?? metadata.range : ''
-    return `${move.name} ${move.type} ${category} ${range} ${move.level ?? ''}`.toLowerCase().includes(normalizedSearch)
+    const category = metadata?.attackCategory ?? 'unknown'
+    const searchableCategory = moveCategoryLabels[category]
+    const range = rangeValue(move)
+    const searchableText = `${move.name} ${move.type} ${searchableCategory} ${rangeLabel(range)} ${move.level ?? ''}`.toLowerCase()
+    return (elementFilter === 'Todos os elementos' || move.type === elementFilter)
+      && (damageFilter === 'Todos os tipos de dano' || category === damageFilter)
+      && (rangeFilter === 'Todos os alcances' || range === rangeFilter)
+      && searchableText.includes(normalizedSearch)
   })
-  const getSortValue = (move: Move, key: SortKey): string | number | null => {
-    const metadata = moveMetadataByName.get(move.name)
-    switch (key) {
-      case 'level': return move.level
-      case 'name': return move.name
-      case 'type': return typeLabel(move.type)
-      case 'category': return metadata ? moveCategoryLabels[metadata.attackCategory] : null
-      case 'power': return metadata?.power ?? null
-      case 'range': return metadata?.range ? moveRangeLabels[metadata.range] ?? metadata.range : null
-      case 'cooldown': return metadata?.cooldown ? Number.parseInt(metadata.cooldown, 10) : null
-    }
-  }
-  const sortedMoves = sort ? [...filteredMoves].sort((first, second) => {
-    const firstValue = getSortValue(first, sort.key)
-    const secondValue = getSortValue(second, sort.key)
-    if (firstValue === null && secondValue === null) return 0
-    if (firstValue === null) return 1
-    if (secondValue === null) return -1
-    const comparison = typeof firstValue === 'number' && typeof secondValue === 'number'
-      ? firstValue - secondValue
-      : String(firstValue).localeCompare(String(secondValue), 'pt-BR', { numeric: true, sensitivity: 'base' })
-    return sort.direction === 'desc' ? -comparison : comparison
-  }) : filteredMoves
-  const toggleSort = (key: SortKey) => setSort((current) => current?.key === key
-    ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' }
-    : { key, direction: 'desc' })
 
   return <div className="move-section">
     <div className="section-title"><span>{title}</span></div>
     <div className="move-list source-move-list">
-      <label className="search move-section-search">
-        <Search size={15} aria-hidden="true" />
-        <input aria-label={`Buscar em ${title.toLowerCase()}`} value={search} onChange={(event) => setSearch(event.target.value)} placeholder={title === 'TMs QUE APRENDE' ? 'Buscar TM compatível...' : 'Buscar golpe por nível...'} />
-        {search && <button type="button" aria-label={`Limpar busca em ${title.toLowerCase()}`} onClick={() => setSearch('')}><X size={15} /></button>}
-      </label>
+      <div className="move-section-controls">
+        <label className="search move-section-search">
+          <Search size={15} aria-hidden="true" />
+          <input aria-label={`Buscar em ${title.toLowerCase()}`} value={search} onChange={(event) => setSearch(event.target.value)} placeholder={title === 'TMs QUE APRENDE' ? 'Buscar TM compatível...' : 'Buscar golpe por nível...'} />
+          {search && <button type="button" aria-label={`Limpar busca em ${title.toLowerCase()}`} onClick={() => setSearch('')}><X size={15} /></button>}
+        </label>
+        <div className="move-section-filters">
+          <select className="move-filter-select" aria-label={`Filtrar elemento em ${title.toLowerCase()}`} value={elementFilter} onChange={(event) => setElementFilter(event.target.value)}>
+            <option value="Todos os elementos">Todos elementos</option>
+            {availableElements.map((element) => <option value={element} key={element}>{typeLabel(element)}</option>)}
+          </select>
+          <select className="move-filter-select" aria-label={`Filtrar tipo de dano em ${title.toLowerCase()}`} value={damageFilter} onChange={(event) => setDamageFilter(event.target.value)}>
+            <option value="Todos os tipos de dano">Todo dano</option>
+            {availableCategories.map((category) => <option value={category} key={category}>{moveCategoryLabels[category]}</option>)}
+          </select>
+          <select className="move-filter-select" aria-label={`Filtrar alcance em ${title.toLowerCase()}`} value={rangeFilter} onChange={(event) => setRangeFilter(event.target.value)}>
+            <option value="Todos os alcances">Todos alcances</option>
+            {availableRanges.map((range) => <option value={range} key={range}>{rangeLabel(range)}</option>)}
+          </select>
+        </div>
+      </div>
       {filteredMoves.length ? <div className="move-table-scroll"><table className={`source-move-table ${showMoveMetadata ? 'level-move-table' : 'tm-move-table'}`}>
-      <thead><tr>{columns.filter(({ key }) => showMoveMetadata || key !== 'level').map(({ key, label }) => <th scope="col" aria-sort={sort?.key === key ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'} key={key}><button type="button" className="move-sort-button" onClick={() => toggleSort(key)} aria-label={`Ordenar por ${label}${sort?.key === key ? sort.direction === 'desc' ? ', decrescente' : ', crescente' : ''}`}><span>{label}</span><small aria-hidden="true">{sort?.key === key ? sort.direction === 'desc' ? '↓' : '↑' : '↕'}</small></button></th>)}</tr></thead>
-      <tbody>{sortedMoves.map((move) => {
+      <thead><tr>{columns.filter(({ key }) => showMoveMetadata || key !== 'level').map(({ key, label }) => <th scope="col" key={key}>{label}</th>)}</tr></thead>
+      <tbody>{filteredMoves.map((move) => {
         const metadata = moveMetadataByName.get(move.name)
         const category = metadata?.attackCategory
         const range = metadata?.range
@@ -680,7 +781,7 @@ function MoveSection({ title, moves }: { title: string; moves: Move[] }) {
           <td><span className="move-metric move-cooldown">{metadata?.cooldown ?? 'Indisponível'}</span></td>
         </tr>
       })}</tbody>
-    </table></div> : <p className="empty-moves">{moves.length === 0 ? 'A wiki não lista golpes para esta espécie.' : 'Nenhum golpe ou TM encontrado.'}</p>}
+    </table></div> : <p className="empty-moves">{moves.length === 0 ? 'A wiki não lista golpes para esta espécie.' : 'Nenhum golpe corresponde à busca e aos filtros.'}</p>}
     </div>
   </div>
 }

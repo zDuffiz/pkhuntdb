@@ -10,8 +10,8 @@
 .world-controls select { width: 100%; min-width: 0; height: 48px; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #17243d; font: inherit; font-weight: 700; }
 .world-count { grid-column: 1 / -1; color: #4e5f54; font-size: 13px; font-weight: 800; text-align: right; }
 .world-note { margin: -5px 0 0; color: #52645a; font-size: 13px; }
-.world-biomes { display: grid; gap: 8px; }
-.world-biome { --biome-accent: #27815f; --biome-tint: #245d48; --biome-dark-tint: #a8d4b7; overflow: hidden; border-bottom: 2px solid var(--biome-accent); background: rgba(255, 255, 255, .45); }
+.world-biomes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: start; gap: 10px; }
+.world-biome { --biome-accent: #27815f; --biome-tint: #245d48; --biome-dark-tint: #a8d4b7; min-width: 0; overflow: hidden; border: 1px solid color-mix(in srgb, var(--biome-accent) 32%, white); border-top: 3px solid var(--biome-accent); border-radius: 6px; background: var(--biome-wash, #fff); }
 .world-biome-floresta, .world-map-floresta { --biome-accent: #378552; --biome-tint: #245d38; --biome-dark-tint: #aad3b1; --biome-wash: #e9f2e4; --biome-night: #203329; }
 .world-biome-planicie, .world-map-planicie { --biome-accent: #a17c2e; --biome-tint: #755718; --biome-dark-tint: #e6d29a; --biome-wash: #f3eddd; --biome-night: #322c1e; }
 .world-biome-mar, .world-map-mar { --biome-accent: #197f91; --biome-tint: #176173; --biome-dark-tint: #9dd4da; --biome-wash: #e4f1f3; --biome-night: #1d3035; }
@@ -22,20 +22,22 @@
 .world-biome-pantano, .world-map-pantano { --biome-accent: #75813f; --biome-tint: #56622b; --biome-dark-tint: #c6d092; --biome-wash: #eef0e0; --biome-night: #303424; }
 .world-biome-vulcao, .world-map-vulcao { --biome-accent: #b55b36; --biome-tint: #914629; --biome-dark-tint: #f0b394; --biome-wash: #f8e9df; --biome-night: #3b2924; }
 .world-biome-torre, .world-map-torre { --biome-accent: #655d67; --biome-tint: #514752; --biome-dark-tint: #c9bdcc; --biome-wash: #edeaf0; --biome-night: #302b34; }
-.world-biome > summary { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 68px; padding: 12px 48px 12px 16px; cursor: pointer; list-style: none; }
+.world-biome > summary { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 30px; align-items: start; gap: 8px; min-height: 124px; padding: 12px 12px 34px; cursor: pointer; list-style: none; text-align: left; }
 .world-biome > summary::-webkit-details-marker { display: none; }
-.world-biome > summary::after { position: absolute; top: 50%; right: 18px; color: var(--biome-accent); content: '+'; font-size: 22px; font-weight: 800; transform: translateY(-50%); }
+.world-biome > summary::after { position: absolute; right: 10px; bottom: 8px; display: grid; width: 21px; height: 21px; place-items: center; border: 1px solid color-mix(in srgb, var(--biome-accent) 36%, white); border-radius: 50%; color: var(--biome-accent); content: '+'; font-size: 15px; font-weight: 800; }
+.world-biome[open] { grid-column: 1 / -1; }
 .world-biome[open] > summary::after { content: '−'; }
+.world-biome > summary:focus-visible { outline: 2px solid var(--biome-accent); outline-offset: -3px; }
 .world-biome > summary > span { display: grid; gap: 3px; min-width: 0; }
-.world-biome > summary strong { color: var(--biome-tint); font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 800; }
-.world-biome > summary > b { display: grid; width: 32px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--biome-accent) 14%, white); color: var(--biome-tint); font-size: 13px; font-weight: 800; }
+.world-biome > summary strong { color: var(--biome-tint); font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 800; overflow-wrap: anywhere; }
+.world-biome > summary > b { display: grid; width: 28px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--biome-accent) 14%, white); color: var(--biome-tint); font-size: 12px; font-weight: 800; }
 .world-biome-header { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(180px, .45fr); gap: 10px; padding: 0 12px 12px; }
 .world-biome-search { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #637590; }
 .world-biome-search:focus-within { border-color: var(--biome-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--biome-accent) 14%, transparent); }
 .world-biome-search input { width: 100%; min-width: 0; height: 42px; border: 0; outline: 0; background: transparent; color: #17243d; font: inherit; }
 .world-biome-search input::placeholder { color: #74839a; }
 .world-biome-header select { width: 100%; min-width: 0; height: 46px; padding: 0 12px; border: 2px solid #b9cde8; border-radius: 8px; background: #fff; color: #17243d; font: inherit; font-weight: 700; }
-.world-map-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 12px 14px; }
+.world-map-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 0 12px 14px; }
 .world-map { min-width: 0; padding: 13px; border: 1px solid color-mix(in srgb, var(--biome-accent, #6caa88) 32%, white); border-top: 3px solid var(--biome-accent, #6caa88); border-radius: 6px; background: var(--biome-wash, #fff); }
 .world-map-focused { scroll-margin-top: 24px; box-shadow: 0 0 0 3px var(--biome-accent, #378552); }
 .world-map-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
@@ -47,10 +49,10 @@
 .world-stage-mega { background: #f6e4df; color: #9b4a35; }
 .world-map-types { margin: 8px 0; color: #45564c; font-size: 13px; font-weight: 700; }
 .world-spawns { display: grid; }
-.world-spawn { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(60px, .8fr) 64px; align-items: center; gap: 9px; min-height: 38px; border-top: 1px solid #edf1ec; }
-.world-spawn-identity { display: flex; min-width: 0; flex-wrap: wrap; align-items: baseline; gap: 2px 7px; }
+.world-spawn { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(60px, .8fr) 64px; align-items: center; gap: 9px; min-height: 44px; border-top: 1px solid #edf1ec; }
+.world-spawn-identity { display: grid; align-content: center; justify-items: start; gap: 2px; min-width: 0; }
 .world-spawn strong { min-width: 0; color: #253b30; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
-.world-capture-hardness { flex: 0 0 auto; color: #7d6740; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.world-capture-hardness { color: #7d6740; font-size: 10px; font-weight: 700; line-height: 1.2; }
 .world-chance-track { display: block; height: 5px; overflow: hidden; border-radius: 4px; background: #e7eee8; }
 .world-chance-track i { display: block; height: 100%; border-radius: inherit; background: #4a9a70; }
 .world-spawn > b { color: #245d48; font-size: 14px; font-weight: 800; text-align: right; }
@@ -71,6 +73,9 @@
 :root[data-color-mode="dark"] .world-biome { border-bottom-color: color-mix(in srgb, var(--biome-accent) 72%, #26313b); background: rgba(28, 35, 43, .72); }
 :root[data-color-mode="dark"] .world-biome > summary strong { color: var(--biome-dark-tint); }
 :root[data-color-mode="dark"] .world-biome > summary > b { background: color-mix(in srgb, var(--biome-accent) 22%, #202731); color: var(--biome-dark-tint); }
+:root[data-color-mode="dark"] .world-biome { border-color: color-mix(in srgb, var(--biome-accent) 55%, #1c232b); border-top-color: var(--biome-accent); border-radius: 6px; background: color-mix(in srgb, var(--biome-accent) 10%, #1c232b); }
+:root[data-color-mode="dark"] .world-biome > summary::after { border-color: color-mix(in srgb, var(--biome-accent) 60%, #202731); color: var(--biome-dark-tint); }
+:root[data-color-mode="dark"] .world-biome > summary:focus-visible { outline-color: var(--biome-dark-tint); }
 :root[data-color-mode="dark"] .world-map { border-color: color-mix(in srgb, var(--biome-accent, #394a40) 55%, #1c232b); border-top-color: var(--biome-accent, #5c9871); background: var(--biome-night, #1c232b); }
 :root[data-color-mode="dark"] .world-map-focused { box-shadow: 0 0 0 3px var(--biome-dark-tint, #aad3b1); }
 :root[data-color-mode="dark"] .world-map-heading h3,
@@ -83,15 +88,40 @@
 :root[data-color-mode="dark"] .world-chance-track { background: #344139; }
 :root[data-color-mode="dark"] .world-spawn > b { color: #a8d4b7; }
 
+@media (max-width: 1200px) {
+  .world-biomes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .world-map { padding: 10px; }
+  .world-map-heading h3 { font-size: 17px; }
+  .world-map-id { font-size: 11px; }
+  .world-map-types { font-size: 11px; }
+  .world-spawn { grid-template-columns: minmax(0, 1fr) minmax(44px, .6fr) 50px; gap: 6px; }
+  .world-spawn strong { font-size: 12px; }
+  .world-capture-hardness { font-size: 10px; }
+  .world-spawn > b { font-size: 12px; }
+}
+
+@media (max-width: 1000px) and (min-width: 851px) {
+  .world-map-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (max-width: 850px) {
+  .world-biomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .world-biome-header { grid-template-columns: minmax(0, 1fr); }
-  .world-map-list { grid-template-columns: minmax(0, 1fr); }
+  .world-map-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 800px) {
+  .content:has(.world-atlas) { min-width: 0; }
+  .content:has(.world-atlas) > .topbar { flex-wrap: wrap; gap: 12px; }
+  .content:has(.world-atlas) .topbar-actions { flex-wrap: wrap; gap: 8px; }
+  .world-atlas, .world-controls { min-width: 0; width: 100%; }
 }
 
 @media (max-width: 650px) {
+  .world-biomes { grid-template-columns: minmax(0, 1fr); }
   .world-controls { grid-template-columns: minmax(0, 1fr); }
   .world-count { grid-column: auto; }
-  .world-map-list { padding-inline: 8px; }
+  .world-map-list { grid-template-columns: minmax(0, 1fr); padding-inline: 8px; }
   .world-map { padding: 11px; }
   .world-spawn { grid-template-columns: minmax(80px, 1fr) 56px; gap: 7px; }
   .world-chance-track { grid-column: 1 / -1; grid-row: 2; margin-bottom: 5px; }

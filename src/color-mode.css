@@ -117,10 +117,10 @@
   color: #e2e8ef;
   box-shadow: 0 10px 26px rgba(0, 0, 0, .22);
 }
-:root[data-color-mode="dark"] .pokedex-grid { background: #313b46; }
-:root[data-color-mode="dark"] .pokedex-card { border-color: #313b46; background: #202731; color: #edf2f7; box-shadow: 0 3px 0 rgba(0, 0, 0, .16); }
+:root[data-color-mode="dark"] .pokedex-grid { background: #171d24; }
+:root[data-color-mode="dark"] .pokedex-card { border-color: #39444f; background: #222a33; color: #e8edf2; box-shadow: 0 2px 5px rgba(0, 0, 0, .2); }
 :root[data-color-mode="dark"] .pokedex-card:hover,
-:root[data-color-mode="dark"] .pokedex-card.selected { border-color: #f0c96b; background: #29323c; box-shadow: 0 4px 0 #66542e; }
+:root[data-color-mode="dark"] .pokedex-card.selected { border-color: var(--element-color, #aab4bc); background: color-mix(in srgb, var(--element-color, #aab4bc) 14%, #222a33); box-shadow: 0 5px 12px rgba(0, 0, 0, .32); }
 :root[data-color-mode="dark"] .compatible-pokemon-card { border-color: #46525e; background: #232b34; color: #edf2f7; }
 :root[data-color-mode="dark"] .compatible-pokemon-heading h2 { color: #e6f0f7; }
 :root[data-color-mode="dark"] .compatible-pokemon-heading > span { color: #a6b5c2; }
@@ -128,11 +128,14 @@
 :root[data-color-mode="dark"] .compatible-pokemon-trigger:hover { background: #304657; color: #e5f5ff; }
 :root[data-color-mode="dark"] .card-top,
 :root[data-color-mode="dark"] .sort { color: #b3bdc8; }
-:root[data-color-mode="dark"] .card-image { border-radius: 5px; background: #1a2027; }
+:root[data-color-mode="dark"] .card-image { border-radius: 5px; background: linear-gradient(180deg, color-mix(in srgb, var(--element-color, #75808a) 20%, #1b222a), color-mix(in srgb, var(--element-color, #75808a) 8%, #1b222a)); }
 :root[data-color-mode="dark"] .card-name b { color: #f1f4f7; }
-:root[data-color-mode="dark"] .card-types em { border-color: #4a5663; background: #29323b; color: #e0e7ee; }
-:root[data-color-mode="dark"] .card-stats[data-type] { background: color-mix(in srgb, var(--element-color, #526171) 32%, #1b222a) !important; color: #d3dbe4; }
+:root[data-color-mode="dark"] .card-types em { border-color: color-mix(in srgb, var(--element-color, #526171) 62%, #222a33); background: color-mix(in srgb, var(--element-color, #526171) 20%, #222a33); color: color-mix(in srgb, var(--element-color, #c9d3dc) 58%, white); }
+:root[data-color-mode="dark"] .card-stats[data-type] { background: color-mix(in srgb, var(--element-color, #526171) 22%, #1b222a) !important; color: #d3dbe4; }
 :root[data-color-mode="dark"] .card-stats b { color: #fff; }
+:root[data-color-mode="dark"] .pokedex-reset-button { border-color: #46525e; background: #222a33; color: #dce4eb; }
+:root[data-color-mode="dark"] .pokedex-reset-button:hover { border-color: #e36b75; background: #38272c; color: #ffb2ba; }
+:root[data-color-mode="dark"] .pokedex-reset-button:focus-visible { outline-color: #f08b94; }
 :root[data-color-mode="dark"] .panel-heading,
 :root[data-color-mode="dark"] .tm-head { border-color: #39434f; background: #252e38; color: #c5d8eb; }
 :root[data-color-mode="dark"] .tm-row { border-color: #323c47; background: #1c232b; color: #dce3ea; }
@@ -219,9 +222,10 @@
 :root[data-color-mode="dark"] .move-list span { color: #e3e9ef; }
 :root[data-color-mode="dark"] .empty-moves,
 :root[data-color-mode="dark"] .no-matchup { color: #aab5c1; }
-:root[data-color-mode="dark"] .type-pill.fraquezas { border-color: #71434a; background: #39262c; color: #ffc0c4; }
-:root[data-color-mode="dark"] .type-pill.resistências { border-color: #3c6954; background: #20342d; color: #b4e7c8; }
+:root[data-color-mode="dark"] .type-pill.fraquezas,
+:root[data-color-mode="dark"] .type-pill.resistências { border-color: color-mix(in srgb, var(--element-color, #526171) 62%, #202731); background: color-mix(in srgb, var(--element-color, #788590) 28%, #202731); color: color-mix(in srgb, var(--element-color, #c9d3dc) 50%, white); }
 :root[data-color-mode="dark"] .type-pill.imunidades { border-color: #566271; background: #29323c; color: #d2dbe4; }
+:root[data-color-mode="dark"] .type-pill.super-efetivo-contra { border-color: color-mix(in srgb, var(--element-color, #526171) 62%, #202731); background: color-mix(in srgb, var(--element-color, #788590) 28%, #202731); color: color-mix(in srgb, var(--element-color, #c9d3dc) 50%, white); }
 
 :root[data-color-mode="dark"] .calculator-field,
 :root[data-color-mode="dark"] .calculator-field span,
@@ -278,12 +282,17 @@
 :root[data-color-mode="dark"] .comparison-table-head { background: #2a3540; color: #d3e6f7; }
 :root[data-color-mode="dark"] .comparison-table-head span { color: #d3e6f7; }
 
-:root[data-color-mode="dark"] .mission-group { border-bottom-color: var(--element-color, #39434f); background: rgba(30, 37, 45, .9); }
+:root[data-color-mode="dark"] .mission-group { border-color: color-mix(in srgb, var(--element-color, #526171) 48%, #202731); border-top-color: var(--element-color, #71808c); border-radius: 6px; background: color-mix(in srgb, var(--element-color, #71808c) 10%, #202731); }
+:root[data-color-mode="dark"] .mission-group summary::after { border-color: color-mix(in srgb, var(--element-color, #526171) 62%, #202731); color: var(--element-color, #b8c4cf); }
+:root[data-color-mode="dark"] .mission-group summary:focus-visible { outline-color: var(--element-color, #9ab7c6); }
 :root[data-color-mode="dark"] .mission-group-title strong,
 :root[data-color-mode="dark"] .mission-group-summary-count { color: #e5edf5; }
 :root[data-color-mode="dark"] .mission-clan-name,
 :root[data-color-mode="dark"] .mission-count { color: #bdc8d4; }
 :root[data-color-mode="dark"] .mission-card { border-color: color-mix(in srgb, var(--element-color, #526171) 45%, #202731); background: #202731; color: #e4eaf0; box-shadow: 0 3px 0 rgba(0, 0, 0, .18); }
+:root[data-color-mode="dark"] .mission-card-summary::after { border-color: color-mix(in srgb, var(--element-color, #526171) 62%, #202731); }
+:root[data-color-mode="dark"] .mission-card-summary:focus-visible { outline-color: var(--element-color, #9ab7c6); }
+:root[data-color-mode="dark"] .mission-card-content { border-top-color: color-mix(in srgb, var(--element-color, #526171) 34%, #202731); }
 :root[data-color-mode="dark"] .mission-card-header h3 { color: color-mix(in srgb, var(--element-color, #b8d5f7) 62%, #f2f5f8); }
 :root[data-color-mode="dark"] .mission-part,
 :root[data-color-mode="dark"] .mission-description { color: #d1d9e2; }
@@ -296,6 +305,10 @@
 :root[data-color-mode="dark"] .mission-rewards dd,
 :root[data-color-mode="dark"] .mission-advice > summary { color: #c4ddf4; }
 :root[data-color-mode="dark"] .mission-advice { border-color: #3c4652; }
+:root[data-color-mode="dark"] .advice-option-one { border-color: color-mix(in srgb, var(--element-color, #71808c) 48%, #202832); border-left-color: var(--element-color, #71808c); background: color-mix(in srgb, var(--element-color, #71808c) 17%, #202832); }
+:root[data-color-mode="dark"] .advice-option-one span,
+:root[data-color-mode="dark"] .advice-option-one small { color: #b8c5cf; }
+:root[data-color-mode="dark"] .advice-option-one strong { color: #edf3f7; }
 :root[data-color-mode="dark"] .mission-advice-content h4,
 :root[data-color-mode="dark"] .advice-best-map strong,
 :root[data-color-mode="dark"] .advice-single-map strong,
@@ -306,6 +319,19 @@
 :root[data-color-mode="dark"] .advice-map-link:disabled { color: #8998a6; }
 :root[data-color-mode="dark"] .advice-best-map,
 :root[data-color-mode="dark"] .advice-single-map { background: #28333e; }
+:root[data-color-mode="dark"] .advice-map-card:hover:not(:disabled) { border-color: color-mix(in srgb, var(--element-color, #71808c) 54%, #202832); background: color-mix(in srgb, var(--element-color, #71808c) 24%, #202832); }
+:root[data-color-mode="dark"] .advice-map-card:focus-visible { outline-color: var(--element-color, #9ab7c6); }
+:root[data-color-mode="dark"] .advice-route-link { border-bottom-color: #3c4652; }
+:root[data-color-mode="dark"] .advice-route-link:hover { background: #2b3540; }
+:root[data-color-mode="dark"] .advice-route-link:focus-visible { outline-color: #83b7eb; }
+:root[data-color-mode="dark"] .advice-route-map-name { color: #c1e0f8; }
+:root[data-color-mode="dark"] .advice-easiest-capture { border-color: color-mix(in srgb, var(--element-color, #71808c) 48%, #202832); border-left-color: var(--element-color, #71808c); background: color-mix(in srgb, var(--element-color, #71808c) 17%, #202832); }
+:root[data-color-mode="dark"] .advice-easiest-capture-link:hover { border-color: var(--element-color, #71808c); background: color-mix(in srgb, var(--element-color, #71808c) 26%, #202832); }
+:root[data-color-mode="dark"] .advice-easiest-capture-link:focus-visible { outline-color: color-mix(in srgb, var(--element-color, #9ab7c6) 68%, white); }
+:root[data-color-mode="dark"] .advice-easiest-capture span,
+:root[data-color-mode="dark"] .advice-easiest-capture small { color: #b8c5cf; }
+:root[data-color-mode="dark"] .advice-easiest-capture strong { color: #edf3f7; }
+:root[data-color-mode="dark"] .advice-easiest-capture .advice-easiest-capture-map-name { color: #c1e0f8; }
 :root[data-color-mode="dark"] .advice-best-map span,
 :root[data-color-mode="dark"] .advice-best-map small,
 :root[data-color-mode="dark"] .advice-single-map span,
@@ -325,6 +351,20 @@
 :root[data-color-mode="dark"] .capture-row .capture-range.capture-range-hard { border-color: #895125; background: #402b1c; color: #ffc58d !important; }
 :root[data-color-mode="dark"] .capture-row .capture-range.capture-range-prize { border-color: #823c47; background: #3e2429; color: #ffadb4 !important; }
 :root[data-color-mode="dark"] .capture-row .capture-range.capture-range-tough { border-color: #4d5660; background: #080a0c; color: #f1f3f5 !important; }
+:root[data-color-mode="dark"] .capture-panel { border-color: #39444f; background: #1c232b; box-shadow: 0 10px 24px rgba(0, 0, 0, .2); }
+:root[data-color-mode="dark"] .capture-panel .capture-note { border-color: #548093; background: #202e36; color: #c0d0d8; }
+:root[data-color-mode="dark"] .capture-panel .capture-note strong { color: #d6edf4; }
+:root[data-color-mode="dark"] .capture-panel > .panel-heading { border-color: #39444f; background: #202832; color: #e0e8ee; }
+:root[data-color-mode="dark"] .capture-panel .capture-head { border-color: #3d4854; background: #252e38; color: #b9c9d5; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row { border-color: #313b45; background: #1c232b; color: #d6dee5; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row:nth-child(even) { background: #1c232b; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row:nth-child(odd) { background: #202832; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row:hover { background: #293640; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row > strong { color: #f0f4f7; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row .capture-types { color: #c0d9e7; }
+:root[data-color-mode="dark"] .capture-panel .tm-row.capture-row .capture-hardness { color: #ff9ca2; }
+:root[data-color-mode="dark"] .capture-panel .capture-sort-button { color: inherit; }
+:root[data-color-mode="dark"] .capture-panel .capture-sort-button:focus-visible { outline-color: #77bde4; }
 :root[data-color-mode="dark"] .capture-ball { border-color: #486d86; background: #243747; color: #c6e4fa; }
 :root[data-color-mode="dark"] .capture-types { color: #c0d9ec; }
 :root[data-color-mode="dark"] .capture-hardness { color: #ff9ca2; }
@@ -397,6 +437,43 @@
 :root[data-color-mode="dark"] .base-stat-track i[data-band="high"] { background: #45b96c; }
 :root[data-color-mode="dark"] .base-stat-track { background: #2a333c; }
 
+:root[data-color-mode="dark"] .detail-screen .back-button { border-color: #46525e; background: #222a33; color: #dce4eb; }
+:root[data-color-mode="dark"] .detail-screen .back-button:hover { border-color: #e36b75; background: #38272c; color: #ffb2ba; }
+:root[data-color-mode="dark"] .detail-screen .back-button:focus-visible { outline-color: #f08b94; }
+:root[data-color-mode="dark"] .detail-screen .detail-hero-screen { border-color: color-mix(in srgb, var(--element-color, #71808c) 48%, #252d36); border-left-color: var(--element-color, #71808c); background: linear-gradient(110deg, color-mix(in srgb, var(--element-color, #71808c) 24%, #202832), #202832 76%) !important; box-shadow: 0 9px 24px rgba(0, 0, 0, .22); color: #edf2f6; }
+:root[data-color-mode="dark"] .detail-screen .detail-id { border-color: color-mix(in srgb, var(--element-color, #71808c) 58%, #252d36); background: color-mix(in srgb, var(--element-color, #71808c) 18%, #202832); color: color-mix(in srgb, var(--element-color, #b4c0c8) 55%, white); }
+:root[data-color-mode="dark"] .detail-screen .detail-hero-screen .kicker { color: #b8c4ce; }
+:root[data-color-mode="dark"] .detail-screen .detail-hero-screen h2 { color: #f3f6f8; }
+:root[data-color-mode="dark"] .detail-screen .detail-hero-screen .chips span[data-type] { border-color: color-mix(in srgb, var(--element-color) 62%, #202832); background: color-mix(in srgb, var(--element-color) 24%, #202832); color: color-mix(in srgb, var(--element-color) 55%, white); }
+:root[data-color-mode="dark"] .detail-screen .detail-block { border-color: #39444f; background: #202832; box-shadow: 0 8px 22px rgba(0, 0, 0, .18); }
+:root[data-color-mode="dark"] .detail-screen .section-title { border-bottom-color: #39444f; color: #e8edf2; }
+:root[data-color-mode="dark"] .detail-screen .base-stat-heading,
+:root[data-color-mode="dark"] .detail-screen .base-stat-name,
+:root[data-color-mode="dark"] .detail-screen .base-stat-range { color: #c4ced7; }
+:root[data-color-mode="dark"] .detail-screen .base-stat-heading small { color: #95a3af; }
+:root[data-color-mode="dark"] .detail-screen .base-stat-total { border-top-color: #46515c; background: #28313b; }
+:root[data-color-mode="dark"] .detail-screen .base-stat-total .base-stat-name,
+:root[data-color-mode="dark"] .detail-screen .base-stat-total .base-stat-value,
+:root[data-color-mode="dark"] .detail-screen .base-stat-total .base-stat-range { color: #f0f4f7; }
+:root[data-color-mode="dark"] .detail-screen .stats small { color: #aebac4; }
+:root[data-color-mode="dark"] .detail-screen .stats b { color: #ecf1f5; }
+:root[data-color-mode="dark"] .detail-screen .matchups { border-top-color: #39444f; }
+:root[data-color-mode="dark"] .detail-screen .move-section .source-move-table tbody td > strong { color: #ecf1f5; }
+:root[data-color-mode="dark"] .move-section-controls { background: #202832; }
+:root[data-color-mode="dark"] .move-filter-select { border-color: transparent; background: #2b333d; color: #e2e8ef; }
+:root[data-color-mode="dark"] .move-filter-select:hover { background: #343e49; }
+:root[data-color-mode="dark"] .move-filter-select:focus-visible { outline-color: #77bde4; }
+:root[data-color-mode="dark"] .canonical-tm-panel { border-color: #39444f; background: #1c232b; box-shadow: 0 10px 24px rgba(0, 0, 0, .2); }
+:root[data-color-mode="dark"] .canonical-tm-panel > .panel-heading { border-color: #39444f; background: #202832; color: #e0e8ee; }
+:root[data-color-mode="dark"] .canonical-tm-head { border-color: #3d4854; background: #252e38; color: #b9c9d5; }
+:root[data-color-mode="dark"] .canonical-tm-row { border-color: #313b45; background: #1c232b; color: #d6dee5; }
+:root[data-color-mode="dark"] .canonical-tm-row:nth-child(odd) { background: #202832; }
+:root[data-color-mode="dark"] .canonical-tm-row:hover { background: #293640; }
+:root[data-color-mode="dark"] .canonical-tm-row .type[data-type] { border-color: color-mix(in srgb, var(--element-color, #8997a3) 60%, #202832); background: color-mix(in srgb, var(--element-color, #8997a3) 22%, #202832); color: color-mix(in srgb, var(--element-color, #c8d1d9) 54%, white); }
+:root[data-color-mode="dark"] .canonical-tm-row .compatible-pokemon-trigger { border-color: #45535f; background: #29333d; color: #ccdae4; }
+:root[data-color-mode="dark"] .canonical-tm-row .compatible-pokemon-trigger:hover { border-color: #628098; background: #30404c; color: #ecf6fb; }
+:root[data-color-mode="dark"] .canonical-tm-row .compatible-pokemon-trigger:focus-visible { outline-color: #77bde4; }
+
 @media (max-width: 650px) {
   .base-stat-row { grid-template-columns: minmax(58px, .8fr) 32px minmax(42px, 1fr) 35px 35px; gap: 5px; min-height: 36px; }
   .base-stat-heading { font-size: 10px; }
@@ -468,4 +545,32 @@
   .canonical-tm-panel .tm-row.canonical-tm-row { grid-template-columns: minmax(0, 1.2fr) minmax(0, .65fr) minmax(0, .9fr) minmax(0, .55fr) minmax(0, .65fr) minmax(0, .8fr); }
   .canonical-tm-panel .tm-head.canonical-tm-head span:nth-child(7),
   .canonical-tm-panel .tm-row.canonical-tm-row span:nth-child(7) { display: flex; }
+}
+
+@media (max-width: 800px) {
+  .content:has(.capture-panel) { min-width: 0; }
+  .content:has(.capture-panel) > .topbar { flex-wrap: wrap; gap: 12px; }
+  .content:has(.capture-panel) .topbar-actions { flex-wrap: wrap; gap: 8px; }
+  .content:has(.capture-panel) .toolbar .search { flex: 1 1 100%; min-width: 0; }
+  .content:has(.capture-panel) .toolbar select { flex: 1 1 120px; min-width: 0; max-width: 100%; }
+}
+
+@media (max-width: 800px) {
+  .content:has(.canonical-tm-panel) { min-width: 0; }
+  .content:has(.canonical-tm-panel) > .topbar { flex-wrap: wrap; gap: 12px; }
+  .content:has(.canonical-tm-panel) .topbar-actions { flex-wrap: wrap; gap: 8px; }
+  .content:has(.canonical-tm-panel) .toolbar .search { flex: 1 1 100%; min-width: 0; }
+  .content:has(.canonical-tm-panel) .toolbar select { flex: 1 1 120px; min-width: 0; max-width: 100%; }
+}
+
+@media (max-width: 650px) {
+  .canonical-tm-panel .tm-head.canonical-tm-head,
+  .canonical-tm-panel .tm-row.canonical-tm-row { grid-template-columns: minmax(0, 1.2fr) minmax(0, .75fr) minmax(0, .9fr) minmax(0, .55fr) minmax(0, 1.2fr); gap: 6px; }
+  .canonical-tm-panel .tm-head.canonical-tm-head span:nth-child(3),
+  .canonical-tm-panel .tm-row.canonical-tm-row span:nth-child(3),
+  .canonical-tm-panel .tm-head.canonical-tm-head span:nth-child(6),
+  .canonical-tm-panel .tm-row.canonical-tm-row span:nth-child(6) { display: none; }
+  .canonical-tm-panel .tm-head.canonical-tm-head span:nth-child(7),
+  .canonical-tm-panel .tm-row.canonical-tm-row span:nth-child(7) { display: flex; min-width: 0; }
+  .canonical-tm-panel .tm-row.canonical-tm-row .compatible-pokemon-trigger { padding: 4px 5px; white-space: nowrap; overflow-wrap: normal; font-size: 10px; }
 }

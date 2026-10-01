@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { KeyboardEvent } from 'react'
-import { Search } from 'lucide-react'
+import { RotateCcw, Search } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import type { Pokemon } from './data'
 import { technicalMoves } from './data'
@@ -154,6 +154,11 @@ export default function RaidPlanner({ pokemon, status }: { pokemon: Pokemon[]; s
     setIsBossSuggestionsOpen(false)
     setHighlightedBossIndex(-1)
   }
+  const resetBossSearch = () => {
+    setSelectedBossName('')
+    setIsBossSuggestionsOpen(false)
+    setHighlightedBossIndex(-1)
+  }
   const handleBossKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'ArrowDown' && filteredBosses.length) {
       event.preventDefault()
@@ -189,7 +194,10 @@ export default function RaidPlanner({ pokemon, status }: { pokemon: Pokemon[]; s
       <div className="raid-boss-field">
         <label htmlFor="raid-boss-input">Boss ativo na janela</label>
         <div className="raid-boss-picker">
-          <div className="search raid-boss-search"><Search size={16} aria-hidden="true" /><input id="raid-boss-input" type="text" role="combobox" aria-autocomplete="list" aria-expanded={isBossSuggestionsOpen} aria-controls="raid-boss-suggestions" aria-activedescendant={highlightedBossIndex >= 0 ? `raid-boss-option-${highlightedBossIndex}` : undefined} value={selectedBossName} onFocus={() => setIsBossSuggestionsOpen(true)} onBlur={() => setIsBossSuggestionsOpen(false)} onChange={(event) => { setSelectedBossName(event.target.value); setHighlightedBossIndex(-1); setIsBossSuggestionsOpen(true) }} onKeyDown={handleBossKeyDown} disabled={status === 'loading'} placeholder="Digite o nome do boss..." autoComplete="off" /></div>
+          <div className="raid-boss-search-row">
+            <div className="search raid-boss-search"><Search size={16} aria-hidden="true" /><input id="raid-boss-input" type="text" role="combobox" aria-autocomplete="list" aria-expanded={isBossSuggestionsOpen} aria-controls="raid-boss-suggestions" aria-activedescendant={highlightedBossIndex >= 0 ? `raid-boss-option-${highlightedBossIndex}` : undefined} value={selectedBossName} onFocus={() => setIsBossSuggestionsOpen(true)} onBlur={() => setIsBossSuggestionsOpen(false)} onChange={(event) => { setSelectedBossName(event.target.value); setHighlightedBossIndex(-1); setIsBossSuggestionsOpen(true) }} onKeyDown={handleBossKeyDown} disabled={status === 'loading'} placeholder="Digite o nome do boss..." autoComplete="off" /></div>
+            <button type="button" className="raid-search-reset" onClick={resetBossSearch} title="Limpar pesquisa e boss ativo"><RotateCcw size={15} aria-hidden="true" /><span>Reset Pesquisa</span></button>
+          </div>
           {isBossSuggestionsOpen && <div className="raid-boss-suggestions" id="raid-boss-suggestions" role="listbox" aria-label="Bosses disponíveis">
             {filteredBosses.length ? (['Lendário', 'Mega'] as const).map((kind) => {
               const group = filteredBosses.filter((boss) => boss.kind === kind)
