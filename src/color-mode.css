@@ -187,6 +187,8 @@
 :root[data-color-mode="dark"] .capture-calculator-field select,
 :root[data-color-mode="dark"] .capture-calculator-field input { border-color: #485462; background: #202731; color: #e4eaf0; }
 :root[data-color-mode="dark"] .capture-phase-suggestion { color: #aab5c1; }
+:root[data-color-mode="dark"] .capture-weather-hint { border-color: #e2c26b; background: #39321e; color: #f4e2a8; }
+:root[data-color-mode="dark"] .capture-weather-hint a { color: #a9dcff; }
 :root[data-color-mode="dark"] .capture-pokemon-options { border-color: #485462; background: #202731; }
 :root[data-color-mode="dark"] .capture-pokemon-options button,
 :root[data-color-mode="dark"] .capture-pokemon-options span { color: #e4eaf0; }

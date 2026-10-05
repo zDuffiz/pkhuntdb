@@ -424,6 +424,8 @@ select { min-width: 140px; }
 .capture-calculator-field { display: grid; gap: 6px; min-width: 0; color: #54758a; font-size: 12px; font-weight: 800; }
 .capture-calculator-field select, .capture-calculator-field input { width: 100%; min-width: 0; height: 42px; padding: 0 10px; border: 2px solid #b9d8e8; border-radius: 6px; background: #f8fdff; color: #29465a; font: 700 14px 'Nunito', sans-serif; }
 .capture-phase-suggestion { grid-column: 1 / -1; margin-top: -5px; color: #637590; font-size: 12px; line-height: 1.4; }
+.capture-weather-hint { grid-column: 1 / -1; margin-top: -5px; padding: 10px 12px; border-left: 4px solid #d09100; border-radius: 4px; background: #fff0b8; color: #493700; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.capture-weather-hint a { color: #075b8b; font-weight: 900; text-decoration: underline; text-underline-offset: 2px; }
 .capture-pokemon-picker { position: relative; min-width: 0; }
 .capture-pokemon-options { position: absolute; z-index: 5; top: calc(100% + 4px); left: 0; display: grid; width: 100%; max-height: 240px; overflow: auto; border: 1px solid #b9d8e8; border-radius: 6px; background: #fff; box-shadow: 0 8px 20px rgba(25, 58, 82, .16); }
 .capture-pokemon-options button, .capture-pokemon-options span { padding: 9px 11px; border: 0; background: transparent; color: #29465a; font: 700 14px 'Nunito', sans-serif; text-align: left; }

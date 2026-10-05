@@ -61,6 +61,8 @@ for (const map of worldRegions) {
 const captureHardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
 const captureBallPower = { 'Poké Ball': 4, 'Great Ball': 7, 'Ultra Ball': 13 } as const
 const captureRarityDivisors = { Comum: 1, Incomum: 10, Raro: 26, 'Épico': 39, Prismático: 90, Mítico: 174, Astral: 283 } as const
+const captureWeatherMultiplier = 2.5
+const captureWeatherByType: Record<string, string> = { Water: 'Chuva', Fire: 'Sol forte', Electric: 'Tempestade elétrica', Ice: 'Nevasca', Rock: 'Tempestade de areia', Ground: 'Tempestade de areia', Steel: 'Tempestade de areia', Ghost: 'Neblina', Dark: 'Neblina' }
 const captureLevelPenaltyPoints = [[0.24, 0.98], [0.3, 0.96], [0.5, 0.83], [0.6, 0.7], [0.75, 0.42], [0.8, 0.3], [0.9, 0]] as const
 const getCaptureLevelPenalty = (teamToTargetRatio: number) => {
   if (teamToTargetRatio >= 0.9) return 0
@@ -901,6 +903,7 @@ function CaptureCalculator({ entries, pokemon }: { entries: CaptureEntry[]; poke
   const [showPokemonOptions, setShowPokemonOptions] = useState(false)
   const [rarity, setRarity] = useState<Rarity | ''>('')
   const [ball, setBall] = useState<Ball | ''>('')
+  const [favorableWeather, setFavorableWeather] = useState(false)
   const [teamLevel, setTeamLevel] = useState<number | ''>('')
   const [targetLevel, setTargetLevel] = useState<number | ''>('')
   const [partyLevels, setPartyLevels] = useState<Array<number | ''>>(['', '', ''])
@@ -919,13 +922,15 @@ function CaptureCalculator({ entries, pokemon }: { entries: CaptureEntry[]; poke
     setTargetLevel(phaseSuggestion?.level ?? '')
   }, [captureEntry?.name, phaseSuggestion?.level])
   const pokemonEntry = captureEntry ? pokemon.find((entry) => entry.name === captureEntry.name) : undefined
+  const favoriteWeather = pokemonEntry ? [...new Set(pokemonEntry.type.split(' / ').flatMap((type) => captureWeatherByType[type] ? [captureWeatherByType[type]] : []))] : []
   const matchingPokemon = normalizedPokemonSearch ? entries.filter((entry) => entry.name.toLocaleLowerCase().includes(normalizedPokemonSearch)).slice(0, 8) : entries.slice(0, 8)
   const rarityOptions = Object.keys(captureRarityDivisors) as Rarity[]
   const ballOptions = Object.keys(captureBallPower) as Ball[]
   const teamToTargetRatio = teamLevel !== '' && targetLevel !== '' ? teamLevel / Math.max(1, targetLevel) : null
   const levelPenalty = teamToTargetRatio === null ? 0 : getCaptureLevelPenalty(teamToTargetRatio)
   const hardnessFactor = captureEntry ? (209 / Math.max(1, captureEntry.hardness)) ** 2 : 0
-  const chance = captureEntry && rarity !== '' && ball !== '' && teamToTargetRatio !== null ? Math.min(1, Math.max(0, 0.214 * (captureBallPower[ball] / 13) * hardnessFactor * (1 - levelPenalty) / captureRarityDivisors[rarity])) : null
+  const weatherMultiplier = favorableWeather ? captureWeatherMultiplier : 1
+  const chance = captureEntry && rarity !== '' && ball !== '' && teamToTargetRatio !== null ? Math.min(1, Math.max(0, 0.214 * (captureBallPower[ball] / 13) * hardnessFactor * (1 - levelPenalty) * weatherMultiplier / captureRarityDivisors[rarity])) : null
   const expectedBalls = chance !== null && chance > 0 ? 1 / chance : null
   const percentFormat = new Intl.NumberFormat('pt-BR', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 5 })
   const ballsFormat = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 })
@@ -952,9 +957,11 @@ function CaptureCalculator({ entries, pokemon }: { entries: CaptureEntry[]; poke
           </div>
           <label className="capture-calculator-field"><span>Raridade</span><select value={rarity} onChange={(event) => setRarity(event.target.value as Rarity | '')}><option value="">Selecione a raridade</option>{rarityOptions.map((option) => <option key={option} value={option}>{option}</option>)}</select></label>
           <label className="capture-calculator-field"><span>Pokébola</span><select value={ball} onChange={(event) => setBall(event.target.value as Ball | '')}><option value="">Selecione a Pokébola</option>{ballOptions.map((option) => <option key={option} value={option}>{option} · força {captureBallPower[option]}</option>)}</select></label>
+          <label className="capture-calculator-field"><span>Clima</span><select value={favorableWeather ? 'favorable' : 'none'} onChange={(event) => setFavorableWeather(event.target.value === 'favorable')}><option value="none">Sem clima</option><option value="favorable">Com clima</option></select></label>
           <label className="capture-calculator-field"><span>Média do nível do time (3 ativos)</span><input type="number" min="1" max="1000" placeholder="Digite a média" value={teamLevel} onChange={(event) => { const value = event.target.value; setTeamLevel(value === '' ? '' : Math.min(1000, Math.max(1, Number(value)))) }} /></label>
           <label className="capture-calculator-field"><span>Nível da fase/alvo</span><input type="number" min="1" max="1000" placeholder="Digite o nível da fase" value={targetLevel} onChange={(event) => { const value = event.target.value; setTargetLevel(value === '' ? '' : Math.min(1000, Math.max(1, Number(value)))) }} /></label>
           {phaseSuggestion && <small className="capture-phase-suggestion">Fase sugerida: {phaseSuggestion.mapName} · nível {phaseSuggestion.level} ({phaseSuggestion.source})</small>}
+          {captureEntry && <small className="capture-weather-hint">Dica para {captureEntry.name}: clima favorável {favoriteWeather.length ? `${favoriteWeather.join(' e ')} pelo tipo` : 'não identificado pelos tipos'}; céu limpo não altera a captura. Se o clima atual coincidir, use “Com clima” (×2,5). <a href="https://pokehunt-wiki.gitbook.io/pokehunt-wiki/mecanicas-centrais/clima" target="_blank" rel="noreferrer">Regras do clima</a>.</small>}
         </div>
         <p className="capture-selected-hardness">Dureza oficial: <strong>{captureEntry?.hardness ?? '—'}</strong> · Faixa: <strong>{captureEntry?.range ?? 'Selecione um Pokémon'}</strong></p>
       </div>
@@ -962,8 +969,9 @@ function CaptureCalculator({ entries, pokemon }: { entries: CaptureEntry[]; poke
         <h2>Resultado estimado</h2>
         <div className="capture-calculator-metric"><span>Chance por arremesso</span><strong>{chance !== null ? percentFormat.format(chance) : '—'}</strong></div>
         <div className="capture-calculator-metric"><span>Média esperada para capturar 1</span><strong>{expectedBalls !== null && Number.isFinite(expectedBalls) ? `~${ballsFormat.format(expectedBalls)} ${expectedBalls === 1 ? 'bola' : 'bolas'}` : '—'}</strong></div>
+        <p>Multiplicador de clima aplicado: ×{weatherMultiplier.toFixed(2).replace('.', ',')}</p>
         <p>Tipo do Pokémon: {pokemonEntry ? pokemonEntry.type.split(' / ').map(typeLabel).join(' / ') : captureEntry ? 'indisponível' : 'selecione uma espécie válida'}</p>
-        <small>A média usa tentativas independentes com a mesma chance. Lendários, shiny e o piso especial de dificuldade em fases 45+ não são modelados.</small>
+        <small>A média usa tentativas independentes com a mesma chance. Use “Com clima” quando a espécie estiver no clima favorito; esse bônus não vale para lendários, Megas, pseudo-lendários e Ditto. Shiny e o piso especial de dificuldade em fases 45+ não são modelados.</small>
       </div>
     </div>
     <section className="capture-party-average" aria-label="Calculadora da média de nível do time">
