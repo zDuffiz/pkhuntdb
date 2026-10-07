@@ -104,6 +104,24 @@ body { min-width: 320px; background-color: var(--app-canvas); background-image: 
 .comparison-title strong:empty::after { color: var(--app-muted); content: 'Aguardando Pokémon'; font: 600 15px var(--app-font-body); }
 .comparison-card:not(:has(.comparison-title strong:not(:empty))) .comparison-result { display: none; }
 button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline-color: var(--app-focus); }
+select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: none !important; }
+select::-ms-expand { display: none; }
+.evolution-section { margin: 18px 0 22px; padding: 16px 18px; border: 1px solid var(--app-line); border-radius: 7px; background: var(--app-surface); box-shadow: var(--app-shadow); }
+.evolution-section > .section-title { margin-bottom: 10px; }
+.evolution-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr)); gap: 14px; }
+.evolution-stage { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); align-content: start; min-width: 0; gap: 6px; }
+.evolution-stage-label { grid-column: 1 / -1; color: var(--app-muted); font: 600 10px var(--app-font-body); }
+.evolution-item { display: flex; align-items: center; width: 100%; min-width: 0; min-height: 60px; gap: 7px; padding: 6px 8px; border: 1px solid var(--app-line); border-radius: 6px; background: var(--app-surface-muted); color: var(--app-ink); text-align: left; cursor: pointer; transition: border-color .15s ease, background-color .15s ease; }
+.evolution-item:hover, .evolution-item[aria-pressed="true"] { border-color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 9%, var(--app-surface)); }
+.evolution-item:focus-visible { outline: 2px solid var(--app-focus); outline-offset: 2px; }
+.evolution-item img { width: 42px; height: 42px; flex: 0 0 42px; object-fit: contain; }
+.evolution-item span { display: grid; gap: 3px; min-width: 0; }
+.evolution-item small { color: var(--app-muted); font: 500 9px var(--app-font-body); }
+.evolution-item strong { color: var(--app-ink); font: 700 13px var(--app-font-display); overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .evolution-section { padding: 13px; }
+  .evolution-list { grid-template-columns: 1fr; gap: 10px; }
+}
 
 :root[data-color-mode="dark"] body { background-color: var(--app-canvas) !important; background-image: radial-gradient(#283139 .8px, transparent .8px), linear-gradient(135deg, #1a2026, #13181d) !important; color: var(--app-ink) !important; }
 :root[data-color-mode="dark"] .sidebar { border-right-color: var(--app-line); background: linear-gradient(180deg, #20272e, #181e24); box-shadow: 4px 0 18px rgba(0, 0, 0, .18); }

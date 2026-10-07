@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair
 import liveGif from '../assets/Emote-animado-explodindo-a-cabeça.gif'
 import discordGif from '../assets/Dançando animado.gif'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
+import evolutionCatalog from './evolution-data.json'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
 import regionCatalog from './region-data.json'
 import RaidPlanner from './RaidPlanner'
@@ -229,7 +230,7 @@ function Atlas() {
             setCaptureSubTab('calculator')
             changeView('captures')
           } else changeView(destination)
-        }} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <>
+        }} counts={{ pokemon: pokemon.length, missions: clanMissions.length, tms: tms.length, captures: captureRates.length, world: worldRegions.length }} /> : view === 'detail' ? <PokemonDetail selected={selected} entries={pokemon} onSelect={openPokemon} onBack={() => changeView('pokemon')} /> : view === 'tm-compatible' ? <CompatiblePokemonScreen move={selectedTm} entries={compatiblePokemon} onBack={() => setView('tms')} onSelect={openPokemon} /> : view === 'calculator' ? <>
           <div className="calculator-reset-toolbar"><button type="button" className="calculator-reset-button" onClick={() => setCalculatorResetVersion((version) => version + 1)}><RotateCcw size={15} aria-hidden="true" /><span>Resetar calculadora</span></button></div>
           <PokemonCalculator entries={pokemon} resetVersion={calculatorResetVersion} />
           <div className="calculator-reset-toolbar comparison-reset-toolbar"><button type="button" className="calculator-reset-button" onClick={() => setComparisonResetVersion((version) => version + 1)}><RotateCcw size={15} aria-hidden="true" /><span>Resetar comparação</span></button></div>
@@ -463,6 +464,7 @@ function MissionFinder({ pokemon, onOpenMap }: { pokemon: Pokemon[]; onOpenMap: 
   const [secondElement, setSecondElement] = useState('')
   const [thirdElement, setThirdElement] = useState('')
   const [pokemonName, setPokemonName] = useState('')
+  const [hasSearched, setHasSearched] = useState(false)
   const typeByName = useMemo(() => new Map(pokemon.map((entry) => [entry.name, entry.type.split(' / ')])), [pokemon])
   const pokemonNames = useMemo(() => [...new Set(pokemon.map((entry) => entry.name))].sort((first, second) => first.localeCompare(second)), [pokemon])
   const elements = Object.keys(typeLabels)
@@ -471,7 +473,7 @@ function MissionFinder({ pokemon, onOpenMap }: { pokemon: Pokemon[]; onOpenMap: 
   const selectedElements = (singleElementTarget ? [firstElement] : [firstElement, secondElement, thirdElement]).filter(Boolean)
   const selectedPokemon = pokemonNames.find((name) => name.toLowerCase() === pokemonName.trim().toLowerCase()) ?? ''
   const pokemonSuggestions = pokemonName.trim() && !selectedPokemon ? pokemonNames.filter((name) => name.toLowerCase().includes(pokemonName.trim().toLowerCase())).slice(0, 8) : []
-  const ready = mode === 'pokemon' ? selectedPokemon !== '' : selectedElements.length > 0
+  const ready = hasSearched && (mode === 'pokemon' ? selectedPokemon !== '' : selectedElements.length > 0)
   const results = useMemo(() => {
     if (!ready) return []
     const levels = worldRegions.filter((map) => map.stage === 'region').map((map) => map.level).sort((first, second) => first - second)
@@ -527,17 +529,17 @@ function MissionFinder({ pokemon, onOpenMap }: { pokemon: Pokemon[]; onOpenMap: 
   return <section className="mission-finder">
     <h2>Buscar melhor mapa para a missão</h2>
     <div className="mission-finder-fields">
-      <label><span>Objetivo</span><select aria-label="Objetivo da missão" value={action} onChange={(event) => { const next = event.target.value as 'capture' | 'defeat'; setAction(next); if (next === 'capture' && mode === 'weak') setMode('element') }}><option value="defeat">Derrotar</option><option value="capture">Capturar</option></select></label>
-      <label><span>Alvo</span><select aria-label="Tipo de alvo" value={mode} onChange={(event) => setMode(event.target.value as 'element' | 'pokemon' | 'weak')}><option value="element">Elemento</option>{action === 'defeat' && <option value="weak">Fraco a</option>}<option value="pokemon">Pokémon</option></select></label>
+      <label><span>Objetivo</span><select aria-label="Objetivo da missão" value={action} onChange={(event) => { setHasSearched(true); const next = event.target.value as 'capture' | 'defeat'; setAction(next); if (next === 'capture' && mode === 'weak') setMode('element') }}><option value="defeat">Derrotar</option><option value="capture">Capturar</option></select></label>
+      <label><span>Alvo</span><select aria-label="Tipo de alvo" value={mode} onChange={(event) => { setHasSearched(true); setMode(event.target.value as 'element' | 'pokemon' | 'weak') }}><option value="element">Elemento</option>{action === 'defeat' && <option value="weak">Fraco a</option>}<option value="pokemon">Pokémon</option></select></label>
       {mode !== 'pokemon' ? <>
-        <label><span>Elemento{singleElementTarget ? '' : ' 1'}</span><select aria-label={singleElementTarget ? 'Elemento da missão' : 'Primeiro elemento'} value={firstElement} onChange={(event) => setFirstElement(event.target.value)}>{elements.map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+        <label><span>Elemento{singleElementTarget ? '' : ' 1'}</span><select aria-label={singleElementTarget ? 'Elemento da missão' : 'Primeiro elemento'} value={firstElement} onChange={(event) => { setHasSearched(true); setFirstElement(event.target.value) }}>{elements.map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
         {!singleElementTarget && <>
-          <label><span>Elemento 2 (opcional)</span><select aria-label="Segundo elemento" value={secondElement} onChange={(event) => setSecondElement(event.target.value)}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
-          <label><span>Elemento 3 (opcional)</span><select aria-label="Terceiro elemento" value={thirdElement} onChange={(event) => setThirdElement(event.target.value)}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement && element !== secondElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+          <label><span>Elemento 2 (opcional)</span><select aria-label="Segundo elemento" value={secondElement} onChange={(event) => { setHasSearched(true); setSecondElement(event.target.value) }}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+          <label><span>Elemento 3 (opcional)</span><select aria-label="Terceiro elemento" value={thirdElement} onChange={(event) => { setHasSearched(true); setThirdElement(event.target.value) }}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement && element !== secondElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
         </>}
-      </> : <label><span>Pokémon</span><input type="search" aria-label="Pokémon da missão" autoComplete="off" value={pokemonName} onChange={(event) => setPokemonName(event.target.value)} placeholder="Pesquisar Pokémon..." />{pokemonSuggestions.length > 0 && <div className="mission-finder-suggestions">{pokemonSuggestions.map((name) => <button type="button" key={name} onClick={() => setPokemonName(name)}>{name}</button>)}</div>}</label>}
+      </> : <label><span>Pokémon</span><input type="search" aria-label="Pokémon da missão" autoComplete="off" value={pokemonName} onChange={(event) => { setHasSearched(true); setPokemonName(event.target.value) }} placeholder="Pesquisar Pokémon..." />{pokemonSuggestions.length > 0 && <div className="mission-finder-suggestions">{pokemonSuggestions.map((name) => <button type="button" key={name} onClick={() => { setHasSearched(true); setPokemonName(name) }}>{name}</button>)}</div>}</label>}
     </div>
-    {!ready ? <p className="mission-empty">Digite e escolha um Pokémon para ver os mapas.</p> : results.some((item) => item.entry) ? <div className="mission-finder-results">{results.map(({ label, entry, detail }) => entry ? <button type="button" className="mission-finder-result" key={label} onClick={() => onOpenMap(entry.map.id)} aria-label={`Abrir ${entry.map.name} no Mundo`}>
+    {!ready ? <p className="mission-empty">{hasSearched ? 'Digite e escolha um Pokémon para ver os mapas.' : 'Escolha os filtros da missão para ver os mapas.'}</p> : results.some((item) => item.entry) ? <div className="mission-finder-results">{results.map(({ label, entry, detail }) => entry ? <button type="button" className="mission-finder-result" key={label} onClick={() => onOpenMap(entry.map.id)} aria-label={`Abrir ${entry.map.name} no Mundo`}>
       <span className="mission-finder-rank">{label}</span>
       <strong>{entry.map.name}</strong>
       <small>{entry.map.id} · nível {entry.map.level} · {formatChance(entry.chance)} dos spawns</small>
@@ -721,6 +723,18 @@ function PokemonList({ entries, selected, status, statSort, onSelect }: { entrie
 
 const normalizeMoveName = (name: string) => name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’]/g, "'").replace(/♀/g, ' female').replace(/♂/g, ' male').replace(/\s+/g, ' ').trim()
 
+const evolutionFamilies = evolutionCatalog as string[][][]
+
+function getEvolutionFamily(selected: Pokemon, entries: Pokemon[]): Pokemon[][] {
+  const family = evolutionFamilies.find((stages) => stages.some((names) => names.includes(selected.name)))
+  if (!family) return []
+  const availableStages = family.map((names) => names.flatMap((name) => {
+    const entry = entries.find((pokemon) => pokemon.name === name)
+    return entry ? [entry] : []
+  })).filter((stage) => stage.length)
+  return availableStages.flat().length > 1 ? availableStages : []
+}
+
 function compatibleTmsForPokemon(selected: Pokemon): Move[] {
   if (!selected.hasMoveset) return []
   const levelByName = new Map<string, number>()
@@ -743,9 +757,10 @@ function compatibleTmsForPokemon(selected: Pokemon): Move[] {
   })
 }
 
-function PokemonDetail({ selected, onBack }: { selected: Pokemon; onBack: () => void }) {
+function PokemonDetail({ selected, entries, onSelect, onBack }: { selected: Pokemon; entries: Pokemon[]; onSelect: (entry: Pokemon) => void; onBack: () => void }) {
   const stats = { HP: selected.stats.hp, ATAQUE: selected.stats.attack, DEFESA: selected.stats.defense, SPA: selected.stats.specialAttack, SPD: selected.stats.specialDefense, SPEED: selected.stats.speed }
   const compatibleTms = compatibleTmsForPokemon(selected)
+  const evolutionFamily = getEvolutionFamily(selected, entries)
   return <div className="detail-screen">
     <button className="back-button" onClick={onBack}>← Voltar para Pokedex</button>
     <div className="detail-hero detail-hero-screen" data-type={selected.type.split(' / ')[0]} style={{ '--accent': selected.accent } as React.CSSProperties}>
@@ -754,6 +769,16 @@ function PokemonDetail({ selected, onBack }: { selected: Pokemon; onBack: () => 
       <span className="detail-symbol">◒</span>
       <div><p className="kicker">{selected.region.toUpperCase()} / ESPÉCIE POKÉMON</p><h2>{selected.name}</h2><div className="chips">{selected.type.split(' / ').map((type) => <span data-type={type} key={type}>{typeLabel(type)}</span>)}</div></div>
     </div>
+    {evolutionFamily.length > 0 && <section className="evolution-section" aria-label={`Evoluções de ${selected.name}`}>
+      <div className="section-title"><span>LINHA EVOLUTIVA</span></div>
+      <div className="evolution-list">{evolutionFamily.map((stage, index) => <div className="evolution-stage" aria-label={`Estágio ${index + 1}`} key={stage.map((pokemon) => pokemon.name).join('|')}>
+        <span className="evolution-stage-label">ESTÁGIO {index + 1}</span>
+        {stage.map((pokemon) => <button type="button" className="evolution-item" aria-pressed={selected.name === pokemon.name} key={`${pokemon.region}-${pokemon.name}`} onClick={() => onSelect(pokemon)}>
+          <img src={pokemon.image} alt="" />
+          <span><small>{pokemon.form === 'Mega' ? 'MEGA' : pokemon.form === 'Base' ? 'BASE' : 'FORMA'}</small><strong>{pokemon.name}</strong></span>
+        </button>)}
+      </div>)}</div>
+    </section>}
     <div className="detail-columns">
       <section className="detail-block">
         <div className="section-title"><span>STATUS BASE</span></div>

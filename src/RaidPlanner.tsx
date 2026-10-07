@@ -114,7 +114,7 @@ function findBestAttack(pokemon: Pokemon, bossType: string): DamageCandidate | n
 }
 
 function typeChipStyle(type: string): CSSProperties {
-  const color = typeColors[type] ?? '#52647b'
+  const color = typeColors[type.split(' / ')[0]] ?? '#52647b'
   return { borderColor: color, backgroundColor: `${color}18`, color }
 }
 
@@ -126,7 +126,11 @@ export default function RaidPlanner({ pokemon, status }: { pokemon: Pokemon[]; s
     .filter((entry) => entry.form === 'Mega')
     .map((entry) => ({ name: entry.name, type: entry.type, generation: entry.generation, kind: 'Mega' as const }))
     .sort((first, second) => first.name.localeCompare(second.name)), [pokemon])
-  const bosses = useMemo(() => [...legendaryRaidBosses, ...megaBosses], [megaBosses])
+  const bosses = useMemo(() => {
+    const pokemonTypes = new Map(pokemon.map((entry) => [entry.name, entry.type]))
+    const legendaryBosses = legendaryRaidBosses.map((boss) => ({ ...boss, type: pokemonTypes.get(boss.name) ?? boss.type }))
+    return [...legendaryBosses, ...megaBosses]
+  }, [megaBosses, pokemon])
   const filteredBosses = useMemo(() => {
     const filter = selectedBossName.trim().toLocaleLowerCase()
     return filter ? bosses.filter((boss) => boss.name.toLocaleLowerCase().includes(filter)) : bosses
@@ -220,13 +224,22 @@ export default function RaidPlanner({ pokemon, status }: { pokemon: Pokemon[]; s
 
     {!activeBoss ? <p className="raid-empty">Selecione um boss ativo para ver os matchups e as recomendações.</p> : <>
       <section className="raid-boss-summary" aria-label={`Boss selecionado: ${activeBoss.name}`}>
-        <div><span className={`raid-boss-kind raid-boss-kind-${activeBoss.kind === 'Mega' ? 'mega' : 'legendary'}`}>{activeBoss.kind}</span><h2>{activeBoss.name}</h2></div>
-        <span className="raid-boss-type" style={typeChipStyle(activeBoss.type)}>Elemento {formatType(activeBoss.type)}</span>
+        <div className="raid-boss-identity"><span className={`raid-boss-kind raid-boss-kind-${activeBoss.kind === 'Mega' ? 'mega' : 'legendary'}`}>{activeBoss.kind}</span><h2>{activeBoss.name}</h2></div>
+        <div className="raid-boss-type-block">
+          <span className="raid-info-label">ELEMENTOS DO LENDÁRIO</span>
+          <div className="raid-boss-type-list">{activeBoss.type.split(' / ').map((type) => <span className="raid-boss-type" style={typeChipStyle(type)} key={type}>{formatType(type)}</span>)}</div>
+        </div>
       </section>
 
       <section className="raid-elements-section" aria-labelledby="raid-elements-title">
-        <div className="raid-section-heading"><h2 id="raid-elements-title">Melhores elementos</h2><span>contra {activeBoss.name}</span></div>
-        <div className="raid-element-list">{bestElements.map((element) => <span className="raid-element-chip" style={typeChipStyle(element.type)} key={element.type}><strong>{formatType(element.type)}</strong><b>{formatMultiplier(element.multiplier)}</b></span>)}</div>
+        <div className="raid-section-heading">
+          <div className="raid-elements-heading-copy"><span className="raid-info-label">COUNTERS · {activeBoss.name.toUpperCase()}</span><h2 id="raid-elements-title">Melhores elementos</h2></div>
+          <span>Use ataques desses tipos contra o boss</span>
+        </div>
+        <div className="raid-element-list">{bestElements.map((element, index) => <span className={index === 0 ? 'raid-element-chip raid-element-chip-primary' : 'raid-element-chip'} style={typeChipStyle(element.type)} key={element.type}>
+          <span>{index === 0 && <small>MAIOR FRAQUEZA</small>}<strong>{formatType(element.type)}</strong></span>
+          <b>{formatMultiplier(element.multiplier)}</b>
+        </span>)}</div>
       </section>
 
       {status !== 'ready' ? <p className="raid-empty">Carregando o roster da Pokédex...</p> : <>

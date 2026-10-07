@@ -11,7 +11,8 @@
     "sync:move-categories": "node scripts/sync-move-categories.mjs",
     "sync:capture": "node scripts/sync-capture.mjs",
     "sync:regions": "node scripts/sync-regions.mjs",
-    "sync:missions": "node scripts/sync-mission-recommendations.mjs"
+    "sync:missions": "node scripts/sync-mission-recommendations.mjs",
+    "sync:evolutions": "node scripts/sync-evolutions.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
