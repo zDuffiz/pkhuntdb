@@ -61,7 +61,6 @@ for (const map of worldRegions) {
 }
 const captureHardnessByName = new Map(captureRates.map((entry) => [entry.name, entry.hardness]))
 const siteVisitBadgeUrl = 'https://hits.sh/zduffiz.github.io/pkhuntdb.svg?label=visitas&color=e8bd4f&labelColor=252e36'
-const siteVisitDashboardUrl = 'https://hits.sh/zduffiz.github.io/pkhuntdb/'
 const captureBallPower = { 'Poké Ball': 4, 'Great Ball': 7, 'Ultra Ball': 13 } as const
 const captureRarityDivisors = { Comum: 1, Incomum: 10, Raro: 26, 'Épico': 39, Prismático: 90, Mítico: 174, Astral: 283 } as const
 const captureWeatherMultiplier = 2.5
@@ -231,10 +230,10 @@ function Atlas() {
           <button aria-label="RAIDS" className={view === 'raids' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('raids')}><Swords size={18} /> <span>RAIDS</span> <strong>74</strong></button>
           <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
         </nav>
-        {import.meta.env.PROD && <a className="sidebar-visit-counter" href={siteVisitDashboardUrl} target="_blank" rel="noreferrer" aria-label="Ver estatísticas de visitas do site">
+        {import.meta.env.PROD && <div className="sidebar-visit-counter">
           <span>VISITAS DO SITE</span>
           <img src={siteVisitBadgeUrl} alt="Contador público de visitas" />
-        </a>}
+        </div>}
       </aside>
 
       <section className={view === 'raids' ? 'content raids-view' : 'content'}>
