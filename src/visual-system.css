@@ -48,9 +48,9 @@ body { min-width: 320px; background-color: var(--app-canvas); background-image: 
 .sidebar-visit-badge { display: block; width: fit-content; max-width: 100%; overflow: hidden; border: 1px solid color-mix(in srgb, var(--app-accent) 18%, var(--app-line)); border-radius: 6px; background: var(--app-surface); }
 .sidebar-visit-badge img { display: block; width: auto; max-width: 100%; height: 26px; border-radius: inherit; }
 @media (max-width: 800px) {
-  .sidebar-visit-counter { justify-items: center; padding: 8px 2px; border: 0; background: transparent; }
+  .sidebar-visit-counter { justify-items: center; padding: 8px 2px; border: 1px solid var(--app-line); border-radius: 7px; background: color-mix(in srgb, var(--app-accent) 5%, var(--app-surface)); }
   .sidebar-visit-label { display: none; }
-  .sidebar-visit-badge { max-width: 58px; }
+  .sidebar-visit-badge { max-width: 52px; }
   .sidebar-visit-badge img { height: 20px; }
 }
 .brand, .brand b { color: var(--app-ink); }
