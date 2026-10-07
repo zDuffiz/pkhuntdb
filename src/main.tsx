@@ -83,11 +83,13 @@ const moveMetadataByName = new Map(tms.map((move) => [move.name, move]))
 const typeLabels: Record<string, string> = { Normal: 'Normal', Fire: 'Fogo', Water: 'Água', Electric: 'Elétrico', Grass: 'Planta', Ice: 'Gelo', Fighting: 'Lutador', Poison: 'Veneno', Ground: 'Terra', Flying: 'Voador', Psychic: 'Psíquico', Bug: 'Inseto', Rock: 'Pedra', Ghost: 'Fantasma', Dragon: 'Dragão', Dark: 'Sombrio', Steel: 'Aço', Fairy: 'Fada' }
 const typeLabel = (type: string) => typeLabels[type] ?? type
 const typeListLabel = (types: string) => types.split(' / ').map(typeLabel).join(' / ')
+const missionElementColors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
+const missionElementColor = (element: string) => missionElementColors[(element.split('/').at(-1) ?? element).trim().toLowerCase()] ?? '#173b9b'
 
 function App() { return <Atlas /> }
 
 function Atlas() {
-  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
+  const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'mission-tracker' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode-v2') === 'light' ? 'light' : 'dark')
   const [calculatorResetVersion, setCalculatorResetVersion] = useState(0)
   const [comparisonResetVersion, setComparisonResetVersion] = useState(0)
@@ -217,14 +219,20 @@ function Atlas() {
           </div>
           <button aria-label="Mundo" className={view === 'world' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('world')}><MapIcon size={18} /> <span>Mundo</span> <strong>{worldRegions.length}</strong></button>
           <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
-          <button aria-label="Missões" className={view === 'missions' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong></button>
+          <div className="nav-group">
+            <button aria-label="Missões" aria-expanded={view === 'missions' || view === 'mission-tracker'} className={view === 'missions' || view === 'mission-tracker' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong><ChevronDown className={view === 'missions' || view === 'mission-tracker' ? 'nav-chevron expanded' : 'nav-chevron'} size={16} aria-hidden="true" /></button>
+            {(view === 'missions' || view === 'mission-tracker') && <div className="nav-submenu" role="group" aria-label="Menu de Missões">
+              <button type="button" className={view === 'missions' ? 'nav-subitem active' : 'nav-subitem'} aria-current={view === 'missions' ? 'page' : undefined} title="Missões de Clã" onClick={() => changeView('missions')}><ClipboardList size={15} /><span>Missões</span></button>
+              <button type="button" className={view === 'mission-tracker' ? 'nav-subitem active' : 'nav-subitem'} aria-current={view === 'mission-tracker' ? 'page' : undefined} title="Tracker de missão" onClick={() => changeView('mission-tracker')}><Crosshair size={15} /><span>Tracker de missão</span></button>
+            </div>}
+          </div>
           <button aria-label="RAIDS" className={view === 'raids' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('raids')}><Swords size={18} /> <span>RAIDS</span> <strong>74</strong></button>
           <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
         </nav>
       </aside>
 
       <section className={view === 'raids' ? 'content raids-view' : 'content'}>
-        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="creator-showcase"><img className="creator-gif" src={discordGif} alt="" aria-hidden="true" /><div className="creator-credit"><span>Criado por:</span><a className="creator-link" href="https://discord.com/users/337805709561561088" target="_blank" rel="noreferrer" aria-label="Abrir o perfil Discord de zDuffi">zDuffi<ExternalLink size={13} /></a></div></div><div className="topbar-actions"><div className="live-showcase"><img className="live-gif" src={liveGif} alt="" aria-hidden="true" /><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a></div><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
+        <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'mission-tracker' ? 'Tracker de missão' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="creator-showcase"><img className="creator-gif" src={discordGif} alt="" aria-hidden="true" /><div className="creator-credit"><span>Criado por:</span><a className="creator-link" href="https://discord.com/users/337805709561561088" target="_blank" rel="noreferrer" aria-label="Abrir o perfil Discord de zDuffi">zDuffi<ExternalLink size={13} /></a></div></div><div className="topbar-actions"><div className="live-showcase"><img className="live-gif" src={liveGif} alt="" aria-hidden="true" /><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a></div><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' || view === 'mission-tracker' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
         {view === 'raids' ? <RaidPlanner pokemon={pokemon} status={status} /> : view === 'home' ? <HomeDashboard onNavigate={(destination) => {
           if (destination === 'capture-calculator') {
             setCaptureSubTab('calculator')
@@ -235,7 +243,7 @@ function Atlas() {
           <PokemonCalculator entries={pokemon} resetVersion={calculatorResetVersion} />
           <div className="calculator-reset-toolbar comparison-reset-toolbar"><button type="button" className="calculator-reset-button" onClick={() => setComparisonResetVersion((version) => version + 1)}><RotateCcw size={15} aria-hidden="true" /><span>Resetar comparação</span></button></div>
           <PokemonComparison entries={pokemon} resetVersion={comparisonResetVersion} />
-        </> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : <>
+        </> : view === 'world' ? <WorldAtlas entries={worldRegions} focusMapId={worldFocusMapId} /> : view === 'mission-tracker' ? <MissionTracker items={clanMissions} pokemon={pokemon} maps={worldRegions} onOpenMap={openRecommendedMap} /> : <>
           {(view !== 'captures' || captureSubTab === 'rates') && <div className="toolbar">
             <label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={view === 'pokemon' ? 'Encontre um Pokémon, tipo ou região...' : view === 'tms' ? 'Qual golpe você procura?' : view === 'captures' ? 'Pesquise uma espécie ou Ball...' : 'Pesquise um golpe, tipo ou categoria...'} /></label>
             {view === 'pokemon' ? <>
@@ -383,12 +391,143 @@ function WorldAtlas({ entries, focusMapId }: { entries: WorldRegion[]; focusMapI
   </section>
 }
 
+type MissionMapRoute = { map: WorldRegion; species: Set<string> }
+
+function getMissionMapRoutes(mission: ClanMission, maps: WorldRegion[]): MissionMapRoute[] {
+  const recommendation = mission.recommendation
+  if (mission.kind === 'Contrato específico') {
+    const routes = new Map<string, MissionMapRoute>()
+    for (const target of recommendation.targets ?? []) {
+      const map = maps.find((entry) => entry.id === target.regionId)
+      if (!map) continue
+      const route = routes.get(map.id) ?? { map, species: new Set<string>() }
+      route.species.add(target.species)
+      routes.set(map.id, route)
+    }
+    return [...routes.values()].filter((route) => route.map.spawns.some((spawn) => route.species.has(spawn.name)))
+  }
+
+  const map = maps.find((entry) => entry.id === recommendation.regionId)
+  if (!map) return []
+  const species = new Set((recommendation.pokemon ?? []).filter((entry) => entry.valid !== false).map((entry) => entry.name))
+  return map.spawns.some((spawn) => species.has(spawn.name)) ? [{ map, species }] : []
+}
+
+function getMissionEligibleSpawns(mission: ClanMission, map: WorldRegion, pokemonByName: Map<string, Pokemon>): WorldRegion['spawns'] {
+  if (mission.kind === 'Contrato específico') {
+    const targets = new Set((mission.recommendation.targets ?? []).map((target) => target.species))
+    return map.spawns.filter((spawn) => targets.has(spawn.name))
+  }
+
+  const element = mission.element.split('/').at(-1)?.trim() ?? ''
+  return map.spawns.filter((spawn) => {
+    const entry = pokemonByName.get(spawn.name)
+    if (!entry) return false
+    if (mission.kind === 'Captura') return captureHardnessByName.has(spawn.name) && entry.type.split(' / ').includes(element)
+    return getTypeMatchups(entry.type).some((matchup) => matchup.type === element && matchup.multiplier > 1)
+  })
+}
+
+function missionObjectiveLabel(mission: ClanMission, sharedSpecies: string[] = []): string {
+  const target = new Intl.NumberFormat('pt-BR').format(mission.target)
+  if (mission.kind === 'Captura') return `Capturar ${target} Pokémon de ${mission.element.split(' / ')[0]}`
+  if (mission.kind === 'Contrato específico') {
+    const targets = (mission.recommendation.targets ?? []).filter((entry) => !sharedSpecies.length || sharedSpecies.includes(entry.species))
+      .map((entry) => `${new Intl.NumberFormat('pt-BR').format(entry.required)} ${entry.species}`)
+    return `Derrotar ${targets.join(' e ') || `${target} alvos específicos`}`
+  }
+  return `Derrotar ${target} Pokémon fracos a ${mission.element.split(' / ')[0]}`
+}
+
+function MissionTracker({ items, pokemon, maps, onOpenMap }: { items: ClanMission[]; pokemon: Pokemon[]; maps: WorldRegion[]; onOpenMap: (mapId: string) => void }) {
+  const [selectedMissionId, setSelectedMissionId] = useState('')
+  const [selectedMapId, setSelectedMapId] = useState('')
+  const [selectedElement, setSelectedElement] = useState('')
+  const [activityFilter, setActivityFilter] = useState<'all' | 'capture' | 'defeat'>('all')
+  const [missionSearch, setMissionSearch] = useState('')
+  const selectedMission = items.find((mission) => mission.id === selectedMissionId)
+  const pokemonByName = useMemo(() => new Map(pokemon.map((entry) => [entry.name, entry])), [pokemon])
+  const elements = useMemo(() => [...new Set(items.map((mission) => mission.element))]
+    .sort((first, second) => first.split(' / ')[0].localeCompare(second.split(' / ')[0])), [items])
+  const availableMissions = useMemo(() => {
+    const query = missionSearch.trim().toLocaleLowerCase()
+    return items.filter((mission) => mission.element === selectedElement
+      && (activityFilter === 'all' || (activityFilter === 'capture' ? mission.kind === 'Captura' : mission.kind !== 'Captura'))
+      && `${mission.clan} ${mission.name} ${mission.kind} ${missionObjectiveLabel(mission)}`.toLocaleLowerCase().includes(query))
+      .sort((first, second) => first.tier - second.tier || first.name.localeCompare(second.name))
+  }, [activityFilter, items, missionSearch, selectedElement])
+  const choiceGroups = activityFilter === 'all' ? [
+    { key: 'capture', label: 'Capturar', missions: availableMissions.filter((mission) => mission.kind === 'Captura') },
+    { key: 'defeat', label: 'Derrotar', missions: availableMissions.filter((mission) => mission.kind !== 'Captura') },
+  ] : [{ key: activityFilter, label: activityFilter === 'capture' ? 'Capturar' : 'Derrotar', missions: availableMissions }]
+  const routes = useMemo(() => selectedMission ? getMissionMapRoutes(selectedMission, maps) : [], [selectedMission, maps])
+  const selectedRoute = routes.find((route) => route.map.id === selectedMapId) ?? routes[0]
+  const selectedSpawns = useMemo(() => selectedMission && selectedRoute
+    ? getMissionEligibleSpawns(selectedMission, selectedRoute.map, pokemonByName).filter((spawn) => selectedRoute.species.has(spawn.name))
+    : [], [pokemonByName, selectedMission, selectedRoute])
+  const concurrentMissions = useMemo(() => {
+    if (!selectedMission || !selectedRoute) return []
+    const currentSpecies = new Set(selectedSpawns.map((spawn) => spawn.name))
+    if (!currentSpecies.size) return []
+    const totalWeight = selectedRoute.map.spawns.reduce((total, spawn) => total + spawn.weight, 0) || 1
+
+    return items.flatMap((mission) => {
+      if (mission.id === selectedMission.id) return []
+      const sharedSpawns = getMissionEligibleSpawns(mission, selectedRoute.map, pokemonByName)
+        .filter((spawn) => currentSpecies.has(spawn.name))
+      if (!sharedSpawns.length) return []
+      const sharedWeight = sharedSpawns.reduce((total, spawn) => total + spawn.weight, 0)
+      return [{ mission, species: sharedSpawns.map((spawn) => spawn.name), chance: sharedWeight / totalWeight }]
+    }).sort((first, second) => second.chance - first.chance || first.mission.tier - second.mission.tier || first.mission.name.localeCompare(second.mission.name))
+  }, [items, pokemonByName, selectedMission, selectedRoute, selectedSpawns])
+  const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 }).format(value)
+
+  return <div className="mission-tracker">
+    <header className="mission-tracker-heading"><div><span>TRACKER DE MISSÃO</span><h2>Encontre tarefas para avançar junto</h2></div><p>Selecione uma missão e veja quais outras podem progredir no mesmo mapa.</p></header>
+    <div className="mission-tracker-controls">
+      <label><span>Elemento</span><select aria-label="Filtrar missões por elemento" value={selectedElement} onChange={(event) => { setSelectedElement(event.target.value); setSelectedMissionId(''); setSelectedMapId('') }}>
+        <option value="">Selecione um elemento...</option>
+        {elements.map((element) => <option value={element} key={element}>{element.split(' / ')[0]}</option>)}
+      </select></label>
+      <label className="mission-tracker-search"><span>Buscar clã ou Pokémon</span><div><Search size={16} aria-hidden="true" /><input type="search" aria-label="Buscar missão por clã ou Pokémon" placeholder="Ex.: Raibolt, Magikarp..." value={missionSearch} onChange={(event) => setMissionSearch(event.target.value)} /></div></label>
+    </div>
+    <div className="mission-tracker-activity" role="group" aria-label="Filtrar tipo de missão">
+      <span>Objetivo</span>
+      {([['all', 'Todas'], ['capture', 'Capturar'], ['defeat', 'Derrotar']] as const).map(([value, label]) => <button type="button" aria-pressed={activityFilter === value} className={activityFilter === value ? 'active' : ''} key={value} onClick={() => { setActivityFilter(value); setSelectedMissionId(''); setSelectedMapId('') }}>{label}</button>)}
+    </div>
+    {!selectedElement ? <p className="mission-tracker-empty">Escolha um elemento para ver as missões separadas entre capturar e derrotar.</p> : availableMissions.length ? <div className="mission-tracker-choices">{choiceGroups.filter((group) => group.missions.length > 0).map((group) => <section className="mission-tracker-choice-group" key={group.key}>
+      <header><h3>{group.label}</h3><span>{group.missions.length} missões</span></header>
+      <div className="mission-tracker-choice-list">{group.missions.map((mission) => {
+        const routeCount = getMissionMapRoutes(mission, maps).length
+        return <button type="button" className={selectedMissionId === mission.id ? 'mission-tracker-choice selected' : 'mission-tracker-choice'} style={{ '--element-color': missionElementColor(mission.element) } as React.CSSProperties} aria-pressed={selectedMissionId === mission.id} key={mission.id} onClick={() => { setSelectedMissionId(mission.id); setSelectedMapId('') }}>
+          <div className="mission-tracker-card-meta"><span className="mission-tracker-element-tag">{mission.element.split(' / ')[0]}</span><span>{mission.clan} · Tier {mission.tier}{mission.minimumLevel ? ` · Nível ${mission.minimumLevel}+` : ''}</span></div>
+          <strong>{mission.name}</strong>
+          <p>{missionObjectiveLabel(mission)}</p>
+          <small>{routeCount} {routeCount === 1 ? 'mapa recomendado' : 'mapas recomendados'}</small>
+        </button>
+      })}</div>
+    </section>)}</div> : <p className="mission-tracker-empty">Nenhuma missão encontrada para esses filtros.</p>}
+    {selectedElement && !selectedMission ? <p className="mission-tracker-empty">Selecione um cartão para definir sua missão atual.</p> : selectedMission && !selectedRoute ? <p className="mission-tracker-empty">Esta missão ainda não possui uma rota mapeada.</p> : selectedMission && selectedRoute ? <>
+      {routes.length > 1 && <label className="mission-tracker-map-select"><span>Mapa da missão</span><select aria-label="Mapa da missão" value={selectedRoute.map.id} onChange={(event) => setSelectedMapId(event.target.value)}>{routes.map((route) => <option value={route.map.id} key={route.map.id}>{route.map.name} · nível {route.map.level}</option>)}</select></label>}
+      <div className="mission-tracker-active" style={{ '--element-color': missionElementColor(selectedMission.element) } as React.CSSProperties}>
+        <div><div className="mission-tracker-card-meta"><span className="mission-tracker-element-tag">{selectedMission.element.split(' / ')[0]}</span><span>{selectedMission.clan} · {selectedMission.kind}</span></div><strong>{selectedMission.name}</strong><small>{missionObjectiveLabel(selectedMission, selectedSpawns.map((spawn) => spawn.name))} · {selectedRoute.map.name} · nível {selectedRoute.map.level}</small></div>
+        <button type="button" onClick={() => onOpenMap(selectedRoute.map.id)}><MapPin size={15} aria-hidden="true" />Abrir mapa</button>
+      </div>
+      <div className="mission-tracker-results" aria-live="polite">
+        <div className="mission-tracker-results-heading"><h3>Missões simultâneas</h3><span>{concurrentMissions.length} encontradas</span></div>
+        {concurrentMissions.length ? <div className="mission-tracker-list">{concurrentMissions.map(({ mission, species, chance }) => <article className="mission-tracker-card" style={{ '--element-color': missionElementColor(mission.element) } as React.CSSProperties} key={mission.id}>
+          <div><div className="mission-tracker-card-meta"><span className="mission-tracker-element-tag">{mission.element.split(' / ')[0]}</span><span>{mission.clan} · {mission.kind} · Tier {mission.tier}</span></div><strong>{mission.name}</strong></div>
+          <p>{missionObjectiveLabel(mission, species)}</p>
+          <small>{species.length === 1 ? 'Alvo compartilhado' : 'Alvos compartilhados'}: {species.join(', ')} · {formatChance(chance)} dos spawns do mapa</small>
+        </article>)}</div> : <p className="mission-tracker-empty">Nenhuma outra missão mapeada avança com os alvos deste mapa.</p>}
+      </div>
+    </> : null}
+  </div>
+}
+
 function MissionBoard({ items, pokemon, onOpenMap }: { items: ClanMission[]; pokemon: Pokemon[]; onOpenMap: (mapId: string) => void }) {
   const [query, setQuery] = useState('')
   const [selectedClan, setSelectedClan] = useState('Todos os clãs')
-  const colors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
-  const getElementKey = (element: string) => (element.split('/').at(-1) ?? element).trim().toLowerCase()
-  const getElementColor = (element: string) => colors[getElementKey(element)] ?? '#173b9b'
   const getElementName = (element: string) => element.split(' / ')[0]
   const normalizedQuery = query.trim().toLowerCase()
   const matches = items.filter((mission) => (selectedClan === 'Todos os clãs' || mission.clan === selectedClan)
@@ -428,26 +567,26 @@ function MissionBoard({ items, pokemon, onOpenMap }: { items: ClanMission[]; pok
     <MissionFinder pokemon={pokemon} onOpenMap={onOpenMap} />
     <div className="mission-controls">
       <label className="mission-search"><Search size={18} /><input aria-label="Buscar missões" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar missão, clã ou elemento..." /></label>
-      <label className="mission-filter" style={{ '--element-color': selectedElement ? getElementColor(selectedElement) : '#2764e7' } as React.CSSProperties}>
+      <label className="mission-filter" style={{ '--element-color': selectedElement ? missionElementColor(selectedElement) : '#2764e7' } as React.CSSProperties}>
         <span className="mission-filter-swatch" aria-hidden="true" />
         <select aria-label="Filtrar missões por clã" value={selectedClan} onChange={(event) => setSelectedClan(event.target.value)}>
           <option value="Todos os clãs">Todos os clãs</option>
           {clanNames.map((clan) => {
             const element = elementByClan.get(clan) ?? ''
-            return <option key={clan} value={clan} style={{ color: getElementColor(element) }}>{clan} · {element}</option>
+            return <option key={clan} value={clan} style={{ color: missionElementColor(element) }}>{clan} · {element}</option>
           })}
         </select>
       </label>
       <span className="mission-count">{matches.length} de {items.length} missões</span>
     </div>
-    {groups.length ? <div className="mission-groups">{groups.map((group) => <details className="mission-group" key={group.clan} open={selectedClan !== 'Todos os clãs' || normalizedQuery.length > 0} style={{ '--element-color': getElementColor(group.missions[0].element) } as React.CSSProperties}>
+    {groups.length ? <div className="mission-groups">{groups.map((group) => <details className="mission-group" key={group.clan} open={selectedClan !== 'Todos os clãs' || normalizedQuery.length > 0} style={{ '--element-color': missionElementColor(group.missions[0].element) } as React.CSSProperties}>
       <summary><span className="mission-group-title"><strong>Missões de {getElementName(group.missions[0].element)}</strong><span className="mission-group-subline"><span className="mission-element-badge">{group.missions[0].element}</span><span className="mission-clan-name">{group.clan}</span></span></span><span className="mission-group-summary-count">{group.missions.length} missões</span></summary>
       <div className="mission-list">{group.missions.map((mission) => {
         const elementType = mission.element.split('/').at(-1)?.trim()
         const easiestCapture = elementType ? easiestCaptureByElement.get(elementType) ?? null : null
         return <article className="mission-card" key={mission.id}>
-          <div className="mission-card-header" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}><div><span className="mission-part">Parte {mission.part}</span><h3>{mission.name}</h3></div><span className="mission-tier">Tier {mission.tier}</span></div>
-          <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': getElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
+          <div className="mission-card-header" style={{ '--element-color': missionElementColor(mission.element) } as React.CSSProperties}><div><span className="mission-part">Parte {mission.part}</span><h3>{mission.name}</h3></div><span className="mission-tier">Tier {mission.tier}</span></div>
+          <div className="mission-tags"><span>{mission.kind}</span><span>Nível mín. {mission.minimumLevel ?? '—'}</span><span className="mission-element-chip" style={{ '--element-color': missionElementColor(mission.element) } as React.CSSProperties}>{mission.element}</span></div>
           <p className="mission-description">{mission.kind === 'Captura' ? <>Capturar <strong>{formatNumber(mission.target)}</strong> Pokémon do tipo <strong>{mission.element}</strong>.</> : mission.kind === 'Contrato específico' ? <>Derrotar os Pokémon específicos desta etapa até completar <strong>{formatNumber(mission.target)} abates</strong>.</> : <>Derrotar <strong>{formatNumber(mission.target)} Pokémon</strong> fracos ao elemento <strong>{mission.element}</strong>.</>}</p>
           <dl className="mission-rewards"><div><dt>Gold</dt><dd>{formatNumber(mission.gold)}</dd></div><div><dt>XP</dt><dd>{formatNumber(mission.experience)}</dd></div><div><dt>Token</dt><dd>{formatNumber(mission.tokens)}</dd></div><div><dt>Pontos do clã</dt><dd>{formatNumber(mission.clanPoints)}</dd></div></dl>
           <MissionAdvice recommendation={mission.recommendation} hardnessByName={hardnessByName} easiestCapture={easiestCapture} onOpenMap={onOpenMap} />
