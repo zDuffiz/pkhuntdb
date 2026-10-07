@@ -424,6 +424,7 @@ function MissionBoard({ items, pokemon, onOpenMap }: { items: ClanMission[]; pok
   const formatNumber = (value: number) => new Intl.NumberFormat('pt-BR').format(value)
 
   return <section className="mission-board">
+    <MissionFinder pokemon={pokemon} onOpenMap={onOpenMap} />
     <div className="mission-controls">
       <label className="mission-search"><Search size={18} /><input aria-label="Buscar missões" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar missão, clã ou elemento..." /></label>
       <label className="mission-filter" style={{ '--element-color': selectedElement ? getElementColor(selectedElement) : '#2764e7' } as React.CSSProperties}>
@@ -452,6 +453,97 @@ function MissionBoard({ items, pokemon, onOpenMap }: { items: ClanMission[]; pok
         </article>
       })}</div>
     </details>)}</div> : <p className="mission-empty">Nenhuma missão encontrada.</p>}
+  </section>
+}
+
+function MissionFinder({ pokemon, onOpenMap }: { pokemon: Pokemon[]; onOpenMap: (mapId: string) => void }) {
+  const [action, setAction] = useState<'capture' | 'defeat'>('defeat')
+  const [mode, setMode] = useState<'element' | 'pokemon' | 'weak'>('element')
+  const [firstElement, setFirstElement] = useState('Fire')
+  const [secondElement, setSecondElement] = useState('')
+  const [thirdElement, setThirdElement] = useState('')
+  const [pokemonName, setPokemonName] = useState('')
+  const typeByName = useMemo(() => new Map(pokemon.map((entry) => [entry.name, entry.type.split(' / ')])), [pokemon])
+  const pokemonNames = useMemo(() => [...new Set(pokemon.map((entry) => entry.name))].sort((first, second) => first.localeCompare(second)), [pokemon])
+  const elements = Object.keys(typeLabels)
+  const singleElementTarget = mode === 'element'
+  const singleElementDefeat = action === 'defeat' && singleElementTarget
+  const selectedElements = (singleElementTarget ? [firstElement] : [firstElement, secondElement, thirdElement]).filter(Boolean)
+  const selectedPokemon = pokemonNames.find((name) => name.toLowerCase() === pokemonName.trim().toLowerCase()) ?? ''
+  const pokemonSuggestions = pokemonName.trim() && !selectedPokemon ? pokemonNames.filter((name) => name.toLowerCase().includes(pokemonName.trim().toLowerCase())).slice(0, 8) : []
+  const ready = mode === 'pokemon' ? selectedPokemon !== '' : selectedElements.length > 0
+  const results = useMemo(() => {
+    if (!ready) return []
+    const levels = worldRegions.filter((map) => map.stage === 'region').map((map) => map.level).sort((first, second) => first - second)
+    const easyMax = levels[Math.floor(levels.length / 2) - 1]
+    const ranked = worldRegions.map((map) => {
+      const total = map.spawns.reduce((sum, spawn) => sum + spawn.weight, 0)
+      const hits = map.spawns.filter((spawn) => {
+        if (action === 'capture' && !captureHardnessByName.has(spawn.name)) return false
+        if (mode === 'pokemon') return spawn.name === selectedPokemon
+        const types = typeByName.get(spawn.name) ?? []
+        if (mode === 'weak') return types.length > 0 && selectedElements.every((element) => getTypeMatchups(types.join(' / ')).some((matchup) => matchup.type === element && matchup.multiplier > 1))
+        return selectedElements.some((element) => types.includes(element))
+      })
+      const weight = hits.reduce((sum, spawn) => sum + spawn.weight, 0)
+      const hardnessWeight = hits.reduce((sum, spawn) => sum + (captureHardnessByName.get(spawn.name) ?? 0) * spawn.weight, 0)
+      return { map, hits, chance: total ? weight / total : 0, averageHardness: weight ? hardnessWeight / weight : 0 }
+    }).filter((entry) => entry.chance > 0)
+      .filter((entry) => !singleElementDefeat || new Set(entry.hits.map((spawn) => spawn.name)).size >= 3)
+      .sort((first, second) => second.chance - first.chance || first.map.level - second.map.level || first.map.name.localeCompare(second.map.name))
+    if (action === 'capture' && singleElementTarget) {
+      const easiestSpecies = [...new Set(ranked.flatMap((entry) => entry.hits.map((spawn) => spawn.name)))]
+        .map((name) => ({ name, hardness: captureHardnessByName.get(name) }))
+        .filter((entry): entry is { name: string; hardness: number } => entry.hardness !== undefined)
+        .sort((first, second) => first.hardness - second.hardness || first.name.localeCompare(second.name))[0]
+      const easiestMap = easiestSpecies ? ranked.flatMap((entry) => {
+        const speciesWeight = entry.hits.filter((spawn) => spawn.name === easiestSpecies.name).reduce((sum, spawn) => sum + spawn.weight, 0)
+        const total = entry.map.spawns.reduce((sum, spawn) => sum + spawn.weight, 0)
+        return speciesWeight ? [{ entry, chance: total ? speciesWeight / total : 0 }] : []
+      }).sort((first, second) => second.chance - first.chance || first.entry.map.level - second.entry.map.level)[0] : undefined
+      const concentrationRanking = [...ranked].sort((first, second) => second.chance - first.chance || first.averageHardness - second.averageHardness || first.map.level - second.map.level)
+      const concentrationMap = concentrationRanking.find((entry) => entry.map.id !== easiestMap?.entry.map.id) ?? concentrationRanking[0]
+      return [
+        { label: 'Menor dureza', entry: easiestMap?.entry, detail: easiestSpecies && easiestMap ? `${easiestSpecies.name} · Dureza ${easiestSpecies.hardness} · ${formatChance(easiestMap.chance)} de spawn` : '' },
+        { label: 'Maior concentração', entry: concentrationMap, detail: concentrationMap ? `Dureza média ${new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(concentrationMap.averageHardness)} · espécies capturáveis do elemento` : '' },
+      ]
+    }
+    if (action === 'capture') return [{ label: 'Melhor mapa', entry: ranked[0], detail: '' }]
+    if (mode === 'pokemon') return ranked.map((entry, index) => ({ label: `Mapa ${index + 1}`, entry, detail: '' }))
+    if (singleElementDefeat) return [
+      { label: 'Mapa fácil', entry: ranked.find((item) => item.map.stage === 'region' && item.map.level <= easyMax), detail: '' },
+      { label: 'Mapa avançado', entry: ranked.find((item) => item.map.stage !== 'region'), detail: '' },
+    ]
+    return [
+      { label: 'Mapa fácil', entry: ranked.find((item) => item.map.stage === 'region' && item.map.level <= easyMax), detail: '' },
+      { label: 'Mapa médio', entry: ranked.find((item) => item.map.stage === 'region' && item.map.level > easyMax), detail: '' },
+      { label: 'Mapa avançado (Elite +)', entry: ranked.find((item) => item.map.stage !== 'region'), detail: '' },
+    ]
+  }, [ready, action, mode, selectedPokemon, firstElement, secondElement, thirdElement, typeByName])
+  function formatChance(value: number) {
+    return new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 }).format(value)
+  }
+
+  return <section className="mission-finder">
+    <h2>Buscar melhor mapa para a missão</h2>
+    <div className="mission-finder-fields">
+      <label><span>Objetivo</span><select aria-label="Objetivo da missão" value={action} onChange={(event) => { const next = event.target.value as 'capture' | 'defeat'; setAction(next); if (next === 'capture' && mode === 'weak') setMode('element') }}><option value="defeat">Derrotar</option><option value="capture">Capturar</option></select></label>
+      <label><span>Alvo</span><select aria-label="Tipo de alvo" value={mode} onChange={(event) => setMode(event.target.value as 'element' | 'pokemon' | 'weak')}><option value="element">Elemento</option>{action === 'defeat' && <option value="weak">Fraco a</option>}<option value="pokemon">Pokémon</option></select></label>
+      {mode !== 'pokemon' ? <>
+        <label><span>Elemento{singleElementTarget ? '' : ' 1'}</span><select aria-label={singleElementTarget ? 'Elemento da missão' : 'Primeiro elemento'} value={firstElement} onChange={(event) => setFirstElement(event.target.value)}>{elements.map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+        {!singleElementTarget && <>
+          <label><span>Elemento 2 (opcional)</span><select aria-label="Segundo elemento" value={secondElement} onChange={(event) => setSecondElement(event.target.value)}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+          <label><span>Elemento 3 (opcional)</span><select aria-label="Terceiro elemento" value={thirdElement} onChange={(event) => setThirdElement(event.target.value)}><option value="">Nenhum</option>{elements.filter((element) => element !== firstElement && element !== secondElement).map((element) => <option key={element} value={element}>{typeLabel(element)}</option>)}</select></label>
+        </>}
+      </> : <label><span>Pokémon</span><input type="search" aria-label="Pokémon da missão" autoComplete="off" value={pokemonName} onChange={(event) => setPokemonName(event.target.value)} placeholder="Pesquisar Pokémon..." />{pokemonSuggestions.length > 0 && <div className="mission-finder-suggestions">{pokemonSuggestions.map((name) => <button type="button" key={name} onClick={() => setPokemonName(name)}>{name}</button>)}</div>}</label>}
+    </div>
+    {!ready ? <p className="mission-empty">Digite e escolha um Pokémon para ver os mapas.</p> : results.some((item) => item.entry) ? <div className="mission-finder-results">{results.map(({ label, entry, detail }) => entry ? <button type="button" className="mission-finder-result" key={label} onClick={() => onOpenMap(entry.map.id)} aria-label={`Abrir ${entry.map.name} no Mundo`}>
+      <span className="mission-finder-rank">{label}</span>
+      <strong>{entry.map.name}</strong>
+      <small>{entry.map.id} · nível {entry.map.level} · {formatChance(entry.chance)} dos spawns</small>
+      {detail && <small>{detail}</small>}
+      <small>{entry.hits.map((spawn) => spawn.name).join(', ')}</small>
+    </button> : <div className="mission-finder-result" key={label}><span className="mission-finder-rank">{label}</span><small>Nenhum mapa nesta faixa.</small></div>)}</div> : <p className="mission-empty">Nenhum mapa encontrado para essa busca.</p>}
   </section>
 }
 
