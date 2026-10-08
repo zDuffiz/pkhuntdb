@@ -193,6 +193,52 @@
 .mission-tracker-card p { margin: 0; color: var(--app-ink); font-size: 12px; }
 .mission-tracker-card > small { color: var(--app-muted); font-size: 11px; }
 .mission-tracker-empty { margin: 0; border: 1px dashed var(--app-line); border-radius: 6px; padding: 15px; color: var(--app-muted); font-size: 13px; }
+.mission-tracker-completed-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 14px; }
+.mission-tracker-completed-toolbar > button { display: inline-flex; min-height: 38px; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--app-line); border-radius: 5px; background: var(--app-surface); color: var(--app-ink); cursor: pointer; font: 700 12px var(--app-font-body); }
+.mission-tracker-completed-toolbar > button:hover,.mission-tracker-completed-toolbar > button[aria-expanded="true"] { border-color: var(--app-accent); color: var(--app-accent); }
+.mission-tracker-completed-toolbar > button > span { padding-left: 4px; color: var(--app-muted); font: 11px var(--app-font-mono); }
+.mission-tracker-completed-toolbar > small { color: var(--app-muted); font-size: 11px; }
+.mission-tracker-completed-manager { display: grid; gap: 12px; padding: 14px; border: 1px solid var(--app-line); border-top: 2px solid var(--app-accent); border-radius: 5px; background: var(--app-surface); }
+.mission-tracker-completed-manager > header { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.mission-tracker-completed-manager > header h3 { margin: 0; color: var(--app-ink); font: 700 17px var(--app-font-display); }
+.mission-tracker-completed-manager > header p { margin: 4px 0 0; color: var(--app-muted); font-size: 11px; }
+.mission-tracker-completed-search { display: flex; min-width: min(100%, 230px); height: 38px; align-items: center; gap: 8px; padding: 0 10px; border: 1px solid var(--app-line); border-radius: 4px; color: var(--app-muted); }
+.mission-tracker-completed-search input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--app-ink); font: 12px var(--app-font-body); }
+.mission-tracker-completed-search:focus-within { border-color: var(--app-focus); box-shadow: 0 0 0 2px color-mix(in srgb, var(--app-focus) 20%, transparent); }
+.mission-tracker-completed-list { display: grid; max-height: 360px; overflow: auto; border: 1px solid var(--app-line); border-radius: 4px; }
+.mission-tracker-completed-groups { display: block; }
+.mission-tracker-completed-group { display: grid; grid-template-columns: minmax(0, 1fr) 34px; align-items: start; border-bottom: 1px solid var(--app-line); }
+.mission-tracker-completed-group:last-child { border-bottom: 0; }
+.mission-tracker-completed-group > details { min-width: 0; }
+.mission-tracker-completed-group > details > summary { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto 15px; align-items: center; gap: 9px; min-height: 42px; padding: 7px 10px; border-left: 3px solid var(--element-color, var(--app-line)); background: color-mix(in srgb, var(--element-color, var(--app-accent)) 8%, var(--app-surface)); color: var(--app-ink); cursor: pointer; list-style: none; }
+.mission-tracker-completed-group > details > summary::-webkit-details-marker { display: none; }
+.mission-tracker-completed-group > details > summary:hover { background: color-mix(in srgb, var(--element-color, var(--app-accent)) 14%, var(--app-surface)); }
+.mission-tracker-completed-group > details > summary > strong { color: var(--element-color, var(--app-ink)); font-size: 12px; }
+.mission-tracker-completed-group > details > summary > small { color: var(--app-muted); font-size: 10px; }
+.mission-tracker-completed-group > details > summary > svg { color: var(--element-color, var(--app-muted)); transition: transform .15s ease; }
+.mission-tracker-completed-group > details[open] > summary > svg { transform: rotate(180deg); }
+.mission-tracker-completed-element-mark { width: 9px; height: 9px; border-radius: 50%; background: var(--element-color, var(--app-accent)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--element-color, var(--app-accent)) 17%, transparent); }
+.mission-tracker-completed-rows { display: grid; padding-left: 12px; }
+.mission-tracker-completed-select-all { position: relative; display: grid; width: 22px; height: 22px; place-items: center; margin: 10px 6px 0; cursor: pointer; }
+.mission-tracker-completed-select-all > input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.mission-tracker-completed-select-all > .mission-tracker-completed-check { width: 18px; height: 18px; border-color: color-mix(in srgb, var(--element-color, var(--app-line)) 70%, var(--app-line)); }
+.mission-tracker-completed-select-all > input:checked + .mission-tracker-completed-check { border-color: var(--element-color, var(--app-accent)); background: var(--element-color, var(--app-accent)); color: var(--app-surface); }
+.mission-tracker-completed-select-all > input:indeterminate + .mission-tracker-completed-check { border-color: var(--element-color, var(--app-accent)); background: color-mix(in srgb, var(--element-color, var(--app-accent)) 18%, var(--app-surface)); color: transparent; }
+.mission-tracker-completed-select-all > input:indeterminate + .mission-tracker-completed-check::after { width: 8px; height: 2px; background: var(--element-color, var(--app-accent)); content: ''; }
+.mission-tracker-completed-select-all > input:focus-visible + .mission-tracker-completed-check { outline: 2px solid var(--app-focus); outline-offset: 2px; }
+.mission-tracker-completed-select-all > input:disabled { cursor: wait; }
+.mission-tracker-completed-row { position: relative; display: grid; grid-template-columns: 18px minmax(0, 1fr); align-items: center; gap: 10px; min-height: 52px; padding: 7px 10px; border-bottom: 1px solid var(--app-line); cursor: pointer; }
+.mission-tracker-completed-row:last-child { border-bottom: 0; }
+.mission-tracker-completed-row:hover { background: color-mix(in srgb, var(--element-color, var(--app-accent)) 7%, var(--app-surface)); }
+.mission-tracker-completed-row > input { position: absolute; z-index: 1; left: 10px; width: 18px; height: 18px; margin: 0; opacity: 0; cursor: pointer; }
+.mission-tracker-completed-check { display: grid; width: 18px; height: 18px; place-items: center; border: 1px solid var(--app-line); border-radius: 3px; color: transparent; transition: background-color .12s ease, color .12s ease, border-color .12s ease; }
+.mission-tracker-completed-row > input:checked + .mission-tracker-completed-check { border-color: var(--element-color, var(--app-accent)); background: var(--element-color, var(--app-accent)); color: var(--app-surface); }
+.mission-tracker-completed-row > input:focus-visible + .mission-tracker-completed-check { outline: 2px solid var(--app-focus); outline-offset: 2px; }
+.mission-tracker-completed-row > input:disabled { cursor: wait; }
+.mission-tracker-completed-copy { display: grid; min-width: 0; gap: 3px; }
+.mission-tracker-completed-copy strong { overflow-wrap: anywhere; color: var(--app-ink); font-size: 12px; }
+.mission-tracker-completed-copy small { color: var(--app-muted); font-size: 10px; }
+.mission-tracker-completion-message { margin: 0; padding: 10px 12px; border-left: 2px solid #d77c58; background: color-mix(in srgb, #d77c58 10%, var(--app-surface)); color: var(--app-ink); font-size: 12px; }
 :root[data-color-mode="dark"] .mission-tracker-element-tag { border-color: color-mix(in srgb, var(--element-color, var(--app-accent)) 54%, transparent); background: color-mix(in srgb, var(--element-color, var(--app-accent)) 25%, var(--app-surface)); color: color-mix(in srgb, var(--element-color, var(--app-accent)) 65%, white); }
 @media (max-width: 600px) {
   .mission-tracker-heading { align-items: flex-start; flex-direction: column; gap: 5px; }

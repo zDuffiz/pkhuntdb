@@ -1,0 +1,10 @@
+project_id = "pkhuntdb"
+
+[functions.login-with-username]
+verify_jwt = false
+
+[functions.request-password-reset]
+verify_jwt = false
+
+[functions.get-membership]
+verify_jwt = true

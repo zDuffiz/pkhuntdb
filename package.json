@@ -15,6 +15,7 @@
     "sync:evolutions": "node scripts/sync-evolutions.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
     "react": "latest",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "supabase": "^2.120.0"
   }
 }

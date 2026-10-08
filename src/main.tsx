@@ -1,11 +1,13 @@
 import React, { StrictMode, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowRight, BookOpen, Calculator, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, Map as MapIcon, MapPin, Moon, Radio, RotateCcw, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
+import AuthGate, { useMembership } from './AuthGate'
+import { ArrowRight, BookOpen, Calculator, Check, ChevronDown, ClipboardList, Crosshair, ExternalLink, Home, ListChecks, Map as MapIcon, MapPin, Moon, Radio, RotateCcw, ScrollText, Search, Sun, Swords, X } from 'lucide-react'
 import liveGif from '../assets/Emote-animado-explodindo-a-cabeça.gif'
 import discordGif from '../assets/Dançando animado.gif'
 import { captureRates, loadPokemon, moveDex, pokemonFallback, technicalMoves, type CaptureEntry, type Move, type MoveDexEntry, type Pokemon, type TechnicalMove } from './data'
 import evolutionCatalog from './evolution-data.json'
 import { clanMissions, clanNames, type ClanMission } from './mission-data'
+import { supabase } from './supabase'
 import regionCatalog from './region-data.json'
 import RaidPlanner from './RaidPlanner'
 import { getSuperEffectiveTypes, getTypeMatchups } from './type-chart'
@@ -86,11 +88,17 @@ const typeLabel = (type: string) => typeLabels[type] ?? type
 const typeListLabel = (types: string) => types.split(' / ').map(typeLabel).join(' / ')
 const missionElementColors: Record<string, string> = { bug: '#567d1f', dark: '#4c4657', dragon: '#6345a7', electric: '#987200', fairy: '#9c3a8a', fighting: '#a34331', fire: '#b54625', flying: '#5375a8', ghost: '#5b4a8c', grass: '#3e7627', ground: '#89632c', ice: '#327880', normal: '#5b626a', poison: '#724087', psychic: '#a63162', rock: '#74612a', steel: '#4d6275', water: '#2b5c9a' }
 const missionElementColor = (element: string) => missionElementColors[(element.split('/').at(-1) ?? element).trim().toLowerCase()] ?? '#173b9b'
+const vipAccessRestrictionsEnabled = false
+const vipOnlyViews = new Set(['missions', 'mission-tracker', 'calculator'])
 
-function App() { return <Atlas /> }
+function App() { return <AuthGate><Atlas /></AuthGate> }
 
 function Atlas() {
   const [view, setView] = useState<'home' | 'pokemon' | 'tms' | 'tm-compatible' | 'captures' | 'movedex' | 'missions' | 'mission-tracker' | 'calculator' | 'world' | 'raids' | 'detail'>('home')
+  const { level: membershipLevel, loading: membershipLoading } = useMembership()
+  const hasVipAccess = membershipLevel === 'vip' && !membershipLoading
+  const shouldRestrictVipAccess = vipAccessRestrictionsEnabled && !hasVipAccess
+  const [showVipAccessDialog, setShowVipAccessDialog] = useState(false)
   const [colorMode, setColorMode] = useState<'light' | 'dark'>(() => window.localStorage.getItem('pkhuntdb-color-mode-v2') === 'light' ? 'light' : 'dark')
   const [calculatorResetVersion, setCalculatorResetVersion] = useState(0)
   const [comparisonResetVersion, setComparisonResetVersion] = useState(0)
@@ -185,9 +193,22 @@ function Atlas() {
   const eggGroups = [...new Set(pokemon.flatMap((entry) => entry.eggGroup.split(',').map((group) => group.trim()).filter(Boolean)))].sort((a, b) => a.localeCompare(b))
 
   function changeView(nextView: typeof view) {
+    if (vipOnlyViews.has(nextView) && shouldRestrictVipAccess) {
+      setShowVipAccessDialog(true)
+      return
+    }
     setQuery('')
     setWorldFocusMapId(null)
     setView(nextView)
+  }
+
+  function changeCaptureSubTab(nextTab: 'rates' | 'calculator') {
+    if (nextTab === 'calculator' && shouldRestrictVipAccess) {
+      setShowVipAccessDialog(true)
+      return
+    }
+    setQuery('')
+    setCaptureSubTab(nextTab)
   }
 
   function openPokemon(entry: Pokemon) {
@@ -214,21 +235,21 @@ function Atlas() {
           <div className="nav-group">
             <button aria-label="Capturas" aria-expanded={view === 'captures'} className={view === 'captures' ? 'nav-item active' : 'nav-item'} onClick={() => { setCaptureSubTab('rates'); changeView('captures') }}><Crosshair size={18} /> <span>Capturas</span> <strong>{captureRates.length}</strong><ChevronDown className={view === 'captures' ? 'nav-chevron expanded' : 'nav-chevron'} size={16} aria-hidden="true" /></button>
             {view === 'captures' && <div className="nav-submenu" role="group" aria-label="Menu de Capturas">
-              <button type="button" className={captureSubTab === 'rates' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'rates' ? 'page' : undefined} title="Taxas de Captura" onClick={() => { setQuery(''); setCaptureSubTab('rates') }}><Crosshair size={15} /><span>Taxas de Captura</span></button>
-              <button type="button" className={captureSubTab === 'calculator' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'calculator' ? 'page' : undefined} title="Calculadora de Captura" onClick={() => { setQuery(''); setCaptureSubTab('calculator') }}><Calculator size={15} /><span>Calculadora de Captura</span></button>
+              <button type="button" className={captureSubTab === 'rates' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'rates' ? 'page' : undefined} title="Taxas de Captura" onClick={() => changeCaptureSubTab('rates')}><Crosshair size={15} /><span>Taxas de Captura</span></button>
+              <button type="button" className={captureSubTab === 'calculator' ? 'nav-subitem active' : 'nav-subitem'} aria-current={captureSubTab === 'calculator' ? 'page' : undefined} title="Calculadora de Captura" onClick={() => changeCaptureSubTab('calculator')}><Calculator size={15} /><span>Calculadora de Captura</span>{vipAccessRestrictionsEnabled && <span className="vip-nav-tag">VIP</span>}</button>
             </div>}
           </div>
           <button aria-label="Mundo" className={view === 'world' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('world')}><MapIcon size={18} /> <span>Mundo</span> <strong>{worldRegions.length}</strong></button>
           <button aria-label="MoveDex" hidden className={view === 'movedex' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('movedex')}><Swords size={18} /> <span>MoveDex</span> <strong>{moveDex.length}</strong></button>
           <div className="nav-group">
-            <button aria-label="Missões" aria-expanded={view === 'missions' || view === 'mission-tracker'} className={view === 'missions' || view === 'mission-tracker' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span> <strong>{clanMissions.length}</strong><ChevronDown className={view === 'missions' || view === 'mission-tracker' ? 'nav-chevron expanded' : 'nav-chevron'} size={16} aria-hidden="true" /></button>
+            <button aria-label="Missões" aria-expanded={view === 'missions' || view === 'mission-tracker'} className={view === 'missions' || view === 'mission-tracker' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('missions')}><ClipboardList size={18} /> <span>Missões</span>{vipAccessRestrictionsEnabled && <span className="vip-nav-tag">VIP</span>} <strong>{clanMissions.length}</strong><ChevronDown className={view === 'missions' || view === 'mission-tracker' ? 'nav-chevron expanded' : 'nav-chevron'} size={16} aria-hidden="true" /></button>
             {(view === 'missions' || view === 'mission-tracker') && <div className="nav-submenu" role="group" aria-label="Menu de Missões">
               <button type="button" className={view === 'missions' ? 'nav-subitem active' : 'nav-subitem'} aria-current={view === 'missions' ? 'page' : undefined} title="Missões de Clã" onClick={() => changeView('missions')}><ClipboardList size={15} /><span>Missões</span></button>
               <button type="button" className={view === 'mission-tracker' ? 'nav-subitem active' : 'nav-subitem'} aria-current={view === 'mission-tracker' ? 'page' : undefined} title="Tracker de missão" onClick={() => changeView('mission-tracker')}><Crosshair size={15} /><span>Tracker de missão</span></button>
             </div>}
           </div>
           <button aria-label="RAIDS" className={view === 'raids' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('raids')}><Swords size={18} /> <span>RAIDS</span> <strong>74</strong></button>
-          <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span> <strong>6</strong></button>
+          <button aria-label="Calculadora" className={view === 'calculator' ? 'nav-item active' : 'nav-item'} onClick={() => changeView('calculator')}><Calculator size={18} /> <span>Calculadora</span>{vipAccessRestrictionsEnabled && <span className="vip-nav-tag">VIP</span>} <strong>6</strong></button>
         </nav>
         {import.meta.env.PROD && <div className="sidebar-visit-counter">
           <span className="sidebar-visit-label">VISITAS DO SITE</span>
@@ -240,6 +261,10 @@ function Atlas() {
         <header className="topbar"><div>{view !== 'home' && <p className="kicker">PK HUNT DATABASE / CENTRAL DE TREINADORES</p>}<h1>{view === 'home' ? 'Início' : view === 'detail' ? selected.name : view === 'pokemon' ? 'Sua Pokédex' : view === 'tms' ? 'Golpes & TMs' : view === 'tm-compatible' ? 'Pokémon compatíveis' : view === 'captures' ? captureSubTab === 'calculator' ? 'Calculadora de Captura' : 'Taxas de Captura' : view === 'world' ? 'Mundo' : view === 'calculator' ? 'Calculadora de Status' : view === 'mission-tracker' ? 'Tracker de missão' : view === 'missions' ? 'Missões de Clã' : 'MoveDex'}</h1></div><div className="creator-showcase"><img className="creator-gif" src={discordGif} alt="" aria-hidden="true" /><div className="creator-credit"><span>Criado por:</span><a className="creator-link" href="https://discord.com/users/337805709561561088" target="_blank" rel="noreferrer" aria-label="Abrir o perfil Discord de zDuffi">zDuffi<ExternalLink size={13} /></a></div></div><div className="topbar-actions"><div className="live-showcase"><img className="live-gif" src={liveGif} alt="" aria-hidden="true" /><a className="live-link" href="https://www.twitch.tv/zduffi" target="_blank" rel="noreferrer"><Radio size={16} /> <span>LIVE NA TWITCH</span><ExternalLink size={13} /></a></div><div className="theme-switch" role="group" aria-label="Modo de cores"><button type="button" aria-label="Modo claro" title="Modo claro" aria-pressed={colorMode === 'light'} onClick={() => setColorMode('light')}><Sun size={17} /><span>Claro</span></button><button type="button" aria-label="Modo escuro" title="Modo escuro" aria-pressed={colorMode === 'dark'} onClick={() => setColorMode('dark')}><Moon size={17} /><span>Escuro</span></button></div>{view !== 'home' && <div className="version">{view === 'captures' ? captureRates.length : view === 'movedex' ? moveDex.length : view === 'missions' || view === 'mission-tracker' ? clanMissions.length : view === 'calculator' ? '6' : view === 'world' ? worldRegions.length : status === 'ready' ? '747' : '...'} {view === 'calculator' ? 'ATRIBUTOS' : view === 'world' ? 'MAPAS' : 'REGISTROS'} <span>WIKI</span></div>}</div></header>
         {view === 'raids' ? <RaidPlanner pokemon={pokemon} status={status} /> : view === 'home' ? <HomeDashboard onNavigate={(destination) => {
           if (destination === 'capture-calculator') {
+            if (shouldRestrictVipAccess) {
+              setShowVipAccessDialog(true)
+              return
+            }
             setCaptureSubTab('calculator')
             changeView('captures')
           } else changeView(destination)
@@ -275,6 +300,13 @@ function Atlas() {
           {view === 'captures' && captureSubTab === 'calculator' ? <CaptureCalculator entries={captureRates} pokemon={pokemon} /> : view === 'pokemon' ? <PokemonList entries={filteredPokemon} selected={selected} status={status} statSort={statSort} onSelect={openPokemon} /> : view === 'tms' ? <TmTable items={filteredTms} sort={tmSort} onSort={(key) => setTmSort((current) => current?.key === key ? { key, direction: current.direction === 'desc' ? 'asc' : 'desc' } : { key, direction: 'desc' })} onSelectMove={(move) => { setSelectedTm(move); setView('tm-compatible') }} /> : view === 'captures' ? <CaptureTable items={filteredCaptures} pokemon={pokemon} sort={captureSort} onSort={setCaptureSort} /> : view === 'missions' ? <MissionBoard items={clanMissions} pokemon={pokemon} onOpenMap={openRecommendedMap} /> : <MoveDexTable items={filteredMoveDex} />}
         </>}
       </section>
+      {showVipAccessDialog && <div className="vip-access-overlay"><section className="vip-access-dialog" role="dialog" aria-modal="true" aria-labelledby="vip-access-title">
+        <button type="button" className="vip-access-close" aria-label="Fechar" onClick={() => setShowVipAccessDialog(false)}>×</button>
+        <span className="vip-access-eyebrow">ACESSO VIP</span>
+        <h2 id="vip-access-title">Ferramenta exclusiva VIP</h2>
+        <p>{membershipLoading ? 'Estamos verificando o nível da sua conta.' : membershipLevel === 'vip' ? 'Seu acesso VIP está sendo atualizado. Tente novamente em instantes.' : 'Faça login com um e-mail autorizado para acesso VIP.'}</p>
+        <button type="button" className="vip-access-action" onClick={() => setShowVipAccessDialog(false)}>Entendi</button>
+      </section></div>}
     </main>
   )
 }
@@ -450,6 +482,115 @@ function MissionTracker({ items, pokemon, maps, onOpenMap }: { items: ClanMissio
   const [selectedElement, setSelectedElement] = useState('')
   const [activityFilter, setActivityFilter] = useState<'all' | 'capture' | 'defeat'>('all')
   const [missionSearch, setMissionSearch] = useState('')
+  const [showCompletedManager, setShowCompletedManager] = useState(false)
+  const [completedMissionSearch, setCompletedMissionSearch] = useState('')
+  const [completedMissionIds, setCompletedMissionIds] = useState<Set<string>>(() => new Set())
+  const [userId, setUserId] = useState<string | null>(null)
+  const [completionLoading, setCompletionLoading] = useState(Boolean(supabase))
+  const [savingCompletion, setSavingCompletion] = useState(false)
+  const [completionMessage, setCompletionMessage] = useState('')
+  const activeUserIdRef = useRef<string | null | undefined>(undefined)
+
+  useEffect(() => {
+    const client = supabase
+    if (!client) {
+      setCompletionLoading(false)
+      return
+    }
+
+    let disposed = false
+    const { data: { subscription } } = client.auth.onAuthStateChange((_event, session) => {
+      const nextUserId = session?.user.id ?? null
+      if (activeUserIdRef.current === nextUserId) return
+      activeUserIdRef.current = nextUserId
+      setUserId(nextUserId)
+      setCompletedMissionIds(new Set())
+      setCompletionMessage('')
+      setCompletionLoading(Boolean(nextUserId))
+      if (!nextUserId) return
+
+      window.setTimeout(async () => {
+        const { data, error } = await client
+          .from('completed_clan_missions')
+          .select('mission_id')
+          .eq('user_id', nextUserId)
+        if (disposed || activeUserIdRef.current !== nextUserId) return
+        if (error) {
+          setCompletionMessage('Não foi possível carregar suas missões concluídas.')
+        } else {
+          setCompletedMissionIds(new Set(data.map((entry) => entry.mission_id)))
+        }
+        setCompletionLoading(false)
+      }, 0)
+    })
+
+    return () => {
+      disposed = true
+      subscription.unsubscribe()
+    }
+  }, [])
+
+  async function updateMissionCompletion(missionId: string, completed: boolean) {
+    if (completionLoading || savingCompletion) return
+    const previousMissions = completedMissionIds
+    const nextMissions = new Set(previousMissions)
+    if (completed) nextMissions.add(missionId)
+    else nextMissions.delete(missionId)
+    setCompletedMissionIds(nextMissions)
+    setCompletionMessage('')
+    if (completed && selectedMissionId === missionId) {
+      setSelectedMissionId('')
+      setSelectedMapId('')
+    }
+    if (!userId || !supabase) return
+
+    setSavingCompletion(true)
+    try {
+      const { error } = completed
+        ? await supabase.from('completed_clan_missions').insert({ user_id: userId, mission_id: missionId })
+        : await supabase.from('completed_clan_missions').delete().eq('user_id', userId).eq('mission_id', missionId)
+      if (error) throw error
+    } catch {
+      setCompletedMissionIds(previousMissions)
+      setCompletionMessage('Não foi possível salvar a alteração. Tente novamente.')
+    } finally {
+      setSavingCompletion(false)
+    }
+  }
+
+  async function updateMissionGroupCompletion(missions: ClanMission[], completed: boolean) {
+    if (completionLoading || savingCompletion || !missions.length) return
+    const previousMissions = completedMissionIds
+    const missionIds = missions.map((mission) => mission.id)
+    const nextMissions = new Set(previousMissions)
+    for (const missionId of missionIds) {
+      if (completed) nextMissions.add(missionId)
+      else nextMissions.delete(missionId)
+    }
+    setCompletedMissionIds(nextMissions)
+    setCompletionMessage('')
+    if (completed && missionIds.includes(selectedMissionId)) {
+      setSelectedMissionId('')
+      setSelectedMapId('')
+    }
+    if (!userId || !supabase) return
+
+    setSavingCompletion(true)
+    try {
+      const { error } = completed
+        ? await supabase.from('completed_clan_missions').insert(missionIds
+          .filter((missionId) => !previousMissions.has(missionId))
+          .map((missionId) => ({ user_id: userId, mission_id: missionId })))
+        : await supabase.from('completed_clan_missions').delete().eq('user_id', userId).in('mission_id', missionIds)
+      if (error) throw error
+    } catch {
+      setCompletedMissionIds(previousMissions)
+      setCompletionMessage('Não foi possível salvar a alteração. Tente novamente.')
+    } finally {
+      setSavingCompletion(false)
+    }
+  }
+
   const selectedMission = items.find((mission) => mission.id === selectedMissionId)
   const pokemonByName = useMemo(() => new Map(pokemon.map((entry) => [entry.name, entry])), [pokemon])
   const elements = useMemo(() => [...new Set(items.map((mission) => mission.element))]
@@ -457,10 +598,20 @@ function MissionTracker({ items, pokemon, maps, onOpenMap }: { items: ClanMissio
   const availableMissions = useMemo(() => {
     const query = missionSearch.trim().toLocaleLowerCase()
     return items.filter((mission) => mission.element === selectedElement
+      && !completedMissionIds.has(mission.id)
       && (activityFilter === 'all' || (activityFilter === 'capture' ? mission.kind === 'Captura' : mission.kind !== 'Captura'))
       && `${mission.clan} ${mission.name} ${mission.kind} ${missionObjectiveLabel(mission)}`.toLocaleLowerCase().includes(query))
       .sort((first, second) => first.tier - second.tier || first.name.localeCompare(second.name))
-  }, [activityFilter, items, missionSearch, selectedElement])
+  }, [activityFilter, completedMissionIds, items, missionSearch, selectedElement])
+  const completedMissionChoices = useMemo(() => {
+    const query = completedMissionSearch.trim().toLocaleLowerCase()
+    return items.filter((mission) => `${mission.clan} ${mission.name} ${mission.kind} ${mission.element} ${mission.description}`.toLocaleLowerCase().includes(query))
+      .sort((first, second) => first.clan.localeCompare(second.clan) || first.tier - second.tier || first.name.localeCompare(second.name))
+  }, [completedMissionSearch, items])
+  const completedMissionGroups = useMemo(() => elements.map((element) => ({
+    element,
+    missions: completedMissionChoices.filter((mission) => mission.element === element),
+  })).filter((group) => group.missions.length > 0), [completedMissionChoices, elements])
   const choiceGroups = activityFilter === 'all' ? [
     { key: 'capture', label: 'Capturar', missions: availableMissions.filter((mission) => mission.kind === 'Captura') },
     { key: 'defeat', label: 'Derrotar', missions: availableMissions.filter((mission) => mission.kind !== 'Captura') },
@@ -477,18 +628,46 @@ function MissionTracker({ items, pokemon, maps, onOpenMap }: { items: ClanMissio
     const totalWeight = selectedRoute.map.spawns.reduce((total, spawn) => total + spawn.weight, 0) || 1
 
     return items.flatMap((mission) => {
-      if (mission.id === selectedMission.id) return []
+      if (mission.id === selectedMission.id || completedMissionIds.has(mission.id)) return []
       const sharedSpawns = getMissionEligibleSpawns(mission, selectedRoute.map, pokemonByName)
         .filter((spawn) => currentSpecies.has(spawn.name))
       if (!sharedSpawns.length) return []
       const sharedWeight = sharedSpawns.reduce((total, spawn) => total + spawn.weight, 0)
       return [{ mission, species: sharedSpawns.map((spawn) => spawn.name), chance: sharedWeight / totalWeight }]
     }).sort((first, second) => second.chance - first.chance || first.mission.tier - second.mission.tier || first.mission.name.localeCompare(second.mission.name))
-  }, [items, pokemonByName, selectedMission, selectedRoute, selectedSpawns])
+  }, [completedMissionIds, items, pokemonByName, selectedMission, selectedRoute, selectedSpawns])
   const formatChance = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 }).format(value)
 
   return <div className="mission-tracker">
     <header className="mission-tracker-heading"><div><span>TRACKER DE MISSÃO</span><h2>Encontre tarefas para avançar junto</h2></div><p>Selecione uma missão e veja quais outras podem progredir no mesmo mapa.</p></header>
+    <div className="mission-tracker-completed-toolbar">
+      <button type="button" aria-expanded={showCompletedManager} onClick={() => setShowCompletedManager((current) => !current)}><ListChecks size={16} aria-hidden="true" />{showCompletedManager ? 'Fechar lista de quests' : 'Gerenciar quests concluídas'}<span>{completedMissionIds.size}/{items.length}</span></button>
+      <small>{userId ? 'Progresso salvo na sua conta' : 'Visitante: o progresso reinicia ao sair do tracker'}</small>
+    </div>
+    {completionMessage && <p className="mission-tracker-completion-message" role="alert">{completionMessage}</p>}
+    {showCompletedManager && <section className="mission-tracker-completed-manager" aria-label="Todas as quests">
+      <header><div><h3>Todas as quests</h3><p>Marque as missões já concluídas para removê-las dos resultados do tracker.</p></div><label className="mission-tracker-completed-search"><Search size={15} aria-hidden="true" /><input type="search" aria-label="Buscar nas quests" placeholder="Buscar clã ou missão..." value={completedMissionSearch} onChange={(event) => setCompletedMissionSearch(event.target.value)} /></label></header>
+      {completionLoading ? <p className="mission-tracker-empty">Carregando seu progresso...</p> : <div className="mission-tracker-completed-list mission-tracker-completed-groups">{completedMissionGroups.map((group) => {
+        const completedCount = group.missions.filter((mission) => completedMissionIds.has(mission.id)).length
+        const allCompleted = completedCount === group.missions.length
+        const partiallyCompleted = completedCount > 0 && !allCompleted
+        return <div className="mission-tracker-completed-group" key={group.element} style={{ '--element-color': missionElementColor(group.element) } as React.CSSProperties}>
+          <details open={Boolean(completedMissionSearch.trim())}>
+            <summary><span className="mission-tracker-completed-element-mark" aria-hidden="true" /><strong>{group.element.split(' / ')[0]}</strong><small>{completedCount}/{group.missions.length} concluídas</small><ChevronDown size={15} aria-hidden="true" /></summary>
+            <div className="mission-tracker-completed-rows">{group.missions.map((mission) => <label className="mission-tracker-completed-row" key={mission.id} style={{ '--element-color': missionElementColor(mission.element) } as React.CSSProperties}>
+              <input type="checkbox" checked={completedMissionIds.has(mission.id)} disabled={savingCompletion} onChange={(event) => { void updateMissionCompletion(mission.id, event.target.checked) }} />
+              <span className="mission-tracker-completed-check" aria-hidden="true"><Check size={13} /></span>
+              <span className="mission-tracker-completed-copy"><strong>{mission.name}</strong><small>{mission.clan} · {mission.kind} · Tier {mission.tier}</small></span>
+            </label>)}</div>
+          </details>
+          <label className="mission-tracker-completed-select-all" title={allCompleted ? 'Desmarcar todas as quests do elemento' : 'Marcar todas as quests do elemento'}>
+            <input type="checkbox" aria-label={`Selecionar todas as quests de ${group.element.split(' / ')[0]}`} aria-checked={partiallyCompleted ? 'mixed' : allCompleted} checked={allCompleted} disabled={completionLoading || savingCompletion} ref={(input) => { if (input) input.indeterminate = partiallyCompleted }} onChange={() => { void updateMissionGroupCompletion(group.missions, !allCompleted) }} />
+            <span className="mission-tracker-completed-check" aria-hidden="true"><Check size={13} /></span>
+          </label>
+        </div>
+      })}</div>}
+      {!completionLoading && completedMissionChoices.length === 0 && <p className="mission-tracker-empty">Nenhuma quest encontrada.</p>}
+    </section>}
     <div className="mission-tracker-controls">
       <label><span>Elemento</span><select aria-label="Filtrar missões por elemento" value={selectedElement} onChange={(event) => { setSelectedElement(event.target.value); setSelectedMissionId(''); setSelectedMapId('') }}>
         <option value="">Selecione um elemento...</option>
@@ -500,7 +679,7 @@ function MissionTracker({ items, pokemon, maps, onOpenMap }: { items: ClanMissio
       <span>Objetivo</span>
       {([['all', 'Todas'], ['capture', 'Capturar'], ['defeat', 'Derrotar']] as const).map(([value, label]) => <button type="button" aria-pressed={activityFilter === value} className={activityFilter === value ? 'active' : ''} key={value} onClick={() => { setActivityFilter(value); setSelectedMissionId(''); setSelectedMapId('') }}>{label}</button>)}
     </div>
-    {!selectedElement ? <p className="mission-tracker-empty">Escolha um elemento para ver as missões separadas entre capturar e derrotar.</p> : availableMissions.length ? <div className="mission-tracker-choices">{choiceGroups.filter((group) => group.missions.length > 0).map((group) => <section className="mission-tracker-choice-group" key={group.key}>
+    {completionLoading ? <p className="mission-tracker-empty">Carregando seu progresso...</p> : !selectedElement ? <p className="mission-tracker-empty">Escolha um elemento para ver as missões separadas entre capturar e derrotar.</p> : availableMissions.length ? <div className="mission-tracker-choices">{choiceGroups.filter((group) => group.missions.length > 0).map((group) => <section className="mission-tracker-choice-group" key={group.key}>
       <header><h3>{group.label}</h3><span>{group.missions.length} missões</span></header>
       <div className="mission-tracker-choice-list">{group.missions.map((mission) => {
         const routeCount = getMissionMapRoutes(mission, maps).length

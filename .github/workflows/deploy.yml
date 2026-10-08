@@ -31,6 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL || 'https://tnlwqsotuyomoqphivlg.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY || 'sb_publishable_kmndJznpiVng7-WLusuzAw_mOYGfqKu' }}
         run: npm run build
 
       - name: Setup Pages
