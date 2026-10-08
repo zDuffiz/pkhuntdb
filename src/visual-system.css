@@ -43,14 +43,15 @@ body :not(svg) { font-family: var(--app-font-body) !important; letter-spacing: 0
 body { min-width: 320px; background-color: var(--app-canvas); background-image: radial-gradient(#dce4e7 .8px, transparent .8px), linear-gradient(135deg, #fafbfb 0%, #eef2f3 100%); background-size: 20px 20px, 100% 100%; color: var(--app-ink); font-size: 14px; line-height: 1.45; }
 .app-shell, .content { min-width: 0; background: transparent; color: var(--app-ink); }
 .sidebar { border-right: 1px solid var(--app-line); background: #fbfcfc; box-shadow: 4px 0 18px rgba(35, 52, 62, .06); }
-.sidebar-visit-counter { display: grid; justify-items: start; gap: 8px; margin-top: auto; padding: 12px 10px; border: 1px solid var(--app-line); border-radius: 7px; background: color-mix(in srgb, var(--app-accent) 5%, var(--app-surface)); color: var(--app-muted); }
-.sidebar-visit-label { color: var(--app-muted); font: 700 10px var(--app-font-display); }
-.sidebar-visit-badge { display: block; width: fit-content; max-width: 100%; overflow: hidden; border: 1px solid color-mix(in srgb, var(--app-accent) 18%, var(--app-line)); border-radius: 6px; background: var(--app-surface); }
-.sidebar-visit-badge img { display: block; width: auto; max-width: 100%; height: 26px; border-radius: inherit; }
+.sidebar-visit-counter { display: grid; justify-items: start; gap: 9px; margin-top: auto; padding: 12px; border: 1px solid color-mix(in srgb, var(--app-accent) 24%, var(--app-line)); border-top: 2px solid var(--app-accent); border-radius: 7px; background: color-mix(in srgb, var(--app-accent) 7%, var(--app-surface)); box-shadow: 0 5px 14px rgba(24, 43, 49, .08); color: var(--app-muted); }
+.sidebar-visit-label { display: flex; align-items: center; gap: 7px; color: var(--app-ink); font: 700 9px var(--app-font-display); letter-spacing: .1em; }
+.sidebar-visit-label::before { width: 6px; height: 6px; border-radius: 50%; background: var(--app-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-accent) 15%, transparent); content: ''; }
+.sidebar-visit-badge { display: block; width: fit-content; max-width: 100%; overflow: hidden; border: 0; border-radius: 4px; background: transparent; }
+.sidebar-visit-badge img { display: block; width: auto; max-width: 100%; height: 27px; border-radius: inherit; }
 @media (max-width: 800px) {
-  .sidebar-visit-counter { justify-items: center; padding: 8px 2px; border: 1px solid var(--app-line); border-radius: 7px; background: color-mix(in srgb, var(--app-accent) 5%, var(--app-surface)); }
+  .sidebar-visit-counter { justify-items: center; gap: 6px; padding: 8px 2px; border: 1px solid var(--app-line); border-top: 2px solid var(--app-accent); border-radius: 7px; background: color-mix(in srgb, var(--app-accent) 5%, var(--app-surface)); box-shadow: none; }
   .sidebar-visit-label { display: none; }
-  .sidebar-visit-badge { max-width: 52px; }
+  .sidebar-visit-badge { max-width: 48px; }
   .sidebar-visit-badge img { height: 20px; }
 }
 .brand, .brand b { color: var(--app-ink); }
